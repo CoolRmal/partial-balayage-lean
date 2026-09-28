@@ -1,4 +1,9 @@
-import Mathlib.Data.Nat.Basic
+module
+
+public import Mathlib.Data.Nat.Basic
+
+-- Add `@[expose]` to public definitions whose bodies downstream clients need.
+public section
 
 /-!
 # Supporting proof development
