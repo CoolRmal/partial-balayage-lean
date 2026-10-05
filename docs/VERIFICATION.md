@@ -35,3 +35,14 @@ completed successfully. Its mechanical report has `status: pass`, `stage: comple
 commit. It checks the same three theorem names above, under `palomar-standard-v1` with
 the pinned pipeline revision recorded in the workflow. The report is mechanical evidence
 for this checkpoint, not registration or completion of the other table rows.
+
+## Fifth proof checkpoint
+
+Commit: `57ee18236f8146214ee17a849548f99c556e01ca`.
+
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37314988680)
+completed successfully on 5 October 2026. Its report records `status: pass`, `stage: complete`,
+the exact immutable source commit above, and an empty warnings list. The build, comparator,
+independent kernel checks, and challenge provenance audit all passed under
+`palomar-standard-v1`. The comparator still contains exactly the three completed maximal bounds;
+the Fourier and vector Sobolev developments are supporting proofs for the pending rows.

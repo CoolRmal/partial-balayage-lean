@@ -445,8 +445,9 @@ finite-domain $$L^2$$ compactness. `Linear/DirichletDual.lean` now proves the ab
 positive Green construction and this dual state equation for a coercive Dirichlet
 operator and value embedding. `Linear/CapComplementarity.lean` proves the actual
 measurable support competitor, integral equality, vector alignment, and saturation.
-Instantiating the finite-product Sobolev value embedding and Dirichlet operator
-remains necessary before this becomes a concrete differential equation.
+`Linear/VectorDirichlet.lean` now instantiates the finite-product Sobolev value map
+and the actual Poincaré-coercive Dirichlet operator. It supplies the concrete
+coordinatewise weak Laplace equations, cap, alignment, and active-set saturation.
 
 The local construction alone is insufficient for the whole-space theorem. One
 route is to exhaust the space by balls and prove uniform energy, $$L^1$$ and $$L^2$$
@@ -467,10 +468,14 @@ On the zero set, second weak derivatives vanish and therefore $$\mu=f$$.
 Combining the two regions gives $$\|\mu\|_1\le\|f\|_1$$. This is stronger than
 the contact-set bound alone and provides the uniform bound
 $$\|\mu\|_2^2\le\kappa\|f\|_1$$ for an exhaustion. The vector norm-gradient
-chain rule and second-derivative locality remain substantive missing API.
+chain rule is proved in `Linear/VectorSobolevComposition.lean`; second-derivative
+regularity and its localization remain substantive missing API.
 `Linear/SobolevZeroSet.lean` proves first-gradient vanishing on zero sets, and equality
 of gradients on equality sets, for the actual copied Sobolev graph space on every
-open domain. The regularized vector norm test and its admissibility still need proof.
+open domain. `Linear/SecondSobolevZeroSet.lean` iterates this vanishing for actual
+second-gradient graphs. It does not assert that all Dirichlet gradients belong to
+the global zero-boundary Sobolev space. `Linear/VectorSobolevComposition.lean` proves
+the regularized vector norm test's admissibility for every positive regularization.
 
 An alternative whole-space implementation more closely follows
 `Obstacle/Functional.lean`: build the vector Hilbert energy space and minimize
@@ -525,8 +530,25 @@ actual Hessian trace, traceless splitting, and pointwise Pythagorean norm identi
 actual Frechet derivative and positive Jacobian quadratic form. Its dominated-limit
 and genuine Sobolev weak-equation testing theorems give the active-volume estimate
 once simultaneous admissible vector composition graphs are constructed. That
-construction is an explicit remaining premise, not a table theorem or an assumed
-mass estimate. Second-derivative locality and whole-space construction also remain.
+construction has now been discharged by `Linear/VectorSobolevComposition.lean`,
+which proves the multivariate Sobolev chain rule and the concrete finite-domain
+active-volume estimate. The sharper restricted active-mass estimate,
+second-derivative regularity, and whole-space construction remain.
+
+`Linear/L1NormFunctional.lean` proves continuous linear inclusion from actual
+finite-measure vector L² into L¹, convexity of its norm, and weak lower
+semicontinuity. `Linear/WholeSpaceL1Norm.lean` proves the full vector norm integral
+is weakly lower semicontinuous on sigma-finite spaces by an exact exhaustion;
+its mass sublevel sets are weakly closed, including infinite integral values.
+`Linear/HessianCapEstimate.lean` discharges the energy and orthogonal
+splitting conditions using the actual full and traceless Hessians. It supplies the
+article's exact optimized Hessian coefficient from capped-density data; the
+unconditional construction of that density is still required.
+
+`Maximal/RadialFluxComparison.lean` proves the finite-annulus integration-by-parts
+identity, including the joined-profile flux jump. `Maximal/RadialKernelComparison.lean`
+proves the actual heat and Poisson flux monotonicity and jump signs. These are
+prerequisites for the distributional kernel comparison, not yet a maximal bound.
 
 These hypotheses must be discharged by concrete balayage before any additional
 table row is added to the unconditional Challenge/Solution pair.

@@ -35,6 +35,15 @@ public import PartialBalayage.Linear.OperatorMultiplier
 public import PartialBalayage.Linear.ProjectionMultiplier
 public import PartialBalayage.Linear.VectorDirichletMass
 public import PartialBalayage.Maximal.PoissonMajorant
+public import PartialBalayage.Linear.SecondSobolevZeroSet
+public import PartialBalayage.Linear.HessianCapEstimate
+public import PartialBalayage.Linear.L1NormFunctional
+public import PartialBalayage.Linear.WholeSpaceL1Norm
+public import PartialBalayage.Linear.VectorDirichlet
+public import PartialBalayage.Linear.VectorSobolevComposition
+public import PartialBalayage.Maximal.RadialFluxComparison
+public import PartialBalayage.Maximal.RadialKernelComparison
+public import PartialBalayage.Maximal.HarmonicCenterLimits
 
 /-!
 # Two partial balayage principles
