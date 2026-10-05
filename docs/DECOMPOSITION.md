@@ -545,8 +545,17 @@ an actual L² function with an L² weak Laplacian has represented L² second der
 first- and second-order cutoff product identities from the actual H01 weak equation.
 `Linear/LocalCutoffRegularity.lean` constructs the actual complex L² zero extension
 of each interior cutoff and proves it has represented L² second derivatives using
-Fourier H² regularity. The localized graph-closure and zero-set locality bridge
-remains to be constructed.
+Fourier H² regularity. `Linear/FourierSobolevGraph.lean` constructs the actual real
+weak Sobolev graphs of represented complex Fourier states.
+`Linear/CompactSobolevDensity.lean` proves that compactly supported genuine weak
+graphs belong to the actual H01 closure. `Linear/SecondGraphWeakLaplacian.lean`
+and `Linear/LocalCutoffZeroSet.lean` combine these facts with interior regularity
+and a countable smooth-bump cover to prove that actual weak Laplace forcing
+vanishes almost everywhere on the state's zero set, with no additional
+regularity or locality hypothesis.
+`Linear/VectorInactiveLocality.lean` applies this to the concrete vector obstacle:
+its density equals the input on the inactive set, its total norm mass contracts,
+and its L² norm squared is at most the cap times the input mass.
 
 `Linear/MollifierL2.lean` proves normalized nonnegative convolution is an actual
 contraction on L². `Linear/MollifierL2Convergence.lean` proves strong convergence
@@ -599,9 +608,26 @@ retain the finite center-value term for arbitrary nonnegative compact C² tests.
 C² functions with bounded derivatives by genuine cutoff estimates and dominated
 convergence. `Maximal/L2MollifiedSource.lean` constructs actual bounded positive
 smooth mollifications of nonnegative L² states, derives their true Laplace equation
-from the distributional equation, and applies the source comparison. Returning to
-the original L² state and constructing the actual whole-space obstacle remain
-necessary for the final maximal bounds.
+from the distributional equation, and applies the source comparison.
+`Maximal/L1KernelL2.lean` proves the actual L¹-kernel L² Young map, including
+almost-everywhere convolution existence and strong convergence transfer.
+`Maximal/SobolevKernelSourceBound.lean` passes the source comparison to the
+original nonnegative L² state by the closed L² order cone.
+`Maximal/SemigroupSobolevSourceBound.lean` specializes this to the actual heat
+and Poisson majorants, including the nonnegative contact pairing, and discharges
+their integrability and positivity using their genuine kernel formulas.
+Constructing the whole-space obstacle and concluding the maximal inequalities
+remain necessary.
+
+`Linear/L2ZeroExtension.lean` and `Linear/SobolevZeroExtension.lean` construct
+genuine isometric zero extensions of restricted L² classes and actual H01 graphs.
+`Linear/ZeroExtensionMass.lean` proves preservation of the norm integral.
+`Linear/SobolevDistributionGradient.lean` identifies the true distributional
+and Fourier derivatives of whole-space H01 coordinates from their defining
+test-graph closure. `Linear/VectorDirichletEnergy.lean` proves the exact value
+and gradient norm identities and the energy-plus-cap-mass balance of the actual
+finite vector obstacle. Uniform state bounds and the whole-space limit are
+still required.
 
 These hypotheses must be discharged by concrete balayage before any additional
 table row is added to the unconditional Challenge/Solution pair.

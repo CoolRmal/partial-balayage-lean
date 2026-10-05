@@ -81,7 +81,9 @@ records `status: pass`, `stage: complete`, `phase: verification`, and empty erro
 and warning lists. This verifies the three-row checkpoint under `palomar-standard-v1`;
 the other thirteen rows and final registration remain pending.
 
-## Eighth proof checkpoint: local verification
+## Eighth proof checkpoint
+
+Commit: `1dd0f7591baf393f04d11daece365b4489722563`.
 
 The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
 (3,958 build jobs), including fifteen new supporting modules. Their endpoint kernel
@@ -94,3 +96,21 @@ center-source comparisons, their bounded C² and positive L² mollification tran
 actual mollifier convergence and spatial cutoff graphs, and the isotropic Fourier
 energy space and coercivity estimates. The comparator remains the three completed
 unconditional table bounds; these supporting results do not complete the other rows.
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37331387116)
+passed. Its downloaded report identifies this exact source commit and records
+`status: pass`, `stage: complete`, `phase: verification`, and empty error and warning lists.
+This remains mechanical validation of the same three-row comparator scope under
+`palomar-standard-v1`; it is not final registration or completion of all sixteen rows.
+
+## Ninth proof checkpoint: local verification
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(3,971 build jobs), including thirteen new supporting modules. Their audited
+endpoints use only `propext`, `Classical.choice`, and `Quot.sound`.
+The new proofs establish actual weak Laplacian zero-set locality, finite vector
+obstacle total mass contraction, genuine L² and H01 zero extension and mass
+preservation, actual distributional gradient identities, the finite obstacle
+energy-mass balance, the L¹-kernel L² Young map, and the original-state heat and
+Poisson source comparisons. The unconditional comparator remains the same three
+completed table bounds; a whole-space obstacle construction and the remaining
+thirteen table conclusions are still required before final registration.

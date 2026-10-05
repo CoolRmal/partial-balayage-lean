@@ -77,6 +77,19 @@ public import PartialBalayage.Maximal.SemigroupKernelSourceBound
 public import PartialBalayage.Maximal.ScaledSemigroupSourceBound
 public import PartialBalayage.Maximal.BoundedSourceTransfer
 public import PartialBalayage.Maximal.L2MollifiedSource
+public import PartialBalayage.Linear.L2ZeroExtension
+public import PartialBalayage.Linear.SobolevZeroExtension
+public import PartialBalayage.Linear.ZeroExtensionMass
+public import PartialBalayage.Linear.CompactSobolevDensity
+public import PartialBalayage.Linear.FourierSobolevGraph
+public import PartialBalayage.Linear.SobolevDistributionGradient
+public import PartialBalayage.Linear.SecondGraphWeakLaplacian
+public import PartialBalayage.Linear.LocalCutoffZeroSet
+public import PartialBalayage.Linear.VectorInactiveLocality
+public import PartialBalayage.Linear.VectorDirichletEnergy
+public import PartialBalayage.Maximal.L1KernelL2
+public import PartialBalayage.Maximal.SobolevKernelSourceBound
+public import PartialBalayage.Maximal.SemigroupSobolevSourceBound
 
 /-!
 # Two partial balayage principles
