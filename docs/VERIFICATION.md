@@ -63,7 +63,9 @@ passed. Its downloaded report identifies this exact source commit and records `s
 three-theorem comparator scope, under `palomar-standard-v1`; it is not a completed sixteen-row
 formalization or Palomar registration.
 
-## Seventh proof checkpoint: local verification
+## Seventh proof checkpoint
+
+Commit: `ab3c7db4cc989b9a1c53aa621c9a3a660eb7dfb6`.
 
 The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
 (3,943 build jobs). The eighteen new supporting modules were also built individually.
@@ -73,3 +75,22 @@ includes finite vector obstacle estimates, genuine cutoff Fourier regularity, we
 compactness of mass-capped densities, actual heat/Poisson kernel comparisons,
 Poisson normalization and Kato averaging, and exact planar bound formulas.
 The unconditional comparator scope remains the same three completed table bounds.
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37326411705)
+passed. Its downloaded mechanical report identifies this exact source commit and
+records `status: pass`, `stage: complete`, `phase: verification`, and empty error
+and warning lists. This verifies the three-row checkpoint under `palomar-standard-v1`;
+the other thirteen rows and final registration remain pending.
+
+## Eighth proof checkpoint: local verification
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(3,958 build jobs), including fifteen new supporting modules. Their endpoint kernel
+audits reported exactly `propext`, `Classical.choice`, and `Quot.sound`.
+Source checks found no proof holes, custom axioms, native decision procedures, or
+lines exceeding 100 characters in the new modules. The energy-space file uses two
+local notations for its genuine L² space and Hilbert product; their definitions are
+explicit in the source. New results include exact ambient majorant masses, full
+center-source comparisons, their bounded C² and positive L² mollification transfers,
+actual mollifier convergence and spatial cutoff graphs, and the isotropic Fourier
+energy space and coercivity estimates. The comparator remains the three completed
+unconditional table bounds; these supporting results do not complete the other rows.

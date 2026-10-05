@@ -62,6 +62,21 @@ public import PartialBalayage.Maximal.AffineRadialScaling
 public import PartialBalayage.Maximal.ScaledSemigroupMajorants
 public import PartialBalayage.Maximal.PoissonKernel
 public import PartialBalayage.Maximal.PoissonKato
+public import PartialBalayage.Linear.FourierL1L2
+public import PartialBalayage.Linear.FourierEnergySplit
+public import PartialBalayage.Linear.IsotropicEnergySpace
+public import PartialBalayage.Linear.FourierCoercivity
+public import PartialBalayage.Linear.LaplacianProduct
+public import PartialBalayage.Linear.MollifierL2
+public import PartialBalayage.Linear.MollifierL2Convergence
+public import PartialBalayage.Linear.SobolevSpatialCutoff
+public import PartialBalayage.Maximal.SquaredRadialMass
+public import PartialBalayage.Maximal.SemigroupMajorantMass
+public import PartialBalayage.Maximal.RadialKernelSourceBound
+public import PartialBalayage.Maximal.SemigroupKernelSourceBound
+public import PartialBalayage.Maximal.ScaledSemigroupSourceBound
+public import PartialBalayage.Maximal.BoundedSourceTransfer
+public import PartialBalayage.Maximal.L2MollifiedSource
 
 /-!
 # Two partial balayage principles

@@ -548,11 +548,23 @@ of each interior cutoff and proves it has represented L² second derivatives usi
 Fourier H² regularity. The localized graph-closure and zero-set locality bridge
 remains to be constructed.
 
+`Linear/MollifierL2.lean` proves normalized nonnegative convolution is an actual
+contraction on L². `Linear/MollifierL2Convergence.lean` proves strong convergence
+of shrinking normalized bump convolutions for every L² class.
+`Linear/SobolevSpatialCutoff.lean` constructs actual interior-cutoff H01 graphs,
+including their represented gradients and support.
+
 `Linear/L1NormFunctional.lean` proves continuous linear inclusion from actual
 finite-measure vector L² into L¹, convexity of its norm, and weak lower
 semicontinuity. `Linear/WholeSpaceL1Norm.lean` proves the full vector norm integral
 is weakly lower semicontinuous on sigma-finite spaces by an exact exhaustion;
 its mass sublevel sets are weakly closed, including infinite integral values.
+`Linear/FourierL1L2.lean` proves the integral and unitary L² Fourier transforms
+agree for integrable Hilbert-valued inputs. `Linear/FourierEnergySplit.lean`
+proves the actual isotropic low/high-frequency estimate. `Linear/IsotropicEnergySpace.lean`
+constructs the complete Hilbert energy graph and identifies its full Fourier energy.
+`Linear/FourierCoercivity.lean` proves a positive small-frequency radius exists
+in every positive dimension and the resulting quantitative energy and mass bounds.
 `Linear/WholeSpaceMassCompactness.lean` proves weak compactness of the actual Hilbert L²
 densities satisfying a pointwise norm cap and a finite full-vector mass bound, even
 on an infinite measure space. It supplies density compactness for a future exhaustion;
@@ -579,6 +591,17 @@ kernel by Laplace-Gaussian integration, without a normalization assumption.
 `Maximal/PoissonKato.lean` specializes norm-defect and Kato averaging to this actual
 probability kernel. `Maximal/PlanarBoundFormula.lean` proves the exact
 elementary planar heat and Poisson formulas, including their improper tails.
+`Maximal/SquaredRadialMass.lean` and `Maximal/SemigroupMajorantMass.lean` prove
+genuine ambient integrability and exact full masses of both normalized majorants,
+in every positive dimension and at every positive time. The center-source modules
+retain the finite center-value term for arbitrary nonnegative compact C² tests.
+`Maximal/BoundedSourceTransfer.lean` proves this comparison for globally bounded
+C² functions with bounded derivatives by genuine cutoff estimates and dominated
+convergence. `Maximal/L2MollifiedSource.lean` constructs actual bounded positive
+smooth mollifications of nonnegative L² states, derives their true Laplace equation
+from the distributional equation, and applies the source comparison. Returning to
+the original L² state and constructing the actual whole-space obstacle remain
+necessary for the final maximal bounds.
 
 These hypotheses must be discharged by concrete balayage before any additional
 table row is added to the unconditional Challenge/Solution pair.
