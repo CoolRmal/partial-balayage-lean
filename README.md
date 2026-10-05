@@ -43,9 +43,15 @@ spaces; its positive quadratic variational problem has a proved solution without
 The Kato averaging inequality and exact square-certificate mass arithmetic are also proved.
 The finite-domain dual cap construction now gives its state equation, exact alignment and
 saturation on the active set. Genuine Sobolev zero-set locality, shifted projection symbols,
-and the orthogonal and identity-component level-set coefficients are proved. The heat harmonic
-majorant dominates the heat profile at every positive radius, joins at the exact outer radius,
-and has the exact weighted inner mass and positive outward derivative jump.
+and the orthogonal and identity-component level-set coefficients are proved. The heat and Poisson
+harmonic majorants dominate their profiles at every positive radius, join at their exact outer
+radii, and have the exact weighted inner masses and positive outward derivative jumps.
+Constant output maps commute with the genuine unitary Fourier transform on L². The full Hessian
+has trace minus the input, and its norm splits orthogonally into its traceless and identity parts
+almost everywhere. Gradient and Leray projections are actual bounded L² operators, with proved
+half-identity decompositions and shifted operator norm at most one half. Regularized vector norm
+tests have the proved derivative and positivity needed for an active-volume estimate from actual
+Sobolev weak equations; admissibility of those vector composition graphs remains a prerequisite.
 These steps do not yet prove any of the thirteen pending weak-type rows.
 
 ## Project map

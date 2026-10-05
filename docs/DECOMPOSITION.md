@@ -503,8 +503,9 @@ existing order-two ball obstacle.
 The unique heat and Poisson parameters now satisfy the article's exact intervals in
 every positive dimension. `Maximal/RadialTangentMass.lean` proves the weighted mass
 identities for power and logarithmic harmonic tangents. `Maximal/HeatMajorant.lean`
-proves actual domination at every positive squared radius, joining at the outer
-radius, and a strictly positive outward derivative jump. The origin is excluded
+and `Maximal/PoissonMajorant.lean` prove actual domination at every positive squared
+radius, joining at the outer radius, and a strictly positive outward derivative
+jump for the respective profiles. The origin is excluded
 from these real profile statements; its artificial totalized value is irrelevant
 to a future almost-everywhere kernel statement in positive dimension. Distributional
 kernel inequalities and the resulting maximal estimates are still pending.
@@ -513,6 +514,20 @@ kernel inequalities and the resulting maximal estimates are still pending.
 orthogonal projections and that their shifts by half the identity have norm at
 most one half. `Linear/IdentityComponent.lean` and `Linear/OrthogonalComponent.lean`
 prove the exact level-set coefficients from explicit decomposition hypotheses.
+`Linear/OperatorMultiplier.lean` constructs actual bounded operator-valued Fourier
+multipliers, and `Linear/ProjectionMultiplier.lean` instantiates the gradient and
+Leray projections, their contractions, and their exact half-identity decompositions.
+`Linear/FourierPostcomposition.lean` proves constant output maps commute with Fourier
+and inverse Fourier on L² via Schwartz density. `Linear/HessianTrace.lean` proves the
+actual Hessian trace, traceless splitting, and pointwise Pythagorean norm identity.
+
+`Linear/VectorDirichletMass.lean` proves the regularized vector norm direction's
+actual Frechet derivative and positive Jacobian quadratic form. Its dominated-limit
+and genuine Sobolev weak-equation testing theorems give the active-volume estimate
+once simultaneous admissible vector composition graphs are constructed. That
+construction is an explicit remaining premise, not a table theorem or an assumed
+mass estimate. Second-derivative locality and whole-space construction also remain.
+
 These hypotheses must be discharged by concrete balayage before any additional
 table row is added to the unconditional Challenge/Solution pair.
 

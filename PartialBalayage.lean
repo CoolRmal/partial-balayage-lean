@@ -29,6 +29,12 @@ public import PartialBalayage.Linear.ProjectionSymbol
 public import PartialBalayage.Linear.SobolevZeroSet
 public import PartialBalayage.Maximal.RadialTangentMass
 public import PartialBalayage.Maximal.HeatMajorant
+public import PartialBalayage.Linear.FourierPostcomposition
+public import PartialBalayage.Linear.HessianTrace
+public import PartialBalayage.Linear.OperatorMultiplier
+public import PartialBalayage.Linear.ProjectionMultiplier
+public import PartialBalayage.Linear.VectorDirichletMass
+public import PartialBalayage.Maximal.PoissonMajorant
 
 /-!
 # Two partial balayage principles
