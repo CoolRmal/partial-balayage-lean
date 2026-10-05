@@ -159,5 +159,29 @@ They also establish weak semicontinuity of true energy plus mass, closure of
 Dirichlet tests, the distributional PDE, active-volume bounds, and the final
 outer-measure step for maximal level sets. Actual operator cancellation and
 semigroup off-contact comparisons remain required. The comparator still
-contains the same three completed unconditional table bounds. The official
-full preflight for this snapshot is pending; final registration remains pending.
+contains the same three completed unconditional table bounds. The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37341874886)
+passed for commit `85d0bfe37eb391a7c7677536ea9a1cb9fbb61ea8`. Its downloaded
+report identifies that exact source commit and records `status: pass`,
+`stage: complete`, `phase: verification`, and empty errors and warnings. It
+checks the same three-row comparator scope; final registration remains pending.
+
+## Twelfth proof checkpoint: nine table rows
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(4,016 build jobs), including seventeen new supporting and final modules. The
+six final heat/Poisson bounds and their two general all-L¹ weak-bound endpoints
+were kernel-audited together: every declaration uses exactly `propext`,
+`Classical.choice`, and `Quot.sound`. Supporting endpoint audits use the same
+standard axioms. Source checks found no proof placeholders, custom axioms,
+native decision procedures, or lines exceeding 100 characters in the new modules.
+Metadata and module-source validation passed.
+
+The six new maximal conclusions quantify over every integrable real input and
+every extended-real level, with genuine monotone L¹ transfer from actual L¹
+and L² inputs. Unique exact parameters are proved to exist, and one-dimensional
+Gaussian/arctangent and planar formulas are proved equal to the actual majorant
+masses. `Challenge.lean` independently defines the original kernels, maximal
+operators and exact constants using Mathlib alone. `Solution.lean` supplies the
+matching proofs. The comparator is expanded from three to nine table names.
+This snapshot's nine-row official preflight is pending. Seven table rows and
+final Palomar review and registration remain required.

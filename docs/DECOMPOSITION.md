@@ -9,6 +9,10 @@ the exact expressions represented by approximate decimals. Cited sharp compariso
 asymptotic estimates, and optimality of the majorants are useful context but are not
 additional final targets.
 
+Nine rows are completed and advertised in the comparator: 7, 8, 10, and 11–16.
+Rows 1–6 and 9 remain pending. The exact semigroup bounds quantify over all
+integrable real inputs and all extended-real levels.
+
 ## Definitions required by the statements
 
 Use Lebesgue measure on the Euclidean space of dimension $$n$$. For an operator $$T$$,
@@ -513,7 +517,7 @@ radius, joining at the outer radius, and a strictly positive outward derivative
 jump for the respective profiles. The origin is excluded
 from these real profile statements; its artificial totalized value is irrelevant
 to a future almost-everywhere kernel statement in positive dimension. Distributional
-kernel inequalities and the resulting maximal estimates are still pending.
+kernel inequalities and the resulting all-L¹ maximal estimates are now proved.
 
 `Linear/ProjectionSymbol.lean` proves actual gradient and Leray symbols are
 orthogonal projections and that their shifts by half the identity have norm at
@@ -679,8 +683,13 @@ inputs. `Maximal/RationalTimeMaximal.lean` identifies both actual maximal
 functions with their positive-rational-time suprema and passes countably many
 almost-everywhere bounds to the full positive-time supremum.
 
-These hypotheses must be discharged by concrete balayage before any additional
-table row is added to the unconditional Challenge/Solution pair.
+The genuine scalar contact equation, original-kernel cap, rational-time supremum
+reduction, and monotone L¹ transfer now discharge these hypotheses for all six
+semigroup table rows. `Maximal/SemigroupWeakBounds.lean` proves the final
+unconditional exact coefficients and their one-dimensional and planar expressions.
+The selected tangency parameters satisfy the proved unique algebraic equations.
+Concrete weak estimates and L¹ operator extension for the pending linear rows
+and the stronger square certificate remain required.
 
 ## Verification boundary
 

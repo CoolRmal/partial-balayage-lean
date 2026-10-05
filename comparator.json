@@ -4,9 +4,19 @@
   "theorem_names": [
     "PartialBalayage.interval_weakTypeConstant_le_two",
     "PartialBalayage.ball_weakTypeConstant_two_le_exp",
-    "PartialBalayage.ball_weakTypeConstant_le_rpow"
+    "PartialBalayage.ball_weakTypeConstant_le_rpow",
+    "PartialBalayage.heat_weakTypeConstant_le_formula",
+    "PartialBalayage.poisson_weakTypeConstant_le_formula",
+    "PartialBalayage.heat_weakTypeConstant_two_le_exact",
+    "PartialBalayage.poisson_weakTypeConstant_two_le_exact",
+    "PartialBalayage.heat_weakTypeConstant_one_le_exact",
+    "PartialBalayage.poisson_weakTypeConstant_one_le_exact"
   ],
   "definition_names": [],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
   "enable_nanoda": true
 }

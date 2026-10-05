@@ -120,10 +120,28 @@ public import PartialBalayage.Linear.ScalarStateExhaustion
 public import PartialBalayage.Linear.WholeSpaceScalarPositiveBalayage
 public import PartialBalayage.Maximal.CappedMaximalLevelSet
 
+public import PartialBalayage.Linear.HessianDerivative
+public import PartialBalayage.Linear.BeurlingHessianIdentity
+public import PartialBalayage.Linear.HessianLinearity
+public import PartialBalayage.Linear.WholeSpaceHessianRegularity
+public import PartialBalayage.Linear.WholeSpaceHessianLocality
+public import PartialBalayage.Linear.SobolevUnivDensity
+public import PartialBalayage.Linear.SchwartzDirichletTest
+public import PartialBalayage.Maximal.OneDimensionalBoundFormula
+public import PartialBalayage.Maximal.ScalarSemigroupContact
+public import PartialBalayage.Maximal.ScalarSemigroupOffActiveCap
+public import PartialBalayage.Maximal.SemigroupNonnegL2WeakBound
+public import PartialBalayage.Maximal.KernelContactCap
+public import PartialBalayage.Maximal.NormTruncation
+public import PartialBalayage.Maximal.KernelWeakBoundTransfer
+public import PartialBalayage.Maximal.SemigroupWeakTransfer
+public import PartialBalayage.Maximal.SemigroupParameters
+public import PartialBalayage.Maximal.SemigroupWeakBounds
+
 /-!
 # Two partial balayage principles
 
-The library currently exports the three previously formalized interval and Euclidean-ball bounds.
+The library exports nine table rows: intervals, Euclidean balls, and the six heat/Poisson bounds.
 The remaining rows of the published table are tracked in `docs/DECOMPOSITION.md`.
 Supporting development includes capped-decomposition level-set estimates, finite-measure vector
 obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.

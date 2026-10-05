@@ -4,82 +4,67 @@
 
 Work in progress toward formalizing all sixteen upper-bound rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-The target includes Riesz and Beurling transforms, Hessians, projections, centred maximal
-operators, and Poisson and heat maximal operators.
+Nine rows are now proved: centred intervals, planar and higher-dimensional Euclidean
+balls, and all six Poisson and heat maximal-operator bounds. Every maximal estimate
+quantifies over all integrable real inputs and all extended-real levels. The six new
+semigroup bounds use the article's exact formulas and proved unique parameters.
 
-The initial Challenge/Solution pair covers three rows: centred intervals, planar Euclidean
-balls, and Euclidean balls in dimensions at least three. Their proofs are adapted from the
+The Riesz, Beurling, full and traceless Hessian, projection, and square rows remain
+pending. This repository has **not** completed the table and is **not registered on
+Palomar**. A Comparator pass for the advertised nine statements certifies those
+statements only. Current verification evidence is in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+
+The three interval and Euclidean-ball proofs are adapted from the author's
 [earlier formalization](https://github.com/CoolRmal/centered-maximal-constant/tree/72c022ba09032b522c878cca2f9b6c68217d77ea).
-The other thirteen rows are pending. This repository has **not** completed the table and is
-**not registered on Palomar**. A Comparator pass for the current three statements certifies
-only those statements.
-
-For an integrable real function, the centred maximal function takes the supremum of averages
-of its absolute value over every centred interval or ball. The compared claims are
+Their exact bounds are
 
 $$
-c_1\le 2,\qquad c_{\mathrm{ball},2}\le e,\qquad
-c_{\mathrm{ball},n}\le (n/2)^{n/(n-2)}\quad(n\ge3).
+c_1\le2,\qquad c_{\mathrm{ball},2}\le e,\qquad
+c_{\mathrm{ball},n}\le(n/2)^{n/(n-2)}\quad(n\ge3).
 $$
 
-The Challenge uses Lebesgue measure and quantifies over every integrable input and every
-level. Balls use the Euclidean norm. Cubes use the sup norm; in dimension one they are intervals.
+The new semigroup proofs construct actual positive whole-space Laplace balayage,
+prove its cap complementarity and active-volume bound, compare the original kernels
+with genuine integrable tangent majorants, compute their exact masses, and pass
+rational-time comparisons to the full supremum. Monotone L¹ and L² truncations extend
+the exact estimates to every integrable input. Parameter existence and uniqueness,
+the one-dimensional Gaussian and arctangent tails, and the planar elementary
+formulas are proved. The final statements assume no analytical certificates.
 
-Some source table entries are decimal approximations to exact formulas. Truncated decimals
-are not rigorous upper bounds; formal statements will retain the exact formulas. The new
-square target is strictly below 3.616. The earlier bound 3.879 does not meet it.
+Supporting development also constructs actual whole-space vector balayage and proves
+genuine global Sobolev regularity and Hessian cancellation. Fourier multipliers use
+Euclidean vector and Frobenius matrix norms. These supporting results have not yet
+completed the remaining singular-integral rows.
 
-New supporting proofs establish the level-set estimate from concrete capped decomposition
-data and its optimized coefficient, as well as the complex-input Beurling transform's L²
-contraction through Mathlib's unitary Fourier transform. The Poisson and heat convolution
-maximal operators and their exact parameterized bound formulas are defined, with kernel
-positivity and heat-kernel mass one proved. The full vector Riesz and Frobenius-matrix Hessian
-operators have L² contraction proofs. Exact scalar optimization yields the Hessian coefficients
-and the projection coefficient from its unique cubic root. The radial constants and unique heat
-and Poisson parameters in the article's exact intervals are proved. The traceless Hessian has the precise
-Frobenius multiplier norm, with bounded vector multipliers realized as continuous linear maps.
-The genuine vector-valued norm-cap set is closed, convex, and weakly compact on finite measure
-spaces; its positive quadratic variational problem has a proved solution without coercivity.
-The Kato averaging inequality and exact square-certificate mass arithmetic are also proved.
-The finite-domain dual cap construction now gives its state equation, exact alignment and
-saturation on the active set. Genuine Sobolev zero-set locality, shifted projection symbols,
-and the orthogonal and identity-component level-set coefficients are proved. The heat and Poisson
-harmonic majorants dominate their profiles at every positive radius, join at their exact outer
-radii, and have the exact weighted inner masses and positive outward derivative jumps.
-Constant output maps commute with the genuine unitary Fourier transform on L². The full Hessian
-has trace minus the input, and its norm splits orthogonally into its traceless and identity parts
-almost everywhere. Gradient and Leray projections are actual bounded L² operators, with proved
-half-identity decompositions and shifted operator norm at most one half. Regularized vector norm
-tests have the proved derivative and positivity needed for an active-volume estimate from actual
-Sobolev weak equations; admissibility of those vector composition graphs remains a prerequisite.
-These steps do not yet prove any of the thirteen pending weak-type rows.
+Some table decimals approximate exact formulas and are not rigorous truncated upper
+bounds. The formal statements retain exact expressions. The square target is strictly
+below 3.616; the earlier bound 3.879 does not meet it.
 
 ## Project map
 
-- `Challenge.lean`: independent auditable statements importing Mathlib alone.
-- `Solution.lean`: matching proved declarations.
-- `PartialBalayage/`: new development and adapters to earlier proofs.
-- `CenteredMaximal/`: the required copied source closure with author headers preserved.
-- `comparator.json`: exact statements currently compared.
+- `Challenge.lean`: nine independent auditable statements importing Mathlib alone.
+- `Solution.lean`: the matching proved declarations.
+- `PartialBalayage/`: new proofs and adapters to earlier results.
+- `CenteredMaximal/`: the copied minimal earlier source closure, preserving author headers.
+- `comparator.json`: the exact nine statements currently compared.
 - `formalization.yaml`: provenance, scope, automation and review metadata.
-- `docs/DECOMPOSITION.md`: complete table and remaining proof dependencies.
+- `docs/DECOMPOSITION.md`: all sixteen targets and the proof dependencies.
 - `docs/PALOMAR.md`: verification and eventual registration procedure.
 
 Lean and Mathlib are pinned; committed manifests record exact dependency revisions.
-Build with `lake exe cache get` followed by `lake build`. The deliberate Challenge `sorry`
-holes state the problem and do not enter the Solution.
+Build with `lake exe cache get` followed by `lake build`. The deliberate Challenge
+holes state the problems and do not enter Solution. Linux CI runs the pinned
+Comparator with its bundled NanoDa and con-ron independent kernels. Official Palomar
+full preflight verifies an immutable public snapshot; a build alone is not a
+Comparator pass.
 
-Linux CI runs `scripts/verify-comparator.sh` with the toolchain's Comparator and independent
-kernels. Manual Palomar preflight verifies a specified immutable commit. A successful build
-alone is not a Comparator pass.
-
-After every row is proved, the final commit will be verified and submitted through
-[Palomar's intake](https://submit.palomar-registry.org/). Inspect the returned review and exact
-claims before registration.
+After all sixteen rows are proved, the final commit will be verified and submitted
+through [Palomar's intake](https://submit.palomar-registry.org/). Final registration
+requires review and the human author's consent to that exact review.
 
 ## Provenance and licence
 
-Mathematics and human authorship: Yongxi Lin. Codex and its collaborating agents assist with
-formalization and verification; no AI system is listed as an author. Layout and verification
-scripts start from [PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate/tree/2891de4c48955af824969a263d31b25e7a9a1406).
+Mathematics and human authorship: Yongxi Lin. Codex and its collaborating agents
+assist with formalization and verification; no AI system is listed as an author.
+The template comes from [PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate/tree/2891de4c48955af824969a263d31b25e7a9a1406).
 Code is Apache-2.0. No external human review has been obtained.
