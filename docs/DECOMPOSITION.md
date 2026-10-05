@@ -18,12 +18,16 @@ vector and Frobenius matrix norms.
 Further proved square prerequisites include the exact all-input diamond-to-square
 maximal transfer, the actual beta-integral upper bound and intrinsic-constant
 lower bound, uniform positive finite-ball fractional obstacles, actual compact
-energy tests, and the genuine generator/form pairing. The first actual kernel
-majorization triangle is verified. The complete majorization and distributional
-generator checks, followed by whole-space fractional balayage, remain necessary.
-The Riesz half-order space has genuine Markov compositions and finite-volume
-Dirichlet coercivity; its signed whole-space obstacle and final Riesz estimate
-remain necessary.
+energy tests, and the genuine generator/form pairing. The complete actual kernel majorization is proved, including every cell and
+boundary. The distributional generator check and whole-space fractional
+contact/comparison argument remain necessary. The actual whole-space jump
+density is integrable with exactly the original input mass, and genuine strong
+compact cutoff approximation and supported dual pairings are proved.
+The Riesz development proves uniform finite Poisson obstacle bounds, actual
+joint weak limits and half-order energy recovery. Genuine Poisson test
+equations identify the complete Riesz vector with a physical Sobolev gradient
+and give its zero-set cancellation. Whole-space complementarity and the final
+Riesz weak estimate remain necessary.
 
 ## Definitions required by the statements
 

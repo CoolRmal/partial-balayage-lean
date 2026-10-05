@@ -106,11 +106,11 @@ theorem isotropicDirichletForm_poissonRealHalfTest {t : ℝ} (ht : 0 < t)
   norm_num [Complex.mul_re, Complex.mul_im] at h
   rw [h, inner_poissonSmoothedGenerator ht]
 
-/-- The genuine weak half-order equation identifies every regularized spatial generator. -/
-theorem poissonGenerator_regularized_weakPDE {t : ℝ} (ht : 0 < t)
+/-- Equations at genuine Poisson tests identify the actual regularized generator. -/
+theorem poissonGenerator_regularized_of_test_equations {t : ℝ} (ht : 0 < t)
     (U : WholeState) (q : L²ℝ)
-    (hPDE : ∀ V : WholeState, isotropicDirichletForm univ U V =
-      inner ℝ q (isotropicDirichletGlobalValue univ V)) :
+    (hTest : ∀ f : L²ℝ, isotropicDirichletForm univ U (poissonRealHalfTest ht f) =
+      inner ℝ q (poissonConvolutionL2 ht f)) :
     poissonGenerator (poissonSmoothedStateTwo ht (isotropicEnergyValue 1 U.val)) =
       Complex.ofRealCLM.compLp (poissonConvolutionL2 ht q) := by
   let G := poissonGenerator (poissonSmoothedStateTwo ht (isotropicEnergyValue 1 U.val))
@@ -128,9 +128,8 @@ theorem poissonGenerator_regularized_weakPDE {t : ℝ} (ht : 0 < t)
   have he : g = poissonConvolutionL2 ht q := by
     apply ext_inner_right ℝ
     intro f
-    have h := hPDE (poissonRealHalfTest ht f)
-    rw [isotropicDirichletGlobalValue_poissonRealHalfTest,
-      isotropicDirichletForm_poissonRealHalfTest] at h
+    have h := hTest f
+    rw [isotropicDirichletForm_poissonRealHalfTest] at h
     change (inner ℂ G (Complex.ofRealCLM.compLp f)).re = _ at h
     rw [← hg, re_inner_complexifyL2] at h
     have hs := inner_poissonConvolutionL2 ht (Complex.ofRealCLM.compLp q)
@@ -140,5 +139,18 @@ theorem poissonGenerator_regularized_weakPDE {t : ℝ} (ht : 0 < t)
     rw [re_inner_complexifyL2, re_inner_complexifyL2] at hr
     exact h.trans hr
   exact hg.symm.trans (congrArg (fun f : L²ℝ ↦ Complex.ofRealCLM.compLp f) he)
+
+
+/-- The genuine weak half-order equation identifies every regularized spatial generator. -/
+theorem poissonGenerator_regularized_weakPDE {t : ℝ} (ht : 0 < t)
+    (U : WholeState) (q : L²ℝ)
+    (hPDE : ∀ V : WholeState, isotropicDirichletForm univ U V =
+      inner ℝ q (isotropicDirichletGlobalValue univ V)) :
+    poissonGenerator (poissonSmoothedStateTwo ht (isotropicEnergyValue 1 U.val)) =
+      Complex.ofRealCLM.compLp (poissonConvolutionL2 ht q) := by
+  apply poissonGenerator_regularized_of_test_equations ht U q
+  intro f
+  simpa only [isotropicDirichletGlobalValue_poissonRealHalfTest] using
+    hPDE (poissonRealHalfTest ht f)
 
 end PartialBalayage.Linear

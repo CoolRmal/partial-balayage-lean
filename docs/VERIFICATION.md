@@ -404,3 +404,46 @@ majorization transfer support the remaining leaf checks.
 These results do not expand the fourteen-statement comparator scope. The full
 Riesz and square rows, their final official verification and Palomar
 registration remain pending.
+
+
+## Twentieth proof checkpoint: complete square majorization and Riesz gradient
+
+The [nineteenth official retry](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37368957907)
+did not reach verification. Its profile job executed no steps and was
+cancelled after fifteen minutes; verification was skipped and no mechanical
+report was produced. The sixteenth snapshot remains the latest successful
+full official preflight with no errors or warnings.
+
+The combined library, challenge and solution build passed (4,269 jobs).
+The 90 new modules and two modified regularity modules have successful focused
+builds and compiled standard-axiom audits; source and metadata checks passed.
+
+The complete geometric certificate proves that the actual square kernel is
+nonnegative everywhere and dominates the indicator of the closed unit diamond.
+All 421 symmetry-reduced leaves, covering the original 799 triangles, and all
+boundary and reflection cases are checked by Lean. The 73 new certificate
+modules have successful focused builds, and all 1,276 imported endpoint
+inspections use only `propext`, `Classical.choice`, and `Quot.sound`.
+
+New Riesz support proves genuine low/high-frequency interpolation for actual
+Poisson quadratic defects and uniform finite-obstacle bounds independent of
+the domain. Actual weak limits recover the whole-space half-order energy and
+integrable state value. A genuine full-norm Fourier identity yields physical
+Sobolev regularity, and every coordinate of the full Riesz transform is the
+actual weak gradient. Only the actual height-one Poisson test equations are
+needed for full-vector zero-set cancellation. The previous full weak-equation
+endpoints retain their original types.
+
+The square support proves that the actual whole-space density is integrable
+and has exactly the original input mass. True bounded Lipschitz cutoffs preserve
+the full singular energy graph and converge strongly, with a proved product
+error bound. Supported ordinary L² values have genuine weighted dual tests and
+exact physical pairings. The actual fractional weak equation holds against
+every full singular-energy test, including the limiting state itself. The
+actual cubic spline has proved C² regularity, explicit first and second
+derivatives, and a genuine compact Lipschitz derivative.
+
+These supporting results do not expand the fourteen-statement comparator
+scope. The Riesz complementarity and final estimate, square generator positivity
+and final maximal comparison, final official verification and Palomar
+registration remain pending.
