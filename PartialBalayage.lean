@@ -44,6 +44,24 @@ public import PartialBalayage.Linear.VectorSobolevComposition
 public import PartialBalayage.Maximal.RadialFluxComparison
 public import PartialBalayage.Maximal.RadialKernelComparison
 public import PartialBalayage.Maximal.HarmonicCenterLimits
+public import PartialBalayage.Linear.VectorActiveMass
+public import PartialBalayage.Linear.VectorBalayageFinite
+public import PartialBalayage.Linear.LocalSecondSobolev
+public import PartialBalayage.Linear.LocalCutoffEquation
+public import PartialBalayage.Linear.LocalCutoffLaplacian
+public import PartialBalayage.Linear.LocalCutoffRegularity
+public import PartialBalayage.Linear.WholeSpaceMassCompactness
+public import PartialBalayage.Maximal.HarmonicRadialIntegrability
+public import PartialBalayage.Maximal.RadialLocalIntegrability
+public import PartialBalayage.Maximal.JoinedRadialKernelIntegrability
+public import PartialBalayage.Maximal.RadialPairingGeometry
+public import PartialBalayage.Maximal.RadialKernelPairing
+public import PartialBalayage.Maximal.SemigroupKernelPairing
+public import PartialBalayage.Maximal.PlanarBoundFormula
+public import PartialBalayage.Maximal.AffineRadialScaling
+public import PartialBalayage.Maximal.ScaledSemigroupMajorants
+public import PartialBalayage.Maximal.PoissonKernel
+public import PartialBalayage.Maximal.PoissonKato
 
 /-!
 # Two partial balayage principles

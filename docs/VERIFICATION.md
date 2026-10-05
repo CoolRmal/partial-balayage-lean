@@ -46,3 +46,30 @@ the exact immutable source commit above, and an empty warnings list. The build, 
 independent kernel checks, and challenge provenance audit all passed under
 `palomar-standard-v1`. The comparator still contains exactly the three completed maximal bounds;
 the Fourier and vector Sobolev developments are supporting proofs for the pending rows.
+
+## Sixth proof checkpoint
+
+Commit: `116990dc098e808f485ef4e17777d851c4e9e7f0`.
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(3,923 build jobs). Individual builds of the nine new supporting modules also passed.
+Compiled axiom inspections of the whole-space vector norm integral and its weakly closed
+mass sublevels reported exactly `propext`, `Classical.choice`, and `Quot.sound`.
+The final statements in the new vector composition, concrete Dirichlet obstacle, conditional
+Hessian estimate, and radial flux/center-limit modules were also checked on that basis.
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37322220693)
+passed. Its downloaded report identifies this exact source commit and records `status: pass`,
+`stage: complete`, `phase: verification`, and empty error and warning lists. This is the same
+three-theorem comparator scope, under `palomar-standard-v1`; it is not a completed sixteen-row
+formalization or Palomar registration.
+
+## Seventh proof checkpoint: local verification
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(3,943 build jobs). The eighteen new supporting modules were also built individually.
+Their endpoint audits use exactly `propext`, `Classical.choice`, and `Quot.sound`,
+with no proof holes, native decision procedures, or custom axioms. The new material
+includes finite vector obstacle estimates, genuine cutoff Fourier regularity, weak
+compactness of mass-capped densities, actual heat/Poisson kernel comparisons,
+Poisson normalization and Kato averaging, and exact planar bound formulas.
+The unconditional comparator scope remains the same three completed table bounds.

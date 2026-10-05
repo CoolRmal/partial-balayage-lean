@@ -532,14 +532,31 @@ and genuine Sobolev weak-equation testing theorems give the active-volume estima
 once simultaneous admissible vector composition graphs are constructed. That
 construction has now been discharged by `Linear/VectorSobolevComposition.lean`,
 which proves the multivariate Sobolev chain rule and the concrete finite-domain
-active-volume estimate. The sharper restricted active-mass estimate,
-second-derivative regularity, and whole-space construction remain.
+active-volume estimate. `Linear/VectorActiveMass.lean` now proves the sharper
+restricted active-mass estimate and the total density-mass consequence once actual
+inactive-set locality is supplied. `Linear/VectorBalayageFinite.lean` combines the
+actual obstacle construction and testing into finite-domain existence, including
+the active-volume bound and the active density's L² energy bound. It does not
+assert a total density-mass estimate without the required locality argument.
+
+`Linear/LocalSecondSobolev.lean` proves genuine global Fourier elliptic regularity:
+an actual L² function with an L² weak Laplacian has represented L² second derivatives.
+`Linear/LocalCutoffEquation.lean` and `Linear/LocalCutoffLaplacian.lean` prove the true
+first- and second-order cutoff product identities from the actual H01 weak equation.
+`Linear/LocalCutoffRegularity.lean` constructs the actual complex L² zero extension
+of each interior cutoff and proves it has represented L² second derivatives using
+Fourier H² regularity. The localized graph-closure and zero-set locality bridge
+remains to be constructed.
 
 `Linear/L1NormFunctional.lean` proves continuous linear inclusion from actual
 finite-measure vector L² into L¹, convexity of its norm, and weak lower
 semicontinuity. `Linear/WholeSpaceL1Norm.lean` proves the full vector norm integral
 is weakly lower semicontinuous on sigma-finite spaces by an exact exhaustion;
 its mass sublevel sets are weakly closed, including infinite integral values.
+`Linear/WholeSpaceMassCompactness.lean` proves weak compactness of the actual Hilbert L²
+densities satisfying a pointwise norm cap and a finite full-vector mass bound, even
+on an infinite measure space. It supplies density compactness for a future exhaustion;
+the obstacle-state limit and its identification remain necessary.
 `Linear/HessianCapEstimate.lean` discharges the energy and orthogonal
 splitting conditions using the actual full and traceless Hessians. It supplies the
 article's exact optimized Hessian coefficient from capped-density data; the
@@ -548,7 +565,20 @@ unconditional construction of that density is still required.
 `Maximal/RadialFluxComparison.lean` proves the finite-annulus integration-by-parts
 identity, including the joined-profile flux jump. `Maximal/RadialKernelComparison.lean`
 proves the actual heat and Poisson flux monotonicity and jump signs. These are
-prerequisites for the distributional kernel comparison, not yet a maximal bound.
+prerequisites for the distributional kernel comparison. `Maximal/RadialKernelPairing.lean`
+and `Maximal/SemigroupKernelPairing.lean` now prove actual ambient integrability and
+nonnegative Laplacian pairings for nonnegative C² compact tests vanishing at the center,
+for both exact-root majorants in every positive dimension. The supporting radial
+integrability and sphere-geometry modules supply the center and support terms.
+`Maximal/AffineRadialScaling.lean` and `Maximal/ScaledSemigroupMajorants.lean` prove
+the actual normalized time-kernel identities, almost-everywhere domination, compact
+integrability, and zero-contact pairings after translation and dilation. Transfer
+to the actual Sobolev obstacle and the final maximal inequalities remain necessary.
+`Maximal/PoissonKernel.lean` proves integrability and mass one of the genuine Poisson
+kernel by Laplace-Gaussian integration, without a normalization assumption.
+`Maximal/PoissonKato.lean` specializes norm-defect and Kato averaging to this actual
+probability kernel. `Maximal/PlanarBoundFormula.lean` proves the exact
+elementary planar heat and Poisson formulas, including their improper tails.
 
 These hypotheses must be discharged by concrete balayage before any additional
 table row is added to the unconditional Challenge/Solution pair.
