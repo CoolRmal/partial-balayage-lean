@@ -90,6 +90,19 @@ public import PartialBalayage.Linear.VectorDirichletEnergy
 public import PartialBalayage.Maximal.L1KernelL2
 public import PartialBalayage.Maximal.SobolevKernelSourceBound
 public import PartialBalayage.Maximal.SemigroupSobolevSourceBound
+public import PartialBalayage.Linear.VectorSobolevExtension
+public import PartialBalayage.Linear.SobolevCoordinateMass
+public import PartialBalayage.Linear.FourierDirichletEnergy
+public import PartialBalayage.Linear.ScalarDirichletInterpolation
+public import PartialBalayage.Linear.VectorStateCoercivity
+public import PartialBalayage.Linear.UniformFiniteStateBounds
+public import PartialBalayage.Linear.ZeroExtensionWeakEquation
+public import PartialBalayage.Linear.ScalarPositiveObstacle
+public import PartialBalayage.Linear.L2DomainRestriction
+public import PartialBalayage.Linear.FiniteDensityExhaustion
+public import PartialBalayage.Linear.JointWeakCompactness
+public import PartialBalayage.Maximal.SemigroupTimeContinuity
+public import PartialBalayage.Maximal.RationalTimeMaximal
 
 /-!
 # Two partial balayage principles

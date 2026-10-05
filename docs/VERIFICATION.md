@@ -102,7 +102,9 @@ passed. Its downloaded report identifies this exact source commit and records
 This remains mechanical validation of the same three-row comparator scope under
 `palomar-standard-v1`; it is not final registration or completion of all sixteen rows.
 
-## Ninth proof checkpoint: local verification
+## Ninth proof checkpoint
+
+Commit: `6979a1e2818416eff4046a41be990030b506a722`.
 
 The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
 (3,971 build jobs), including thirteen new supporting modules. Their audited
@@ -114,3 +116,25 @@ energy-mass balance, the L¹-kernel L² Young map, and the original-state heat a
 Poisson source comparisons. The unconditional comparator remains the same three
 completed table bounds; a whole-space obstacle construction and the remaining
 thirteen table conclusions are still required before final registration.
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37334592978)
+passed. Its downloaded report records this exact source commit, `status: pass`,
+`stage: complete`, `phase: verification`, and empty error and warning lists.
+It checks the same three completed theorem names under `palomar-standard-v1`.
+
+## Tenth proof checkpoint: local verification
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(3,984 build jobs), including thirteen new supporting modules. Audited endpoints
+use exactly `propext`, `Classical.choice`, and `Quot.sound`; the new files contain
+no proof holes, custom axioms, or native decision procedures, and use lines of
+at most 100 characters. The Fourier energy file uses explicit local type
+notations for the actual Euclidean domain and complex L² space.
+New results include genuine scalar Fourier/Dirichlet energy conversion and
+interpolation, quantitative domain-independent bounds for actual finite vector
+states, actual scalar obstacle positivity, density restriction and exhaustion,
+joint cofinal weak compactness, interior weak equations after zero extension,
+and genuine positive-time semigroup convolution continuity and rational-time
+supremum reduction. The actual whole-space PDE and complementarity construction
+are still pending. The comparator continues to contain the same three completed
+unconditional table bounds; the other thirteen rows and final registration
+remain required.

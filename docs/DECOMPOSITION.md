@@ -626,8 +626,31 @@ genuine isometric zero extensions of restricted L² classes and actual H01 graph
 and Fourier derivatives of whole-space H01 coordinates from their defining
 test-graph closure. `Linear/VectorDirichletEnergy.lean` proves the exact value
 and gradient norm identities and the energy-plus-cap-mass balance of the actual
-finite vector obstacle. Uniform state bounds and the whole-space limit are
-still required.
+finite vector obstacle. `Linear/VectorSobolevExtension.lean` extends the actual
+finite vector state isometrically, preserving its value and gradient energy.
+`Linear/SobolevCoordinateMass.lean` identifies the actual integrable complex
+extended coordinate masses. `Linear/FourierDirichletEnergy.lean` proves the
+exact isotropic Fourier energy/physical Dirichlet energy identity, and
+`Linear/ScalarDirichletInterpolation.lean` derives the genuine scalar estimate.
+`Linear/VectorStateCoercivity.lean` and `Linear/UniformFiniteStateBounds.lean`
+deduce quantitative domain-independent energy, mass, and full Sobolev state
+bounds from the actual weak equation and cap alignment.
+`Linear/ZeroExtensionWeakEquation.lean` transports the genuine weak equation
+to global compact tests supported in the finite domain.
+`Linear/ScalarPositiveObstacle.lean` proves actual scalar state and density
+positivity from nonnegative input, using genuine negative-part Sobolev tests.
+`Linear/L2DomainRestriction.lean` and `Linear/FiniteDensityExhaustion.lean`
+construct actual finite obstacle density families with their whole-space cap
+and mass bounds. `Linear/JointWeakCompactness.lean` supplies simultaneous
+cofinal weak limits for actual bounded states and densities, and transports
+fixed linear test equations. Passing the actual PDE and energy-mass balance
+to the limit, and recovering complementarity, remain necessary.
+
+`Maximal/SemigroupTimeContinuity.lean` proves actual heat and Poisson convolution
+integrability at every center and continuity in positive time for integrable
+inputs. `Maximal/RationalTimeMaximal.lean` identifies both actual maximal
+functions with their positive-rational-time suprema and passes countably many
+almost-everywhere bounds to the full positive-time supremum.
 
 These hypotheses must be discharged by concrete balayage before any additional
 table row is added to the unconditional Challenge/Solution pair.
