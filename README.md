@@ -13,7 +13,7 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
 configured for fifteen statements. The fifteen-row checkpoint
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37376877702)
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37381997180)
 with no errors or warnings.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
@@ -59,6 +59,10 @@ The full source form has genuine compact-test integrability and L¹ contact
 positivity. Exact coefficient tables and the first actual interior generator
 rectangle are checked. Completing the full positivity partition and transferring
 the constructed state to that source remain necessary for the square conclusion.
+Actual Euclidean diamond averages, maximal functions, every extended-real level,
+norm inputs and monotone L¹ truncations now have their exact coefficient transfer
+to the original square operator. The positive coefficient is derived from true
+unit-diamond domination, without an assumed numerical bound.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly

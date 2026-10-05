@@ -623,3 +623,52 @@ twenty-third preflight for public commit
 `93ff97256078786d633af93e03ff9a7b03ac7f78` was still at the comparator and
 provenance stage when this checkpoint was prepared. The comparator scope remains
 fifteen unconditional table rows; the square row and final registration are pending.
+
+
+## Twenty-fifth proof checkpoint: exact maximal transfer and genuine source graph
+
+The [twenty-third full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37381997180)
+passed for exact public commit `93ff97256078786d633af93e03ff9a7b03ac7f78`.
+The downloaded report records `status: pass`, `stage: complete`, empty errors and
+warnings, the fifteen exact theorem names, independent NanoDa and con-ron checks,
+and canonical challenge provenance with no untrusted sources. Its check time is
+5 October 2026 at 22:59:44 UTC. The challenge has 287 lines and 15,316 bytes.
+The square row remains outside this verified comparator scope.
+
+Nineteen new supporting modules have successful focused builds and imported
+permitted-axiom audits. The final combined library, challenge and solution build
+passed (4,443 jobs), and source and metadata validation passed. Fourteen imported
+public maximal, cap, mass and dilation endpoints use exactly `propext`,
+`Classical.choice` and `Quot.sound`. The new reflection metadata equations require
+no axioms. All selected modules satisfy the 100-column limit.
+
+The genuine Euclidean diamond maximal function agrees with actual normalized
+positive-kernel pairings and nonnegative ordinary region integrals. True contact
+caps give the exact half-kernel coefficient at every extended-real threshold,
+including zero and infinity. Actual norm inputs and monotone truncations extend
+L¹ and L² estimates to every integrable input. The real Euclidean-to-coordinate
+volume equivalence transports every region, integral, maximal function and level
+set; the determinant-two square transformation preserves the same weak coefficient.
+The actual unit diamond integral proves that the exact coefficient is at least one.
+The already proved strict half-mass bound yields the table target once the genuine
+all-input coefficient is established. These are transfer conclusions, not a
+completed square table theorem.
+
+Actual full-source compact tests have true L² images and source-form equations on
+integrable energy tests. The full translation-increment graph is genuinely closed
+and Hilbert; weak compactness and strong value convergence preserve the genuine
+graph and pass bounded source-energy equations to the limit. Source-generator
+convolution commutation is proved. The actual source density is identified with
+the named interior certificate expression at sixteen times the absolute physical
+coordinates. Its fixed positive-part measure is sigma finite and genuinely
+integrates every compact away-origin test; positive source dilations are also
+sigma finite. Identification of this measure with the original whole generator
+still requires completing actual density positivity.
+
+The first original interior rectangle is genuinely positive, with no numerical
+positivity premise. Actual rectangle soundness and reflection of checked power
+data are proved. All remaining interior rectangles and the constructed-state
+source contact passage remain ongoing. The official twenty-fourth preflight for
+public commit `43e72c519876b905f3e456b032597657c2d44521` was still running when
+this checkpoint was prepared. The comparator remains fifteen unconditional rows;
+final sixteen-row verification and Palomar registration remain pending.

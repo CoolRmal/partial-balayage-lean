@@ -526,6 +526,44 @@ public import PartialBalayage.Maximal.Square.DiamondBoundaryNull
 
 public import PartialBalayage.Maximal.Square.RationalDiamondAverages
 
+public import PartialBalayage.Maximal.Square.EuclideanDiamondMaximal
+
+public import PartialBalayage.Maximal.Square.KernelMassPositivity
+
+public import PartialBalayage.Maximal.Square.DiamondContactLevelBound
+
+public import PartialBalayage.Maximal.Square.DiamondWeakTransfer
+
+public import PartialBalayage.Maximal.Square.DilatedSourceSigmaFinite
+
+public import PartialBalayage.Maximal.Square.KernelGeneratorAlmostEverywhere
+
+public import PartialBalayage.Maximal.Square.KernelGeneratorSymmetries
+
+public import PartialBalayage.Maximal.Square.KernelSourceInteriorFormula
+
+public import PartialBalayage.Maximal.Square.EuclideanDiamondTransport
+
+public import PartialBalayage.Maximal.Square.GeneratorRectangleLower
+
+public import PartialBalayage.Maximal.Square.FirstGeneratorLeaf
+
+public import PartialBalayage.Maximal.Square.GeneratorPowerReflection
+
+public import PartialBalayage.Maximal.Square.CompensatedSourcePairing
+
+public import PartialBalayage.Maximal.Square.CompensatedSourceTests
+
+public import PartialBalayage.Maximal.Square.TranslationJumpGraph
+
+public import PartialBalayage.Maximal.Square.TranslationJumpFormLimit
+
+public import PartialBalayage.Maximal.Square.SourceGeneratorConvolution
+
+public import PartialBalayage.Maximal.Square.SquareSourceMeasure
+
+public import PartialBalayage.Maximal.Square.GeneratorInteriorTransport
+
 /-!
 # Two partial balayage principles
 

@@ -804,3 +804,17 @@ contact positivity, while graph passage for the constructed state remains ongoin
 Exact coefficient matrices, tensor Taylor error bounds, radial tangents and the
 first positive arithmetic rectangle are checked. Full interior coverage and all
 remaining positivity rectangles still need certification.
+
+
+The actual maximal-function transfer is now complete: true normalized Euclidean
+diamond averages, every extended-real level, norm inputs, monotone L¹ truncations,
+volume-preserving coordinate transport and the genuine square transformation
+preserve the exact half-kernel coefficient. Its positivity follows from actual
+unit-diamond area and domination. The full singular-source graph, genuine compact
+source tests, weak equation passage and source/convolution commutation are proved.
+The original interior density agrees exactly with the named finite certificate
+expression at sixteen times the absolute physical coordinates. The fixed positive
+source candidate is sigma finite and has actual local test integrability. The
+first genuine interior rectangle is positive. The full finite partition and true
+contact of the constructed state remain necessary before the square row is added
+to Challenge, Solution and the comparator.
