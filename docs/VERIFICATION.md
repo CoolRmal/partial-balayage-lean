@@ -183,5 +183,31 @@ Gaussian/arctangent and planar formulas are proved equal to the actual majorant
 masses. `Challenge.lean` independently defines the original kernels, maximal
 operators and exact constants using Mathlib alone. `Solution.lean` supplies the
 matching proofs. The comparator is expanded from three to nine table names.
-This snapshot's nine-row official preflight is pending. Seven table rows and
+The [nine-row official preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37346097092)
+failed at the comparator stage for exact source commit
+`f73b6194976d4cd83a0db3d0d4f243ee2a97e9cf`: the challenge and solution
+`IsPoissonWeakTypeBound` definitions referred to differently shared, generated
+proof names. The local theorem build passed, but this snapshot is not counted
+as a successful nine-row comparator result. Seven table rows and
 final Palomar review and registration remain required.
+
+
+## Thirteenth proof checkpoint: complex operator scope and comparator repair
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(4,025 build jobs). Eight new supporting modules construct genuine scalar and
+vector complex-input capped decompositions, prove actual Hessian and projection
+cancellation, and give unconditional every-level Hessian, traceless Hessian and
+Beurling bounds on integrable L² inputs. Their audited endpoints use exactly
+`propext`, `Classical.choice`, and `Quot.sound`. Independent concrete Fourier
+definitions specify the original multipliers and genuine linear all-L¹ weak
+constants; the all-L¹ extension and operator bridges are subsequent work.
+These supporting estimates do not enlarge the advertised nine-row scope yet.
+
+The independent centred maximal definitions now occupy their own
+`Challenge.MaximalDefinitions` module. This preserves Mathlib-only challenge
+dependencies and matches the solution's module boundary, correcting Lean's
+sharing of auxiliary volume-instance proofs. The fully elaborated
+`IsPoissonWeakTypeBound` value now matches exactly between the independent
+challenge and solution environments. A fresh full Palomar preflight remains
+required to verify the repaired nine-row comparator.

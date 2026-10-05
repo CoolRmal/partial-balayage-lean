@@ -138,6 +138,15 @@ public import PartialBalayage.Maximal.SemigroupWeakTransfer
 public import PartialBalayage.Maximal.SemigroupParameters
 public import PartialBalayage.Maximal.SemigroupWeakBounds
 
+public import PartialBalayage.Linear.ComplexEuclideanTransport
+public import PartialBalayage.Linear.ComplexVectorEuclideanTransport
+public import PartialBalayage.Linear.ExtendedLevelSet
+public import PartialBalayage.Linear.FourierOperatorDefinitions
+public import PartialBalayage.Linear.HessianWeakBounds
+public import PartialBalayage.Linear.ProjectionHessianIdentity
+public import PartialBalayage.Linear.WholeSpaceComplexBalayage
+public import PartialBalayage.Linear.WholeSpaceProjectionBalayage
+
 /-!
 # Two partial balayage principles
 
