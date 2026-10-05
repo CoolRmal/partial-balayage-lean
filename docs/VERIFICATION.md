@@ -672,3 +672,49 @@ source contact passage remain ongoing. The official twenty-fourth preflight for
 public commit `43e72c519876b905f3e456b032597657c2d44521` was still running when
 this checkpoint was prepared. The comparator remains fifteen unconditional rows;
 final sixteen-row verification and Palomar registration remain pending.
+
+
+## Twenty-sixth proof checkpoint: constructed singular-source contact
+
+The [twenty-fourth full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37384905929)
+passed for exact public commit `43e72c519876b905f3e456b032597657c2d44521`.
+The downloaded report records `status: pass`, `stage: complete`, empty errors and
+warnings, all fifteen exact theorem names, independent NanoDa and con-ron checks,
+and high-trust canonical challenge provenance with no untrusted sources. Its
+check time is 5 October 2026 at 23:19:26 UTC. The challenge remains 287 lines and
+15,316 bytes. The square row remains outside that comparator scope.
+
+Seventy-seven new supporting modules have successful focused builds and imported
+permitted-axiom audits. The combined library, challenge and solution build passed
+(4,520 jobs); source and metadata validation passed. Twelve imported public
+coefficient, Horner, rational-literal and actual constructed-contact endpoints use
+only `propext`, `Classical.choice` and `Quot.sound`. All selected new modules
+satisfy the 100-column limit. Shared power, radial-root, coordinate, geometric
+coverage, source-bridge and genuine mollified-state endpoints also have imported
+standard-axiom audits. No unfinished candidate modules are included in this commit.
+
+The true compact positive mollifications of the constructed state preserve its
+physical generator equation. Genuine source convolution and bounded energies pass
+through the closed full-source translation graph. Contact positivity then holds
+for the actual constructed state and the singular source of infinite total mass.
+The construction derives its state integrability, nonnegativity, weak equation,
+capped density, mass and active-volume estimates. True source and kernel dilation
+give contact caps at every positive radius. The actual square weak constant is
+strictly below 452/125 assuming only almost-everywhere nonnegativity of the actual
+`squareGeneratorDensity`; no graph, finite-mass, state-regularity or source-pairing
+certificate is assumed. An independent read-only statement audit confirms this
+scope and the genuine all-L¹, all-extended-real-level operator transfer.
+
+Actual operator symmetry, exterior positivity and null axes/support boundary
+reduce the remaining premise to strict positivity on the ordered interior region.
+Forty-seven power-cache blocks check 2,993 actual signed-power enclosures; six
+radial-root blocks check the exact negative-power bounds at 369 radii. Four actual
+coordinate blocks and generic leaf soundness are checked. Every finite incoming
+Horner value and derivative agrees with the original integrated-tail polynomial;
+normalized rational literals are proved equal to ordinary quotients. Genuine
+four-child rectangle subdivision and floor-based unit-cell coverage are proved.
+The complete coordinate/leaf arithmetic and whole rectangle partition coverage
+remain ongoing. The twenty-fifth official preflight was still at the comparator
+and provenance stage when this checkpoint was prepared. The comparator remains
+fifteen unconditional rows; final sixteen-row verification and Palomar registration
+remain pending.

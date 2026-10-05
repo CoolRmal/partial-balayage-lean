@@ -13,7 +13,7 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
 configured for fifteen statements. The fifteen-row checkpoint
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37381997180)
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37384905929)
 with no errors or warnings.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
@@ -57,8 +57,11 @@ axis and boundary singularities. True source and kernel dilation, physical
 diamond averages and simultaneous all-positive-radius estimates are proved.
 The full source form has genuine compact-test integrability and L¹ contact
 positivity. Exact coefficient tables and the first actual interior generator
-rectangle are checked. Completing the full positivity partition and transferring
-the constructed state to that source remain necessary for the square conclusion.
+rectangle are checked. Genuine mollification, source convolution and the closed
+full-source graph now transfer the constructed state to the singular source.
+The strict square bound follows from positivity of the actual source density alone.
+Completing every finite positivity check and the full coverage proof remains necessary
+before adding the square row to the comparator.
 Actual Euclidean diamond averages, maximal functions, every extended-real level,
 norm inputs and monotone L¹ truncations now have their exact coefficient transfer
 to the original square operator. The positive coefficient is derived from true

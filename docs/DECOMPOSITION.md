@@ -818,3 +818,17 @@ source candidate is sigma finite and has actual local test integrability. The
 first genuine interior rectangle is positive. The full finite partition and true
 contact of the constructed state remain necessary before the square row is added
 to Challenge, Solution and the comparator.
+
+
+The constructed square state now has its genuine singular-source contact inequality.
+Compact positive mollifications preserve the actual weak generator equation; true
+source convolution and energy bounds pass through the closed full-source graph.
+No finite total source mass or additional state regularity is assumed. Genuine
+source and kernel dilation then give contact caps at every positive radius.
+The exact square constant is strictly below 3.616 assuming only almost-everywhere
+nonnegativity of the actual source density. Actual operator symmetry and exterior
+positivity reduce this last premise to strict positivity on the ordered interior
+region. A genuine four-child subdivision theorem and floor-based unit-cell cover
+supply finite geometric soundness. Shared exact power caches, checked radial roots,
+actual coordinate data, and sound finite-tail Horner evaluation support the remaining
+complete arithmetic certificate and its full coverage proof.
