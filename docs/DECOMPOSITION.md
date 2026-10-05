@@ -777,13 +777,17 @@ every exact finite polynomial obtained by integrating its binomial series.
 The actual radial generator is constant along each positive-quadrant diamond edge,
 and its homogeneity reduces it to one fixed diagonal integral. Positive real beta
 integrals are linked to genuine Gamma quotients, and the diagonal's positive-beta
-combination has the exact intrinsic normalization. The remaining diagonal integral
-evaluation and full radial distributional identification are still required.
+combination has the exact intrinsic normalization. The actual diagonal integral
+is now evaluated by convergent ordinary integration by parts, completing the
+paired homogeneous radial generator identity. The exact planar strip-volume
+bounds and real cusp estimates support the remaining full radial distributional
+identification.
 
 True singular translation-jump contact positivity holds with measures of infinite
 total mass. Actual quadratic cutoffs around the origin have uniform derivative
 bounds and generator errors tending to zero against every integrable kernel.
-Finite truncated second moments therefore extend punctured source equality to
-compact C² tests with zero value and gradient at the origin. Even source
-representation on arbitrary tests, the whole generator positivity certificate
-and final comparison remain pending.
+Actual punctured source identities derive finite truncated second moments by
+positive cutoffs and Fatou limits. They give the full even compensated source
+representation on arbitrary compact C² tests, including the origin, and actual
+membership of those tests in the full singular translation-jump form. The whole
+generator positivity certificate and final comparison remain pending.

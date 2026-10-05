@@ -12,9 +12,9 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 
 The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fifteen statements. The fourteen-row checkpoint
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37371871892)
-with no errors or warnings. The fifteen-row official preflight is still pending.
+configured for fifteen statements. The fifteen-row checkpoint
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37376877702)
+with no errors or warnings.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
@@ -48,9 +48,12 @@ give the full-vector Riesz coefficient two on every real L¹ input.
 The square prerequisites include the actual kernel's nonnegativity and closed-diamond
 majorization, exact mass below twice 3.616, the genuine spline generator formula,
 actual Taylor error bounds and finite incoming-tail lower bounds. True angular
-constancy and homogeneity reduce the radial generator to its diagonal. Its final
-integral evaluation, generator positivity arithmetic and source comparison remain
-necessary for the square table conclusion.
+constancy, homogeneity and the exact convergent diagonal integral establish the
+intrinsic radial source constant. Actual strip volumes control the coordinate
+and boundary singularities. The full even compensated source representation
+and its required second moment follow from genuine punctured test identities.
+Generator positivity arithmetic and the final source comparison remain necessary
+for the square table conclusion.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly

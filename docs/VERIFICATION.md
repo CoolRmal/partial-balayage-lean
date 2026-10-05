@@ -538,5 +538,49 @@ and con-ron kernels under `palomar-standard-v1`.
 The [twenty-first fifteen-row preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37374503935)
 for exact public commit `3733ab5699c83034f606964a92102dded938a6f4` acquired
 verification and reached the actual comparator and provenance stage. Its
-result remains pending at this checkpoint. The square table conclusion,
-final sixteen-row official verification and Palomar registration remain pending.
+result remained pending at this checkpoint. Subsequent verification below
+records its completed pass. The square table conclusion, final sixteen-row
+official verification and Palomar registration remain pending.
+
+## Twenty-third proof checkpoint: exact radial evaluation and compensated source
+
+The [twenty-first full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37374503935)
+passed for exact public commit `3733ab5699c83034f606964a92102dded938a6f4`.
+The [twenty-second full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37376877702)
+also passed for exact public commit `213ad641e94da32eb1c4f2e01e75c02406a42e0d`.
+Both downloaded mechanical reports record `status: pass`, `stage: complete`,
+empty errors and warnings, the fifteen exact theorem names, canonical challenge
+provenance and independent NanoDa and con-ron kernel checks. These are the first
+official passes including the full-vector Riesz row. The square row remains
+outside the current comparator; final registration has not occurred.
+
+Twenty-seven new supporting modules have successful focused builds and
+standard-axiom endpoint audits. The combined library, challenge and solution
+build passed (4,363 jobs), and source and metadata validation passed. All 31
+imported analytic normalization and strip-volume endpoints use exactly
+`propext`, `Classical.choice` and `Quot.sound`. Genuine one-dimensional changes of variables
+identify positive beta-prime integrals. Actual diagonal primitives have proved
+derivatives, cancellation at the singular origin, agreement at the crossing
+point and vanishing at infinity. Ordinary convergent fundamental theorems give
+the exact paired homogeneous radial source constant, without a radial source
+certificate. Genuine Euclidean volume preservation and the determinant-two
+diamond map prove coordinate strip volume at most `4Lt` and diamond boundary
+strip volume at most `8Rt`. The strip module's local notations abbreviate the
+explicit Euclidean plane and the two-coordinate real function space.
+
+The full even compensated source representation is proved against every
+compact C² test. Its truncated second moment follows from actual punctured
+test identities by positive cutoffs and Fatou limits. Genuine compact C² and
+Lipschitz tests consequently belong to the full singular translation-jump form.
+The genuine compensated source generator on compact C² tests equals the actual
+convolution of the kernel with the coordinate-stable generator pointwise.
+Actual source-side Fubini and compact C² self-adjointness are proved, with true
+radial truncation tails and real axis/boundary cusp bounds. The genuine tensor
+spline correction has its exact physical generator and unconditional compact-test
+source pairing, with actual compact C² regularity and support. Genuine signed
+spline generator regrouping, coefficient ranges and cubic interval bounds
+support the remaining finite positivity leaves. No completed positivity
+certificate or final square maximal estimate is claimed.
+The actual full kernel generator is nonnegative at and beyond its support
+boundary, directly from the genuine kernel's nonnegativity and zero exterior.
+The exterior module uses an explicit local notation for the Euclidean plane.
