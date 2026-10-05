@@ -35,9 +35,13 @@ contraction through Mathlib's unitary Fourier transform. The Poisson and heat co
 maximal operators and their exact parameterized bound formulas are defined, with kernel
 positivity and heat-kernel mass one proved. The full vector Riesz and Frobenius-matrix Hessian
 operators have L² contraction proofs. Exact scalar optimization yields the Hessian coefficients
-and the projection coefficient from its unique cubic root. The radial constants and unique
-positive heat parameter are also proved; the sharper prescribed lower endpoint of its interval
-remains pending. These steps do not yet prove any of the thirteen pending weak-type rows.
+and the projection coefficient from its unique cubic root. The radial constants and unique heat
+parameter in the article's exact interval are proved. The traceless Hessian has the precise
+Frobenius multiplier norm, with bounded vector multipliers realized as continuous linear maps.
+The genuine vector-valued norm-cap set is closed, convex, and weakly compact on finite measure
+spaces; its positive quadratic variational problem has a proved solution without coercivity.
+The Kato averaging inequality and exact square-certificate mass arithmetic are also proved.
+These steps do not yet prove any of the thirteen pending weak-type rows.
 
 ## Project map
 

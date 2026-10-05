@@ -8,18 +8,25 @@ module
 public import PartialBalayage.Maximal.ExistingBounds
 public import PartialBalayage.Maximal.SemigroupDefinitions
 public import PartialBalayage.Linear.LevelSet
+public import PartialBalayage.Linear.CapEnergy
 public import PartialBalayage.Linear.ScalarMultiplier
 public import PartialBalayage.Constants.Linear
 public import PartialBalayage.Constants.Radial
 public import PartialBalayage.Maximal.HeatKernel
 public import PartialBalayage.Linear.RieszMultiplier
 public import PartialBalayage.Linear.HessianMultiplier
+public import PartialBalayage.Linear.BoundedVectorMultiplier
+public import PartialBalayage.Linear.TracelessMultiplier
+public import PartialBalayage.Linear.NormCap
+public import PartialBalayage.Linear.CapVariational
+public import PartialBalayage.Linear.KatoAveraging
+public import PartialBalayage.Constants.SquareMass
 
 /-!
 # Two partial balayage principles
 
 The library currently exports the three previously formalized interval and Euclidean-ball bounds.
 The remaining rows of the published table are tracked in `docs/DECOMPOSITION.md`.
-Supporting development includes the capped-decomposition level-set estimate, the actual Poisson
-and heat operators, and the complex Beurling L² multiplier and its contraction estimate.
+Supporting development includes capped-decomposition level-set estimates, finite-measure vector
+obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.
 -/

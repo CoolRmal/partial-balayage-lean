@@ -11,6 +11,8 @@ public import Mathlib.Analysis.Convex.Slope
 public import Mathlib.Analysis.Calculus.MeanValue
 public import Mathlib.Analysis.Calculus.Deriv.Slope
 public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+public import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 public import Mathlib.Topology.Order.IntermediateValue
 public import Mathlib.Tactic
 
@@ -199,5 +201,124 @@ theorem existsUnique_poissonRoot_one :
   have hf : a * (1 - 5 * a) = 0 := by nlinarith
   have h := (mul_eq_zero.mp hf).resolve_left ha0.ne'
   linarith
+
+private def harmonicCoordinate (β z : ℝ) : ℝ :=
+  if β = 1 then Real.log z else (z ^ (1 - β) - 1) / (1 - β)
+
+private theorem harmonicCoordinate_one (β : ℝ) : harmonicCoordinate β 1 = 0 := by
+  by_cases hβ : β = 1 <;> simp [harmonicCoordinate, hβ]
+
+private theorem hasDerivAt_harmonicCoordinate {β z : ℝ} (hz : 0 < z) :
+    HasDerivAt (harmonicCoordinate β) (z ^ (-β)) z := by
+  by_cases hβ : β = 1
+  · subst β
+    unfold harmonicCoordinate
+    simpa [Real.rpow_neg_one] using Real.hasDerivAt_log hz.ne'
+  · have hβ' : 1 - β ≠ 0 := sub_ne_zero.mpr (Ne.symm hβ)
+    have hder := Real.hasDerivAt_rpow_const (p := 1 - β) (Or.inl hz.ne')
+    convert (hder.sub_const 1).div_const (1 - β) using 1
+    · funext x
+      simp [harmonicCoordinate, hβ]
+    · rw [show 1 - β - 1 = -β by ring, mul_div_cancel_left₀ _ hβ']
+
+private theorem exp_neg_ratio_mul_lt_rpow {β r z : ℝ} (hβ : 0 < β)
+    (hz1 : 1 < z) (hzr : z < r) :
+    z ^ (-β) < Real.exp (-(β / r) * (z - 1)) := by
+  have hz0 : 0 < z := zero_lt_one.trans hz1
+  have hr0 : 0 < r := hz0.trans hzr
+  have hlog := Real.one_sub_inv_le_log_of_pos hz0
+  have hid : β * (1 - z⁻¹) = β * (z - 1) / z := by
+    field_simp
+  have hlt : β / r * (z - 1) < β * (1 - z⁻¹) := by
+    rw [hid, div_mul_eq_mul_div]
+    exact div_lt_div_of_pos_left (mul_pos hβ (sub_pos.mpr hz1)) hz0 hzr
+  have hlt' := hlt.trans_le (mul_le_mul_of_nonneg_left hlog hβ.le)
+  rw [Real.rpow_def_of_pos hz0]
+  apply Real.exp_lt_exp.mpr
+  nlinarith
+
+private theorem exp_neg_harmonicRatio_lt {β r : ℝ} (hβ : 0 < β) (hr : 1 < r)
+    (hbalance : harmonicCoordinate β r = 1 / β) :
+    Real.exp (-(β / r) * (r - 1)) < 1 - 1 / r := by
+  let a : ℝ := β / r
+  let f : ℝ → ℝ := fun z ↦ Real.exp (-a * (z - 1))
+  have hr0 : 0 < r := zero_lt_one.trans hr
+  have hf : Continuous f := by fun_prop
+  have hdf : ∀ z ∈ Ioo 1 r, HasDerivAt f (-a * f z) z := by
+    intro z hz
+    simpa [f, mul_comm] using (((hasDerivAt_id z).sub_const 1).const_mul (-a)).exp
+  have hg : ContinuousOn (harmonicCoordinate β) (Icc 1 r) := by
+    intro z hz
+    exact ((hasDerivAt_harmonicCoordinate (β := β)
+      (zero_lt_one.trans_le hz.1)).continuousAt).continuousWithinAt
+  obtain ⟨z, hz, he⟩ := exists_ratio_hasDerivAt_eq_ratio_slope f (fun z ↦ -a * f z)
+    hr hf.continuousOn hdf (harmonicCoordinate β) (fun z ↦ z ^ (-β)) hg
+    (fun z hz ↦ hasDerivAt_harmonicCoordinate (zero_lt_one.trans hz.1))
+  simp only [hbalance, harmonicCoordinate_one, sub_zero] at he
+  have hf1 : f 1 = 1 := by simp [f]
+  rw [hf1] at he
+  have hpower : z ^ (-β) < f z := exp_neg_ratio_mul_lt_rpow hβ hz.1 hz.2
+  have hpower0 : 0 < z ^ (-β) := Real.rpow_pos_of_pos (zero_lt_one.trans hz.1) _
+  have hrewrite : 1 / β * (-a * f z) = -(1 / r) * f z := by
+    dsimp [a]
+    field_simp
+  rw [hrewrite] at he
+  have hmul := mul_lt_mul_of_pos_left hpower (one_div_pos.mpr hr0)
+  change f r < 1 - 1 / r
+  by_contra h
+  have hnonneg : 0 ≤ f r - 1 + 1 / r := by linarith
+  have hprod := mul_nonneg hnonneg hpower0.le
+  nlinarith
+
+private theorem harmonicCoordinate_rho (n : ℕ) (hn : 1 ≤ n) :
+    harmonicCoordinate ((n : ℝ) / 2) (rho n) = 2 / (n : ℝ) := by
+  by_cases hn2 : n = 2
+  · subst n
+    norm_num [harmonicCoordinate, rho_two, Real.log_exp]
+  · have hn0 : (0 : ℝ) < n := by exact_mod_cast (by omega : 0 < n)
+    have hβ : (n : ℝ) / 2 ≠ 1 := by
+      intro h
+      apply hn2
+      exact_mod_cast (show (n : ℝ) = 2 by linarith)
+    have hden : 1 - (n : ℝ) / 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hβ)
+    have hden' : (2 : ℝ) - n ≠ 0 := by
+      intro h
+      apply hβ
+      linarith
+    rw [harmonicCoordinate, ite_eq_right hβ, rho_rpow_one_sub_half n hn hn2]
+    field_simp
+
+/-- At the lower endpoint stated in the article, the exponential lies below the affine line. -/
+theorem heatRoot_lower_endpoint_neg (n : ℕ) (hn : 1 ≤ n) :
+    Real.exp (-(rho n - 1) * ((n : ℝ) / (2 * rho n))) < 1 - 1 / rho n := by
+  have hn0 : (0 : ℝ) < n := by exact_mod_cast (by omega : 0 < n)
+  have hr0 := rho_pos n hn
+  have hβ : 0 < (n : ℝ) / 2 := by positivity
+  have hbalance : harmonicCoordinate ((n : ℝ) / 2) (rho n) = 1 / ((n : ℝ) / 2) := by
+    simpa only [one_div, inv_div] using harmonicCoordinate_rho n hn
+  convert exp_neg_harmonicRatio_lt hβ (one_lt_rho n hn) hbalance using 1
+  congr 1
+  field_simp
+
+/-- The heat tangency equation has its unique nonzero root in the article's precise interval. -/
+theorem existsUnique_heatRoot (n : ℕ) (hn : 1 ≤ n) :
+    ∃! a : ℝ, a ∈ Ioo ((n : ℝ) / (2 * rho n)) ((n : ℝ) / 2) ∧
+      Real.exp (-(rho n - 1) * a) = 1 - 2 * a / (n : ℝ) := by
+  have hn0 : (0 : ℝ) < n := by exact_mod_cast (by omega : 0 < n)
+  have hr0 := rho_pos n hn
+  have hrl : 1 < rho n := one_lt_rho n hn
+  have hc : 0 < rho n - 1 := by linarith
+  have hl : 0 < (n : ℝ) / (2 * rho n) := by positivity
+  have hlr : (n : ℝ) / (2 * rho n) < (n : ℝ) / 2 :=
+    div_lt_div_of_pos_left hn0 (by norm_num) (by linarith)
+  have hid : 2 / (n : ℝ) * ((n : ℝ) / (2 * rho n)) = 1 / rho n := by
+    field_simp
+  have hr : 1 - 2 / (n : ℝ) * ((n : ℝ) / 2) <
+      Real.exp (-(rho n - 1) * ((n : ℝ) / 2)) := by
+    have hid' : 2 / (n : ℝ) * ((n : ℝ) / 2) = 1 := by field_simp
+    rw [hid', sub_self]
+    exact Real.exp_pos _
+  simpa only [div_mul_eq_mul_div] using existsUnique_exp_affine_eq_of_signs
+    (d := 2 / (n : ℝ)) hc hl hlr (by rw [hid]; exact heatRoot_lower_endpoint_neg n hn) hr
 
 end PartialBalayage.Constants

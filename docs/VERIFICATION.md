@@ -24,3 +24,14 @@ The pinned verifier requires a twelve-character lowercase alphanumeric request I
 authorization relationship in its options. Both workflow inputs have been corrected. The
 verifier's reporting step masked these intake errors as a malformed-report error; neither that
 attempt nor successful parsing of the corrected inputs is evidence of a full preflight pass.
+
+## Second proof checkpoint
+
+Commit: `897dd0ad93bfe8e78b25159feaafad2b2a3571b5`.
+
+The corrected [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37306182443)
+completed successfully. Its mechanical report has `status: pass`, `stage: complete`,
+`phase: verification`, no errors and no warnings, and identifies this exact repository and
+commit. It checks the same three theorem names above, under `palomar-standard-v1` with
+the pinned pipeline revision recorded in the workflow. The report is mechanical evidence
+for this checkpoint, not registration or completion of the other table rows.
