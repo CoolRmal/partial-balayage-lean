@@ -769,3 +769,21 @@ majorization leaf are linked to their actual rational coefficients. The
 remaining square work is distributional generator positivity and genuine
 source comparison. The signed Riesz obstacle exhaustion, physical gradient
 identification, full-vector cancellation and final all-L¹ table bound are proved.
+
+The actual square spline generator now has its exact singular-integral power
+formula and scaling. Genuine Taylor and boundary error bounds yield sound rational
+interval enclosures. The true incoming radial tail is integrable and dominates
+every exact finite polynomial obtained by integrating its binomial series.
+The actual radial generator is constant along each positive-quadrant diamond edge,
+and its homogeneity reduces it to one fixed diagonal integral. Positive real beta
+integrals are linked to genuine Gamma quotients, and the diagonal's positive-beta
+combination has the exact intrinsic normalization. The remaining diagonal integral
+evaluation and full radial distributional identification are still required.
+
+True singular translation-jump contact positivity holds with measures of infinite
+total mass. Actual quadratic cutoffs around the origin have uniform derivative
+bounds and generator errors tending to zero against every integrable kernel.
+Finite truncated second moments therefore extend punctured source equality to
+compact C² tests with zero value and gradient at the origin. Even source
+representation on arbitrary tests, the whole generator positivity certificate
+and final comparison remain pending.

@@ -489,3 +489,54 @@ and reached the comparator and challenge provenance stage. Its result is still
 pending at this checkpoint. That immutable attempt has the fourteen-row scope;
 no fifteen-row official pass is claimed here. The square table conclusion,
 final sixteen-row verification and Palomar registration remain pending.
+
+
+## Twenty-second proof checkpoint: genuine square generator support
+
+The combined library, challenge and solution build passed (4,336 jobs).
+Twenty-eight new modules have successful focused builds and standard-axiom
+endpoint audits. All 21 imported root endpoints use only `propext`,
+`Classical.choice`, and `Quot.sound`. Source and metadata checks passed.
+The independent challenge and fifteen-statement comparator scope are unchanged.
+
+The actual incoming radial kernel is integrable and dominates every finite
+binomial truncation. Genuine improper power moments identify each exact
+rational coefficient, proving the finite polynomial lower bound for the
+actual incoming tail. True convex tangent planes combine downward rational
+constants with that actual analytic bound, including tangents at the support
+radius. Actual positive real beta integrals agree with the genuine Gamma
+quotients. Recurrence, reflection and trigonometry identify the diagonal
+positive-beta combination with the exact intrinsic constant. The ordinary
+integration-by-parts evaluation of the diagonal integral remains pending.
+
+The real diamond coordinate integrals converge at positive-quadrant points.
+Actual small-jump quadratic cancellation, kink-preserving derivatives,
+integrable angular majorants and translated crossed-axis cancellation prove
+angular constancy. Genuine dilation scaling reduces the paired generator to
+the fixed diagonal. No radial source certificate is assumed.
+
+Actual power Taylor and boundary error bounds now give sound rational
+interval enclosures for the spline generator and its signed tensor sums.
+These results support the remaining 6,739 generator positivity leaves;
+completion of those leaves is not claimed.
+
+True contact positivity holds for the full translation-jump energy with
+measures of infinite total mass. Actual quadratic cutoffs at the origin
+have uniform second derivative bounds and generator errors tending to zero
+against every integrable kernel. Finite truncated second moments extend
+actual punctured source equality to compact C² tests with zero value and
+gradient at the origin. The full even compensated source representation,
+generator positivity and final maximal comparison remain pending.
+
+The [twentieth official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37371871892)
+passed for exact public commit `c050e8a3c46401a25d521929f39a429a73bcb4d9`.
+Its downloaded mechanical report has `status: pass`, `stage: complete`,
+and no errors or warnings. It checks the fourteen exact theorem names,
+canonical Mathlib-only challenge provenance and the independent NanoDa
+and con-ron kernels under `palomar-standard-v1`.
+
+The [twenty-first fifteen-row preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37374503935)
+for exact public commit `3733ab5699c83034f606964a92102dded938a6f4` acquired
+verification and reached the actual comparator and provenance stage. Its
+result remains pending at this checkpoint. The square table conclusion,
+final sixteen-row official verification and Palomar registration remain pending.

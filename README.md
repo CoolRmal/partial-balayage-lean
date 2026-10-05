@@ -13,7 +13,8 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
 configured for fifteen statements. The fourteen-row checkpoint
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37359788746).
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37371871892)
+with no errors or warnings. The fifteen-row official preflight is still pending.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
@@ -43,6 +44,13 @@ are proved to exist and to be unique among finite weak-bound extensions. The fin
 statements use the independently defined concrete Fourier operators. Actual signed
 Poisson balayage, full-norm Fourier regularity and physical Sobolev zero-set locality
 give the full-vector Riesz coefficient two on every real L¹ input.
+
+The square prerequisites include the actual kernel's nonnegativity and closed-diamond
+majorization, exact mass below twice 3.616, the genuine spline generator formula,
+actual Taylor error bounds and finite incoming-tail lower bounds. True angular
+constancy and homogeneity reduce the radial generator to its diagonal. Its final
+integral evaluation, generator positivity arithmetic and source comparison remain
+necessary for the square table conclusion.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly
