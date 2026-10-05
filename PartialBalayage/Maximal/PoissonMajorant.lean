@@ -5,6 +5,7 @@ Authors: Yongxi Lin
 -/
 module
 
+public import PartialBalayage.TableDefinitions
 public import PartialBalayage.Maximal.RadialTangentMass
 
 /-!
@@ -209,12 +210,6 @@ private theorem poissonTangentProfile_at_balance {β r a : ℝ} (hβ : 0 < β) (
   unfold poissonTangentProfile
   rw [mul_div_cancel_right₀ _ ha.ne', hbalance, poisson_tangent_identity hβ ha]
   ring
-
-/-- A Poisson tangency parameter satisfies the article's exact root equation and interval. -/
-def IsPoissonTangencyParameter (n : ℕ) (a : ℝ) : Prop :=
-  a ∈ Ioo ((n : ℝ) / (3 * rho n)) ((n : ℝ) / 3) ∧
-    (1 - a / (n : ℝ)) / (1 + a) ^ (((n : ℝ) + 3) / 2) =
-      1 / (1 + rho n * a) ^ (((n : ℝ) + 1) / 2)
 
 /-- The article's exact Poisson tangency parameter exists and is unique. -/
 theorem existsUnique_isPoissonTangencyParameter (n : ℕ) (hn : 1 ≤ n) :

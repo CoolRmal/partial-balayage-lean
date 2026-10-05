@@ -204,10 +204,40 @@ definitions specify the original multipliers and genuine linear all-L¹ weak
 constants; the all-L¹ extension and operator bridges are subsequent work.
 These supporting estimates do not enlarge the advertised nine-row scope yet.
 
-The independent centred maximal definitions now occupy their own
-`Challenge.MaximalDefinitions` module. This preserves Mathlib-only challenge
-dependencies and matches the solution's module boundary, correcting Lean's
-sharing of auxiliary volume-instance proofs. The fully elaborated
-`IsPoissonWeakTypeBound` value now matches exactly between the independent
-challenge and solution environments. A fresh full Palomar preflight remains
-required to verify the repaired nine-row comparator.
+This snapshot moved the independent centred maximal definitions into a
+`Challenge.MaximalDefinitions` helper. The fully elaborated local
+`IsPoissonWeakTypeBound` value then matched between challenge and solution.
+However, the [official preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37349307931)
+failed at the canonical-challenge stage for commit
+`7095131e0a0711bfe41b3a7e7f8c3f6c3744e4f3`: the independent challenge compiler
+allows Mathlib dependencies but cannot import the candidate repository's
+`Challenge` helper module. This attempt did not reach the comparator and is
+not counted as a successful nine-row check.
+
+## Fourteenth proof checkpoint: fourteen table rows
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(4,039 build jobs). The five new table endpoints cover the complex Beurling
+transform, full Frobenius Hessians in dimension two and in all dimensions at
+least two, the traceless Frobenius Hessian including its one-dimensional zero
+case, and both gradient and Leray projections on actual complex Euclidean
+vectors. They quantify over genuine linear all-L¹ extensions that agree with
+the original Fourier operators on integrable L² inputs. The extension is
+constructed from actual Cauchy-in-measure limits and proved unique; no
+analytic certificate is assumed in these final statements.
+
+Direct compiled axiom inspections of all five final endpoints report exactly
+`propext`, `Classical.choice`, and `Quot.sound`. Supporting all-L¹ extension,
+projection, Fourier-bridge and Poisson-transform endpoints were audited on the
+same basis. Source and metadata validation passed. The committed square
+coefficient, spline and rational Bernstein modules have individual successful
+builds and standard-axiom audits; they do not yet prove the square table row.
+
+All transparent challenge definitions are now copied in the same order from
+one Mathlib-only `TableDefinitions` block. `Challenge.lean` is standalone and
+imports only Mathlib. Existing library modules reexport the centralized block,
+so the genuine definitions and Lean's auxiliary proof names agree without
+adding permitted definition holes. The comparator now lists fourteen table
+theorems. A fresh official full preflight is required to establish comparator
+success for this expanded scope. The full-vector Riesz and square-maximal
+rows, final human review and Palomar registration remain pending.

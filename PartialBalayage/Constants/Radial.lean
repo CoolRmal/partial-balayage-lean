@@ -5,6 +5,7 @@ Authors: Yongxi Lin
 -/
 module
 
+public import PartialBalayage.TableDefinitions
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
 public import Mathlib.Analysis.Convex.SpecificFunctions.Basic
 public import Mathlib.Analysis.Convex.Slope
@@ -30,10 +31,6 @@ noncomputable section
 open Filter Set Topology
 
 namespace PartialBalayage.Constants
-
-/-- Ratio of the outer and inner squared radii in the radial majorants. -/
-def rho (n : ℕ) : ℝ :=
-  if n = 2 then Real.exp 1 else ((n : ℝ) / 2) ^ (2 / ((n : ℝ) - 2))
 
 /-- In dimension one the squared-radius ratio is four. -/
 theorem rho_one : rho 1 = 4 := by

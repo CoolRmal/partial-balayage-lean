@@ -73,4 +73,35 @@ theorem poisson_weakTypeConstant_one_le_exact :
     poissonWeakTypeConstant 1 ≤ ENNReal.ofReal poissonOneBound :=
   Maximal.poisson_weakTypeConstant_one_le_exact
 
+/-- The full Frobenius Hessian's exact all-L¹ bound in every dimension at least two. -/
+theorem hessian_weakTypeConstant_le_formula (n : ℕ) (hn : 2 ≤ n) :
+    linearWeakTypeConstant (𝕜 := ℂ) (hessianFourierOperator (n := n)) ≤
+      ENNReal.ofReal (hessianCoefficient n (hessianParameter n)) :=
+  Linear.hessian_weakTypeConstant_le_formula n hn
+
+/-- The full planar Frobenius Hessian's exact coefficient is `3 * sqrt 6 / 4`. -/
+theorem hessian_weakTypeConstant_two_le_exact :
+    linearWeakTypeConstant (𝕜 := ℂ) (hessianFourierOperator (n := 2)) ≤
+      ENNReal.ofReal (3 * Real.sqrt 6 / 4) :=
+  Linear.hessian_weakTypeConstant_two_le_exact
+
+/-- The actual complex-input Beurling transform has all-L¹ weak coefficient at most two. -/
+theorem beurling_weakTypeConstant_le_two :
+    linearWeakTypeConstant (𝕜 := ℂ) beurlingFourierOperator ≤ 2 :=
+  Linear.beurling_weakTypeConstant_le_two
+
+/-- The full traceless Frobenius Hessian has the dimension-dependent table coefficient. -/
+theorem tracelessHessian_weakTypeConstant_le (n : ℕ) (hn : 1 ≤ n) :
+    linearWeakTypeConstant (𝕜 := ℂ) (tracelessHessianFourierOperator (n := n)) ≤
+      ENNReal.ofReal (2 * Real.sqrt (1 - 1 / (n : ℝ))) :=
+  Linear.tracelessHessian_weakTypeConstant_le n hn
+
+/-- Both actual projections have the same exact cubic-root coefficient on all L¹ inputs. -/
+theorem projections_weakTypeConstants_le_exact (n : ℕ) (hn : 2 ≤ n) :
+    linearWeakTypeConstant (𝕜 := ℂ) (gradientFourierOperator (n := n)) ≤
+      ENNReal.ofReal (projectionCoefficient projectionParameter) ∧
+    linearWeakTypeConstant (𝕜 := ℂ) (lerayFourierOperator (n := n)) ≤
+      ENNReal.ofReal (projectionCoefficient projectionParameter) :=
+  Linear.projections_weakTypeConstants_le_exact n hn
+
 end PartialBalayage

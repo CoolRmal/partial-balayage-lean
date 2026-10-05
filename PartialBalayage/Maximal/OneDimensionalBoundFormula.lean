@@ -5,6 +5,7 @@ Authors: Yongxi Lin
 -/
 module
 
+public import PartialBalayage.TableDefinitions
 public import PartialBalayage.Maximal.SemigroupMajorantMass
 public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
@@ -84,10 +85,6 @@ theorem poissonBoundFormula_one_fifth :
   have hnonzero := (sqrt_pos.mpr (by norm_num : (0 : ℝ) < 5)).ne'
   field_simp [pi_ne_zero, hnonzero]
   nlinarith
-
-/-- The complementary error function, defined by its genuine ordinary Gaussian tail. -/
-def complementaryErrorFunction (r : ℝ) : ℝ :=
-  2 / sqrt Real.pi * ∫ s in Ioi r, exp (-(s ^ 2))
 
 /-- The one-dimensional heat tail is exactly the Gaussian tail after `z = r²`. -/
 theorem heatTail_one {b : ℝ} (hb : 0 ≤ b) :

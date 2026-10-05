@@ -5,6 +5,7 @@ Authors: Yongxi Lin
 -/
 module
 
+public import PartialBalayage.TableDefinitions
 public import PartialBalayage.Maximal.HeatMajorant
 public import PartialBalayage.Maximal.PoissonMajorant
 
@@ -23,12 +24,6 @@ noncomputable section
 open PartialBalayage.Constants
 
 namespace PartialBalayage
-
-/-- The article's unique heat parameter, with an arbitrary totalization in dimension zero. -/
-def heatTangencyParameter (n : ℕ) : ℝ := Classical.epsilon (IsHeatTangencyParameter n)
-
-/-- The article's unique Poisson parameter, with an arbitrary totalization in dimension zero. -/
-def poissonTangencyParameter (n : ℕ) : ℝ := Classical.epsilon (IsPoissonTangencyParameter n)
 
 theorem isHeatTangencyParameter_selected (n : ℕ) (hn : 1 ≤ n) :
     IsHeatTangencyParameter n (heatTangencyParameter n) :=

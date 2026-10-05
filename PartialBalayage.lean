@@ -147,10 +147,25 @@ public import PartialBalayage.Linear.ProjectionHessianIdentity
 public import PartialBalayage.Linear.WholeSpaceComplexBalayage
 public import PartialBalayage.Linear.WholeSpaceProjectionBalayage
 
+public import PartialBalayage.TableDefinitions
+public import PartialBalayage.Linear.WeakL1Extension
+public import PartialBalayage.Linear.WeakL1ExtensionUniqueness
+public import PartialBalayage.Linear.CauchyMeasureLimit
+public import PartialBalayage.Linear.IntegrableL2Dense
+public import PartialBalayage.Linear.ProjectionWeakBounds
+public import PartialBalayage.Linear.FourierOperatorBridge
+public import PartialBalayage.Linear.LinearWeakBounds
+public import PartialBalayage.Linear.LinearTableWeakBounds
+public import PartialBalayage.Linear.PoissonSubordinationIntegral
+public import PartialBalayage.Linear.PoissonSubordination
+public import PartialBalayage.Linear.PoissonFourier
+public import PartialBalayage.Maximal.Square.Coefficients
+public import PartialBalayage.Maximal.Square.CubicSpline
+
 /-!
 # Two partial balayage principles
 
-The library exports nine table rows: intervals, Euclidean balls, and the six heat/Poisson bounds.
+The library exports fourteen table rows, including the exact Hessian and projection estimates.
 The remaining rows of the published table are tracked in `docs/DECOMPOSITION.md`.
 Supporting development includes capped-decomposition level-set estimates, finite-measure vector
 obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.

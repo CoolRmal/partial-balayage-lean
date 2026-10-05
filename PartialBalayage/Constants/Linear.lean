@@ -5,6 +5,7 @@ Authors: Yongxi Lin
 -/
 module
 
+public import PartialBalayage.TableDefinitions
 public import Mathlib.Analysis.Real.Sqrt
 public import Mathlib.Topology.Order.IntermediateValue
 public import Mathlib.Tactic
@@ -25,15 +26,6 @@ objective has the same structure, with a unique root of a strictly increasing cu
 noncomputable section
 
 namespace PartialBalayage
-
-/-- The positive stationary parameter for the full Hessian coefficient in dimension `n`. -/
-def hessianParameter (n : ℕ) : ℝ :=
-  Real.sqrt (2 * (n : ℝ) /
-    ((n : ℝ) + 1 + Real.sqrt (((n : ℝ) + 1) ^ 2 + 4 * ((n : ℝ) - 2))))
-
-/-- The scalar coefficient `1/a + (n-1)a/(n-a²)`, used for `0 < a < √n`. -/
-def hessianCoefficient (n : ℕ) (a : ℝ) : ℝ :=
-  1 / a + ((n : ℝ) - 1) * a / ((n : ℝ) - a ^ 2)
 
 private theorem hessian_denominator_pos_aux {n : ℕ} (hn : 2 ≤ n) :
     0 < (n : ℝ) + 1 + Real.sqrt (((n : ℝ) + 1) ^ 2 + 4 * ((n : ℝ) - 2)) := by
@@ -150,9 +142,6 @@ theorem hessianCoefficient_two :
   field_simp
   nlinarith
 
-/-- The cubic whose root determines the projection coefficient's minimizing parameter. -/
-def projectionCubic (a : ℝ) : ℝ := a ^ 3 - 2 * a ^ 2 + 6 * a - 4
-
 /-- The projection cubic is strictly increasing on the whole real line. -/
 theorem projectionCubic_strictMono : StrictMono projectionCubic := by
   intro a b hab
@@ -179,19 +168,13 @@ theorem existsUnique_projectionParameter :
   intro b hb
   exact projectionCubic_strictMono.injective (hb.2.trans hroot.symm)
 
-/-- The unique root in `(0,1)` of `a³ - 2a² + 6a - 4 = 0`. Existence is proved above. -/
-def projectionParameter : ℝ := Classical.choose existsUnique_projectionParameter
-
 /-- The exact projection parameter is positive and less than one. -/
 theorem projectionParameter_mem : projectionParameter ∈ Set.Ioo 0 1 :=
-  (Classical.choose_spec existsUnique_projectionParameter).1.1
+  (Classical.epsilon_spec existsUnique_projectionParameter.exists).1
 
 /-- The exact projection parameter satisfies the minimizing cubic. -/
 theorem projectionParameter_cubic : projectionCubic projectionParameter = 0 :=
-  (Classical.choose_spec existsUnique_projectionParameter).1.2
-
-/-- The scalar coefficient `1/a + a/(2-a)²`, used for `0 < a < 2`. -/
-def projectionCoefficient (a : ℝ) : ℝ := 1 / a + a / (2 - a) ^ 2
+  (Classical.epsilon_spec existsUnique_projectionParameter.exists).2
 
 private theorem projectionCoefficient_sub_aux {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0)
     (ha2 : 2 - a ≠ 0) (hb2 : 2 - b ≠ 0) (hp : projectionCubic a = 0) :

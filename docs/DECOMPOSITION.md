@@ -9,9 +9,11 @@ the exact expressions represented by approximate decimals. Cited sharp compariso
 asymptotic estimates, and optimality of the majorants are useful context but are not
 additional final targets.
 
-Nine rows are completed and advertised in the comparator: 7, 8, 10, and 11–16.
-Rows 1–6 and 9 remain pending. The exact semigroup bounds quantify over all
-integrable real inputs and all extended-real levels.
+Fourteen rows are completed and advertised in the comparator: 2–8 and 10–16.
+Rows 1 and 9 remain pending. All maximal estimates cover integrable real inputs
+and every extended-real level. The five new linear rows use genuine all-L¹
+linear extensions of the actual complex Fourier multipliers, with Euclidean
+vector and Frobenius matrix norms.
 
 ## Definitions required by the statements
 
@@ -688,8 +690,13 @@ reduction, and monotone L¹ transfer now discharge these hypotheses for all six
 semigroup table rows. `Maximal/SemigroupWeakBounds.lean` proves the final
 unconditional exact coefficients and their one-dimensional and planar expressions.
 The selected tangency parameters satisfy the proved unique algebraic equations.
-Concrete weak estimates and L¹ operator extension for the pending linear rows
-and the stronger square certificate remain required.
+The actual complex-input Hessian, Beurling, traceless Hessian and projection
+level-set estimates now yield true linear all-L¹ extensions with exact L²
+agreement and no decomposition hypotheses. Extension uniqueness follows from
+the actual weak-bound continuity into convergence in measure. The independent
+concrete Fourier definitions equal the constructed multipliers. These discharge
+rows 2–6. The isotropic order-one Riesz construction and the stronger square
+fractional-generator certificate and comparison remain required.
 
 ## Verification boundary
 

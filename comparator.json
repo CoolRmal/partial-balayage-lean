@@ -10,7 +10,12 @@
     "PartialBalayage.heat_weakTypeConstant_two_le_exact",
     "PartialBalayage.poisson_weakTypeConstant_two_le_exact",
     "PartialBalayage.heat_weakTypeConstant_one_le_exact",
-    "PartialBalayage.poisson_weakTypeConstant_one_le_exact"
+    "PartialBalayage.poisson_weakTypeConstant_one_le_exact",
+    "PartialBalayage.hessian_weakTypeConstant_le_formula",
+    "PartialBalayage.hessian_weakTypeConstant_two_le_exact",
+    "PartialBalayage.beurling_weakTypeConstant_le_two",
+    "PartialBalayage.tracelessHessian_weakTypeConstant_le",
+    "PartialBalayage.projections_weakTypeConstants_le_exact"
   ],
   "definition_names": [],
   "permitted_axioms": [

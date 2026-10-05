@@ -4,15 +4,16 @@
 
 Work in progress toward formalizing all sixteen upper-bound rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-Nine rows are now proved: centred intervals, planar and higher-dimensional Euclidean
-balls, and all six Poisson and heat maximal-operator bounds. Every maximal estimate
+Fourteen rows are now proved: the complex-input Beurling transform, full and
+traceless Frobenius Hessians, both projections, centred intervals, Euclidean balls,
+and all six Poisson and heat maximal bounds. Every maximal estimate
 quantifies over all integrable real inputs and all extended-real levels. The six new
 semigroup bounds use the article's exact formulas and proved unique parameters.
 
-The Riesz, Beurling, full and traceless Hessian, projection, and square rows remain
-pending. This repository has **not** completed the table and is **not registered on
-Palomar**. A Comparator pass for the advertised nine statements certifies those
-statements only. Current verification evidence is in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+The full-vector real-input Riesz and square rows remain pending. This repository has
+**not** completed the table and is **not registered on Palomar**. The comparator is
+configured for fourteen statements; its latest verified scope and failed attempts
+are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 The three interval and Euclidean-ball proofs are adapted from the author's
 [earlier formalization](https://github.com/CoolRmal/centered-maximal-constant/tree/72c022ba09032b522c878cca2f9b6c68217d77ea).
@@ -33,8 +34,11 @@ formulas are proved. The final statements assume no analytical certificates.
 
 Supporting development also constructs actual whole-space vector balayage and proves
 genuine global Sobolev regularity and Hessian cancellation. Fourier multipliers use
-Euclidean vector and Frobenius matrix norms. These supporting results have not yet
-completed the remaining singular-integral rows.
+Euclidean vector and Frobenius matrix norms. Actual complex capped decompositions
+and Hessian locality give the Beurling, full and traceless Hessian and projection
+bounds. Genuine linear L¹ extensions
+are proved to exist and to be unique among finite weak-bound extensions. The final
+statements use the independently defined concrete Fourier operators.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly
@@ -42,11 +46,11 @@ below 3.616; the earlier bound 3.879 does not meet it.
 
 ## Project map
 
-- `Challenge.lean`: nine independent auditable statements importing Mathlib alone.
+- `Challenge.lean`: fourteen independent auditable statements importing Mathlib alone.
 - `Solution.lean`: the matching proved declarations.
 - `PartialBalayage/`: new proofs and adapters to earlier results.
 - `CenteredMaximal/`: the copied minimal earlier source closure, preserving author headers.
-- `comparator.json`: the exact nine statements currently compared.
+- `comparator.json`: the exact fourteen statements currently compared.
 - `formalization.yaml`: provenance, scope, automation and review metadata.
 - `docs/DECOMPOSITION.md`: all sixteen targets and the proof dependencies.
 - `docs/PALOMAR.md`: verification and eventual registration procedure.

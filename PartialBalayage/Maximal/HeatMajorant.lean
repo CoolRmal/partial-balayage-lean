@@ -5,6 +5,7 @@ Authors: Yongxi Lin
 -/
 module
 
+public import PartialBalayage.TableDefinitions
 public import PartialBalayage.Maximal.RadialTangentMass
 
 /-!
@@ -212,11 +213,6 @@ private theorem heatTangentProfile_flux_pos_of_join {β a b : ℝ}
     field_simp
   rw [hcancel] at hp
   linarith
-
-/-- A heat tangency parameter satisfies the exact root equation and interval from the article. -/
-def IsHeatTangencyParameter (n : ℕ) (a : ℝ) : Prop :=
-  a ∈ Ioo ((n : ℝ) / (2 * rho n)) ((n : ℝ) / 2) ∧
-    Real.exp (-(rho n - 1) * a) = 1 - 2 * a / (n : ℝ)
 
 /-- The article's exact heat tangency parameter exists and is unique. -/
 theorem existsUnique_isHeatTangencyParameter (n : ℕ) (hn : 1 ≤ n) :

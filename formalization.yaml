@@ -4,10 +4,10 @@ project:
   name: Two partial balayage principles for weak-type estimates
   description: >-
     A Lean formalization in progress of Yongxi Lin's table of weak type (1,1)
-    upper bounds for singular integrals and maximal operators. Nine of sixteen
-    rows are proved: centred intervals, planar and higher-dimensional Euclidean
-    balls, and all six Poisson and heat maximal bounds with exact formulas.
-    Seven singular-integral, projection and square rows remain pending.
+    upper bounds for singular integrals and maximal operators. Fourteen of sixteen
+    rows are proved, including complex Beurling, full and traceless Frobenius
+    Hessians, both projections, centred intervals and balls, and all six Poisson
+    and heat maximal bounds. Full-vector real-input Riesz and square remain pending.
   authors:
   - name: Yongxi Lin
     github: CoolRmal
@@ -42,11 +42,14 @@ related_formalizations:
   note: Supplies three already established maximal-operator bounds.
 status:
   scope: >-
-    The compared surface covers nine rows: centred intervals, planar and
-    higher-dimensional Euclidean balls, and all six Poisson and heat maximal
+    The comparator is configured for fourteen rows: complex Beurling, full and
+    traceless Frobenius Hessians, both projections, centred intervals, planar
+    and higher-dimensional Euclidean balls, and all six Poisson and heat maximal
     bounds. Every maximal statement quantifies over all integrable real inputs
     and all levels. Unique exact tangency parameters and elementary special
-    formulas are proved. Seven rows remain pending before final registration.
+    formulas are proved. The complex singular-integral and projection statements
+    quantify over genuine linear all-L¹ extensions agreeing with the actual L²
+    Fourier operators. Two rows remain pending before final registration.
     Counts exclude the deliberate holes in Challenge.lean.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -77,8 +80,8 @@ automation:
   notes: Copied proofs retain their previously documented provenance.
 fidelity:
   divergences: >-
-    Incomplete: nine of sixteen rows are presently compared. Semigroup formulas
-    use the exact proved unique parameters rather than rounded decimals. Seven
+    Incomplete: fourteen of sixteen rows are presently compared. Semigroup formulas
+    use the exact proved unique parameters rather than rounded decimals. Two
     rows remain pending; the earlier square bound 3.879 is not advertised as
     the requested new bound below 3.616.
 review:
@@ -136,6 +139,31 @@ alignment:
     module: Solution
     status: proved
     note: Exact coefficient for every integrable input and every level.
+  - source: Abstract table, complex-input Beurling transform
+    lean: PartialBalayage.beurling_weakTypeConstant_le_two
+    module: Solution
+    status: proved
+    note: Full complex scalar input and coefficient two.
+  - source: Abstract table, full Frobenius Hessian, dimension two
+    lean: PartialBalayage.hessian_weakTypeConstant_two_le_exact
+    module: Solution
+    status: proved
+    note: Exact coefficient 3 * sqrt 6 / 4.
+  - source: Abstract table, full Frobenius Hessian, every dimension at least two
+    lean: PartialBalayage.hessian_weakTypeConstant_le_formula
+    module: Solution
+    status: proved
+    note: Exact optimized dimension-dependent coefficient.
+  - source: Abstract table, traceless Frobenius Hessian
+    lean: PartialBalayage.tracelessHessian_weakTypeConstant_le
+    module: Solution
+    status: proved
+    note: Exact coefficient including the one-dimensional zero operator.
+  - source: Abstract table, both gradient and Leray projections
+    lean: PartialBalayage.projections_weakTypeConstants_le_exact
+    module: Solution
+    status: proved
+    note: Both operators, actual complex Euclidean vectors and exact cubic-root coefficient.
 acknowledgements: >-
   Built on Lean 4, Mathlib and Yongxi Lin's earlier centred-maximal proofs.
   Layout and verification scripts come from PalomarTemplate. Codex assisted
