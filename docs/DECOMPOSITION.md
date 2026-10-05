@@ -643,8 +643,35 @@ positivity from nonnegative input, using genuine negative-part Sobolev tests.
 construct actual finite obstacle density families with their whole-space cap
 and mass bounds. `Linear/JointWeakCompactness.lean` supplies simultaneous
 cofinal weak limits for actual bounded states and densities, and transports
-fixed linear test equations. Passing the actual PDE and energy-mass balance
-to the limit, and recovering complementarity, remain necessary.
+fixed linear test equations. `Linear/WholeSpaceStateExhaustion.lean` discharges
+the uniform-state requirement with the actual finite obstacles and Fourier bounds.
+`Linear/ExhaustionWeakEquation.lean` proves actual coordinate transport and
+fixed compact-test passage, including eventual expanding-ball containment.
+`Linear/WholeSpaceWeakPDE.lean` constructs actual whole-space states and capped
+finite-mass densities satisfying every smooth compact-test PDE.
+`Linear/WeakDirichletEnergy.lean` proves weak lower semicontinuity of the true
+physical energy plus full vector mass, including infinite mass values.
+`Linear/ExtendedEnergyMassIdentity.lean` transports the finite energy-mass balance
+to one fixed global input pairing. `Linear/DirichletTestClosure.lean` extends the
+actual compact-test PDE to every H01 test. `Linear/WeakDirichletComplementarity.lean`
+recovers true pointwise alignment and saturation for the same joint limit.
+`Linear/WholeSpaceVectorBalayage.lean` now constructs actual global Laplace
+vector balayage with its PDE, cap complementarity, true integrability, total
+mass contraction, and sharp L² density bound, without decomposition or
+analytical-certificate hypotheses.
+`Linear/WholeSpaceActiveVolume.lean` proves the genuine active-volume bound on
+infinite ambient measure, and `Linear/GlobalBalayageActiveSet.lean` supplies an
+actual measurable active cover with that measure bound.
+`Linear/WholeSpaceDistributionPDE.lean` derives the raw distributional Laplacian
+from the actual compact-test weak equation. Concrete Fourier operator cancellation,
+and the final weak-type bounds remain necessary.
+`Linear/ScalarStateExhaustion.lean` transports the genuine scalar state and density
+positivity through the same cofinal joint limit.
+`Linear/WholeSpaceScalarPositiveBalayage.lean` constructs the actual positive global
+scalar state and density with PDE, cap alignment, saturation, integrability, and
+mass bounds. No positivity or limit certificate is assumed.
+`Maximal/CappedMaximalLevelSet.lean` proves the final outer-measure level-set step
+from an actual off-active bound and the active-volume cap.
 
 `Maximal/SemigroupTimeContinuity.lean` proves actual heat and Poisson convolution
 integrability at every center and continuity in positive time for integrable

@@ -103,6 +103,22 @@ public import PartialBalayage.Linear.FiniteDensityExhaustion
 public import PartialBalayage.Linear.JointWeakCompactness
 public import PartialBalayage.Maximal.SemigroupTimeContinuity
 public import PartialBalayage.Maximal.RationalTimeMaximal
+public import PartialBalayage.Linear.WholeSpaceStateExhaustion
+public import PartialBalayage.Linear.ExhaustionWeakEquation
+public import PartialBalayage.Linear.WholeSpaceWeakPDE
+public import PartialBalayage.Linear.WeakDirichletEnergy
+public import PartialBalayage.Linear.DirichletTestClosure
+public import PartialBalayage.Linear.WeakDirichletComplementarity
+public import PartialBalayage.Linear.ExtendedEnergyMassIdentity
+public import PartialBalayage.Linear.WholeSpaceDensityMass
+public import PartialBalayage.Linear.WholeSpaceVectorBalayage
+public import PartialBalayage.Linear.WholeSpaceActiveVolume
+public import PartialBalayage.Linear.WholeSpaceDistributionPDE
+public import PartialBalayage.Linear.GlobalBalayageActiveSet
+
+public import PartialBalayage.Linear.ScalarStateExhaustion
+public import PartialBalayage.Linear.WholeSpaceScalarPositiveBalayage
+public import PartialBalayage.Maximal.CappedMaximalLevelSet
 
 /-!
 # Two partial balayage principles

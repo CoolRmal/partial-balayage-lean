@@ -121,7 +121,9 @@ passed. Its downloaded report records this exact source commit, `status: pass`,
 `stage: complete`, `phase: verification`, and empty error and warning lists.
 It checks the same three completed theorem names under `palomar-standard-v1`.
 
-## Tenth proof checkpoint: local verification
+## Tenth proof checkpoint
+
+Commit: `1eb099c263d18fee8a05758d90bab9a63548e817`.
 
 The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
 (3,984 build jobs), including thirteen new supporting modules. Audited endpoints
@@ -138,3 +140,24 @@ supremum reduction. The actual whole-space PDE and complementarity construction
 are still pending. The comparator continues to contain the same three completed
 unconditional table bounds; the other thirteen rows and final registration
 remain required.
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37337849230)
+passed. Its downloaded report identifies this exact immutable commit and records
+`status: pass`, `stage: complete`, `phase: verification`, and empty error and
+warning lists. This is mechanical verification of the same three completed
+table theorem names under `palomar-standard-v1`.
+
+## Eleventh proof checkpoint
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(3,999 build jobs), including fifteen new supporting modules. Their audited
+endpoints use exactly `propext`, `Classical.choice`, and `Quot.sound`; source
+checks found no proof placeholders, custom axioms, native decision procedures,
+or lines exceeding 100 characters in the new files. New results construct
+actual whole-space vector and positive scalar Laplace balayage, with genuine
+weak PDE, cap alignment and saturation, mass contraction, and integrability.
+They also establish weak semicontinuity of true energy plus mass, closure of
+Dirichlet tests, the distributional PDE, active-volume bounds, and the final
+outer-measure step for maximal level sets. Actual operator cancellation and
+semigroup off-contact comparisons remain required. The comparator still
+contains the same three completed unconditional table bounds. The official
+full preflight for this snapshot is pending; final registration remains pending.
