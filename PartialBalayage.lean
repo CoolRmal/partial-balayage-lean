@@ -383,11 +383,33 @@ public import PartialBalayage.Maximal.Square.SplineRegularity
 
 public import PartialBalayage.Linear.H01PoissonGenerator
 
+public import PartialBalayage.Linear.IsotropicPoissonTestEquation
+public import PartialBalayage.Linear.RieszLinearity
+public import PartialBalayage.Linear.RieszCappedEstimate
+public import PartialBalayage.Linear.PoissonFiniteWeakPDE
+public import PartialBalayage.Linear.PoissonH01TestClosure
+public import PartialBalayage.Linear.PoissonWholeSpaceBalayage
+public import PartialBalayage.Linear.PoissonBalayageActiveSet
+public import PartialBalayage.Linear.RieszWeakBounds
+public import PartialBalayage.Maximal.Square.JumpEnergyMassExhaustion
+public import PartialBalayage.Maximal.Square.JumpWeakEnergyMass
+public import PartialBalayage.Maximal.Square.JumpWholeSpaceObstacle
+public import PartialBalayage.Maximal.Square.JumpWholeSpaceGenerator
+public import PartialBalayage.Maximal.Square.RadialTailBinomial
+public import PartialBalayage.Maximal.Square.RadialTailMoments
+public import PartialBalayage.Maximal.Square.SplinePotential
+public import PartialBalayage.Maximal.Square.SplinePotentialEvaluation
+public import PartialBalayage.Maximal.Square.SplineGeneratorPrimitive
+public import PartialBalayage.Maximal.Square.SplineGeneratorFinite
+public import PartialBalayage.Maximal.Square.SplineGeneratorCancellation
+public import PartialBalayage.Maximal.Square.SplineGenerator
+public import PartialBalayage.Maximal.Square.SplineGeneratorScaling
+
 /-!
 # Two partial balayage principles
 
-The library exports fourteen table rows, including the exact Hessian and projection estimates.
-The remaining rows of the published table are tracked in `docs/DECOMPOSITION.md`.
+The library exports fifteen table rows, including the exact Hessian and projection estimates.
+The remaining square row of the published table is tracked in `docs/DECOMPOSITION.md`.
 Supporting development includes capped-decomposition level-set estimates, finite-measure vector
 obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.
 -/

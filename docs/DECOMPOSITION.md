@@ -9,25 +9,33 @@ the exact expressions represented by approximate decimals. Cited sharp compariso
 asymptotic estimates, and optimality of the majorants are useful context but are not
 additional final targets.
 
-Fourteen rows are completed and advertised in the comparator: 2–8 and 10–16.
-Rows 1 and 9 remain pending. All maximal estimates cover integrable real inputs
-and every extended-real level. The five new linear rows use genuine all-L¹
+Fifteen rows are completed and advertised in the comparator: 1–8 and 10–16.
+Row 9 remains pending. All maximal estimates cover integrable real inputs
+and every extended-real level. The five complex linear rows use genuine all-L¹
 linear extensions of the actual complex Fourier multipliers, with Euclidean
-vector and Frobenius matrix norms.
+vector and Frobenius matrix norms. The complete real-input Riesz vector also
+has a genuine linear all-L¹ extension with coefficient two.
 
 Further proved square prerequisites include the exact all-input diamond-to-square
 maximal transfer, the actual beta-integral upper bound and intrinsic-constant
 lower bound, uniform positive finite-ball fractional obstacles, actual compact
-energy tests, and the genuine generator/form pairing. The complete actual kernel majorization is proved, including every cell and
+energy tests, and the genuine generator/form pairing. The complete actual
+kernel majorization is proved, including every cell and
 boundary. The distributional generator check and whole-space fractional
-contact/comparison argument remain necessary. The actual whole-space jump
+source/comparison argument remain necessary. The actual whole-space jump
 density is integrable with exactly the original input mass, and genuine strong
-compact cutoff approximation and supported dual pairings are proved.
+compact cutoff approximation and supported dual pairings are proved. The
+full fractional weak equation, cap saturation and active-volume bound are proved.
+The actual cubic spline generator equals its explicit power formula, including
+the certificate scale; the actual incoming-tail binomial lower bounds and
+improper moments have their exact rational coefficients.
 The Riesz development proves uniform finite Poisson obstacle bounds, actual
 joint weak limits and half-order energy recovery. Genuine Poisson test
 equations identify the complete Riesz vector with a physical Sobolev gradient
-and give its zero-set cancellation. Whole-space complementarity and the final
-Riesz weak estimate remain necessary.
+and give its zero-set cancellation. Actual signed whole-space complementarity
+constructs the required cap, density-mass contraction and active-volume bound.
+The L² contraction and canonical all-L¹ extension give the unconditional
+full-vector Riesz table coefficient two.
 
 ## Definitions required by the statements
 
@@ -709,8 +717,9 @@ level-set estimates now yield true linear all-L¹ extensions with exact L²
 agreement and no decomposition hypotheses. Extension uniqueness follows from
 the actual weak-bound continuity into convergence in measure. The independent
 concrete Fourier definitions equal the constructed multipliers. These discharge
-rows 2–6. The isotropic order-one Riesz construction and the stronger square
-fractional-generator certificate and comparison remain required.
+rows 1–6, with the later signed isotropic construction discharging the Riesz
+row. The stronger square fractional-generator certificate and comparison
+remain required.
 
 The subsequent Poisson L² modules identify the actual probability convolution
 with its exact Fourier multiplier on every Hilbert L² input. Dominated limits
@@ -740,8 +749,9 @@ The square candidate's exact mass and strict half-mass bound are now proved in
 `Maximal/Square/KernelMass.lean`. The actual diamond-to-square transformation,
 radial power integrals, affine tensor integrals and signed orbit sum establish
 the normalization. The finite cell-coefficient reduction and closed grid coverage
-are also proved. Full kernel majorization, distributional fractional-generator
-positivity and whole-space fractional balayage remain necessary for row 9.
+are also proved. Full kernel majorization and whole-space fractional balayage
+are now proved. Distributional fractional-generator positivity and the actual
+source/comparison passage remain necessary for row 9.
 
 Each final challenge statement must name the concrete operators and exact
 constants above and carry no unproved analytical certificate as a hypothesis.
@@ -753,10 +763,9 @@ all sixteen rows are kernel checked.
 
 The current supporting development includes an actual positive whole-space
 coordinate-stable compact-test equation with an L1 state and a weighted capped
-density. Recovering physical density mass, cap contact and kernel comparison
-remains necessary. All 210 retained bicubic square cells are linked to their
-actual rational coefficients; complete leaf majorization and distributional
-generator positivity remain required. The Riesz regularization bridge now
-constructs genuine H1 Poisson states and actual real half-order tests, and
-identifies regularized generators from the genuine whole-space weak equation.
-The full obstacle exhaustion and final vector cancellation are still pending.
+density. Physical density mass, full energy testing, cap contact and active-volume
+control are now proved. All 210 retained bicubic square cells and every
+majorization leaf are linked to their actual rational coefficients. The
+remaining square work is distributional generator positivity and genuine
+source comparison. The signed Riesz obstacle exhaustion, physical gradient
+identification, full-vector cancellation and final all-L¹ table bound are proved.

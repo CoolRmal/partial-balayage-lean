@@ -447,3 +447,45 @@ These supporting results do not expand the fourteen-statement comparator
 scope. The Riesz complementarity and final estimate, square generator positivity
 and final maximal comparison, final official verification and Palomar
 registration remain pending.
+
+
+## Twenty-first proof checkpoint: fifteen complete table rows
+
+The combined library, challenge and solution build passed (4,290 jobs).
+Twenty-one new modules have successful focused builds and standard-axiom
+endpoint audits; source and metadata checks passed. The final independent
+Riesz solution declaration and all four Riesz weak-bound endpoints have
+compiled audits using exactly `propext`, `Classical.choice`, and `Quot.sound`.
+The canonical Mathlib-only challenge definitions are unchanged, and its one
+new theorem gives the full-vector real-input Riesz constant at most two in
+every positive dimension. The challenge has 287 lines. The comparator now
+contains fifteen exact table theorem names.
+
+The Riesz proof constructs actual signed whole-space Poisson balayage on
+each real integrable L² input. The same finite-state family supplies ordinary
+joint weak limits, a true half-order state, input-mass contraction and genuine
+Poisson test equations. Physical Dirichlet closure discharges compact-support
+restrictions. The actual unregularized generator and every half-order test
+follow from the true height-one equations. The self-energy identity forces
+actual alignment and saturation, giving a measurable active cover and its
+cap-weighted volume bound. Full-norm Fourier regularity identifies every
+coordinate of the actual Riesz vector with the physical weak gradient, whose
+zero-set locality proves agreement off the active set. The genuine L²
+contraction gives coefficient two at every extended-real level. Canonical
+linear extension proves the same bound on every real L¹ input.
+
+The square development now constructs a true positive whole-space fractional
+obstacle with ordinary integrable capped density, exact density mass, full
+singular-energy weak equation, actual cap saturation and active-volume control.
+The physical coordinate-stable generator equation is proved. The actual cubic
+spline generator has its exact power formula and scale factor, obtained from
+true finite singular integrals and a compact-support tail. Genuine positive
+binomial expansions and actual improper power moments identify the incoming-
+tail rational coefficients.
+
+The [twentieth official preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37371871892)
+for public commit `c050e8a3c46401a25d521929f39a429a73bcb4d9` acquired a runner
+and reached the comparator and challenge provenance stage. Its result is still
+pending at this checkpoint. That immutable attempt has the fourteen-row scope;
+no fifteen-row official pass is claimed here. The square table conclusion,
+final sixteen-row verification and Palomar registration remain pending.

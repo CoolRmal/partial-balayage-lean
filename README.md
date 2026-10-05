@@ -4,16 +4,16 @@
 
 Work in progress toward formalizing all sixteen upper-bound rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-Fourteen rows are now proved: the complex-input Beurling transform, full and
-traceless Frobenius Hessians, both projections, centred intervals, Euclidean balls,
+Fifteen rows are now proved: the full-vector real-input Riesz transform,
+complex-input Beurling transform, full and traceless Frobenius Hessians, both projections, centred intervals, Euclidean balls,
 and all six Poisson and heat maximal bounds. Every maximal estimate
 quantifies over all integrable real inputs and all extended-real levels. The six new
 semigroup bounds use the article's exact formulas and proved unique parameters.
 
-The full-vector real-input Riesz and square rows remain pending. This repository has
+The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fourteen statements, and their
-[official full Palomar preflight passed](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37359788746).
+configured for fifteen statements. The fourteen-row checkpoint
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37359788746).
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
@@ -40,7 +40,9 @@ Euclidean vector and Frobenius matrix norms. Actual complex capped decomposition
 and Hessian locality give the Beurling, full and traceless Hessian and projection
 bounds. Genuine linear L¹ extensions
 are proved to exist and to be unique among finite weak-bound extensions. The final
-statements use the independently defined concrete Fourier operators.
+statements use the independently defined concrete Fourier operators. Actual signed
+Poisson balayage, full-norm Fourier regularity and physical Sobolev zero-set locality
+give the full-vector Riesz coefficient two on every real L¹ input.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly
@@ -48,11 +50,11 @@ below 3.616; the earlier bound 3.879 does not meet it.
 
 ## Project map
 
-- `Challenge.lean`: fourteen independent auditable statements importing Mathlib alone.
+- `Challenge.lean`: fifteen independent auditable statements importing Mathlib alone.
 - `Solution.lean`: the matching proved declarations.
 - `PartialBalayage/`: new proofs and adapters to earlier results.
 - `CenteredMaximal/`: the copied minimal earlier source closure, preserving author headers.
-- `comparator.json`: the exact fourteen statements currently compared.
+- `comparator.json`: the exact fifteen statements currently compared.
 - `formalization.yaml`: provenance, scope, automation and review metadata.
 - `docs/DECOMPOSITION.md`: all sixteen targets and the proof dependencies.
 - `docs/PALOMAR.md`: verification and eventual registration procedure.

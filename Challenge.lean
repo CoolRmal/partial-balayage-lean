@@ -278,4 +278,10 @@ theorem projections_weakTypeConstants_le_exact (n : ℕ) (hn : 2 ≤ n) :
       ENNReal.ofReal (projectionCoefficient projectionParameter) := by
   sorry
 
+/-- The complete real-input Riesz vector has coefficient two on every real L¹ input. -/
+theorem riesz_weakTypeConstant_le_two (n : ℕ) (hn : 1 ≤ n) :
+    linearWeakTypeConstant (𝕜 := ℝ) (rieszFourierOperator (n := n)) ≤ 2 := by
+  sorry
+
+
 end PartialBalayage
