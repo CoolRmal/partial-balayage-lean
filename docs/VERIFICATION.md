@@ -326,3 +326,47 @@ coefficients reduce to sixteen actual contributing tensor indices, with
 proved closed grid coverage and index ranges. The final Riesz and square rows
 and Palomar registration remain pending; the comparator still contains the
 same fourteen unconditional table statements.
+
+The seventeenth snapshot is public at
+`ff64dddf75472ada79655709da7b45bca8f960d7`. Its
+[official preflight attempt](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37363443844)
+did not reach verification: GitHub could not acquire a hosted runner after
+multiple attempts, and cancelled the verification job after fifteen minutes.
+That job executed no steps and produced no mechanical report. This is not a
+comparator result; the sixteenth snapshot remains the latest successful
+official full verification.
+
+## Eighteenth proof checkpoint: actual analytic constants and fractional obstacles
+
+Twenty new supporting modules have focused successful builds and compiled
+standard-axiom endpoint audits. The combined library, challenge and solution
+build passed (4,129 jobs); source and metadata checks passed. The library now proves the actual all-input
+diamond-to-square weak-bound transfer, including every averaging region,
+integral, radius, extended-real level and measure factor.
+
+The actual convergent beta integral has the proved bounds
+
+$$
+0<B=\int_0^1 t^{1/5}(1-t)^{1/5}\,dt
+\le\frac{678678670707}{10^{12}},\qquad
+\frac{2\pi\tan(\pi/10)}{(6/5)B}\ge\frac{125337337}{50000000}.
+$$
+
+The rational recurrence is identified with the genuine binomial series;
+nonpositive tails bound its finite truncations, which are integrated exactly.
+Lean's kernel checks the sixty-term rational inequality. The tangent bound
+comes from the actual half-angle identity and the exact cosine at pi over five;
+the pi bound is a proved Mathlib theorem. All nineteen beta and intrinsic-
+constant endpoints, and all nine maximal-transfer endpoints, have direct
+compiled audits using only the standard three axioms.
+
+The square development also proves a genuine Nash estimate, uniform positive
+finite-ball obstacle state and mass bounds, actual compact Lipschitz energy
+tests, and the genuine compact-C2 generator/form pairing. Exact rational
+polynomial evaluation and six concrete cell matrices yield the actual first
+majorization triangle. Complete majorization and generator positivity remain
+pending. The Riesz development constructs genuine one-Lipschitz Markov
+compositions, the actual spatial Poisson quadratic form, and a closed real
+half-order Dirichlet space with proved finite-volume coercivity. The final
+two rows and Palomar registration remain pending; none of these supporting
+results expands the fourteen-statement comparator scope.

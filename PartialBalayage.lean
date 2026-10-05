@@ -212,6 +212,28 @@ public import PartialBalayage.Maximal.Square.SplineMass
 public import PartialBalayage.Maximal.Square.MassCoefficientBound
 public import PartialBalayage.Maximal.Square.KernelMass
 
+
+public import PartialBalayage.Linear.IsotropicEnergyConstruction
+public import PartialBalayage.Linear.PoissonQuadraticSpatial
+public import PartialBalayage.Linear.PoissonMarkovEnergy
+public import PartialBalayage.Linear.IsotropicDirichletSpace
+public import PartialBalayage.Linear.IsotropicDirichletCoercivity
+public import PartialBalayage.Maximal.Square.JumpNash
+public import PartialBalayage.Maximal.Square.JumpNashReal
+public import PartialBalayage.Maximal.Square.JumpBallUniformBounds
+public import PartialBalayage.Maximal.Square.JumpCompactTests
+public import PartialBalayage.Maximal.Square.JumpGeneratorPairing
+public import PartialBalayage.Maximal.Square.ArrayPolynomial
+public import PartialBalayage.Maximal.Square.CellMatrix
+public import PartialBalayage.Maximal.Square.RationalEvaluation
+public import PartialBalayage.Maximal.Square.Data.CellMatrices0
+public import PartialBalayage.Maximal.Square.FirstMajorizationLeaf
+public import PartialBalayage.Maximal.Square.MaximalTransport
+public import PartialBalayage.Maximal.Square.BetaBinomial
+public import PartialBalayage.Maximal.Square.BetaIntegral
+public import PartialBalayage.Maximal.Square.BetaBound
+public import PartialBalayage.Maximal.Square.GeneratorConstantBound
+
 /-!
 # Two partial balayage principles
 

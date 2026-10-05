@@ -15,6 +15,16 @@ and every extended-real level. The five new linear rows use genuine all-L¹
 linear extensions of the actual complex Fourier multipliers, with Euclidean
 vector and Frobenius matrix norms.
 
+Further proved square prerequisites include the exact all-input diamond-to-square
+maximal transfer, the actual beta-integral upper bound and intrinsic-constant
+lower bound, uniform positive finite-ball fractional obstacles, actual compact
+energy tests, and the genuine generator/form pairing. The first actual kernel
+majorization triangle is verified. The complete majorization and distributional
+generator checks, followed by whole-space fractional balayage, remain necessary.
+The Riesz half-order space has genuine Markov compositions and finite-volume
+Dirichlet coercivity; its signed whole-space obstacle and final Riesz estimate
+remain necessary.
+
 ## Definitions required by the statements
 
 Use Lebesgue measure on the Euclidean space of dimension $$n$$. For an operator $$T$$,
