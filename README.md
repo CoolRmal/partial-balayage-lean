@@ -13,7 +13,7 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 The full-vector real-input Riesz and square rows remain pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
 configured for fourteen statements, and their
-[official full Palomar preflight passed](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37354031043).
+[official full Palomar preflight passed](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37359788746).
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
 

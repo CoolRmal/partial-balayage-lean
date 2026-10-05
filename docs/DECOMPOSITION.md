@@ -713,6 +713,22 @@ whole-space fractional obstacle construction before row 9 is completed.
 
 ## Verification boundary
 
+The actual coordinate-stable generator now has proved physical dilation scaling
+and smooth compact-cutoff decay. Genuine finite positive jump obstacles satisfy
+the inside-domain weak equation, cap complementarity and active-volume bound.
+Weighted coordinate and rectangle translation controls support the pending
+uniform-state and whole-space construction. For the isotropic order-one route,
+actual smooth Kato tests and witnesses are constructed, and the full Poisson
+quadratic limit recovers the true half-order Fourier energy, including infinite
+energy cases. Its norm contraction is proved.
+
+The square candidate's exact mass and strict half-mass bound are now proved in
+`Maximal/Square/KernelMass.lean`. The actual diamond-to-square transformation,
+radial power integrals, affine tensor integrals and signed orbit sum establish
+the normalization. The finite cell-coefficient reduction and closed grid coverage
+are also proved. Full kernel majorization, distributional fractional-generator
+positivity and whole-space fractional balayage remain necessary for row 9.
+
 Each final challenge statement must name the concrete operators and exact
 constants above and carry no unproved analytical certificate as a hypothesis.
 Comparator success establishes equality between the challenge and solution

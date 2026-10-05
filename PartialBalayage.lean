@@ -195,6 +195,23 @@ public import PartialBalayage.Maximal.Square.RadialCertificateBounds
 public import PartialBalayage.Maximal.Square.TriangleBounds
 public import PartialBalayage.Maximal.Square.MajorizationLeaf
 
+public import PartialBalayage.Linear.SchwartzIsotropicEnergy
+public import PartialBalayage.Linear.PoissonNormWitness
+public import PartialBalayage.Linear.PoissonQuadraticSpectral
+public import PartialBalayage.Linear.PoissonNormEnergy
+public import PartialBalayage.Maximal.Square.JumpMonotoneComposition
+public import PartialBalayage.Maximal.Square.JumpBallActiveVolume
+public import PartialBalayage.Maximal.Square.JumpTranslationControl
+public import PartialBalayage.Maximal.Square.JumpRectangleEnergy
+public import PartialBalayage.Maximal.Square.CellLocalCoefficient
+public import PartialBalayage.Maximal.Square.SquareGridGeometry
+public import PartialBalayage.Maximal.Square.LocalCoefficientRange
+public import PartialBalayage.Maximal.Square.DiamondSquareTransport
+public import PartialBalayage.Maximal.Square.RadialMass
+public import PartialBalayage.Maximal.Square.SplineMass
+public import PartialBalayage.Maximal.Square.MassCoefficientBound
+public import PartialBalayage.Maximal.Square.KernelMass
+
 /-!
 # Two partial balayage principles
 

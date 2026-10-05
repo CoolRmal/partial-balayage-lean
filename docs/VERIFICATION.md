@@ -287,3 +287,42 @@ unchanged. This addresses the preferred 300-line review-surface warning in
 the successful fourteen-row official report. Source and metadata validation
 passed. The comparator scope remains fourteen unconditional table statements;
 the Riesz and square rows and final Palomar registration remain pending.
+
+The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37359788746)
+passed for exact commit `7fa63f05d0ab91d768266de387be95fbba6cd629`. Its downloaded
+report records `status: pass`, `stage: complete`, `phase: verification`, and
+empty error and warning lists. This verifies the same fourteen compared
+statements and confirms that compacting the challenge resolved the preferred
+review-surface warning.
+
+## Seventeenth proof checkpoint: actual square mass and fractional energy
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution`
+passed (4,088 build jobs), including sixteen new supporting modules.
+Focused builds and endpoint audits use exactly `propext`, `Classical.choice`,
+and `Quot.sound`; source and metadata checks passed.
+
+The actual square kernel has the proved exact mass
+
+$$
+\int K=3aR^{4/5}+\frac{\sum c_{ij}}{256},\qquad
+\frac12\int K<\frac{452}{125}=3.616.
+$$
+
+The proof integrates the genuine diamond radial base and all 1,201 signed
+tensor splines. It includes the actual diamond-to-square matrix, its determinant,
+and its Lebesgue Jacobian. Exact rational fifth-power arithmetic bounds the
+actual real power. Nine transformation and twelve mass endpoints have direct
+compiled standard-axiom audits. The mass result alone does not prove the square
+maximal row: kernel majorization, distributional generator positivity, and the
+whole-space fractional obstacle argument remain required.
+
+Other new supporting proofs construct Schwartz isotropic-energy tests and
+actual normalized Kato witnesses, recover the full half-order Fourier energy
+from Poisson quadratic defects, and prove its true norm contraction. The jump
+development proves genuine monotone compositions, finite-obstacle active
+volume, and weighted coordinate/rectangle translation control. Square cell
+coefficients reduce to sixteen actual contributing tensor indices, with
+proved closed grid coverage and index ranges. The final Riesz and square rows
+and Palomar registration remain pending; the comparator still contains the
+same fourteen unconditional table statements.
