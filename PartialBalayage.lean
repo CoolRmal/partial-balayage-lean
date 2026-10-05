@@ -162,6 +162,22 @@ public import PartialBalayage.Linear.PoissonFourier
 public import PartialBalayage.Maximal.Square.Coefficients
 public import PartialBalayage.Maximal.Square.CubicSpline
 
+public import PartialBalayage.Linear.L2DominatedLimit
+public import PartialBalayage.Linear.PoissonGeneratorScalar
+public import PartialBalayage.Linear.PoissonL2
+public import PartialBalayage.Linear.PoissonL2Fourier
+public import PartialBalayage.Linear.FractionalCutoffBound
+public import PartialBalayage.Linear.StableSecondDifference
+public import PartialBalayage.Maximal.Square.JumpEnergy
+public import PartialBalayage.Maximal.Square.JumpDirichletSpace
+public import PartialBalayage.Maximal.Square.Kernel
+public import PartialBalayage.Maximal.Square.Integrability
+public import PartialBalayage.Maximal.Square.CellPolynomial
+public import PartialBalayage.Maximal.Square.PowerEnclosure
+public import PartialBalayage.Maximal.Square.RadialTangent
+public import PartialBalayage.Maximal.Square.RadialPowerData
+public import PartialBalayage.Maximal.Square.CorrectionPolynomial
+
 /-!
 # Two partial balayage principles
 

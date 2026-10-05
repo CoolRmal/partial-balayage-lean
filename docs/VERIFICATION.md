@@ -241,3 +241,20 @@ adding permitted definition holes. The comparator now lists fourteen table
 theorems. A fresh official full preflight is required to establish comparator
 success for this expanded scope. The full-vector Riesz and square-maximal
 rows, final human review and Palomar registration remain pending.
+
+## Fifteenth proof checkpoint: fractional and square prerequisites
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution` passed
+(4,055 build jobs). Fifteen new supporting modules have successful focused
+builds, source checks and endpoint audits using exactly `propext`,
+`Classical.choice`, and `Quot.sound`. They prove the genuine Poisson L²
+convolution/Fourier identification, dominated filter limits and scalar generator
+quotients; the actual full singular jump energy, normal contractions, closed
+finite-ball Dirichlet spaces and long-jump coercivity; actual integrability and
+cell-polynomial identities of the square comparison kernel; rational enclosures
+for true fractional powers; and full stable second-difference estimates with
+vanishing small-cutoff error. Metadata validation also passed.
+
+The comparator still covers the same fourteen table statements. These supporting
+results do not complete the Riesz or square row, and no final Palomar review or
+registration is claimed.

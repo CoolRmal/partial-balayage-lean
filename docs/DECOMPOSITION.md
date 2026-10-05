@@ -698,6 +698,19 @@ concrete Fourier definitions equal the constructed multipliers. These discharge
 rows 2–6. The isotropic order-one Riesz construction and the stronger square
 fractional-generator certificate and comparison remain required.
 
+The subsequent Poisson L² modules identify the actual probability convolution
+with its exact Fourier multiplier on every Hilbert L² input. Dominated limits
+and the scalar generator quotient use the full positive-height filter.
+For the square row, the actual singular jump graph is closed and complete,
+normal contractions reduce its energy, and finite-ball zero-exterior states
+have a proved long-jump coercivity bound. The actual kernel is integrable and
+has the required support and symmetries; its spline corrections agree with
+exact bicubic cell polynomials. Rational fifth-power enclosures imply true
+real-power inequalities. Exact second-difference bounds control the entire
+singular integral and show that small cutoff errors tend to zero. These
+supporting facts still require the kernel admissibility checks and genuine
+whole-space fractional obstacle construction before row 9 is completed.
+
 ## Verification boundary
 
 Each final challenge statement must name the concrete operators and exact
