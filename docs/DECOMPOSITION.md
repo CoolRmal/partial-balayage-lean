@@ -396,6 +396,103 @@ structure of scalar $$L^2$$. Reuse its general Hilbert-space variational and
 compactness lemmas after supplying the missing vector, whole-space, and fractional
 steps; do not add the desired decomposition as a final theorem hypothesis.
 
+## Implementing the signed and vector obstacle
+
+The strongest reusable components are the genuinely abstract real-Hilbert lemmas in
+`Ball/ObstacleExistence.lean`, `Ball/MonotoneSurjectivity.lean`, and
+`Analysis/WeakCompact.lean`. In particular,
+`exists_eq_of_stronglyMonotone_lipschitz` applies to arbitrary nonlinear maps on a
+complete real Hilbert space. It can solve a radial vector penalty after proving its
+Lipschitz and monotonicity properties. It does not require scalar order. The concrete
+negative-part implementation in `Ball/L2Penalty.lean` does require scalar order and
+must be replaced, rather than applied to vector fields component by component. A
+componentwise cap would give the wrong Euclidean cap and dimension dependence.
+
+A bounded-domain dual construction can avoid the radial-penalty limit. Let
+$$D$$ be a ball, take the finite Hilbert product of the existing scalar
+$$H^1_0(D)$$ spaces, and let $$J$$ be its value embedding into $$L^2(D;E)$$.
+Treat complex $$E$$ as a real Hilbert space. Let $$A$$ be the coercive positive
+Dirichlet operator represented in this Hilbert space. The existing coercive solver
+gives $$A^{-1}$$. Set
+
+$$
+G=J A^{-1}J^*,\qquad
+K_\kappa=\{\mu\in L^2(D;E):|\mu(x)|\le\kappa\text{ almost everywhere}\}.
+$$
+
+The cap set is nonempty, convex, closed and bounded because $$D$$ has finite
+measure, hence weakly compact by `Analysis/WeakCompact.lean`. Minimize the continuous
+convex quadratic
+
+$$
+Q(\mu)=\frac12\langle f-\mu,G(f-\mu)\rangle
+\qquad(\mu\in K_\kappa).
+$$
+
+The weak direct method yields a minimizer without a positive-cone assumption. Put
+$$u=A^{-1}J^*(f-\mu)$$. The first-order variational inequality is
+
+$$\langle Ju,\nu-\mu\rangle\le0\qquad(\nu\in K_\kappa).$$
+
+Take the measurable admissible candidate $$\nu=\kappa Ju/|Ju|$$ on
+$$\{Ju\ne0\}$$ and zero elsewhere. The pointwise upper bound
+$$\langle Ju,\mu\rangle\le\kappa|Ju|$$ and equality of the integrals force
+
+$$\mu=\kappa Ju/|Ju|\qquad\text{almost everywhere on }\{Ju\ne0\}.$$
+
+This gives the signed/vector local equation and exact norm saturation. It uses only
+finite-domain $$L^2$$ compactness, not a new general convex-analysis subgradient
+theorem. The missing implementation steps are the finite-product value embedding,
+the bounded self-adjoint Green operator, closedness of the pointwise norm cap, the
+quadratic first variation, and equality in the Hilbert Cauchy inequality.
+
+The local construction alone is insufficient for the whole-space theorem. One
+route is to exhaust the space by balls and prove uniform energy, $$L^1$$ and $$L^2$$
+bounds before taking weak limits. The zero extension of an individual local
+Dirichlet solution has a boundary flux, so its local equation must not be asserted
+as a whole-space equation. The boundary disappears only after passing to a limit
+against tests contained in each sufficiently large ball.
+
+For the local order-two vector problem, regularity and Sobolev chain/zero-set lemmas
+give a concrete path to the required mass estimate. Test the equation by the
+regularized norm gradient, let the regularization vanish, and obtain
+
+$$
+\kappa|\{u\ne0\}|\le\int_{\{u\ne0\}}|f|.
+$$
+
+On the zero set, second weak derivatives vanish and therefore $$\mu=f$$.
+Combining the two regions gives $$\|\mu\|_1\le\|f\|_1$$. This is stronger than
+the contact-set bound alone and provides the uniform bound
+$$\|\mu\|_2^2\le\kappa\|f\|_1$$ for an exhaustion. The vector norm-gradient
+chain rule and the Sobolev zero-set statement remain substantive unproved API.
+
+An alternative whole-space implementation more closely follows
+`Obstacle/Functional.lean`: build the vector Hilbert energy space and minimize
+
+$$
+\frac12\mathcal E(u,u)+\kappa\|u\|_1-\operatorname{Re}\int\langle f,u\rangle.
+$$
+
+On finite balls, the integral of the norm is continuous and convex as a function of
+the $$L^2$$ value coordinate, so the existing convex weak-lower-semicontinuity lemma
+applies. Taking the increasing supremum over balls gives weak lower semicontinuity
+of the full $$L^1$$ norm for signed/vector functions. This replaces the old scalar
+argument that represents the positive $$L^1$$ norm by linear integrals.
+The old coercivity proof then needs a norm version of its local Gagliardo/Nash
+estimate and a dimension-general energy space. This direct method avoids proving
+Rellich compactness merely to identify a nonlinear exhaustion limit.
+
+For the Riesz row the order-one generator must be the isotropic
+$$(-\Delta)^{1/2}$$. The existing two-coordinate generator
+$$|D_1|+|D_2|$$ is different and does not make the actual Riesz composition local.
+Use the isotropic fractional energy or the Fourier-defined Sobolev space, prove the
+norm contraction/Kato inequality using its positive mass-preserving semigroup, and
+extract the same capped density. Positivity and mass preservation of that semigroup,
+its operator-domain convergence, and the cutoff decay estimate are genuine
+dependencies. The order-one scalar/complex construction cannot be replaced by the
+existing order-two ball obstacle.
+
 ## Verification boundary
 
 Each final challenge statement must name the concrete operators and exact

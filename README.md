@@ -29,6 +29,16 @@ Some source table entries are decimal approximations to exact formulas. Truncate
 are not rigorous upper bounds; formal statements will retain the exact formulas. The new
 square target is strictly below 3.616. The earlier bound 3.879 does not meet it.
 
+New supporting proofs establish the level-set estimate from concrete capped decomposition
+data and its optimized coefficient, as well as the complex-input Beurling transform's L²
+contraction through Mathlib's unitary Fourier transform. The Poisson and heat convolution
+maximal operators and their exact parameterized bound formulas are defined, with kernel
+positivity and heat-kernel mass one proved. The full vector Riesz and Frobenius-matrix Hessian
+operators have L² contraction proofs. Exact scalar optimization yields the Hessian coefficients
+and the projection coefficient from its unique cubic root. The radial constants and unique
+positive heat parameter are also proved; the sharper prescribed lower endpoint of its interval
+remains pending. These steps do not yet prove any of the thirteen pending weak-type rows.
+
 ## Project map
 
 - `Challenge.lean`: independent auditable statements importing Mathlib alone.
