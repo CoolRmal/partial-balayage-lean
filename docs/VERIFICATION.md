@@ -238,9 +238,16 @@ one Mathlib-only `TableDefinitions` block. `Challenge.lean` is standalone and
 imports only Mathlib. Existing library modules reexport the centralized block,
 so the genuine definitions and Lean's auxiliary proof names agree without
 adding permitted definition holes. The comparator now lists fourteen table
-theorems. A fresh official full preflight is required to establish comparator
-success for this expanded scope. The full-vector Riesz and square-maximal
-rows, final human review and Palomar registration remain pending.
+theorems. The [official full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37354031043)
+passed for exact commit `1b0af80954b86c93d20d942afa04e1966b0e97bc`. The downloaded
+report records `status: pass`, `stage: complete`, `phase: verification`, and no
+errors. It verifies all fourteen theorem names, no permitted definition holes,
+the three standard permitted axioms, independent kernels, and the standalone
+Mathlib-only challenge provenance. Its sole warning is that the 356-line
+challenge exceeds the preferred 300-line review size. The next checkpoint
+compacts only comments and blank lines to address that presentation warning.
+The full-vector Riesz and square-maximal rows, final human review and Palomar
+registration remain pending.
 
 ## Fifteenth proof checkpoint: fractional and square prerequisites
 
@@ -258,3 +265,25 @@ vanishing small-cutoff error. Metadata validation also passed.
 The comparator still covers the same fourteen table statements. These supporting
 results do not complete the Riesz or square row, and no final Palomar review or
 registration is claimed.
+
+## Sixteenth proof checkpoint: genuine generators and finite jump obstacles
+
+Sixteen new supporting modules have successful focused builds and endpoint
+audits using only `propext`, `Classical.choice`, and `Quot.sound`. They prove
+the actual isotropic Poisson generator limit, self-adjointness, postcomposition,
+and weak norm Kato inequality; genuine signed scalar caps and finite positive
+jump obstacles; physical stable-generator scaling and actual smooth-cutoff
+decay; and triangle geometry, exact polynomial pullbacks, radial certificate
+bounds, and the comparison-kernel lower-bound implication on a closed triangle.
+The triangle implication is a supporting theorem: the full finite list of
+square checks is still required.
+
+The combined local build of `PartialBalayage`, `Challenge`, and `Solution`
+passed (4,072 build jobs).
+
+The challenge now has 281 lines. A comparison with the previous source after
+removing block comments and whitespace confirms that its Lean commands are
+unchanged. This addresses the preferred 300-line review-surface warning in
+the successful fourteen-row official report. Source and metadata validation
+passed. The comparator scope remains fourteen unconditional table statements;
+the Riesz and square rows and final Palomar registration remain pending.

@@ -12,8 +12,10 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 
 The full-vector real-input Riesz and square rows remain pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fourteen statements; its latest verified scope and failed attempts
-are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+configured for fourteen statements, and their
+[official full Palomar preflight passed](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37354031043).
+Exact verified commits, scope and earlier failed attempts are recorded in
+[docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 The three interval and Euclidean-ball proofs are adapted from the author's
 [earlier formalization](https://github.com/CoolRmal/centered-maximal-constant/tree/72c022ba09032b522c878cca2f9b6c68217d77ea).

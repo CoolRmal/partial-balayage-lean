@@ -178,6 +178,23 @@ public import PartialBalayage.Maximal.Square.RadialTangent
 public import PartialBalayage.Maximal.Square.RadialPowerData
 public import PartialBalayage.Maximal.Square.CorrectionPolynomial
 
+public import PartialBalayage.Linear.StableGeneratorScaling
+public import PartialBalayage.Linear.PoissonGenerator
+public import PartialBalayage.Linear.PoissonKatoTest
+public import PartialBalayage.Linear.PoissonSelfAdjoint
+public import PartialBalayage.Linear.PoissonPostcomposition
+public import PartialBalayage.Linear.PoissonKatoWeak
+public import PartialBalayage.Linear.ScalarIntervalCap
+public import PartialBalayage.Maximal.Square.GeneratorScaling
+public import PartialBalayage.Maximal.Square.GeneratorCutoff
+public import PartialBalayage.Maximal.Square.JumpBallObstacle
+public import PartialBalayage.Maximal.Square.PolynomialEvaluation
+public import PartialBalayage.Maximal.Square.TriangleGeometry
+public import PartialBalayage.Maximal.Square.AffineCellPolynomial
+public import PartialBalayage.Maximal.Square.RadialCertificateBounds
+public import PartialBalayage.Maximal.Square.TriangleBounds
+public import PartialBalayage.Maximal.Square.MajorizationLeaf
+
 /-!
 # Two partial balayage principles
 
