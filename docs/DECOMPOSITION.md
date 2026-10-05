@@ -832,3 +832,15 @@ region. A genuine four-child subdivision theorem and floor-based unit-cell cover
 supply finite geometric soundness. Shared exact power caches, checked radial roots,
 actual coordinate data, and sound finite-tail Horner evaluation support the remaining
 complete arithmetic certificate and its full coverage proof.
+
+
+The entire original interior partition now has unconditional geometric coverage:
+all 210 ordered unit roots, every child subdivision and pruning condition, and
+the real floor-to-rectangle passage are checked. Every ordered strict-interior
+point belongs to one of the original 6,739 retained rectangles, with no assumed
+coverage or rectangle alignment premise. Shared root and coordinate data give
+one checked actual leaf lower bound. Normalized cell-coefficient caches equal
+the original genuine table; their equivalent validity predicates prove exactly
+the original cubic and coordinate properties. The remaining work is the complete
+numerical positivity registry and its unconditional identification with these
+covered rectangles.

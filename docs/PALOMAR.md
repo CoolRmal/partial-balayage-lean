@@ -72,7 +72,11 @@ The sole intake is [submit.palomar-registry.org](https://submit.palomar-registry
 Use the final public 40-character commit and `comparator.json`. For an agent,
 the documented HTTPS route proves push access through authenticated `gh`:
 
-1. `POST /api/submit` with repository, commit, Comparator path, and the agreed
+1. After the final complete public commit has passed full preflight, show the
+   human its repository, exact commit and Comparator path, and obtain agreement
+   to the recorded relationship (`maintainer`). The live agent instructions
+   require this claim about the human to be confirmed before intake. Then use
+   `POST /api/submit` with repository, commit, Comparator path, and the agreed
    human authorization relationship. An ordinary responsible-maintainer claim
    uses `authorization_relationship: "maintainer"`.
 2. Create the returned challenge tag at that commit and a new secret gist

@@ -642,6 +642,37 @@ public import PartialBalayage.Maximal.Square.Data.GeneratorRadialRoots3
 public import PartialBalayage.Maximal.Square.Data.GeneratorRadialRoots4
 public import PartialBalayage.Maximal.Square.Data.GeneratorRadialRoots5
 
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles0
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles1
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles2
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles3
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles4
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles5
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles6
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles7
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles8
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRectangles9
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRemainingRectangles
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionRemainingTrees
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionTrees0
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionTrees1
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionTrees2
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionTrees3
+public import PartialBalayage.Maximal.Square.Data.GeneratorPartitionTrees4
+public import PartialBalayage.Maximal.Square.GeneratorPartitionRectangles
+public import PartialBalayage.Maximal.Square.GeneratorPartitionCoverage
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates88
+public import PartialBalayage.Maximal.Square.Data.FirstCachedGeneratorLeaf
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices0
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices1
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices2
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices3
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices4
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices5
+public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrices6
+public import PartialBalayage.Maximal.Square.NormalizedGeneratorCellCoefficients
+public import PartialBalayage.Maximal.Square.GeneratorFastCubicValidity
+
 /-!
 # Two partial balayage principles
 

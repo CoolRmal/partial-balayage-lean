@@ -718,3 +718,47 @@ remain ongoing. The twenty-fifth official preflight was still at the comparator
 and provenance stage when this checkpoint was prepared. The comparator remains
 fifteen unconditional rows; final sixteen-row verification and Palomar registration
 remain pending.
+
+
+## Twenty-seventh proof checkpoint: complete actual interior geometry
+
+Thirty new supporting modules have successful focused builds and imported
+permitted-axiom audits. The combined library, challenge and solution build passed
+(4,550 jobs); source and metadata validation passed. Every selected module uses
+the module system, has at most 10,000 physical lines, and satisfies 100 columns.
+No unfinished candidate module is included.
+
+The genuine original rectangle partition is fully covered. All 106 rectangle
+blocks and all 210 ordered unit-root trees are identified by ordinary kernel
+checks. Actual four-child coverage and every pruning/leaf check combine with the
+real floor argument. The public theorem gives a contained original rectangle for
+every real point with 0 < v ≤ u and u + v < 28, including all allowed dyadic and
+integer boundary points. The final focused target passed in 64 seconds. Grouped
+remaining tree checks passed in 29 seconds. Its imported audit inspected 153
+exports with only the permitted standard axioms.
+
+The normalized cache contains all 28 actual generator cell matrices, each
+identified with the original proved matrix by a complete finite equality check.
+The aggregate equals the actual original coefficient table. Both cubic and
+coordinate cache-based validity predicates are equivalent to the original
+mathematical predicates. Their 33 imported public equality and validity endpoints
+use only `propext`, `Classical.choice` and `Quot.sound`. All seven cache blocks and
+the two generic endpoints built successfully. A separate normalized coordinate
+block and the actual first shared-data leaf bound also passed their builds and
+four-export standard-axiom audit.
+
+A bounded synchronous ordinary-kernel performance comparison found no consistent
+speed benefit from rewriting the frozen incoming-coefficient or shared-power
+literals. Those caches remain unchanged. All normalized probe values were proved
+equal to their originals; import and I/O stalls dominated process elapsed time.
+Grouping proofs reduced repeated imports. This performance probe adds no
+mathematical premise or trust mechanism to the published development.
+
+The complete numerical positivity registry remains ongoing. Only completed,
+audited data and geometry are published here. The twenty-fifth and twenty-sixth
+official preflights were still running at the comparator/provenance stage when
+this checkpoint was prepared. The latest downloaded passing report remains the
+twenty-fourth exact commit, with zero errors/warnings and fifteen unconditional
+table rows. Final sixteen-row Comparator verification, intake confirmation of
+the human maintainer relationship, private review and review-specific registration
+consent remain pending.

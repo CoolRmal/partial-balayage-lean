@@ -60,8 +60,9 @@ positivity. Exact coefficient tables and the first actual interior generator
 rectangle are checked. Genuine mollification, source convolution and the closed
 full-source graph now transfer the constructed state to the singular source.
 The strict square bound follows from positivity of the actual source density alone.
-Completing every finite positivity check and the full coverage proof remains necessary
-before adding the square row to the comparator.
+The complete subdivision and floor-based coverage proof is now checked.
+Completing every finite positivity check remains necessary before adding the
+square row to the comparator.
 Actual Euclidean diamond averages, maximal functions, every extended-real level,
 norm inputs and monotone L¹ truncations now have their exact coefficient transfer
 to the original square operator. The positive coefficient is derived from true
