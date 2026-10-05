@@ -462,6 +462,70 @@ public import PartialBalayage.Maximal.Square.TensorSplineGenerator
 public import PartialBalayage.Maximal.Square.CompensatedGeneratorConvolution
 public import PartialBalayage.Maximal.Square.ExteriorGeneratorPositivity
 
+public import PartialBalayage.Maximal.Square.Data.RepresentativeCoefficientMatrix
+public import PartialBalayage.Maximal.Square.LiteralGeneratorCoefficient
+public import PartialBalayage.Maximal.Square.GeneratorPowerTaylorData
+public import PartialBalayage.Maximal.Square.GeneratorRectangleGeometry
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix0
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix1
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix2
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix3
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix4
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix5
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix6
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix7
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix8
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix9
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix10
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix11
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix12
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix13
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix14
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix15
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix16
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix17
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix18
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix19
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix20
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix21
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix22
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix23
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix24
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix25
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix26
+public import PartialBalayage.Maximal.Square.Data.GeneratorCellMatrix27
+public import PartialBalayage.Maximal.Square.GeneratorCellCoefficients
+public import PartialBalayage.Maximal.Square.RadialPlaneInterval
+public import PartialBalayage.Maximal.Square.GeneratorCubicIntervalData
+public import PartialBalayage.Maximal.Square.GeneratorRectangleSubdivision
+public import PartialBalayage.Maximal.Square.GeneratorFiniteKnots
+public import PartialBalayage.Maximal.Square.Data.GeneratorCubicInterval_0_1_0
+public import PartialBalayage.Maximal.Square.Data.GeneratorCubicInterval_27_1_1
+public import PartialBalayage.Maximal.Square.GeneratorTensorApproximation
+public import PartialBalayage.Maximal.Square.RadialRectangleTangent
+public import PartialBalayage.Maximal.Square.Data.GeneratorPowerFamily_27_1_1
+public import PartialBalayage.Maximal.Square.Data.GeneratorPowerFamily_0_1_0
+public import PartialBalayage.Maximal.Square.Data.GeneratorRadialPlane0
+public import PartialBalayage.Maximal.Square.Data.GeneratorLeafCheck0
+public import PartialBalayage.Maximal.Square.DiamondGeneratorModel
+public import PartialBalayage.Maximal.Square.DiamondGeneratorBasic
+public import PartialBalayage.Maximal.Square.KernelSourceRepresentation
+public import PartialBalayage.Maximal.Square.DiamondSourceQuadratic
+public import PartialBalayage.Maximal.Square.DiamondPuncturedSource
+public import PartialBalayage.Maximal.Square.RadialPuncturedSource
+public import PartialBalayage.Maximal.Square.KernelPuncturedSource
+public import PartialBalayage.Maximal.Square.DiamondGeneratorExterior
+public import PartialBalayage.Maximal.Square.KernelGeneratorDensity
+public import PartialBalayage.Maximal.Square.TranslationJumpEnergyLimit
+public import PartialBalayage.Maximal.Square.CompensatedSourceBounds
+public import PartialBalayage.Maximal.Square.TranslationJumpL1Contact
+public import PartialBalayage.Maximal.Square.DilatedKernelSource
+public import PartialBalayage.Maximal.Square.DiamondAverageCap
+
+public import PartialBalayage.Maximal.Square.DiamondBoundaryNull
+
+public import PartialBalayage.Maximal.Square.RationalDiamondAverages
+
 /-!
 # Two partial balayage principles
 

@@ -584,3 +584,42 @@ certificate or final square maximal estimate is claimed.
 The actual full kernel generator is nonnegative at and beyond its support
 boundary, directly from the genuine kernel's nonnegativity and zero exterior.
 The exterior module uses an explicit local notation for the Euclidean plane.
+
+
+## Twenty-fourth proof checkpoint: actual source identification and all-radius averages
+
+Sixty-one new supporting modules have successful focused builds and imported
+standard-axiom audits. The final combined library, challenge and solution build
+passed (4,424 jobs). Source and metadata validation passed. Twenty public dilation,
+volume, averaging and rational-radius endpoints use only the standard three
+axioms. Their local notation denotes the genuine Euclidean plane explicitly.
+
+The original radial source is identified through true truncation limits and
+quadratic strip estimates. It combines with the actual tensor spline source in
+one genuine punctured kernel identity. The real physical generator equals that
+combined density away from the axes and support boundary. Actual exterior
+coordinate integrability and nonnegativity are proved; the support boundary is
+null for ordinary volume. No singular contribution is discarded from the full
+source identity.
+
+True kernel dilation and genuine source pushforward prove the source pairing at
+every positive scale. Original closed-diamond indicators are dominated by these
+kernels. Their actual area and true radius-squared kernel mass give the precise
+half-kernel cap. Monotonicity of genuine region integrals and continuity of the
+explicit area extend countably many rational bounds to simultaneous bounds at
+all positive radii.
+
+The singular source has actual compact-test joint integrability, L¹ generator
+integrability and L² bounds. Genuine weak source equations tested against L¹
+energy functions give contact positivity through actual integrable negative-part
+tests. Strong L² convergence and bounded genuine increments give form membership
+by Fatou. The transfer of the constructed state to the source is ongoing.
+
+All actual representative coefficients, 28 cell matrices, cubic bounds and the
+first power families are verified by Lean's kernel. The true tensor generator
+approximation, radial tangent and first assembled rational positive lower bound
+are proved. The full interior positivity partition remains pending. The official
+twenty-third preflight for public commit
+`93ff97256078786d633af93e03ff9a7b03ac7f78` was still at the comparator and
+provenance stage when this checkpoint was prepared. The comparator scope remains
+fifteen unconditional table rows; the square row and final registration are pending.

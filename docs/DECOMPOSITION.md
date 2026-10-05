@@ -791,3 +791,16 @@ positive cutoffs and Fatou limits. They give the full even compensated source
 representation on arbitrary compact C² tests, including the origin, and actual
 membership of those tests in the full singular translation-jump form. The whole
 generator positivity certificate and final comparison remain pending.
+
+
+The original radial and tensor spline densities now have one true punctured
+source identity, with actual local absolute integrability and a genuine physical
+generator formula. Exterior source positivity is proved and the diamond support
+boundary is null for ordinary volume. Kernel and source dilation are genuine at
+every positive radius. Actual indicator domination, planar area and radius-squared
+mass give half-kernel average caps; true region monotonicity makes rational bounds
+simultaneous over all positive radii. Actual L¹ energy tests give singular-source
+contact positivity, while graph passage for the constructed state remains ongoing.
+Exact coefficient matrices, tensor Taylor error bounds, radial tangents and the
+first positive arithmetic rectangle are checked. Full interior coverage and all
+remaining positivity rectangles still need certification.

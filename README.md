@@ -52,8 +52,13 @@ constancy, homogeneity and the exact convergent diagonal integral establish the
 intrinsic radial source constant. Actual strip volumes control the coordinate
 and boundary singularities. The full even compensated source representation
 and its required second moment follow from genuine punctured test identities.
-Generator positivity arithmetic and the final source comparison remain necessary
-for the square table conclusion.
+The original radial and spline sources are now identified together, including
+axis and boundary singularities. True source and kernel dilation, physical
+diamond averages and simultaneous all-positive-radius estimates are proved.
+The full source form has genuine compact-test integrability and L¹ contact
+positivity. Exact coefficient tables and the first actual interior generator
+rectangle are checked. Completing the full positivity partition and transferring
+the constructed state to that source remain necessary for the square conclusion.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly
