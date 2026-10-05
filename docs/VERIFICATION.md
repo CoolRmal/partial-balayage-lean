@@ -370,3 +370,37 @@ compositions, the actual spatial Poisson quadratic form, and a closed real
 half-order Dirichlet space with proved finite-volume coercivity. The final
 two rows and Palomar registration remain pending; none of these supporting
 results expands the fourteen-statement comparator scope.
+
+## Nineteenth proof checkpoint: genuine regularized equations and square cells
+
+The eighteenth official retry did not reach verification. Its
+[profile job](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37365904496)
+executed no steps: GitHub again reported that no hosted runner could acquire
+the job after multiple attempts. It produced no mechanical report. The
+sixteenth snapshot remains the latest successful official full preflight.
+
+Fifty new supporting modules have successful focused builds and compiled
+standard-axiom audits. The combined library, challenge and solution build
+passed (4,179 jobs); source and metadata checks passed. Supporting proofs establish actual
+Poisson first-order regularization, genuine first-to-half-order graph nesting,
+the exact half-form/generator pairing, real-valuedness of the true generator,
+and actual real whole-space Poisson tests. A genuine whole-space half-order
+weak equation identifies every regularized generator with the actual Poisson
+average of its data. Cancelling the nonzero multiplier constructs a genuine
+first-order state from the original weak equation, with the same physical value.
+The finite-domain development constructs the actual
+bounded Poisson Dirichlet operator and its signed capped obstacle, including
+positivity, coercivity, complementarity, full density mass contraction and
+the exact energy-plus-state-mass balance.
+
+The square development gives a true positive whole-space fractional state
+with integrable value and a capped density in a fixed weighted Hilbert space.
+Its physical coordinate-stable generator equation holds against every compact
+C2 test; both weighted density pairings and the cofinal weak limit are proved.
+All 210 retained bicubic cell matrices now have exact coefficient checks in
+Lean's kernel. Genuine sparse-polynomial normalization and actual triangle
+majorization transfer support the remaining leaf checks.
+
+These results do not expand the fourteen-statement comparator scope. The full
+Riesz and square rows, their final official verification and Palomar
+registration remain pending.

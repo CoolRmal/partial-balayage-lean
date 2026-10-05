@@ -746,3 +746,13 @@ statements and verifies their permitted axioms; it does not establish that an
 incorrectly weakened challenge is faithful to the source. Public metadata and
 coverage should distinguish completed table rows from remaining proof work until
 all sixteen rows are kernel checked.
+
+The current supporting development includes an actual positive whole-space
+coordinate-stable compact-test equation with an L1 state and a weighted capped
+density. Recovering physical density mass, cap contact and kernel comparison
+remains necessary. All 210 retained bicubic square cells are linked to their
+actual rational coefficients; complete leaf majorization and distributional
+generator positivity remain required. The Riesz regularization bridge now
+constructs genuine H1 Poisson states and actual real half-order tests, and
+identifies regularized generators from the genuine whole-space weak equation.
+The full obstacle exhaustion and final vector cancellation are still pending.

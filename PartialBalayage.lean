@@ -234,6 +234,62 @@ public import PartialBalayage.Maximal.Square.BetaIntegral
 public import PartialBalayage.Maximal.Square.BetaBound
 public import PartialBalayage.Maximal.Square.GeneratorConstantBound
 
+public import PartialBalayage.Linear.PoissonSmoothing
+public import PartialBalayage.Linear.IsotropicEnergyNesting
+public import PartialBalayage.Linear.IsotropicEnergyPairing
+public import PartialBalayage.Linear.PoissonGeneratorReality
+public import PartialBalayage.Linear.IsotropicDirichletContractions
+public import PartialBalayage.Linear.PoissonDirichletOperators
+public import PartialBalayage.Maximal.Square.JumpWeightedCompactness
+public import PartialBalayage.Maximal.Square.JumpWeightedPairing
+public import PartialBalayage.Maximal.Square.MajorizationTriangle
+public import PartialBalayage.Maximal.Square.SparsePolynomial
+public import PartialBalayage.Maximal.Square.Data.CellMatrices1
+public import PartialBalayage.Maximal.Square.Data.CellMatrices2
+public import PartialBalayage.Maximal.Square.Data.CellMatrices3
+public import PartialBalayage.Maximal.Square.Data.CellMatrices4
+public import PartialBalayage.Maximal.Square.Data.CellMatrices5
+public import PartialBalayage.Maximal.Square.Data.CellMatrices6
+public import PartialBalayage.Maximal.Square.Data.CellMatrices7
+public import PartialBalayage.Maximal.Square.Data.CellMatrices8
+public import PartialBalayage.Maximal.Square.Data.CellMatrices9
+public import PartialBalayage.Maximal.Square.Data.CellMatrices10
+public import PartialBalayage.Maximal.Square.Data.CellMatrices11
+public import PartialBalayage.Maximal.Square.Data.CellMatrices12
+public import PartialBalayage.Maximal.Square.Data.CellMatrices13
+public import PartialBalayage.Maximal.Square.Data.CellMatrices14
+public import PartialBalayage.Maximal.Square.Data.CellMatrices15
+public import PartialBalayage.Maximal.Square.Data.CellMatrices16
+public import PartialBalayage.Maximal.Square.Data.CellMatrices17
+public import PartialBalayage.Maximal.Square.Data.CellMatrices18
+public import PartialBalayage.Maximal.Square.Data.CellMatrices19
+public import PartialBalayage.Maximal.Square.Data.CellMatrices20
+public import PartialBalayage.Maximal.Square.Data.CellMatrices21
+public import PartialBalayage.Maximal.Square.Data.CellMatrices22
+public import PartialBalayage.Maximal.Square.Data.CellMatrices23
+public import PartialBalayage.Maximal.Square.Data.CellMatrices24
+public import PartialBalayage.Maximal.Square.Data.CellMatrices25
+public import PartialBalayage.Maximal.Square.Data.CellMatrices26
+public import PartialBalayage.Maximal.Square.Data.CellMatrices27
+public import PartialBalayage.Maximal.Square.Data.CellMatrices28
+public import PartialBalayage.Maximal.Square.Data.CellMatrices29
+public import PartialBalayage.Maximal.Square.Data.CellMatrices30
+public import PartialBalayage.Maximal.Square.Data.CellMatrices31
+public import PartialBalayage.Maximal.Square.Data.CellMatrices32
+public import PartialBalayage.Maximal.Square.Data.CellMatrices33
+public import PartialBalayage.Maximal.Square.Data.CellMatrices34
+
+public import PartialBalayage.Maximal.Square.JumpWeakPDE
+
+public import PartialBalayage.Linear.PoissonWeakRegularization
+
+public import PartialBalayage.Linear.PoissonL1
+public import PartialBalayage.Linear.PoissonDirichletMass
+
+public import PartialBalayage.Linear.IsotropicWeakPDERegularity
+
+public import PartialBalayage.Linear.PoissonDirichletEnergyMass
+
 /-!
 # Two partial balayage principles
 
