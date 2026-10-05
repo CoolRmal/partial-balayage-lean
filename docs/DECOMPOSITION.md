@@ -441,10 +441,12 @@ $$\langle Ju,\mu\rangle\le\kappa|Ju|$$ and equality of the integrals force
 $$\mu=\kappa Ju/|Ju|\qquad\text{almost everywhere on }\{Ju\ne0\}.$$
 
 This gives the signed/vector local equation and exact norm saturation. It uses only
-finite-domain $$L^2$$ compactness, not a new general convex-analysis subgradient
-theorem. The missing implementation steps are the finite-product value embedding,
-the bounded self-adjoint Green operator, closedness of the pointwise norm cap, the
-quadratic first variation, and equality in the Hilbert Cauchy inequality.
+finite-domain $$L^2$$ compactness. `Linear/DirichletDual.lean` now proves the abstract
+positive Green construction and this dual state equation for a coercive Dirichlet
+operator and value embedding. `Linear/CapComplementarity.lean` proves the actual
+measurable support competitor, integral equality, vector alignment, and saturation.
+Instantiating the finite-product Sobolev value embedding and Dirichlet operator
+remains necessary before this becomes a concrete differential equation.
 
 The local construction alone is insufficient for the whole-space theorem. One
 route is to exhaust the space by balls and prove uniform energy, $$L^1$$ and $$L^2$$
@@ -465,7 +467,10 @@ On the zero set, second weak derivatives vanish and therefore $$\mu=f$$.
 Combining the two regions gives $$\|\mu\|_1\le\|f\|_1$$. This is stronger than
 the contact-set bound alone and provides the uniform bound
 $$\|\mu\|_2^2\le\kappa\|f\|_1$$ for an exhaustion. The vector norm-gradient
-chain rule and the Sobolev zero-set statement remain substantive unproved API.
+chain rule and second-derivative locality remain substantive missing API.
+`Linear/SobolevZeroSet.lean` proves first-gradient vanishing on zero sets, and equality
+of gradients on equality sets, for the actual copied Sobolev graph space on every
+open domain. The regularized vector norm test and its admissibility still need proof.
 
 An alternative whole-space implementation more closely follows
 `Obstacle/Functional.lean`: build the vector Hilbert energy space and minimize
@@ -492,6 +497,24 @@ extract the same capped density. Positivity and mass preservation of that semigr
 its operator-domain convergence, and the cutoff decay estimate are genuine
 dependencies. The order-one scalar/complex construction cannot be replaced by the
 existing order-two ball obstacle.
+
+## Further verified support
+
+The unique heat and Poisson parameters now satisfy the article's exact intervals in
+every positive dimension. `Maximal/RadialTangentMass.lean` proves the weighted mass
+identities for power and logarithmic harmonic tangents. `Maximal/HeatMajorant.lean`
+proves actual domination at every positive squared radius, joining at the outer
+radius, and a strictly positive outward derivative jump. The origin is excluded
+from these real profile statements; its artificial totalized value is irrelevant
+to a future almost-everywhere kernel statement in positive dimension. Distributional
+kernel inequalities and the resulting maximal estimates are still pending.
+
+`Linear/ProjectionSymbol.lean` proves actual gradient and Leray symbols are
+orthogonal projections and that their shifts by half the identity have norm at
+most one half. `Linear/IdentityComponent.lean` and `Linear/OrthogonalComponent.lean`
+prove the exact level-set coefficients from explicit decomposition hypotheses.
+These hypotheses must be discharged by concrete balayage before any additional
+table row is added to the unconditional Challenge/Solution pair.
 
 ## Verification boundary
 

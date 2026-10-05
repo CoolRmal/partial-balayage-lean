@@ -21,6 +21,14 @@ public import PartialBalayage.Linear.NormCap
 public import PartialBalayage.Linear.CapVariational
 public import PartialBalayage.Linear.KatoAveraging
 public import PartialBalayage.Constants.SquareMass
+public import PartialBalayage.Linear.CapComplementarity
+public import PartialBalayage.Linear.DirichletDual
+public import PartialBalayage.Linear.IdentityComponent
+public import PartialBalayage.Linear.OrthogonalComponent
+public import PartialBalayage.Linear.ProjectionSymbol
+public import PartialBalayage.Linear.SobolevZeroSet
+public import PartialBalayage.Maximal.RadialTangentMass
+public import PartialBalayage.Maximal.HeatMajorant
 
 /-!
 # Two partial balayage principles

@@ -36,11 +36,16 @@ maximal operators and their exact parameterized bound formulas are defined, with
 positivity and heat-kernel mass one proved. The full vector Riesz and Frobenius-matrix Hessian
 operators have L² contraction proofs. Exact scalar optimization yields the Hessian coefficients
 and the projection coefficient from its unique cubic root. The radial constants and unique heat
-parameter in the article's exact interval are proved. The traceless Hessian has the precise
+and Poisson parameters in the article's exact intervals are proved. The traceless Hessian has the precise
 Frobenius multiplier norm, with bounded vector multipliers realized as continuous linear maps.
 The genuine vector-valued norm-cap set is closed, convex, and weakly compact on finite measure
 spaces; its positive quadratic variational problem has a proved solution without coercivity.
 The Kato averaging inequality and exact square-certificate mass arithmetic are also proved.
+The finite-domain dual cap construction now gives its state equation, exact alignment and
+saturation on the active set. Genuine Sobolev zero-set locality, shifted projection symbols,
+and the orthogonal and identity-component level-set coefficients are proved. The heat harmonic
+majorant dominates the heat profile at every positive radius, joins at the exact outer radius,
+and has the exact weighted inner mass and positive outward derivative jump.
 These steps do not yet prove any of the thirteen pending weak-type rows.
 
 ## Project map

@@ -202,13 +202,16 @@ theorem existsUnique_poissonRoot_one :
   have h := (mul_eq_zero.mp hf).resolve_left ha0.ne'
   linarith
 
-private def harmonicCoordinate (β z : ℝ) : ℝ :=
+/-- A primitive of the positive radial harmonic weight `z^(-β)`. -/
+def harmonicCoordinate (β z : ℝ) : ℝ :=
   if β = 1 then Real.log z else (z ^ (1 - β) - 1) / (1 - β)
 
-private theorem harmonicCoordinate_one (β : ℝ) : harmonicCoordinate β 1 = 0 := by
+/-- The harmonic coordinate is normalized to vanish at one. -/
+theorem harmonicCoordinate_one (β : ℝ) : harmonicCoordinate β 1 = 0 := by
   by_cases hβ : β = 1 <;> simp [harmonicCoordinate, hβ]
 
-private theorem hasDerivAt_harmonicCoordinate {β z : ℝ} (hz : 0 < z) :
+/-- Differentiating the harmonic coordinate recovers its positive radial weight. -/
+theorem hasDerivAt_harmonicCoordinate {β z : ℝ} (hz : 0 < z) :
     HasDerivAt (harmonicCoordinate β) (z ^ (-β)) z := by
   by_cases hβ : β = 1
   · subst β
@@ -270,7 +273,8 @@ private theorem exp_neg_harmonicRatio_lt {β r : ℝ} (hβ : 0 < β) (hr : 1 < r
   have hprod := mul_nonneg hnonneg hpower0.le
   nlinarith
 
-private theorem harmonicCoordinate_rho (n : ℕ) (hn : 1 ≤ n) :
+/-- The article's radius ratio has harmonic coordinate `2 / n`. -/
+theorem harmonicCoordinate_rho (n : ℕ) (hn : 1 ≤ n) :
     harmonicCoordinate ((n : ℝ) / 2) (rho n) = 2 / (n : ℝ) := by
   by_cases hn2 : n = 2
   · subst n
@@ -320,5 +324,296 @@ theorem existsUnique_heatRoot (n : ℕ) (hn : 1 ≤ n) :
     exact Real.exp_pos _
   simpa only [div_mul_eq_mul_div] using existsUnique_exp_affine_eq_of_signs
     (d := 2 / (n : ℝ)) hc hl hlr (by rw [hid]; exact heatRoot_lower_endpoint_neg n hn) hr
+
+private def poissonLogProfile (N r a : ℝ) : ℝ :=
+  Real.log (1 - a / N) - (N + 3) / 2 * Real.log (1 + a) +
+    (N + 1) / 2 * Real.log (1 + r * a)
+
+private theorem hasDerivAt_poissonLogProfile {N r a : ℝ} (hN : 0 < N)
+    (hr : 0 < r) (ha : a ∈ Ico 0 N) :
+    HasDerivAt (poissonLogProfile N r)
+      (((N + 1) / 2) * (N * r - N - 2 + (1 - 3 * r) * a) /
+        ((N - a) * (1 + a) * (1 + r * a))) a := by
+  have h₁ : 0 < 1 - a / N := by rw [sub_pos, div_lt_one hN]; exact ha.2
+  have h₂ : 0 < 1 + a := by linarith [ha.1]
+  have ha0 := ha.1
+  have h₃ : 0 < 1 + r * a := by positivity
+  have hd₁ := ((hasDerivAt_const a (1 : ℝ)).sub ((hasDerivAt_id a).div_const N)).log h₁.ne'
+  have hd₂ := ((hasDerivAt_id a).const_add 1).log h₂.ne'
+  have hd₃ := (((hasDerivAt_id a).const_mul r).const_add 1).log h₃.ne'
+  convert (hd₁.sub (hd₂.const_mul ((N + 3) / 2))).add
+    (hd₃.const_mul ((N + 1) / 2)) using 1
+  · rfl
+  · have hNa : N - a ≠ 0 := by linarith [ha.2]
+    dsimp
+    field_simp
+    ring
+
+private theorem poissonLogProfile_eq_zero_of_root {N r a : ℝ} (hN : 0 < N)
+    (hr : 0 < r) (ha : a ∈ Ioo 0 N)
+    (he : (1 - a / N) / (1 + a) ^ ((N + 3) / 2) =
+      1 / (1 + r * a) ^ ((N + 1) / 2)) : poissonLogProfile N r a = 0 := by
+  have h₁ : 0 < 1 - a / N := by rw [sub_pos, div_lt_one hN]; exact ha.2
+  have h₂ : 0 < 1 + a := by linarith [ha.1]
+  have ha0 := ha.1
+  have h₃ : 0 < 1 + r * a := by positivity
+  have hlog := congrArg Real.log he
+  rw [Real.log_div h₁.ne' (Real.rpow_pos_of_pos h₂ _).ne',
+    Real.log_div one_ne_zero (Real.rpow_pos_of_pos h₃ _).ne', Real.log_one,
+    Real.log_rpow h₂, Real.log_rpow h₃] at hlog
+  dsimp [poissonLogProfile]
+  linarith
+
+private theorem eq_of_poissonRoot {N r x y : ℝ} (hN : 0 < N) (hr : 1 < r)
+    (hx : x ∈ Ioo 0 N) (hy : y ∈ Ioo 0 N)
+    (hex : (1 - x / N) / (1 + x) ^ ((N + 3) / 2) =
+      1 / (1 + r * x) ^ ((N + 1) / 2))
+    (hey : (1 - y / N) / (1 + y) ^ ((N + 3) / 2) =
+      1 / (1 + r * y) ^ ((N + 1) / 2)) : x = y := by
+  wlog hxy : x < y generalizing x y
+  · rcases lt_trichotomy x y with h | h | h
+    · exact this hx hy hex hey h
+    · exact h
+    · exact (this hy hx hey hex h).symm
+  have hr0 : 0 < r := zero_lt_one.trans hr
+  let d : ℝ → ℝ := fun a ↦ ((N + 1) / 2) *
+    (N * r - N - 2 + (1 - 3 * r) * a) / ((N - a) * (1 + a) * (1 + r * a))
+  have hd : ∀ a ∈ Ico 0 N, HasDerivAt (poissonLogProfile N r) (d a) a :=
+    fun a ha ↦ hasDerivAt_poissonLogProfile hN hr0 ha
+  have hc : ContinuousOn (poissonLogProfile N r) (Icc 0 y) := by
+    intro a ha
+    exact ((hd a ⟨ha.1, ha.2.trans_lt hy.2⟩).continuousAt).continuousWithinAt
+  have hx0 := poissonLogProfile_eq_zero_of_root hN hr0 hx hex
+  have hy0 := poissonLogProfile_eq_zero_of_root hN hr0 hy hey
+  have hzero : poissonLogProfile N r 0 = 0 := by simp [poissonLogProfile]
+  obtain ⟨u, hu, heu⟩ := exists_hasDerivAt_eq_zero hx.1
+    (hc.mono (Icc_subset_Icc le_rfl hxy.le)) (hzero.trans hx0.symm)
+    (fun a ha ↦ hd a ⟨ha.1.le, ha.2.trans hx.2⟩)
+  obtain ⟨v, hv, hev⟩ := exists_hasDerivAt_eq_zero hxy
+    (hc.mono (Icc_subset_Icc hx.1.le le_rfl)) (hx0.trans hy0.symm)
+    (fun a ha ↦ hd a ⟨(hx.1.trans ha.1).le, ha.2.trans hy.2⟩)
+  have hu0 : N * r - N - 2 + (1 - 3 * r) * u = 0 := by
+    have huN : N - u ≠ 0 := by linarith [hu.2, hx.2]
+    have hu1 : 1 + u ≠ 0 := by linarith [hu.1]
+    have hur : 1 + r * u ≠ 0 := by have hu0 := hu.1; positivity
+    dsimp [d] at heu
+    have he₁ := (div_eq_zero_iff.mp heu).resolve_right
+      (mul_ne_zero (mul_ne_zero huN hu1) hur)
+    exact (mul_eq_zero.mp he₁).resolve_left (by positivity)
+  have hv0 : N * r - N - 2 + (1 - 3 * r) * v = 0 := by
+    have hvN : N - v ≠ 0 := by linarith [hv.2, hy.2]
+    have hv1 : 1 + v ≠ 0 := by linarith [hv.1, hx.1]
+    have hvr : 1 + r * v ≠ 0 := by have hv0 : 0 < v := hx.1.trans hv.1; positivity
+    dsimp [d] at hev
+    have he₁ := (div_eq_zero_iff.mp hev).resolve_right
+      (mul_ne_zero (mul_ne_zero hvN hv1) hvr)
+    exact (mul_eq_zero.mp he₁).resolve_left (by positivity)
+  have huv : u < v := hu.2.trans hv.1
+  nlinarith
+
+/-- Logarithm of the magnitude of the Poisson profile's weighted derivative, up to a constant. -/
+def poissonWeightLog (β z : ℝ) : ℝ :=
+  β * Real.log z - (β + 3 / 2) * Real.log (1 + z)
+
+private theorem hasDerivAt_poissonWeightLog {β z : ℝ} (hz : 0 < z) :
+    HasDerivAt (poissonWeightLog β) ((β - 3 * z / 2) / (z * (1 + z))) z := by
+  have hz1 : 0 < 1 + z := by positivity
+  convert ((Real.hasDerivAt_log hz.ne').const_mul β).sub
+    ((((hasDerivAt_id z).const_add 1).log hz1.ne').const_mul (β + 3 / 2)) using 1
+  · rfl
+  · dsimp
+    field_simp
+    ring
+
+/-- The Poisson weighted derivative increases up to its inflection radius squared. -/
+theorem poissonWeightLog_lt {β x y : ℝ} (_hβ : 0 < β) (hx : 0 < x)
+    (hxy : x < y) (hy : y ≤ 2 * β / 3) :
+    poissonWeightLog β x < poissonWeightLog β y := by
+  have hc : ContinuousOn (poissonWeightLog β) (Icc x y) := by
+    intro z hz
+    exact ((hasDerivAt_poissonWeightLog (β := β)
+      (hx.trans_le hz.1)).continuousAt).continuousWithinAt
+  obtain ⟨z, hz, he⟩ := exists_hasDerivAt_eq_slope (poissonWeightLog β)
+    (fun z ↦ (β - 3 * z / 2) / (z * (1 + z))) hxy hc
+    (fun z hz ↦ hasDerivAt_poissonWeightLog (hx.trans hz.1))
+  have hder : 0 < (β - 3 * z / 2) / (z * (1 + z)) := by
+    apply div_pos
+    · linarith [hz.2]
+    · have hz0 := hx.trans hz.1
+      positivity
+  rw [he] at hder
+  exact sub_pos.mp ((div_pos_iff_of_pos_right (sub_pos.mpr hxy)).mp hder)
+
+/-- The Poisson weighted derivative decreases beyond its inflection radius squared. -/
+theorem poissonWeightLog_gt {β x y : ℝ} (hβ : 0 < β)
+    (hx : 2 * β / 3 ≤ x) (hxy : x < y) :
+    poissonWeightLog β y < poissonWeightLog β x := by
+  have hx0 : 0 < x := lt_of_lt_of_le (by positivity) hx
+  have hc : ContinuousOn (poissonWeightLog β) (Icc x y) := by
+    intro z hz
+    exact ((hasDerivAt_poissonWeightLog (β := β)
+      (hx0.trans_le hz.1)).continuousAt).continuousWithinAt
+  obtain ⟨z, hz, he⟩ := exists_hasDerivAt_eq_slope (poissonWeightLog β)
+    (fun z ↦ (β - 3 * z / 2) / (z * (1 + z))) hxy hc
+    (fun z hz ↦ hasDerivAt_poissonWeightLog (hx0.trans hz.1))
+  have hder : (β - 3 * z / 2) / (z * (1 + z)) < 0 := by
+    apply div_neg_of_neg_of_pos
+    · linarith [hz.1]
+    · have hz0 := hx0.trans hz.1
+      positivity
+  rw [he] at hder
+  have hnum := (div_lt_iff₀ (sub_pos.mpr hxy)).mp hder
+  simpa only [zero_mul, sub_neg] using hnum
+
+/-- Exponentiating the logarithmic Poisson weight recovers the weighted derivative. -/
+theorem poissonWeightLog_exp {β z : ℝ} (hz : 0 < z) :
+    Real.exp (poissonWeightLog β z) = z ^ β * (1 + z) ^ (-(β + 3 / 2)) := by
+  rw [Real.rpow_def_of_pos hz, Real.rpow_def_of_pos (by positivity : 0 < 1 + z),
+    ← Real.exp_add]
+  congr 1
+  dsimp [poissonWeightLog]
+  ring
+
+private theorem poisson_harmonic_meanValue {β r a : ℝ} (_hβ : 0 < β) (hr : 1 < r)
+    (ha : 0 < a) (hbalance : harmonicCoordinate β r = 1 / β) :
+    ∃ z ∈ Ioo 1 r,
+      ((1 + a * r) ^ (-(β + 1 / 2)) - (1 + a) ^ (-(β + 1 / 2))) * a ^ β =
+        -((β + 1 / 2) * a / β) * Real.exp (poissonWeightLog β (a * z)) := by
+  let f : ℝ → ℝ := fun z ↦ (1 + a * z) ^ (-(β + 1 / 2))
+  let d : ℝ → ℝ := fun z ↦ -(β + 1 / 2) * a * (1 + a * z) ^ (-(β + 3 / 2))
+  have hdf : ∀ z ∈ Icc 1 r, HasDerivAt f (d z) z := by
+    intro z hz
+    have hz0 : 0 < z := zero_lt_one.trans_le hz.1
+    have hz1 : 0 < 1 + a * z := by positivity
+    have hd := (Real.hasDerivAt_rpow_const (p := -(β + 1 / 2))
+      (Or.inl hz1.ne')).comp z (((hasDerivAt_id z).const_mul a).const_add 1)
+    convert hd using 1
+    · rfl
+    · dsimp [d]
+      rw [show -(β + 1 / 2) - 1 = -(β + 3 / 2) by ring]
+      ring
+  have hf : ContinuousOn f (Icc 1 r) := fun z hz ↦
+    ((hdf z hz).continuousAt).continuousWithinAt
+  have hg : ContinuousOn (harmonicCoordinate β) (Icc 1 r) := fun z hz ↦
+    ((hasDerivAt_harmonicCoordinate (β := β)
+      (zero_lt_one.trans_le hz.1)).continuousAt).continuousWithinAt
+  obtain ⟨z, hz, he⟩ := exists_ratio_hasDerivAt_eq_ratio_slope f d hr hf
+    (fun z hz ↦ hdf z ⟨hz.1.le, hz.2.le⟩) (harmonicCoordinate β)
+    (fun z ↦ z ^ (-β)) hg
+    (fun z hz ↦ hasDerivAt_harmonicCoordinate (zero_lt_one.trans hz.1))
+  simp only [hbalance, harmonicCoordinate_one, sub_zero] at he
+  have hz0 : 0 < z := zero_lt_one.trans hz.1
+  have hp : 0 < z ^ β := Real.rpow_pos_of_pos hz0 _
+  have he' := congrArg (fun v : ℝ ↦ v * z ^ β * a ^ β) he
+  rw [Real.rpow_neg hz0.le] at he'
+  simp only [mul_assoc, inv_mul_cancel₀ hp.ne', one_mul] at he'
+  refine ⟨z, hz, ?_⟩
+  rw [poissonWeightLog_exp (mul_pos ha hz0), Real.mul_rpow ha.le hz0.le]
+  dsimp [f, d] at he'
+  simp only [mul_one] at he'
+  convert he'.symm using 1
+  ring
+
+/-- The balanced Poisson harmonic tangent has the value used in the root equation. -/
+theorem poisson_tangent_identity {β a : ℝ} (hβ : 0 < β) (ha : 0 < a) :
+    (1 - a / (2 * β)) / (1 + a) ^ (β + 3 / 2) =
+      (1 + a) ^ (-(β + 1 / 2)) -
+        ((β + 1 / 2) * a / β) * (1 + a) ^ (-(β + 3 / 2)) := by
+  have hb : 0 < 1 + a := by positivity
+  have he : (1 + a) ^ (-(β + 1 / 2)) =
+      (1 + a) * (1 + a) ^ (-(β + 3 / 2)) := by
+    calc
+      _ = (1 + a) ^ (1 + (-(β + 3 / 2))) := by congr 1; ring
+      _ = (1 + a) ^ (1 : ℝ) * (1 + a) ^ (-(β + 3 / 2)) := Real.rpow_add hb _ _
+      _ = _ := by rw [Real.rpow_one]
+  rw [he, Real.rpow_neg hb.le]
+  field_simp
+  ring
+
+private theorem poisson_tangent_lower_sign {β r a : ℝ} (hβ : 0 < β) (hr : 1 < r)
+    (ha : 0 < a) (har : a * r ≤ 2 * β / 3)
+    (hbalance : harmonicCoordinate β r = 1 / β) :
+    (1 + a * r) ^ (-(β + 1 / 2)) <
+      (1 - a / (2 * β)) / (1 + a) ^ (β + 3 / 2) := by
+  obtain ⟨z, hz, he⟩ := poisson_harmonic_meanValue hβ hr ha hbalance
+  have hz0 : 0 < z := zero_lt_one.trans hz.1
+  have haw : a < a * z := by nlinarith [hz.1]
+  have hzcrit : a * z ≤ 2 * β / 3 := by nlinarith [hz.2]
+  have hw := Real.exp_lt_exp.mpr (poissonWeightLog_lt hβ ha haw hzcrit)
+  have hK : 0 < (β + 1 / 2) * a / β := by positivity
+  have hmul := mul_lt_mul_of_neg_left hw (neg_neg_of_pos hK)
+  rw [poissonWeightLog_exp ha] at hmul
+  have hap : 0 < a ^ β := Real.rpow_pos_of_pos ha _
+  rw [poisson_tangent_identity hβ ha]
+  nlinarith
+
+private theorem poisson_tangent_upper_sign {β r a : ℝ} (hβ : 0 < β) (hr : 1 < r)
+    (ha : 2 * β / 3 ≤ a) (hbalance : harmonicCoordinate β r = 1 / β) :
+    (1 - a / (2 * β)) / (1 + a) ^ (β + 3 / 2) <
+      (1 + a * r) ^ (-(β + 1 / 2)) := by
+  have ha0 : 0 < a := lt_of_lt_of_le (by positivity) ha
+  obtain ⟨z, hz, he⟩ := poisson_harmonic_meanValue hβ hr ha0 hbalance
+  have haw : a < a * z := by nlinarith [hz.1]
+  have hw := Real.exp_lt_exp.mpr (poissonWeightLog_gt hβ ha haw)
+  have hK : 0 < (β + 1 / 2) * a / β := by positivity
+  have hmul := mul_lt_mul_of_neg_left hw (neg_neg_of_pos hK)
+  rw [poissonWeightLog_exp ha0] at hmul
+  have hap : 0 < a ^ β := Real.rpow_pos_of_pos ha0 _
+  rw [poisson_tangent_identity hβ ha0]
+  nlinarith
+
+/-- The Poisson tangency equation has its unique nonzero root in the article's precise interval. -/
+theorem existsUnique_poissonRoot (n : ℕ) (hn : 1 ≤ n) :
+    ∃! a : ℝ, a ∈ Ioo ((n : ℝ) / (3 * rho n)) ((n : ℝ) / 3) ∧
+      (1 - a / (n : ℝ)) / (1 + a) ^ (((n : ℝ) + 3) / 2) =
+        1 / (1 + rho n * a) ^ (((n : ℝ) + 1) / 2) := by
+  have hN : (0 : ℝ) < n := by exact_mod_cast (by omega : 0 < n)
+  have hr0 := rho_pos n hn
+  have hr := one_lt_rho n hn
+  let l : ℝ := (n : ℝ) / (3 * rho n)
+  let u : ℝ := (n : ℝ) / 3
+  have hl : 0 < l := by dsimp [l]; positivity
+  have hu : u < (n : ℝ) := by dsimp [u]; linarith
+  have hlu : l < u := by
+    dsimp [l, u]
+    exact div_lt_div_of_pos_left hN (by norm_num) (by linarith)
+  have hβ : 0 < (n : ℝ) / 2 := by positivity
+  have hbalance : harmonicCoordinate ((n : ℝ) / 2) (rho n) = 1 / ((n : ℝ) / 2) := by
+    simpa only [one_div, inv_div] using harmonicCoordinate_rho n hn
+  have har : l * rho n ≤ 2 * ((n : ℝ) / 2) / 3 := by
+    dsimp [l]
+    field_simp
+    norm_num
+  have haul : 2 * ((n : ℝ) / 2) / 3 ≤ u := by dsimp [u]; linarith
+  have hlow := poisson_tangent_lower_sign hβ hr hl har hbalance
+  have hupp := poisson_tangent_upper_sign hβ hr haul hbalance
+  have he₁ : (n : ℝ) / 2 + 1 / 2 = ((n : ℝ) + 1) / 2 := by ring
+  have he₃ : (n : ℝ) / 2 + 3 / 2 = ((n : ℝ) + 3) / 2 := by ring
+  simp only [show 2 * ((n : ℝ) / 2) = (n : ℝ) by ring, he₁, he₃, mul_comm l,
+    mul_comm u] at hlow hupp
+  let F : ℝ → ℝ := fun a ↦ (1 + rho n * a) ^ (-(((n : ℝ) + 1) / 2)) -
+    (1 - a / (n : ℝ)) / (1 + a) ^ (((n : ℝ) + 3) / 2)
+  have hF : ContinuousOn F (Icc l u) := by
+    intro a ha
+    have ha0 : 0 < a := hl.trans_le ha.1
+    have hb : 1 + a ≠ 0 := by positivity
+    have hbr : 1 + rho n * a ≠ 0 := by positivity
+    have hNne := hN.ne'
+    have hbp : (1 + a) ^ (((n : ℝ) + 3) / 2) ≠ 0 := by positivity
+    apply ContinuousAt.continuousWithinAt
+    dsimp [F]
+    fun_prop (disch := aesop)
+  obtain ⟨a, ha, he⟩ := intermediate_value_Ioo hlu.le hF
+    (show 0 ∈ Ioo (F l) (F u) by constructor <;> dsimp [F] <;> linarith)
+  have ha0 : 0 < a := hl.trans ha.1
+  have har0 : 0 < 1 + rho n * a := by positivity
+  have heq : (1 - a / (n : ℝ)) / (1 + a) ^ (((n : ℝ) + 3) / 2) =
+      1 / (1 + rho n * a) ^ (((n : ℝ) + 1) / 2) := by
+    dsimp [F] at he
+    rw [Real.rpow_neg har0.le, ← one_div] at he
+    linarith
+  refine ⟨a, ⟨ha, heq⟩, fun b hb ↦ ?_⟩
+  exact eq_of_poissonRoot hN hr ⟨hl.trans hb.1.1, hb.1.2.trans hu⟩
+    ⟨ha0, ha.2.trans hu⟩ hb.2 heq
 
 end PartialBalayage.Constants
