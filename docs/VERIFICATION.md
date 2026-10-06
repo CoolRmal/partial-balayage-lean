@@ -1030,3 +1030,27 @@ checking candidate `1e84ddabfbf64c3f4fe29cb61a85571f5caa7543` with separate
 dispatcher revision `2c32bcf030a58efcd4173da2ddafc5552e0af8d5` and retained
 compiled outputs. Final sixteen-row verification and Palomar registration
 remain pending.
+
+## Thirty-sixth proof checkpoint: all square coordinate certificates assembled
+
+The seven remaining paired modules, covering coordinates 72 through 85, passed
+their focused builds and fourteen imported standard-three-axiom audits. The
+aggregate `GeneratorCoordinates` module now assembles all 89 groups, covering
+all 712 actual coordinate entries. Its focused build passed in 6.9 seconds;
+both its data definition and unconditional validity theorem use exactly
+`propext`, `Classical.choice` and `Quot.sound`. The aggregate assembly theorem
+uses a local recursion-depth limit of 32,768. Its source and all seven paired
+sources match their frozen SHA256 manifests before and after the audits.
+
+The explicit library-module, Challenge and Solution build passed (4,629 jobs).
+The separate imported audit of all fifteen completed table statements also
+confirms exactly the three standard axioms for each statement. These coordinate
+certificates do not establish the remaining numerical positivity checks.
+
+The corrected full complex Riesz snapshot is undergoing its official check at
+[run 37404883784](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37404883784),
+for exact public commit `e301f763ae0c819976384ea733f7327e80ce1c44`. The
+protected standard configuration and independent kernels remain required.
+The immutable square numerical snapshot and its retained-output workflow are
+still running. Final sixteen-row verification, Palomar intake, private review
+and registration remain pending.

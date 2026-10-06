@@ -744,6 +744,7 @@ public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates64
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates66
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates68
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates70
+public import PartialBalayage.Maximal.Square.GeneratorCoordinates
 
 /-!
 # Two partial balayage principles
