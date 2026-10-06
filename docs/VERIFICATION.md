@@ -801,3 +801,30 @@ nonnegative norm of the input. The square target remains the strict coefficient
 below 452/125. Complete square arithmetic and complex Riesz are being completed
 in parallel. Official twenty-sixth and twenty-seventh preflights remain ongoing.
 Final all-row verification and Palomar intake, review and registration are pending.
+
+## Twenty-ninth proof checkpoint: actual complex Poisson and Riesz bridges
+
+Four new supporting modules have successful focused builds and clean final LSP
+diagnostics. Their thirteen public theorems have an imported axiom audit using
+only `propext`, `Classical.choice` and `Quot.sound`. The combined library,
+challenge and solution build passed (4,582 jobs). Source, 100-column and
+metadata checks passed. No unfinished numerical or complex-construction module
+is included in this checkpoint.
+
+The actual complex physical H01 test equation determines the genuine complex
+Poisson-smoothed generator. Its nonvanishing Fourier multiplier identifies the
+full complex norm-weighted transform. The same equation constructs a genuine
+first-order energy state and proves the full physical self-energy identity
+without an additional regularity or energy certificate. Every actual complex
+Riesz coordinate represents a true tempered-distribution first derivative.
+The full complex Riesz L² contraction also gives coefficient two from genuine
+norm-capped data, input-mass contraction and active-set agreement.
+
+These are supporting theorems. The final complex capped construction and
+zero-set cancellation remain to be assembled into the all-L¹ table statement.
+All finite square positivity checks also remain necessary. The comparator still
+checks fourteen complete rows and the real-input Riesz subcase. A read-only
+snapshot confirms official checkpoints 26, 27 and 28 are at the comparator and
+provenance stage, with no terminal reports yet. Checkpoint 25 remains the latest
+downloaded full pass with zero errors and warnings. Final sixteen-row Comparator
+verification and Palomar intake, private review and registration remain pending.

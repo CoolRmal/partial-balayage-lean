@@ -44,6 +44,10 @@ are proved to exist and to be unique among finite weak-bound extensions. The fin
 statements use the independently defined concrete Fourier operators. Actual signed
 Poisson balayage, full-norm Fourier regularity and physical Sobolev zero-set locality
 give the full-vector Riesz coefficient two on every real L¹ input.
+The complex extension now has checked physical Poisson regularization, full
+frequency-norm identification, the actual self-energy identity, represented
+Riesz first derivatives and the complex norm-capped level-set estimate. These
+supporting results do not yet complete the complex-input table theorem.
 
 The square prerequisites include the actual kernel's nonnegativity and closed-diamond
 majorization, exact mass below twice 3.616, the genuine spline generator formula,

@@ -701,12 +701,16 @@ public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates28
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates29
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates30
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates31
+public import PartialBalayage.Linear.ComplexPoissonRegularity
+public import PartialBalayage.Linear.ComplexPoissonSelfEnergy
+public import PartialBalayage.Linear.ComplexRieszWeakGradient
+public import PartialBalayage.Linear.ComplexRieszCappedEstimate
 
 /-!
 # Two partial balayage principles
 
-The library exports fifteen table rows, including the exact Hessian and projection estimates.
-The remaining square row of the published table is tracked in `docs/DECOMPOSITION.md`.
+The library exports fourteen full table rows and the real-input Riesz subcase.
+The complex Riesz extension and square row are tracked in `docs/DECOMPOSITION.md`.
 Supporting development includes capped-decomposition level-set estimates, finite-measure vector
 obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.
 -/
