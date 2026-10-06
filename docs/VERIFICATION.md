@@ -953,3 +953,18 @@ That older snapshot still checks the real-input Riesz subcase. The full complex
 Riesz preflight and the full square positivity registry and final sixteen-row
 Comparator verification remain pending, followed by Palomar intake, private
 review and registration.
+
+## Thirty-fourth proof checkpoint: coordinate certificates through 57
+
+The six actual paired modules 32/33, 48/49, 50/51, 52/53, 54/55 and 56/57
+passed focused builds and imported audits of all twelve validity exports.
+Each export uses only `propext`, `Classical.choice` and `Quot.sound`. Their
+data declarations remain unchanged. All coordinate certificates from 0 through
+57 are now included in the public library, together with the previously checked
+86/87 and 88 certificates.
+
+The combined library, challenge and solution build passed (4,614 jobs).
+Source and metadata validation passed. These coordinate certificates support
+the remaining square row; its 106 actual numerical blocks are still undergoing
+ordinary-kernel validation in the immutable remote candidate snapshot.
+The final sixteen-row Comparator check and Palomar registration remain pending.
