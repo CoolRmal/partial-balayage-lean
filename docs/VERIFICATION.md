@@ -1631,3 +1631,47 @@ block 105 indices 19–63. Block 30 has the largest such per-block total, 1,411;
 this is a source count, not a checker-cost bound. The complete source inventory
 has SHA256
 `49c5dbdb1afccd8944c6539ff7cc1a47c7fa9046e88fbbf9c0e9d7530d09f89d`.
+
+## Preserved checkpoint and localized assembly interruption
+
+The 08:34:37 UTC actual API snapshot showed instrumented integration run
+37431956910 completed with failure. All 367 support builds, checkpoint packing
+and the mandatory preassembly upload succeeded. The first assembly module,
+`PartialBalayage.Maximal.Square.GeneratorLeafBlocks`, passed its dependency
+check, then its build received signal 15 after 212.151 seconds. The streamed
+log explicitly reports a runner shutdown signal. No Lean file/line diagnostic
+appears; the shutdown cause is not established. The remaining three builds,
+final leaf guard, imported audits and final report upload were skipped.
+This run does not authorize promotion or final theorem acceptance.
+
+The completed support checkpoint is artifact 11398798738, named
+`square-support-checkpoint-37431956910-1`. Its actual downloaded ZIP has
+417,392,335 bytes and SHA256
+`42c18e5be48a1ea8d17e48c66dcdbcdb85c43709733d32f6b0195a66390b5915`,
+matching the actual GitHub API record and upload log. The safe outer ZIP
+inspection preserved 1,107 files without restoring any build outputs.
+The inner checkpoint manifest has SHA256
+`a74d41676ca715e6ba0ad7b7842ca4bd77c93cfc3c49fca15eb96d8089437145`;
+its 417,321,281-byte support archive has SHA256
+`36ee88281a03e475b2c2f29c690a7354c86e26cd4dd1a7e1fe464c9de222c810`.
+Independent support-only validation and a strictly gated restoration helper
+are being prepared. Neither is final assembly or cold Palomar acceptance.
+The full job log has SHA256
+`69f9f13e15008ef47736a82d7f51034acc5dde5b5bd3f9a1e540cd5decb11ee1`.
+
+The separate generic block-30 aggregate experiment also completed. Its two
+actual whole-forall exported types have the same canonical SHA256
+`a130b755e50909502a392573384d1d7365d7c473aa39d8515b3d6e525615712c`.
+The original export retains all 64 accepted private numerical decisions;
+the cached export retains all 1,872 interval/error equalities and omits the
+64 closed original transport roots. Both use the same ordered 49 supporting
+roots and match all 9,658 shared signatures. Actual fresh default independent
+replays accepted both: original 291.677 seconds wall / 273.760 seconds user,
+cached 318.821 seconds wall / 307.757 seconds user. The cached sample was
+27.144 seconds slower in wall time. The report SHA256 is
+`12be8e4f79b26e9f6368365791a9131674171f91f344708e85c600b2461b0e22`;
+the sealed 49-file manifest SHA256 is
+`1b0512d032419d6a4a29abd04531c0a2dcdcabf91aebc7a5cd715043f97439f5`.
+An independent read-only check matched all 49 actual file hashes/sizes and
+the complete replay records. No cached proof source is adopted. This pair
+provides no full-table resource estimate or final Comparator acceptance.
