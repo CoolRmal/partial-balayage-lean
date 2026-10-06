@@ -1579,3 +1579,55 @@ The frozen retry controls passed 87 synthetic workflow/diagnostic cases and
 guards preserved. Root reran both suites successfully against the reviewed
 bytes. These tests execute no Lean proof, exporter or restoration and do not
 constitute assembly acceptance. The mathematical files remain unchanged.
+
+## Instrumented retry and complete 64-leaf cache comparison
+
+The [instrumented retry, run 37431956910](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37431956910),
+was dispatched at 07:48:17 UTC on 6 October 2026 from control
+`d819f52b29f55d4dfb53fbfc4a584c40ee40b059`, with unchanged source
+`4671737f1acc8292a5c984d00401341c8a4a5548`. Its actual twenty-job numerical
+gate, output restoration and source transition passed. The 08:18:52 UTC
+snapshot still showed ordered support preparation in progress; the saved
+checkpoint, four assembly builds and final imported audits remained pending.
+The separate read-only artifact inspector and disabled publication installer
+have been independently reviewed. Neither accepts an active or failed run.
+
+The controlled block-30 experiment now covers all 936 active original Taylor
+keys and all 64 unchanged leaves. Its ten source modules compiled, and their
+imported audits reported 2,193 genuine declarations using only the standard
+three axioms. Eight literal shards supply 936 interval and 936 error equalities.
+The exact normal exported closure retains these equalities and every actual
+supporting dependency. It contains 36,861 declarations and 116,682,710 bytes,
+compared with 9,722 declarations and 41,477,686 bytes for the original group.
+All 64 closed canonical goal types and all 9,658 shared declaration signatures
+match, with the same ordered 49 supporting roots and no metadata forced into
+only one side.
+
+Both fresh pinned Lean-default independent replays accepted their complete
+exports within the same 600-second and 12-GiB physical guards. The original
+used 289.628 seconds wall / 273.217 seconds user; the cached version used
+324.576 seconds wall / 313.703 seconds user. The cached single sample was
+34.948 seconds slower in wall time. Peak process RSS was approximately
+2.816 GB versus 2.908 GB. This is one sequential whole-export pair, including
+parsing and all supporting proofs; it is not a pure per-leaf measurement or
+a complete-table resource estimate.
+
+Independent read-only inspection matched all 39 sealed evidence files,
+actual command and replay records, the three actual exported inventories,
+all canonical goal hashes and all retained interval/error equalities. The
+comparison report has SHA256
+`60cd45b73bfdefdbf1599121a62ee9e14217939a7019eee6d126d664c380ef6b`;
+the sealed evidence manifest has SHA256
+`946c361b14237c005326943b6824078908724e7973acbeaef5044d5b1215a88b`.
+No cache source was adopted, and all prior evidence and original 106-block
+sources remain unchanged. A disjoint generic aggregate wrapper is being
+checked to measure proof assembly separately, with the same public forall
+statement, existing keys, original proof dependencies and bounded profile.
+Its comparison is pending and does not change the frozen integration source.
+
+A separate exact Git-source inventory found 6,739 genuine records with a
+literal Taylor term total of 52,973, plus 45 zero-term padding records at
+block 105 indices 19–63. Block 30 has the largest such per-block total, 1,411;
+this is a source count, not a checker-cost bound. The complete source inventory
+has SHA256
+`49c5dbdb1afccd8944c6539ff7cc1a47c7fa9046e88fbbf9c0e9d7530d09f89d`.
