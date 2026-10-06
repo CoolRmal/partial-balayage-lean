@@ -1218,3 +1218,55 @@ Pinned NanoDa source creates fresh reduction caches for each declaration; that
 lifecycle does not guarantee immediate allocator page release. These measured
 results cover one block and its shared dependencies only. Final all-block
 Comparator acceptance and resource fit require the actual full check.
+
+## Exact shared-support comparison and an isolated proof-form experiment
+
+An actual export from twenty-one existing support roots retains exactly 9,658
+of the original block export's 9,787 expanded constant names. The difference
+is precisely the block's 128 private arithmetic theorems and its final validity
+theorem; no supporting declaration is omitted or added. All arithmetic theorem
+types are closed. In particular, the lower-bound proofs do not assume metadata
+validity or refer to the metadata auxiliary proofs.
+
+The 41,344,471-byte support export has SHA256
+`abfcaf5c6a8b20ddf036c2d52e5118644f1fceae50c5b94ccb5334962010a5fe`.
+Pinned Lean-default replay accepted it in 96.796 seconds wall and 94.666 seconds
+user, with peak RSS 2,894,200,832 bytes. Subtracting this single measurement from
+the original block measurement gives 184.263 seconds wall and 179.972 seconds
+user for that block's private decisions and final assembly. This export retains
+support for block 30 specifically; it is not the shared closure of every block,
+and these single-sample differences do not establish full-run resource fit.
+
+An isolated prototype removes only the two explicit predicate-unfolding tactic
+lines, retaining the same records, theorem statement, and ordinary kernel
+arithmetic decisions. Its source SHA256 is
+`7c50db6cad9f0a510cfecb158dab15117df83a3b5a9b7e2183fd14bd1eb0ad1b`.
+The real compilation and all three imported standard-axiom audits passed.
+Its export with the same comparator roots/primitives has SHA256
+`a7e96ccab3536346e432ee9ab31e060670d0510cff63cd0d5eb87bda9e37e2e8`.
+It retains every original constant after private module-name normalization and
+adds only the existing metadata-decidability definition. Lean-default replay
+accepted it in 272.360 seconds wall and 266.479 seconds user, with peak RSS
+2,898,542,592 bytes. This is a modest single-sample timing difference, not a
+large verified improvement. No prototype source was adopted, and the running
+106-block candidate remains unchanged.
+
+## First forty-eight numerical blocks independently inspected
+
+All eight six-block ranges from 0 through 47 in replacement run `37409981058`
+completed successfully and their reports and output bundles were independently
+inspected. Every range matches the unchanged exact candidate and dispatcher,
+all 902 source/pin hashes, its actual standard-axiom audit logs, and its ninety
+regular compiled-output hashes and sizes. This covers 48 numerical blocks,
+144 actual validity/numerical/pointwise endpoints and 720 outputs. The other
+58 blocks and combined audit remain pending; no bundles have been restored and
+no complete square or sixteen-row acceptance is claimed.
+
+The independently checked first-thirty-block aggregate has SHA256
+`5ba8972c6046df06a59866d435108aff77dff68c5d3dd6ea19e56e23b752abf0`.
+The final two range report SHA256s in this group are
+`7057d388ec67f193c7a1a9bc575443ce62bb011f34f5bcf2ee3d11a97e318bb3`
+for 36–41 and
+`353258beede42acd82231978dedafcbc53599d698cca0da4d600f637d20bc73d`
+for 42–47; range 30–35 is recorded above. The public run artifacts retain the
+source, audit, output and manifest evidence behind these checks.
