@@ -1148,3 +1148,30 @@ The [replacement run 37409981058](https://github.com/CoolRmal/partial-balayage-l
 checks the unchanged candidate `dde634e918bcbba00881018b205dea4172d2ee5f`
 using tested dispatcher `243a5bd4f80c9517e7c9f834e85c5154eeb8e9a9`.
 Its fresh warm audits, numerical ranges and combined audit remain pending.
+
+## Corrected fifteen-row official acceptance and fresh square warm evidence
+
+The [thirty-fifth official preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37404883784)
+completed with a full pass for exact public snapshot
+`e301f763ae0c819976384ea733f7327e80ce1c44`. Its protected standard report
+has no errors or warnings and matches all fifteen configured table statements,
+including the full complex-input Riesz vector. Lean's default kernel, NanoDa and
+con-ron each explicitly accepted the solution; con-ron verified 61,137 declarations.
+The mechanical report SHA256 is
+`9cc515b2733ef357824764026aff2f57afe0b0b075d0b63236a47069681eee66`.
+The observed runner had four effective CPUs and 16,766,414,848 bytes of memory.
+The source solution build took 2,891.242 seconds and the Comparator 331.693 seconds.
+This acceptance covers fifteen rows; the remaining square row still requires its
+numerical checks, final assembly and a new official sixteen-row check.
+
+The replacement square run's shared stage also passed. Its genuine new-candidate
+report records 65 module build commands and all 99 imported audits, each with
+exactly the three standard axioms. All 902 reported source and pin hashes match
+candidate `dde634e918bcbba00881018b205dea4172d2ee5f`; all 240 shared
+source hashes match the independently recomputed closure. Warm build commands
+took 132.58 seconds in total, the imported audit 3.478 seconds, and the measured
+peak RSS was 3,950,912 kB. The fresh manifest has SHA256
+`dd19adbd4ae7078e3b898965939828f7b442fab29e1f3e33a8ceec5692248821`.
+Its unchanged shared output archive remains byte-identical to the verified seed,
+while the new manifest and actual rerun audits establish the candidate identity.
+Numerical ranges and their combined audit remain pending.
