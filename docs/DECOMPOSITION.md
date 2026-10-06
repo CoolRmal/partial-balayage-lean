@@ -851,11 +851,11 @@ numerical positivity registry and its unconditional identification with these
 covered rectangles.
 
 
-The final source-scope audit identified a remaining complex-input Riesz case.
-The source principle permits complex Hilbert inputs, so the real-input Riesz
-theorem alone does not complete that table row. The fourteen other completed
-rows match the stated input spaces and full norms. The actual complex norm-cap
-Poisson construction and full-vector Riesz cancellation are being extended to
-cover this case with coefficient two; separate component estimates would not
-establish the requested coefficient. Square arithmetic continues independently
-in disjoint exact certificate batches.
+The source-scope audit required the full complex-input Riesz vector. The actual
+complex norm-cap Poisson construction and full-vector Riesz cancellation now
+prove coefficient two on every complex L¹ input. All fifteen completed rows
+match the stated input spaces and full norms. Exact snapshot
+`e301f763ae0c819976384ea733f7327e80ce1c44` passed the full official
+Comparator and independent-kernel preflight. Square arithmetic continues in
+disjoint exact certificate batches; its final unconditional theorem and the
+complete sixteen-row check remain pending.

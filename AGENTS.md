@@ -3,7 +3,7 @@
 Final scope: every upper-bound row of the published article's abstract table. Do not silently
 reduce scope, replace an operator with an arbitrary abstraction, add an assumption equivalent
 to the desired bound, or substitute rounded approximations for exact constants. The current
-three-row comparator is an explicitly incomplete milestone.
+fifteen-row comparator is an explicitly incomplete milestone; the square row remains pending.
 
 Use $$ for LaTeX in Markdown. Preserve copied authorship headers. Every Lean source uses
 `module`. Challenge imports only allowed libraries and states each advertised result
