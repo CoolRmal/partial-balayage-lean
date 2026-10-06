@@ -61,6 +61,13 @@ The workflow pins PalomarSubmission to
 `d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44` in both its `uses` reference and
 `pipeline_commit`. It selects `mode: full` and
 `execution_profile: palomar-standard-v1` for ordinary GitHub-hosted runners.
+The live agent instructions explicitly select this approved hosted profile for
+external reusable callers. Palomar's own dispatches use the separate catalogue
+default `palomar-namespace-16x32-v1`, with sixteen CPUs and 32 GB of memory.
+The hosted base profile's raw file SHA256 is
+`94fcd7906a1b6c076c0036d742e1c5add8625e49bb474818ec8924576dbf0caa`;
+this matches the corrected fifteen-row mechanical report. Both profiles retain
+the 19,800-second execution budget and 350-minute job timeout.
 Inspect the downloaded `mechanical-report.json`: require `status: pass` and
 confirm the repository, source commit, project path, and Comparator path match
 the intended submission. A local build or standalone Comparator pass does not
