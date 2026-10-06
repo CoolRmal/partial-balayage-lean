@@ -4,11 +4,11 @@ project:
   name: Two partial balayage principles for weak-type estimates
   description: >-
     A Lean formalization in progress of Yongxi Lin's table of weak type (1,1)
-    upper bounds for singular integrals and maximal operators. Fifteen of sixteen
-    rows are proved, including full-vector real-input Riesz, complex Beurling,
-    full and traceless Frobenius
+    upper bounds for singular integrals and maximal operators. Fourteen table rows
+    are proved in full, together with the full-vector real-input Riesz subcase.
+    Completed bounds include complex Beurling, full and traceless Frobenius
     Hessians, both projections, centred intervals and balls, and all six Poisson
-    and heat maximal bounds. The square row remains pending.
+    and heat maximal bounds. Complex-input Riesz and the square row remain pending.
   authors:
   - name: Yongxi Lin
     github: CoolRmal
@@ -43,7 +43,8 @@ related_formalizations:
   note: Supplies three already established maximal-operator bounds.
 status:
   scope: >-
-    The comparator is configured for fifteen rows: full-vector real-input Riesz,
+    The comparator has fifteen statements: fourteen complete table rows and the
+    full-vector real-input Riesz subcase,
     complex Beurling, full and
     traceless Frobenius Hessians, both projections, centred intervals, planar
     and higher-dimensional Euclidean balls, and all six Poisson and heat maximal
@@ -52,7 +53,9 @@ status:
     formulas are proved. The complex singular-integral and projection statements
     quantify over genuine linear all-L¹ extensions agreeing with the actual L²
     Fourier operators. The Riesz statement has a genuine linear extension on
-    every real L¹ input. The square row remains pending before final registration.
+    every real L¹ input. The final source fidelity audit identified that the article
+    also covers complex scalar Riesz input; that extension and the square row
+    remain pending before final registration.
     Counts exclude the deliberate holes in Challenge.lean.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -83,8 +86,10 @@ automation:
   notes: Copied proofs retain their previously documented provenance.
 fidelity:
   divergences: >-
-    Incomplete: fifteen of sixteen rows are presently compared. Semigroup formulas
-    use the exact proved unique parameters rather than rounded decimals. The square
+    Incomplete: fourteen table rows and the real-input Riesz subcase are presently
+    compared in fifteen statements. The article also permits complex scalar Riesz
+    input; this scope extension is pending. Semigroup formulas use the exact proved
+    unique parameters rather than rounded decimals. The square
     row remains pending; the earlier square bound 3.879 is not advertised as
     the requested new bound below 3.616.
 review:
@@ -97,11 +102,13 @@ review:
 alignment:
   namespace: PartialBalayage
   statements:
-  - source: Abstract table, full-vector real-input Riesz transform
+  - source: Abstract table, Riesz transform (real-input subcase)
     lean: PartialBalayage.riesz_weakTypeConstant_le_two
     module: Solution
     status: proved
-    note: Every positive dimension, full Euclidean vector and genuine linear all-real-L¹ extension.
+    note: >-
+      Every positive dimension, full Euclidean vector and genuine linear all-real-L¹
+      extension. The article also permits complex scalar input; that extension is pending.
   - source: Abstract table, centred intervals
     lean: PartialBalayage.interval_weakTypeConstant_le_two
     module: Solution

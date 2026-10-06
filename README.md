@@ -4,16 +4,16 @@
 
 Work in progress toward formalizing all sixteen upper-bound rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-Fifteen rows are now proved: the full-vector real-input Riesz transform,
-complex-input Beurling transform, full and traceless Frobenius Hessians, both projections, centred intervals, Euclidean balls,
-and all six Poisson and heat maximal bounds. Every maximal estimate
+Fourteen table rows are proved in full, together with the real-input Riesz subcase:
+complex-input Beurling transform, full and traceless Frobenius Hessians, both
+projections, centred intervals, Euclidean balls, and all six Poisson and heat bounds. Every maximal estimate
 quantifies over all integrable real inputs and all extended-real levels. The six new
 semigroup bounds use the article's exact formulas and proved unique parameters.
 
-The square row remains pending. This repository has
+The square row and the article's complex-input Riesz extension remain pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fifteen statements. The fifteen-row checkpoint
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37384905929)
+configured for fifteen statements. The fifteen-statement checkpoint
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37387101151)
 with no errors or warnings.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).

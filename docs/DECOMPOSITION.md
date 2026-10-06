@@ -844,3 +844,13 @@ the original genuine table; their equivalent validity predicates prove exactly
 the original cubic and coordinate properties. The remaining work is the complete
 numerical positivity registry and its unconditional identification with these
 covered rectangles.
+
+
+The final source-scope audit identified a remaining complex-input Riesz case.
+The source principle permits complex Hilbert inputs, so the real-input Riesz
+theorem alone does not complete that table row. The fourteen other completed
+rows match the stated input spaces and full norms. The actual complex norm-cap
+Poisson construction and full-vector Riesz cancellation are being extended to
+cover this case with coefficient two; separate component estimates would not
+establish the requested coefficient. Square arithmetic continues independently
+in disjoint exact certificate batches.

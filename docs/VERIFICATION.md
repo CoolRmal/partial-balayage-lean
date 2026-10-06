@@ -762,3 +762,42 @@ twenty-fourth exact commit, with zero errors/warnings and fifteen unconditional
 table rows. Final sixteen-row Comparator verification, intake confirmation of
 the human maintainer relationship, private review and review-specific registration
 consent remain pending.
+
+
+## Twenty-eighth proof checkpoint: checked coordinates and corrected input scope
+
+The [twenty-fifth full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37387101151)
+passed for exact public commit `3858eac3c756160a0ea7e809b7e2696838d67319`.
+The downloaded report records `status: pass`, `stage: complete`, zero errors and
+warnings, all fifteen exact theorem names, independent NanoDa and con-ron checks,
+and high-trust canonical challenge provenance with no untrusted sources. Its
+check time is 5 October 2026 at 23:58:18 UTC. This is mechanical evidence for
+exactly those statements, not for the unproved square or complex Riesz cases.
+
+Twenty-eight new original coordinate blocks (4 through 31) passed all focused
+builds and one imported 28-export audit using exactly `propext`,
+`Classical.choice` and `Quot.sound`. Source and 100-column checks pass. The
+combined library, challenge and solution build passed (4,578 jobs). Together
+with the earlier frozen prefix and final coordinate block, these provide checked
+dependencies for the first disjoint full leaf batches. No unfinished numerical
+module is published in this checkpoint.
+
+A read-only final fidelity audit verified that the fresh live article is
+byte-identical to the original source. It found one material input-scope gap:
+the current Riesz theorem covers every real L¹ input, whereas the source's
+real-or-complex Hilbert principle also yields the displayed Riesz coefficient
+two for complex scalar input. This applicability is an inference from its
+explicit principle and displayed Riesz multiplier. The real-input theorem remains
+correct and mechanically verified, but does not by itself complete the article's
+unrestricted Riesz row. The README and structured metadata now explicitly count
+fourteen complete table rows plus this proved real-input subcase. The full
+complex-input extension is in progress; no weaker coefficient is substituted.
+
+The other fourteen statements match the actual article's dimensions, complex
+input spaces, full vector/Frobenius norms, exact parameters, centered geometry
+and all-input extension semantics. Real-input maximal constants also determine
+complex-input constants because their definitions depend only on the real
+nonnegative norm of the input. The square target remains the strict coefficient
+below 452/125. Complete square arithmetic and complex Riesz are being completed
+in parallel. Official twenty-sixth and twenty-seventh preflights remain ongoing.
+Final all-row verification and Palomar intake, review and registration are pending.

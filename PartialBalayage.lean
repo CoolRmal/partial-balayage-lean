@@ -673,6 +673,35 @@ public import PartialBalayage.Maximal.Square.Data.NormalizedGeneratorCellMatrice
 public import PartialBalayage.Maximal.Square.NormalizedGeneratorCellCoefficients
 public import PartialBalayage.Maximal.Square.GeneratorFastCubicValidity
 
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates4
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates5
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates6
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates7
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates8
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates9
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates10
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates11
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates12
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates13
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates14
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates15
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates16
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates17
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates18
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates19
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates20
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates21
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates22
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates23
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates24
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates25
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates26
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates27
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates28
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates29
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates30
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates31
+
 /-!
 # Two partial balayage principles
 
