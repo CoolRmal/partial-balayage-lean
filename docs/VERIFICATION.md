@@ -1301,3 +1301,36 @@ These tests establish the guards only. The support and final proof builds, ten
 imported endpoint audits and full sixteen-row official check still require
 actual gated execution. The independent publication-review report and its
 synthetic test evidence are retained with the local audit records.
+
+## Ninety numerical blocks independently inspected
+
+Fifteen range jobs in run `37409981058` have completed successfully and their
+actual reports and compiled outputs have been independently inspected. This
+covers blocks 0–77 and 84–95: 90 blocks, 270 standard-axiom audit endpoints and
+1,350 compiled outputs. Every range matches the unchanged candidate
+`dde634e918bcbba00881018b205dea4172d2ee5f`, dispatcher
+`243a5bd4f80c9517e7c9f834e85c5154eeb8e9a9` and all 902 source/pin hashes.
+The aggregate of independently reviewed range evidence has SHA256
+`374043b9719597cfce8b08ea577d157d1cb8f76779dc89f4635d13224ea4b22c`.
+
+The other sixteen blocks and the combined numerical audit remain pending at
+this checkpoint. Outputs have only been inspected, never restored. The four
+assembly proofs and full sixteen-row acceptance remain pending.
+
+## Routine CI source classification
+
+Routine CI now checks the exact tested Git difference before running the
+expensive Lean build, API documentation and Comparator jobs. Proof sources,
+dependency pins, comparator configuration, verification scripts and workflow
+changes run all three checks. Documentation and formalization-metadata-only
+changes retain licence, metadata and submission-link checks. Manual dispatch,
+unavailable or ambiguous differences, and any classifier job failure also
+run the full checks. Their command/action blocks and existing action pins are
+preserved, with 350-minute job timeouts. The protected Palomar workflow and
+its approved verification budgets are unchanged.
+
+The actual classification code passed 38 tests using real temporary Git
+commits. Twenty-seven additional cases evaluated the three actual workflow
+conditions, including failure after an output of `false`. Independent review
+and a rerun on the installed files passed all 65 cases. These control tests
+execute no Lean or Comparator commands and establish no new proof acceptance.
