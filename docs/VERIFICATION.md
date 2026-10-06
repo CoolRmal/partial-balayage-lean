@@ -1383,3 +1383,41 @@ raw reports and earlier descriptive interpretations remain preserved.
 The experiment was not adopted. NanoDa and con-ron have not checked it, and
 it establishes no complete table acceptance or full-run resource fit. The
 actual 106-block candidate and all analytical statements remain unchanged.
+
+## One hundred numerical blocks independently inspected
+
+Range 102–105 completed and passed independent report, source/pin, actual
+axiom-log, output-hash and outer artifact identity checks. Together with the
+previous checkpoint, this covers 100 blocks, 300 actual permitted-axiom
+endpoints and 1,500 outputs. Blocks 96–101 and the combined audit remain
+pending at this checkpoint. The 100-block independent aggregate has SHA256
+`e4f7ad80ea70b1124de1ad2350ceadc25d4c11e5b9f572c85ae19e28c1984964`.
+No local restoration or square assembly build has occurred.
+
+## Genuine metadata and numerical decision group measurements
+
+The accepted block-30 export has 64 closed private metadata proofs and 64
+closed private lower-bound proofs. Each group's genuine export retains
+exactly the same 9,658 supporting declarations and only its 64 original proofs:
+9,722 declarations each, with no extra hypotheses, declarations or permissive
+export flags. The two groups overlap precisely on the shared support and
+together omit only the original final block-assembly theorem. Actual pinned
+Lean-default replay accepted both exports sequentially using only standard
+axioms. The retained evidence manifest has SHA256
+`f14fae85358190fcdb431bc80afd216ad0bff9ccfd8f9733b9d0193c4a35c6a6`;
+all 44 evidence file sizes and hashes were independently checked. Earlier
+clarified experiment evidence remains unchanged.
+
+| Export, including shared support | Wall seconds | Peak RSS bytes |
+| --- | ---: | ---: |
+| Earlier shared support alone | 96.796 | 2,894,200,832 |
+| Shared support plus 64 metadata proofs | 96.823 | 2,882,322,432 |
+| Shared support plus 64 numerical lower-bound proofs | 276.456 | 2,895,314,944 |
+
+These are single full-export measurements including parsing and shared
+support. They show no material measured metadata excess and locate the
+expensive checks in the numerical inequalities for this block. Differences
+are not pure proof costs, additive estimates for all 106 blocks, or evidence
+of full-run resource fit. Only Lean-default checked these isolated groups.
+A proposed shared Taylor-result route remains an isolated experiment; no
+source or proof change has been adopted.
