@@ -1494,3 +1494,45 @@ parsing; they are not pure per-leaf costs or evidence of full-table resource
 fit. The actual 106-block candidate remains unchanged. A separate zero-centre
 fallback bridge and its three-leaf endpoints have compiled and passed
 standard-axiom audits; their comparable replay checks are still pending.
+
+## Complete regular CI and zero-centre cache comparison
+
+Regular [CI run 37418157210](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37418157210)
+completed successfully at tested revision
+`e1a689812577a8a44137829fa9ae10bba38f0657`. All six jobs passed: source-change
+classification, metadata/licence, submission links, Lean build, Comparator,
+and API documentation. The documentation job completed at 07:05:42 UTC on
+6 October 2026. This is verification of the fifteen-row source, not acceptance
+of the pending square assembly or the complete sixteen-row table.
+
+The isolated zero-centre cache variant retains the genuine original interval
+calculation when its centre is zero, and proves unconditional equality of
+the other cached calculations with their originals. Its three unchanged
+leaf endpoints compiled and passed sixteen imported standard-axiom audits;
+the generic bridge passed four such audits. Actual exported inventories
+confirmed that the original 47 additional private global power-cache checks
+and old interval bridge are absent, while all 346 selected equality exports
+and all 9,658 baseline declarations remain.
+
+Fresh paired pinned Lean-default replays accepted all six exports, with
+identical closed goal hashes and the same 49 support roots. Independent
+read-only inspection matched all 285 retained evidence file sizes and hashes,
+parsed the actual six exports and checked actual replay and resource records.
+The sealed manifest has SHA256
+`1758d7705c20bc2d2a15ede3fd988b6c6c1e56433a7754b5e647ce89677601f3`;
+the comparison report has SHA256
+`0bfa9e2483eb16876837ffa39a092cbd7d2e7220ed9fe904431928e7857ebc02`.
+
+| Leaf | Original wall / user seconds | Zero-centre wall / user seconds |
+| --- | ---: | ---: |
+| 75 terms | 95.911 / 91.788 | 99.964 / 97.363 |
+| Zero terms | 99.381 / 93.587 | 117.181 / 106.670 |
+| Corner | 101.509 / 98.056 | 104.203 / 101.471 |
+
+These single whole-export samples show no improvement over their fresh
+original baselines. No source was adopted and no complete-table resource
+fit is inferred. A separate controlled 64-leaf block comparison is being
+prepared to measure reuse across a block, using exactly its 936 active
+original Taylor keys. Its proposed data, final proofs and replay remain
+pending at this checkpoint. The frozen original square integration run
+continues independently.
