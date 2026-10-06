@@ -731,6 +731,12 @@ public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates42
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates44
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates46
 public import PartialBalayage.Maximal.Square.GeneratorLeafSparseCheck
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates32
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates48
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates50
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates52
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates54
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates56
 
 /-!
 # Two partial balayage principles
