@@ -1,109 +1,79 @@
 # Palomar preparation and registration
 
-Registration is pending. This project targets all bounds in the table of
+Registration is pending. The current submission scope is fifteen rows of
 [Two partial balayage principles](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-Do not describe the table as fully formalized, submit it as complete, or claim a
-Palomar registration until every advertised bound has a proof and the checks
-below have passed for the same public commit.
+The planar square bound below $$3.616$$ is excluded. The complete article table
+and this distinction are visible in the [README](../README.md).
+The cleaned public snapshot requires fresh verification before intake.
 
-The user has authorized creating the public repository, pushing its development,
-and preparing its submission. Submission must accurately identify the human
-responsible author or maintainer; repository write access alone is not authorship.
+The authoritative sources are the live
+[submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md),
+[protocol](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/docs/specification.md),
+and [agent instructions](https://submit.palomar-registry.org/llms.txt).
+Read them again before using intake; this document is a project checklist.
 
-## Repository requirements
+## Repository checks
 
-These requirements were checked against Palomar's live policy on 2026-10-05.
-The [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md)
-and [protocol](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/docs/specification.md)
-are authoritative; read the live
-[agent instructions](https://submit.palomar-registry.org/llms.txt) before intake.
-
-- Keep `lean-toolchain`, one Lakefile, the committed `lake-manifest.json`,
+- Retain the pinned `lean-toolchain`, Lakefile, `lake-manifest.json`,
   `Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`, and
-  exactly one root licence file. The licence must match `project.license`.
-- Use Lean at least `leanprover/lean4:v4.35.0-rc2`, exactly matching the resolved
-  canonical Mathlib revision's toolchain. Pin all Git dependencies to public,
-  credential-free GitHub URLs and full lowercase 40-character commits.
-- Every submitted regular `.lean` file must use `module` and have at most 10,000
-  physical lines. `lakefile.lean` is exempt only from the header. Exclude `.git`
-  and `.lake`; do not submit Lean symlinks or compiled artifacts.
-- Keep Challenge at most 1,000 lines and 100 KiB, preferably at most 300 lines
-  and 32 KiB. Its transitive imports may use only Lean core, canonical Mathlib,
-  Tau Ceti, or CSLib. Definitions must have their ordinary mathematical meaning
-  and precise docstrings; expose every principal claim and material hypothesis.
-- Comparator may permit only `propext`, `Quot.sound`, and `Classical.choice`.
-  Deliberate Challenge holes are allowed; Solution proofs must not depend on
-  `sorryAx`, `Lean.ofReduceBool`, or custom axioms. Do not put `external_kernels`
-  in the submitted configuration. Palomar ignores `enable_nanoda` and supplies
-  its protected independent-kernel configuration.
-- Use `formalization.yaml` v0.4 with human authors and responsible maintainers,
-  precise scope, a factual abstract, subject classification, source provenance,
-  honest AI-use disclosure, and the review actually completed. This is a
-  source-based formalization of the linked article, not an `original-proof`.
-  The article can use source type `web discussion` and relationship `formalizes`.
+  the matching Apache-2.0 licence.
+- Challenge must expose the fifteen actual mathematical statements and their
+  hypotheses, using only allowed independent dependencies. The excluded square
+  row must not remain as a placeholder or conditional substitute.
+- Solution must prove the matching statements. Deliberate Challenge holes must
+  not enter those proofs. Permit only `propext`, `Classical.choice`, and
+  `Quot.sound`, including legitimate subsets; reject `sorryAx`, native reduction,
+  and custom axioms.
+- Preserve human author headers, dependency provenance, exact formulas, the full
+  intended operator norms and input domains, and honest AI-use disclosure.
+- Keep scope consistent across the README, metadata, Challenge, Solution, and
+  Comparator. Historical verification is evidence about its exact earlier
+  snapshot, not acceptance of the cleaned source.
 
-## Checks for the exact commit
+## Checks for the exact public commit
 
-The template CI checks source requirements, builds, metadata/licence, API
-documentation, and Comparator on Linux. The bundled `lake comparator` uses
-bubblewrap; a macOS development build is not a sandboxed Comparator check.
-Run the project's ordinary CI first, then dispatch the official full preflight:
+Run ordinary CI, then dispatch the protected official full preflight:
 
 ```bash
 gh workflow run palomar-preflight.yml --repo OWNER/REPOSITORY --ref main \
   -f commit=FULL_40_CHARACTER_COMMIT
-gh run list --repo OWNER/REPOSITORY --workflow palomar-preflight.yml
-gh run download RUN_ID --repo OWNER/REPOSITORY \
-  --pattern 'mechanical-report-*' --dir REPORT_DIRECTORY
 ```
 
-The workflow pins PalomarSubmission to
-`d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44` in both its `uses` reference and
-`pipeline_commit`. It selects `mode: full` and
-`execution_profile: palomar-standard-v1` for ordinary GitHub-hosted runners.
-The live agent instructions explicitly select this approved hosted profile for
-external reusable callers. Palomar's own dispatches use the separate catalogue
-default `palomar-namespace-16x32-v1`, with sixteen CPUs and 32 GB of memory.
-The hosted base profile's raw file SHA256 is
-`94fcd7906a1b6c076c0036d742e1c5add8625e49bb474818ec8924576dbf0caa`;
-this matches the corrected fifteen-row mechanical report. Both profiles retain
-the 19,800-second execution budget and 350-minute job timeout.
-Inspect the downloaded `mechanical-report.json`: require `status: pass` and
-confirm the repository, source commit, project path, and Comparator path match
-the intended submission. A local build or standalone Comparator pass does not
-replace this full preflight. The workflow is manual and does not submit anything.
+The committed workflow pins PalomarSubmission to
+`d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44`, selects full mode, and uses
+`palomar-standard-v1` for the approved GitHub-hosted profile. Its fixed budget
+and protected kernel configuration must remain unchanged. Source and cache
+optimizations do not justify relaxing the official verification requirements.
 
-## Submission and registration
+Inspect the actual mechanical report and logs. Require a completed pass binding
+this repository, the exact source commit, `comparator.json`, all fifteen targets,
+permitted axioms, and the actual protected kernel results. A local build or
+selected independent-kernel pass does not replace full preflight. The workflow
+itself does not submit or register the project.
 
-The sole intake is [submit.palomar-registry.org](https://submit.palomar-registry.org/).
-Use the final public 40-character commit and `comparator.json`. For an agent,
-the documented HTTPS route proves push access through authenticated `gh`:
+## Intake and registration
 
-1. After the final complete public commit has passed full preflight, show the
-   human its repository, exact commit and Comparator path, and obtain agreement
-   to the recorded relationship (`maintainer`). The live agent instructions
-   require this claim about the human to be confirmed before intake. Then use
-   `POST /api/submit` with repository, commit, Comparator path, and the agreed
-   human authorization relationship. An ordinary responsible-maintainer claim
-   uses `authorization_relationship: "maintainer"`.
-2. Create the returned challenge tag at that commit and a new secret gist
-   containing the same challenge, following the returned instructions.
-3. `POST /api/verify` with the pending secret and gist identifier. Store its
-   bearer access token privately; never commit or print it. Delete the temporary
-   tag and gist after verification answers. Complete this proof within the
-   fifteen-minute intake lifetime. Do not automate browser sign-in.
-4. Read `GET /api/submission` using the bearer header, at most once a minute
-   during verification and once every five minutes while awaiting review.
-   Read `GET /api/review` when available. Keep an unregistered review private.
-5. If the review requests correctable changes, commit and push the corrections,
-   rerun the checks, and submit the new exact commit.
-6. Registration requires a review with no blocking problems and consent to that
-   exact review. Show the human the review and explain that registration publishes
-   the record, source, redacted review, and immutable preservation tags. After
-   they approve that review, `POST /register` with its `review_sha256`, then
-   confirm `registered` and the public entry. A successful verification or
-   review is not itself registration.
+Use the final verified public commit and `comparator.json` at
+[submit.palomar-registry.org](https://submit.palomar-registry.org/).
+Repository write access alone does not establish human authorship.
 
-Keep access tokens and pending secrets out of Git, public logs, issues, and pull
-requests. If the proof route cannot establish the required tag and secret gist,
-the user must complete Palomar's browser flow themselves.
+1. Show the human the repository, exact commit, Comparator path, and claimed
+   maintainer relationship. Obtain their agreement before intake.
+2. Follow the current documented HTTPS/`gh` proof route and returned challenge
+   instructions within its fifteen-minute lifetime. Keep pending secrets and
+   bearer tokens in private files, outside Git and public output.
+3. Preserve owned temporary proof artifacts on unknown or unconsumed verification
+   outcomes. Clean up only the owned artifacts when the service has confirmed a
+   successful answer or known consumption; do not blindly retry a mutation.
+4. Inspect the actual submission and delivered review under the protocol's polling
+   limits. An unregistered review remains private. Correct blocking issues and
+   reverify the exact new commit when required.
+5. Show the human the complete review and its exact digest. Registration publishes
+   the record, source, redacted review, and preservation tags, so obtain a second
+   agreement to that exact review before registering.
+6. Confirm the actual registered state and public entry. Successful verification
+   or review alone is not registration.
+
+No intake or registration is claimed for this cleanup. The historical accepted
+fifteen-row snapshot and failed sixteen-row attempts are summarized in
+[VERIFICATION.md](VERIFICATION.md).

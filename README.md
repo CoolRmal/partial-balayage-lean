@@ -2,128 +2,138 @@
 
 [![CI](https://github.com/CoolRmal/partial-balayage-lean/actions/workflows/ci.yml/badge.svg)](https://github.com/CoolRmal/partial-balayage-lean/actions/workflows/ci.yml)
 
-A candidate Lean formalization of all sixteen upper-bound rows in Yongxi Lin's
+A Lean formalization of fifteen rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-The results include complex-input full-vector Riesz and Beurling transforms,
+The included results cover the full complex-input Riesz and Beurling transforms,
 full and traceless Frobenius Hessians, both projections, centred intervals,
-Euclidean balls, the strict planar square bound below 3.616, and all six Poisson
-and heat bounds. Every maximal estimate covers all integrable real inputs and
-all extended-real levels. The semigroup bounds use exact formulas and proved
-unique parameters.
+Euclidean balls, and all six Poisson and heat bounds. The planar square row is
+excluded from the current proof and Comparator scope.
 
-The comparator is configured for all sixteen statements. The complete source
-`0055cdf5b947f4e23b0b736a297ab38b48b1a270` passed the official cold Solution build
-(4,739 jobs) and the ordinary CI Lean build (4,742 jobs), including all 106
-numerical blocks and the final square assembly. The official Comparator stage
-exhausted the worker's time budget; ordinary Comparator and documentation jobs
-were cancelled at their 350-minute limits. Neither complete verification run
-passed. Proof optimization is in progress, and the repository is **not
-registered on Palomar**.
+The square bound below $$3.616$$ is difficult to verify because its proof uses
+large exact arithmetic certificates. That proof and its numerical development
+have been removed from this repository's scope. The weaker bound
+$$c(M_\square)\le3.879$$ is formalized in
+[centered-maximal-constant](https://github.com/CoolRmal/centered-maximal-constant),
+where the actual theorem is
+[`CenteredMaximal.weakTypeConstant_two_le_upper`](https://github.com/CoolRmal/centered-maximal-constant/blob/72c022ba09032b522c878cca2f9b6c68217d77ea/Solution.lean#L38).
+That separate result does not replace the article's square row here.
 
-The earlier fifteen-row snapshot
+## Complete article table and current scope
+
+All sixteen article rows are listed below. “Included” identifies the fifteen
+rows in the current source and Comparator; it does not claim that the cleaned
+snapshot has already passed a new complete verification run. Write $$c(T)$$ for
+the weak-type $$(1,1)$$ constant of $$T$$.
+
+| Row | Operator | Article upper bound | Current scope |
+| --- | --- | --- | --- |
+| 1 | Riesz transform | $$2$$ | Included |
+| 2 | Beurling–Ahlfors transform | $$2$$ | Included |
+| 3 | Second-order Riesz transform, $$n=2$$ | $$3\sqrt6/4$$ | Included |
+| 4 | Second-order Riesz transform, $$n\ge2$$ | $$1/a_n+(n-1)a_n/(n-a_n^2)$$ | Included |
+| 5 | Traceless second-order Riesz transform | $$2\sqrt{1-n^{-1}}$$ | Included |
+| 6 | Leray and gradient projections | $$\approx1.805$$ | Included, exact expression |
+| 7 | Centred Hardy–Littlewood maximal operator, $$n=1$$ | $$2$$ | Included |
+| 8 | Centred maximal operator for Euclidean balls, $$n=2$$ | $$e$$ | Included |
+| 9 | Centred maximal operator for axis-parallel squares, $$n=2$$ | $$<3.616$$ | **Excluded** |
+| 10 | Centred maximal operator for Euclidean balls, $$n\ge3$$ | $$(n/2)^{n/(n-2)}$$ | Included |
+| 11 | Poisson maximal operator, $$n=1$$ | $$1+\frac2\pi\left(\frac{\sqrt5}{3}-\arctan\frac2{\sqrt5}\right)\approx1.010$$ | Included |
+| 12 | Poisson maximal operator, $$n=2$$ | $$\approx1.021$$ | Included, exact expression |
+| 13 | Poisson maximal operator | $$\frac{\Gamma((n+1)/2)}{\sqrt\pi\,\Gamma(n/2)}\left[\frac{2b_P^{n/2}}{n(1+a_P)^{(n+1)/2}}+\int_{b_P}^\infty\frac{z^{n/2-1}}{(1+z)^{(n+1)/2}}\,dz\right]$$ | Included for $$n\ge1$$ |
+| 14 | Heat maximal operator, $$n=1$$ | $$\approx1.037087$$ | Included, exact expression |
+| 15 | Heat maximal operator, $$n=2$$ | $$\approx1.094052$$ | Included, exact expression |
+| 16 | Heat maximal operator | $$\frac1{\Gamma(n/2)}\left[\frac{2(\rho_n a_H)^{n/2}e^{-a_H}}n+\int_{\rho_n a_H}^\infty z^{n/2-1}e^{-z}\,dz\right]$$ | Included for $$n\ge1$$ |
+
+The parameters follow the article:
+
+$$
+a_n=\sqrt{\frac{2n}{n+1+\sqrt{(n+1)^2+4(n-2)}}},\qquad
+\rho_n=\begin{cases}(n/2)^{2/(n-2)},&n\ne2,\\e,&n=2.\end{cases}
+$$
+
+For Poisson, $$a_P=a_P(n)$$ is the unique solution in
+$$(n/(3\rho_n),n/3)$$ of
+
+$$
+\frac{1-a_P/n}{(1+a_P)^{(n+3)/2}}
+=\frac1{(1+\rho_n a_P)^{(n+1)/2}},\qquad b_P=\rho_n a_P.
+$$
+
+For heat, $$a_H=a_H(n)$$ is the unique nonzero solution in
+$$(n/(2\rho_n),n/2)$$ of
+
+$$
+e^{-(\rho_n-1)a_H}=1-\frac{2a_H}{n}.
+$$
+
+The decimal labels are approximations, not rigorous truncated upper bounds.
+The formal projection coefficient is
+$$1/a_*+a_* /(2-a_*)^2$$, where $$a_*\in(0,1)$$ is the unique root of
+$$a_*^3-2a_*^2+6a_*-4=0$$. The planar Poisson coefficient is
+
+$$
+\frac{e\,a_P(2)}{2(1+a_P(2))^{3/2}}
++\frac1{\sqrt{1+e\,a_P(2)}}.
+$$
+
+The one- and two-dimensional heat coefficients are respectively
+
+$$
+4\sqrt{a_H(1)/\pi}\,e^{-a_H(1)}
++\operatorname{erfc}(2\sqrt{a_H(1)}),\qquad
+[1+(e-1)a_H(2)]e^{-a_H(2)},
+$$
+
+where $$\operatorname{erfc}(r)=\frac2{\sqrt\pi}\int_r^\infty e^{-s^2}\,ds$$.
+The source proves parameter existence, uniqueness, and the equality of these
+special formulas with the general formulas.
+
+## Proof development
+
+The linear branch constructs actual whole-space vector and complex Poisson
+balayage, proves Sobolev regularity and zero-set cancellation, and derives the
+full vector and Frobenius matrix estimates. Genuine linear extensions give
+bounds for every complex $$L^1$$ input. Leray and gradient projections act on
+vector fields; the Riesz and Hessian estimates use the full outputs.
+
+The semigroup branch constructs positive whole-space Laplace balayage and
+integrable tangent majorants, computes their exact masses, and transfers the
+estimates to every positive time and every integrable input. The final bounds
+have no analytical certificate assumptions. The interval and Euclidean-ball
+proofs are adapted from the author's
+[earlier formalization](https://github.com/CoolRmal/centered-maximal-constant/tree/72c022ba09032b522c878cca2f9b6c68217d77ea).
+
+## Verification and layout
+
+An earlier fifteen-row snapshot,
 `e301f763ae0c819976384ea733f7327e80ce1c44`, including full complex-input Riesz,
 [passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37404883784)
-with no errors or warnings. Comparator and Lean, NanoDa and con-ron accepted
-that earlier solution. The final sixteen-row snapshot still requires the
-complete official check. Exact scope, evidence and earlier failed attempts
-are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+with zero errors and warnings. Its solution was accepted by Comparator and
+Lean, NanoDa, and con-ron. The cleaned current snapshot requires fresh ordinary
+CI and official full verification. The repository is **not registered on
+Palomar**. [Verification history](docs/VERIFICATION.md) distinguishes the
+historical pass from the unsuccessful sixteen-row attempts.
 
-The three interval and Euclidean-ball proofs are adapted from the author's
-[earlier formalization](https://github.com/CoolRmal/centered-maximal-constant/tree/72c022ba09032b522c878cca2f9b6c68217d77ea).
-Their exact bounds are
-
-$$
-c_1\le2,\qquad c_{\mathrm{ball},2}\le e,\qquad
-c_{\mathrm{ball},n}\le(n/2)^{n/(n-2)}\quad(n\ge3).
-$$
-
-The new semigroup proofs construct actual positive whole-space Laplace balayage,
-prove its cap complementarity and active-volume bound, compare the original kernels
-with genuine integrable tangent majorants, compute their exact masses, and pass
-rational-time comparisons to the full supremum. Monotone L¹ and L² truncations extend
-the exact estimates to every integrable input. Parameter existence and uniqueness,
-the one-dimensional Gaussian and arctangent tails, and the planar elementary
-formulas are proved. The final statements assume no analytical certificates.
-
-Supporting development also constructs actual whole-space vector balayage and proves
-genuine global Sobolev regularity and Hessian cancellation. Fourier multipliers use
-Euclidean vector and Frobenius matrix norms. Actual complex capped decompositions
-and Hessian locality give the Beurling, full and traceless Hessian and projection
-bounds. Genuine linear L¹ extensions
-are proved to exist and to be unique among finite weak-bound extensions. The final
-statements use the independently defined concrete Fourier operators. Actual signed
-Poisson balayage, full-norm Fourier regularity and physical Sobolev zero-set locality
-give the full-vector Riesz coefficient two on every real L¹ input.
-The complex extension constructs a genuine complex norm-capped Poisson
-decomposition, proves physical Poisson regularization, the full frequency-norm
-identity and actual self-energy pairing, and identifies every Riesz coordinate
-with a physical first derivative. Real and imaginary zero-set locality give
-full-vector cancellation. Its norm-capped level-set estimate and genuine complex
-linear L¹ extension prove the complete complex-input table theorem.
-
-The square proof constructs the actual nonnegative kernel and proves its
-closed-diamond majorization and exact mass bound. The original radial and
-cubic-spline sources are identified through genuine punctured test identities,
-with the full even compensated source representation and required second
-moment. Exact Taylor enclosures and incoming-tail estimates, the complete
-subdivision and floor-based coverage proof, and all 106 checked numerical
-blocks prove positivity of the actual interior generator. Boundary and axis
-identities give the almost-everywhere nonnegative source used by the source
-comparison theorem. Genuine mollification, source convolution and the closed
-full-source graph transfer the constructed state to that singular source.
-Physical diamond averages, all positive radii, every extended-real level and
-monotone L¹ truncations transfer the coefficient to the original square
-operator, proving
-
-$$
-c(M_\square)<\frac{452}{125}=3.616.
-$$
-
-[All 106 numerical blocks and the combined audit passed on Linux](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
-The exact split registry then compiled locally in 56.237 seconds and its three
-imported axiom audits completed in 7.415 seconds. Rectangle alignment uses 106
-separate checks of 64 labels, preserving the original registry data and public
-theorem statements. The remaining three assembly modules also compiled locally,
-and all ten imported theorem audits use only `propext`, `Classical.choice` and
-`Quot.sound`. The resulting square theorem has no positivity or numerical
-certificate premise.
-
-The earlier integration attempts 37422022840 and 37431956910 failed during
-assembly and remain recorded as failures. The latter saved the completed
-713-module support checkpoint before assembly. These focused local results
-do not turn either failed run into a pass. The subsequent complete cold build
-passed, as described above; complete sixteen-row Comparator acceptance and
-Palomar registration remain pending.
-
-Some table decimals approximate exact formulas and are not rigorous truncated upper
-bounds. The formal statements retain exact expressions. The square target is strictly
-below 3.616; the earlier bound 3.879 does not meet it.
-
-## Project map
-
-- `Challenge.lean`: sixteen independent auditable statements importing Mathlib alone.
+- `Challenge.lean`: fifteen independent statements importing Mathlib alone.
 - `Solution.lean`: the matching proved declarations.
-- `PartialBalayage/`: new proofs and adapters to earlier results.
-- `CenteredMaximal/`: the copied minimal earlier source closure, preserving author headers.
-- `comparator.json`: the exact sixteen statements compared.
-- `formalization.yaml`: provenance, scope, automation and review metadata.
-- `docs/DECOMPOSITION.md`: all sixteen targets and the proof dependencies.
-- `docs/PALOMAR.md`: verification and eventual registration procedure.
+- `PartialBalayage/`: the partial-balayage development and table adapters.
+- `CenteredMaximal/`: the retained earlier source dependencies with author headers.
+- `comparator.json`: the exact fifteen compared statements.
+- `formalization.yaml`: provenance, scope, and review metadata.
+- [docs/DECOMPOSITION.md](docs/DECOMPOSITION.md): definitions and proof map.
+- [docs/PALOMAR.md](docs/PALOMAR.md): verification and registration procedure.
 
-Lean and Mathlib are pinned; committed manifests record exact dependency revisions.
-Build with `lake exe cache get` followed by `lake build`. The deliberate Challenge
-holes state the problems and do not enter Solution. Linux CI runs the pinned
-Comparator with its bundled NanoDa and con-ron independent kernels. Official Palomar
-full preflight verifies an immutable public snapshot; a build alone is not a
-Comparator pass.
-
-After the complete sixteen-row snapshot passes official verification, it will be submitted
-through [Palomar's intake](https://submit.palomar-registry.org/). Final registration
-requires review and the human author's consent to that exact review.
+Lean and Mathlib are pinned. Build with `lake exe cache get`, then `lake build`.
+Deliberate Challenge holes state the problems and do not enter Solution.
+A source build alone does not establish Comparator or independent-kernel
+acceptance. Registration requires successful checks and the human author's
+consent to the exact subsequent review.
+Submission uses [Palomar's intake](https://submit.palomar-registry.org/).
 
 ## Provenance and licence
 
-Mathematics and human authorship: Yongxi Lin. Codex and its collaborating agents
+Mathematics and human authorship: Yongxi Lin. Codex and collaborating agents
 assist with formalization and verification; no AI system is listed as an author.
-The template comes from [PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate/tree/2891de4c48955af824969a263d31b25e7a9a1406).
+The template comes from
+[PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate/tree/2891de4c48955af824969a263d31b25e7a9a1406).
 Code is Apache-2.0. No external human review has been obtained.

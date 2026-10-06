@@ -1,95 +1,31 @@
-# Scope and mathematical decomposition
+# Scope and proof decomposition
 
-The source for this project is the online article [Two partial balayage principles for
-weak-type estimates](https://coolrmal.github.io/articles/two-partial-balayage-principles/),
-as fetched on 5 October 2026. Its abstract contains sixteen rows. The local manuscript
-contains a different table, so its additional applications do not replace or extend the
-requested target. The target consists of the sixteen asserted upper bounds, including
-the exact expressions represented by approximate decimals. Cited sharp comparisons,
-asymptotic estimates, and optimality of the majorants are useful context but are not
-additional final targets.
+The current source and Comparator include fifteen rows of Yongxi Lin's
+[article table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
+The [README](../README.md#complete-article-table-and-current-scope) lists all sixteen
+article rows and marks the planar square bound $$c(M_\square)<3.616$$ as excluded.
+Its large arithmetic certificates made complete verification difficult; the square
+proof and numerical development have been removed from the current scope.
+The separate repository
+[centered-maximal-constant](https://github.com/CoolRmal/centered-maximal-constant)
+formalizes the weaker square bound $$c(M_\square)\le3.879$$.
 
-The candidate comparator lists all sixteen rows. The four new square assembly
-modules have passed focused local builds and ten imported axiom audits; the
-complete sixteen-row ordinary CI and cold official checks remain pending. All maximal
-estimates cover integrable real inputs and every extended-real level. The five
-complex linear rows use genuine all-L¹ linear extensions of the actual complex
-Fourier multipliers, with Euclidean vector and Frobenius matrix norms. The
-complete complex-input Riesz vector has a genuine complex-linear all-L¹
-extension with coefficient two. Row 9 is the strict bound below 452 / 125 for
-the original centred-square operator, with no analytical certificate premise.
+## Operator definitions
 
-All 106 square numerical blocks and their combined audit passed in
-[run 37409981058](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
-The four final registry, source-positivity and strict square-bound modules and
-ten imported standard-axiom audits passed in focused local stages against the
-exact split registry. That registry compiled in 56.237 seconds and its three
-audits completed in 7.415 seconds. The remaining three modules compiled in
-7.532, 5.293 and 6.663 seconds; their two, four and one theorem audits completed
-in 7.213, 6.366 and 6.131 seconds, respectively.
-
-Runs 37422022840 and 37431956910 failed during assembly. The second run retained
-all 367 completed support builds in a 713-module checkpoint before its first
-assembly build stopped. Its failure is preserved; no failure cause is assumed.
-Complete sixteen-row ordinary CI, unchanged cold official verification and
-Palomar registration remain pending. Local assembled checks are not a complete
-official Comparator pass.
-
-Further proved square prerequisites include the exact all-input diamond-to-square
-maximal transfer, the actual beta-integral upper bound and intrinsic-constant
-lower bound, uniform positive finite-ball fractional obstacles, actual compact
-energy tests, and the genuine generator/form pairing. The complete actual
-kernel majorization is proved, including every cell and
-boundary. The distributional generator check and whole-space fractional
-source/comparison argument are assembled from their proved components. The actual whole-space jump
-density is integrable with exactly the original input mass, and genuine strong
-compact cutoff approximation and supported dual pairings are proved. The
-full fractional weak equation, cap saturation and active-volume bound are proved.
-The actual cubic spline generator equals its explicit power formula, including
-the certificate scale; the actual incoming-tail binomial lower bounds and
-improper moments have their exact rational coefficients.
-The Riesz development proves uniform finite Poisson obstacle bounds, actual
-joint weak limits and half-order energy recovery. Genuine Poisson test
-equations identify the complete Riesz vector with a physical Sobolev gradient
-and give its zero-set cancellation. Actual signed whole-space complementarity
-constructs the required cap, density-mass contraction and active-volume bound.
-The L² contraction and canonical all-L¹ extension give the unconditional
-full-vector real-input Riesz coefficient two. The complex extension constructs a
-single complex norm-capped decomposition, derives actual self-energy from the
-physical H01 equation, and identifies every Riesz coordinate with a genuine
-distributional first derivative. Real and imaginary weak graphs give full
-complex zero-set cancellation. The L² contraction and genuine complex-linear
-all-L¹ extension prove the unrestricted scalar-input Riesz table coefficient two.
-
-## Definitions required by the statements
-
-Use Lebesgue measure on the Euclidean space of dimension $$n$$. For an operator $$T$$,
-the weak-type constant is the infimum of all nonnegative extended-real constants $$C$$
-for which
+The weak-type constant is the infimum of the nonnegative extended-real constants
+$$C$$ satisfying the level-set estimate for every integrable input:
 
 $$
-\lambda\,|\{x:|Tf(x)|>\lambda\}|\le C\int |f(x)|\,dx
-\qquad(\lambda>0).
+\lambda\,|\{x:\|Tf(x)\|>\lambda\}|\le C\int\|f(x)\|\,dx.
 $$
 
-The final maximal inequalities quantify over all integrable scalar inputs. Their
-definitions can use nonnegative extended-real integrals and outer measure, as in the
-existing centered-maximal project. For the linear operators, Fourier multipliers give
-canonical bounded operators on complex-valued $$L^2$$. The weak estimate must hold for
-every input in $$L^1\cap L^2$$, and a density/convergence-in-measure construction must
-identify the resulting extension to all $$L^1$$. If a challenge initially uses the
-standard $$L^1\cap L^2$$ formulation of weak type for an $$L^2$$ operator, document and
-prove this equivalence; an extra decomposition hypothesis on each input is not a
-substitute for the article's unconditional operator estimate.
+The maximal statements cover every extended-real level. The linear statements use
+canonical complex Fourier operators and their genuine $$L^1$$ extensions.
+The vector norm is Euclidean/Hermitian and the matrix norm is Frobenius.
+The Riesz operator is the full vector transform, the second-order transform is the
+full matrix transform, and both projections act on vector fields.
 
-For vector outputs use the Euclidean/Hermitian norm. For matrix outputs use the
-Frobenius norm, not an inherited matrix operator norm or a product sup norm. In Lean,
-`EuclideanSpace ℂ (Fin n × Fin n)` is a convenient realization of the matrix output
-space. Likewise, `EuclideanSpace ℝ (Fin n)` gives Euclidean balls, whereas
-`Fin n → ℝ` has the sup norm and its metric balls are cubes.
-
-The linear operators are specified by these multipliers, with any harmless value at
-the zero frequency:
+The relevant multipliers, with harmless values at the zero frequency, are
 
 $$
 \widehat{Rf}(\xi)=\frac{i\xi}{|\xi|}\widehat f(\xi),\qquad
@@ -106,25 +42,9 @@ $$
 \qquad \mathbb P=I-\mathbb Q.
 $$
 
-The Beurling operator acts on complex scalar inputs on the plane; the Riesz operator
-is the full vector transform; the second-order operator is the full matrix transform.
-Leray and gradient projections act on vector fields. Restricting to one Riesz
-component, one matrix entry, or real-only Beurling inputs would weaken the target.
-
-The maximal operators are
-
-$$
-M_cf(x)=\sup_{r>0}\frac1{2r}\int_{x-r}^{x+r}|f(y)|\,dy,
-$$
-
-$$
-M_{B,n}f(x)=\sup_{r>0}\frac1{\omega_n r^n}\int_{B(x,r)}|f(y)|\,dy,
-\qquad \omega_n=\frac{\pi^{n/2}}{\Gamma(n/2+1)},
-$$
-
-$$
-M_\square f(x)=\sup_{r>0}\frac1{4r^2}\int_{x+[-r,r]^2}|f(y)|\,dy,
-$$
+The interval and Euclidean-ball operators average the absolute value of a real
+integrable function over every centred interval or Euclidean ball. The semigroup
+maximal operators are
 
 $$
 P_*f(x)=\sup_{t>0}(p_t*|f|)(x),\qquad
@@ -134,770 +54,83 @@ $$
 
 $$
 H_*f(x)=\sup_{t>0}(h_t*|f|)(x),\qquad
-h_t(x)=(4\pi t)^{-n/2}\exp\left(-\frac{|x|^2}{4t}\right).
+h_t(x)=(4\pi t)^{-n/2}e^{-|x|^2/(4t)}.
 $$
 
-## Exact sixteen-row target list
-
-Write $$c(T)$$ for the weak-type constant just defined. Define
-
-$$
-\rho_n=\begin{cases}
-(n/2)^{2/(n-2)},&n\ne2,\\
-e,&n=2.
-\end{cases}
-$$
-
-For the Poisson formula, let $$a_P(n)$$ be the unique solution in
-$$\left(n/(3\rho_n),n/3\right)$$ of
-
-$$
-\frac{1-a/n}{(1+a)^{(n+3)/2}}
-=\frac1{(1+\rho_n a)^{(n+1)/2}},
-\qquad b_P(n)=\rho_n a_P(n),
-$$
-
-and define the exact bound
-
-$$
-B_P(n)=\frac{\Gamma((n+1)/2)}{\sqrt\pi\,\Gamma(n/2)}
-\left[
-\frac{2b_P(n)^{n/2}}{n(1+a_P(n))^{(n+1)/2}}
-+\int_{b_P(n)}^\infty\frac{z^{n/2-1}}{(1+z)^{(n+1)/2}}\,dz
-\right].
-$$
-
-For the heat formula, let $$a_H(n)$$ be the unique solution in
-$$\left(n/(2\rho_n),n/2\right)$$ of
-
-$$
-e^{-(\rho_n-1)a}=1-\frac{2a}{n},
-\qquad b_H(n)=\rho_n a_H(n),
-$$
-
-and define
-
-$$
-B_H(n)=\frac1{\Gamma(n/2)}
-\left[
-\frac{2b_H(n)^{n/2}e^{-a_H(n)}}n
-+\int_{b_H(n)}^\infty z^{n/2-1}e^{-z}\,dz
-\right].
-$$
-
-Both root definitions require proved existence and uniqueness for every positive
-integer dimension. An unconstrained `Classical.choose` from an assumed root would
-leave part of the unconditional target unproved. Define dimensions below one only
-if the total Lean definitions need default values; the final statements require
-$$n\ge1$$.
-
-1. **Riesz vector transform**, every positive dimension:
-
-   $$c(R)\le2.$$
-
-2. **Beurling–Ahlfors transform**, complex scalar inputs on the plane:
-
-   $$c(B)\le2.$$
-
-3. **Full second-order Riesz transform**, dimension two, Frobenius norm:
-
-   $$c(\mathcal H_2)\le\frac{3\sqrt6}{4}.$$
-
-4. **Full second-order Riesz transform**, every $$n\ge2$$:
-
-   $$
-   c(\mathcal H_n)\le\frac1{a_n}+\frac{(n-1)a_n}{n-a_n^2},
-   \qquad
-   a_n=\sqrt{\frac{2n}{n+1+\sqrt{(n+1)^2+4(n-2)}}}.
-   $$
-
-5. **Traceless second-order Riesz transform**:
-
-   $$c(\mathcal H_{0,n})\le2\sqrt{1-1/n}.$$
-
-   Use $$n\ge2$$ for the nontrivial family; the formula also gives zero in dimension
-   one, where the traceless transform is zero.
-
-6. **Both Leray and gradient projections**, every $$n\ge2$$:
-
-   $$
-   c(\mathbb P),c(\mathbb Q)\le
-   \frac1{a_*}+\frac{a_*}{(2-a_*)^2},
-   $$
-
-   where $$a_*$$ is the unique root in $$0<a_*<1$$ of
-
-   $$a_*^3-2a_*^2+6a_*-4=0.$$
-
-7. **Centered interval maximal operator**:
-
-   $$c(M_c)\le2.$$
-
-8. **Centered planar Euclidean-ball maximal operator**:
-
-   $$c(M_{B,2})\le e.$$
-
-9. **Centered planar axis-parallel-square maximal operator**:
-
-   $$c(M_\square)<3.616.$$
-
-   The body supplies the stronger bound $$c(M_\square)\le C_{6/5}<3.615749$$.
-   The old bound $$3.879$$ cannot discharge this row.
-
-10. **Centered Euclidean-ball maximal operator**, every $$n\ge3$$:
-
-    $$c(M_{B,n})\le(n/2)^{n/(n-2)}.$$
-
-11. **Poisson maximal operator**, dimension one:
-
-    $$
-    c(P_{*,1})\le1+\frac2\pi
-    \left(\frac{\sqrt5}{3}-\arctan\frac2{\sqrt5}\right).
-    $$
-
-    The root values are exactly $$a_P(1)=1/5$$ and $$b_P(1)=4/5$$.
-
-12. **Poisson maximal operator**, dimension two:
-
-    $$c(P_{*,2})\le B_P(2).$$
-
-    An equivalent elementary expression is
-
-    $$
-    B_P(2)=\frac{e\,a_P(2)}{2(1+a_P(2))^{3/2}}
-           +\frac1{\sqrt{1+e\,a_P(2)}}.
-    $$
-
-13. **Poisson maximal operator**, every positive dimension:
-
-    $$c(P_{*,n})\le B_P(n).$$
-
-14. **Heat maximal operator**, dimension one:
-
-    $$
-    c(H_{*,1})\le4\sqrt{\frac{a_H(1)}\pi}e^{-a_H(1)}
-                  +\operatorname{erfc}(2\sqrt{a_H(1)}),
-    $$
-
-    where $$e^{-3a_H(1)}=1-2a_H(1)$$ and
-
-    $$\operatorname{erfc}(r)=\frac2{\sqrt\pi}\int_r^\infty e^{-s^2}\,ds.$$
-
-    The expression must be proved equal to $$B_H(1)$$.
-
-15. **Heat maximal operator**, dimension two:
-
-    $$c(H_{*,2})\le[1+(e-1)a_H(2)]e^{-a_H(2)}.$$
-
-    Here $$e^{-(e-1)a_H(2)}=1-a_H(2)$$. Prove that this expression equals
-    $$B_H(2)$$.
-
-16. **Heat maximal operator**, every positive dimension:
-
-    $$c(H_{*,n})\le B_H(n).$$
-
-## Rounding and formulation issues
-
-The approximate decimals in the abstract are labels for exact upper bounds, not
-rigorous rational bounds. In particular, the exact projection bound is
-$$1.805359306638\ldots$$, the planar Poisson expression is numerically
-$$1.0210358633897\ldots$$, and the two heat expressions are
-$$1.037087059430\ldots$$ and $$1.094052157640\ldots$$. Each exceeds the corresponding
-truncated decimal in the table. State the exact expressions above; any optional
-decimal upper corollary must round upward and have a certified proof.
-
-The online table does not request the cited sharp real-input planar matrix theorem,
-the sharp interval constant, or a proof of the asymptotics. The projection row
-contains two operators and therefore needs two final estimates. The article's
-``second-order Riesz transform'' is matrix-valued and uses the Frobenius norm.
-
-The article's maximal principle explicitly assumes a conservative symmetric Markov
-convolution generator, its homogeneity, and its partial-balayage construction. A
-statement quantifying over arbitrary operators while retaining only off-origin
-kernel positivity would omit essential hypotheses. These assumptions are suitable
-for proving the abstract principle; every concrete final table bound must discharge
-them for its particular generator and kernel.
-
-There is no detected contradiction in the asserted table bounds. The substantial
-proof gaps from the perspective of the existing Lean API are recorded below; the
-article's short variational, Sobolev zero-set, and Courrège arguments should not be
-treated as already formalized facts.
-
-## Proof dependency decomposition
-
-### Linear branch
-
-1. Construct the scalar and finite-dimensional Hilbert-valued partial balayage
-   decomposition for $$0<\alpha\le2$$, including signed and complex inputs:
-
-   $$
-   f=\mu+(-\Delta)^{\alpha/2}u,\quad
-   \|\mu\|_\infty\le\kappa,\quad
-   \|\mu\|_1\le\|f\|_1,\quad
-   \mu=\kappa u/|u|\text{ on }\{u\ne0\}.
-   $$
-
-   Prove the contact-set estimate, the required Sobolev/operator regularity, and the
-   almost-everywhere derivative vanishing on the zero set. Orders one and two cover
-   all the requested linear examples; proving every intermediate fractional order
-   is an optional strengthening of the abstract principle.
-
-2. Prove the elementary weak estimate from this decomposition and locality. It is
-   the Chebyshev estimate
-
-   $$
-   \lambda|\{|Tf|>\lambda\}|\le
-   \left(\frac\lambda\kappa+\frac{M^2\kappa}\lambda\right)\|f\|_1,
-   $$
-
-   followed by $$\kappa=\lambda/M$$, with a separate zero-operator case.
-
-3. Build the actual Fourier-multiplier operators, prove their norm bounds and local
-   compositions. Riesz uses order one; Beurling, matrices and projections use
-   order two. Mathlib's Fourier transform uses the $$2\pi$$ convention, so
-   fractional Laplacian and derivative identities need the matching factors.
-
-4. Prove the pointwise trace orthogonality identity and the traceless energy bound.
-   The sharpened full-matrix estimate is
-
-   $$
-   \frac1a+\frac{(n-1)a}{n-a^2}\qquad(0<a<\sqrt n).
-   $$
-
-   Optimize it by the quartic equation
-
-   $$(n-2)a^4+n(n+1)a^2-n^2=0.$$
-
-5. Prove the identity-component variant and apply it to both projections with
-   $$c=M=1/2$$. The objective is
-
-   $$\frac1a+\frac{a}{(2-a)^2}\qquad(0<a<2).$$
-
-   Prove the minimizing cubic root's existence, uniqueness, and admissibility.
-
-6. Extend from $$L^1\cap L^2$$ to $$L^1$$ and verify that all actual operator
-   definitions in the final statements agree with those extensions.
-
-### Maximal branch
-
-1. Preserve the existing interval and ball results and their direct definitions.
-   These already discharge rows 7, 8, and 10 after transporting definitions.
-
-2. Extract or generalize a kernel transfer theorem for the Laplacian and for the
-   two-coordinate stable generator of order $$6/5$$. A general Courrège theorem is
-   absent from Mathlib; the concrete generators can instead use direct positive
-   measure-minus-atom representations and the existing weak pairing/obstacle
-   machinery. The transfer still needs to handle every dilation outside one common
-   null set and approximation from bounded compactly supported inputs to all
-   integrable inputs.
-
-3. For the square bound, formalize the supplied fractional profile and cubic-spline
-   correction, domination of the unit-diamond indicator, off-origin generator
-   positivity, and its exact mass. Lift every rational/fifth-root certificate into
-   kernel-checked Lean arithmetic. Generalize the old transfer assembly from its
-   hard-coded order-one kernel to order $$6/5$$. The diamond-to-square linear change
-   of variables is already proved in the earlier project.
-
-4. For Poisson and heat, prove the root existence/uniqueness statements, construct
-   the piecewise radial harmonic tangent majorants, prove domination and the
-   nonnegative distributional flux jump, and compute their masses by polar
-   integration. The outer tails are not compactly supported, so ball-kernel results
-   cannot be reused verbatim where they require compact support.
-
-5. Identify all positive-time Poisson and heat kernels with dilations of the base
-   kernels $$p_1$$ and $$h_{1/4}$$. Prove the one- and two-dimensional evaluations
-   as corollaries of the general bounds.
-
-## Historical implementation checkpoints
-
-The following notes preserve intermediate implementation checkpoints and the
-proof work that remained at each checkpoint. Their pending items describe
-those earlier states. The current completed scope is stated above, and exact
-verification evidence is recorded in `docs/VERIFICATION.md`.
-
-### Existing results and missing API
-
-The existing `centered-maximal-constant` development already contains:
-
-- `CenteredMaximal.isWeakTypeBound_two_pow`, hence the interval bound at dimension
-  one;
-- exact planar and higher-dimensional Green kernel masses and all-scale weak bounds,
-  culminating in the two ball theorems in its `Solution.lean`;
-- `CenteredMaximal.exists_obstacle_solution` for the two-coordinate stable jump
-  generator at every order strictly between zero and two, for bounded nonnegative
-  compactly supported scalar inputs;
-- jump forms, a real Hilbert energy space, positive-cone minimization, density
-  extraction, complementarity, mass conservation, scaling, convolution commutation,
-  rational-scale reduction, and approximation to all integrable inputs;
-- a direct positive-measure-minus-point-mass representation for the old order-one
-  Cauchy kernel, and the determinant-two diamond-to-square change of variables;
-- bounded-domain scalar Laplacian penalty solutions, weak limits, capped complement
-  densities, a local distributional equation, and local contact-mass control.
-
-The old square theorem only proves the earlier value $$3.879$$. Its `Cauchy` modules
-contain many facts specifically tied to the old order-one potential and old explicit
-kernel; those facts do not certify the new fractional spline kernel.
-
-Mathlib provides `MeasureTheory.Lp.fourierTransformₗᵢ`,
-`MeasureTheory.Lp.norm_fourier_eq`, tempered distributions, Fourier differentiation,
-and `TemperedDistribution.MemSobolev` with Fourier and derivative characterizations.
-These are usable foundations, but searches found no Riesz/Beurling/Leray operators,
-Euclidean heat/Poisson semigroup maximal theorem, Hilbert-valued balayage theorem,
-Courrège theorem, or Sobolev zero-set derivative theorem matching the required
-application. Its complex disk Poisson kernel is a different object from the
-Euclidean Poisson semigroup kernel here. No existing `erf`/`erfc` definition was
-found; the integral definition is sufficient for the exact dimension-one heat row.
-
-The scalar local ball framework is not a proof of the signed/vector global
-decomposition. Its equation is only tested inside the ball, its sources are
-nonnegative real-valued functions, and its principal cap argument uses the order
-structure of scalar $$L^2$$. Reuse its general Hilbert-space variational and
-compactness lemmas after supplying the missing vector, whole-space, and fractional
-steps; do not add the desired decomposition as a final theorem hypothesis.
-
-### Implementing the signed and vector obstacle
-
-The strongest reusable components are the genuinely abstract real-Hilbert lemmas in
-`Ball/ObstacleExistence.lean`, `Ball/MonotoneSurjectivity.lean`, and
-`Analysis/WeakCompact.lean`. In particular,
-`exists_eq_of_stronglyMonotone_lipschitz` applies to arbitrary nonlinear maps on a
-complete real Hilbert space. It can solve a radial vector penalty after proving its
-Lipschitz and monotonicity properties. It does not require scalar order. The concrete
-negative-part implementation in `Ball/L2Penalty.lean` does require scalar order and
-must be replaced, rather than applied to vector fields component by component. A
-componentwise cap would give the wrong Euclidean cap and dimension dependence.
-
-A bounded-domain dual construction can avoid the radial-penalty limit. Let
-$$D$$ be a ball, take the finite Hilbert product of the existing scalar
-$$H^1_0(D)$$ spaces, and let $$J$$ be its value embedding into $$L^2(D;E)$$.
-Treat complex $$E$$ as a real Hilbert space. Let $$A$$ be the coercive positive
-Dirichlet operator represented in this Hilbert space. The existing coercive solver
-gives $$A^{-1}$$. Set
-
-$$
-G=J A^{-1}J^*,\qquad
-K_\kappa=\{\mu\in L^2(D;E):|\mu(x)|\le\kappa\text{ almost everywhere}\}.
-$$
-
-The cap set is nonempty, convex, closed and bounded because $$D$$ has finite
-measure, hence weakly compact by `Analysis/WeakCompact.lean`. Minimize the continuous
-convex quadratic
-
-$$
-Q(\mu)=\frac12\langle f-\mu,G(f-\mu)\rangle
-\qquad(\mu\in K_\kappa).
-$$
-
-The weak direct method yields a minimizer without a positive-cone assumption. Put
-$$u=A^{-1}J^*(f-\mu)$$. The first-order variational inequality is
-
-$$\langle Ju,\nu-\mu\rangle\le0\qquad(\nu\in K_\kappa).$$
-
-Take the measurable admissible candidate $$\nu=\kappa Ju/|Ju|$$ on
-$$\{Ju\ne0\}$$ and zero elsewhere. The pointwise upper bound
-$$\langle Ju,\mu\rangle\le\kappa|Ju|$$ and equality of the integrals force
-
-$$\mu=\kappa Ju/|Ju|\qquad\text{almost everywhere on }\{Ju\ne0\}.$$
-
-This gives the signed/vector local equation and exact norm saturation. It uses only
-finite-domain $$L^2$$ compactness. `Linear/DirichletDual.lean` now proves the abstract
-positive Green construction and this dual state equation for a coercive Dirichlet
-operator and value embedding. `Linear/CapComplementarity.lean` proves the actual
-measurable support competitor, integral equality, vector alignment, and saturation.
-`Linear/VectorDirichlet.lean` now instantiates the finite-product Sobolev value map
-and the actual Poincaré-coercive Dirichlet operator. It supplies the concrete
-coordinatewise weak Laplace equations, cap, alignment, and active-set saturation.
-
-The local construction alone is insufficient for the whole-space theorem. One
-route is to exhaust the space by balls and prove uniform energy, $$L^1$$ and $$L^2$$
-bounds before taking weak limits. The zero extension of an individual local
-Dirichlet solution has a boundary flux, so its local equation must not be asserted
-as a whole-space equation. The boundary disappears only after passing to a limit
-against tests contained in each sufficiently large ball.
-
-For the local order-two vector problem, regularity and Sobolev chain/zero-set lemmas
-give a concrete path to the required mass estimate. Test the equation by the
-regularized norm gradient, let the regularization vanish, and obtain
-
-$$
-\kappa|\{u\ne0\}|\le\int_{\{u\ne0\}}|f|.
-$$
-
-On the zero set, second weak derivatives vanish and therefore $$\mu=f$$.
-Combining the two regions gives $$\|\mu\|_1\le\|f\|_1$$. This is stronger than
-the contact-set bound alone and provides the uniform bound
-$$\|\mu\|_2^2\le\kappa\|f\|_1$$ for an exhaustion. The vector norm-gradient
-chain rule is proved in `Linear/VectorSobolevComposition.lean`; second-derivative
-regularity and its localization remain substantive missing API.
-`Linear/SobolevZeroSet.lean` proves first-gradient vanishing on zero sets, and equality
-of gradients on equality sets, for the actual copied Sobolev graph space on every
-open domain. `Linear/SecondSobolevZeroSet.lean` iterates this vanishing for actual
-second-gradient graphs. It does not assert that all Dirichlet gradients belong to
-the global zero-boundary Sobolev space. `Linear/VectorSobolevComposition.lean` proves
-the regularized vector norm test's admissibility for every positive regularization.
-
-An alternative whole-space implementation more closely follows
-`Obstacle/Functional.lean`: build the vector Hilbert energy space and minimize
-
-$$
-\frac12\mathcal E(u,u)+\kappa\|u\|_1-\operatorname{Re}\int\langle f,u\rangle.
-$$
-
-On finite balls, the integral of the norm is continuous and convex as a function of
-the $$L^2$$ value coordinate, so the existing convex weak-lower-semicontinuity lemma
-applies. Taking the increasing supremum over balls gives weak lower semicontinuity
-of the full $$L^1$$ norm for signed/vector functions. This replaces the old scalar
-argument that represents the positive $$L^1$$ norm by linear integrals.
-The old coercivity proof then needs a norm version of its local Gagliardo/Nash
-estimate and a dimension-general energy space. This direct method avoids proving
-Rellich compactness merely to identify a nonlinear exhaustion limit.
-
-For the Riesz row the order-one generator must be the isotropic
-$$(-\Delta)^{1/2}$$. The existing two-coordinate generator
-$$|D_1|+|D_2|$$ is different and does not make the actual Riesz composition local.
-Use the isotropic fractional energy or the Fourier-defined Sobolev space, prove the
-norm contraction/Kato inequality using its positive mass-preserving semigroup, and
-extract the same capped density. Positivity and mass preservation of that semigroup,
-its operator-domain convergence, and the cutoff decay estimate are genuine
-dependencies. The order-one scalar/complex construction cannot be replaced by the
-existing order-two ball obstacle.
-
-### Further verified support
-
-The unique heat and Poisson parameters now satisfy the article's exact intervals in
-every positive dimension. `Maximal/RadialTangentMass.lean` proves the weighted mass
-identities for power and logarithmic harmonic tangents. `Maximal/HeatMajorant.lean`
-and `Maximal/PoissonMajorant.lean` prove actual domination at every positive squared
-radius, joining at the outer radius, and a strictly positive outward derivative
-jump for the respective profiles. The origin is excluded
-from these real profile statements; its artificial totalized value is irrelevant
-to a future almost-everywhere kernel statement in positive dimension. Distributional
-kernel inequalities and the resulting all-L¹ maximal estimates are now proved.
-
-`Linear/ProjectionSymbol.lean` proves actual gradient and Leray symbols are
-orthogonal projections and that their shifts by half the identity have norm at
-most one half. `Linear/IdentityComponent.lean` and `Linear/OrthogonalComponent.lean`
-prove the exact level-set coefficients from explicit decomposition hypotheses.
-`Linear/OperatorMultiplier.lean` constructs actual bounded operator-valued Fourier
-multipliers, and `Linear/ProjectionMultiplier.lean` instantiates the gradient and
-Leray projections, their contractions, and their exact half-identity decompositions.
-`Linear/FourierPostcomposition.lean` proves constant output maps commute with Fourier
-and inverse Fourier on L² via Schwartz density. `Linear/HessianTrace.lean` proves the
-actual Hessian trace, traceless splitting, and pointwise Pythagorean norm identity.
-
-`Linear/VectorDirichletMass.lean` proves the regularized vector norm direction's
-actual Frechet derivative and positive Jacobian quadratic form. Its dominated-limit
-and genuine Sobolev weak-equation testing theorems give the active-volume estimate
-once simultaneous admissible vector composition graphs are constructed. That
-construction has now been discharged by `Linear/VectorSobolevComposition.lean`,
-which proves the multivariate Sobolev chain rule and the concrete finite-domain
-active-volume estimate. `Linear/VectorActiveMass.lean` now proves the sharper
-restricted active-mass estimate and the total density-mass consequence once actual
-inactive-set locality is supplied. `Linear/VectorBalayageFinite.lean` combines the
-actual obstacle construction and testing into finite-domain existence, including
-the active-volume bound and the active density's L² energy bound. It does not
-assert a total density-mass estimate without the required locality argument.
-
-`Linear/LocalSecondSobolev.lean` proves genuine global Fourier elliptic regularity:
-an actual L² function with an L² weak Laplacian has represented L² second derivatives.
-`Linear/LocalCutoffEquation.lean` and `Linear/LocalCutoffLaplacian.lean` prove the true
-first- and second-order cutoff product identities from the actual H01 weak equation.
-`Linear/LocalCutoffRegularity.lean` constructs the actual complex L² zero extension
-of each interior cutoff and proves it has represented L² second derivatives using
-Fourier H² regularity. `Linear/FourierSobolevGraph.lean` constructs the actual real
-weak Sobolev graphs of represented complex Fourier states.
-`Linear/CompactSobolevDensity.lean` proves that compactly supported genuine weak
-graphs belong to the actual H01 closure. `Linear/SecondGraphWeakLaplacian.lean`
-and `Linear/LocalCutoffZeroSet.lean` combine these facts with interior regularity
-and a countable smooth-bump cover to prove that actual weak Laplace forcing
-vanishes almost everywhere on the state's zero set, with no additional
-regularity or locality hypothesis.
-`Linear/VectorInactiveLocality.lean` applies this to the concrete vector obstacle:
-its density equals the input on the inactive set, its total norm mass contracts,
-and its L² norm squared is at most the cap times the input mass.
-
-`Linear/MollifierL2.lean` proves normalized nonnegative convolution is an actual
-contraction on L². `Linear/MollifierL2Convergence.lean` proves strong convergence
-of shrinking normalized bump convolutions for every L² class.
-`Linear/SobolevSpatialCutoff.lean` constructs actual interior-cutoff H01 graphs,
-including their represented gradients and support.
-
-`Linear/L1NormFunctional.lean` proves continuous linear inclusion from actual
-finite-measure vector L² into L¹, convexity of its norm, and weak lower
-semicontinuity. `Linear/WholeSpaceL1Norm.lean` proves the full vector norm integral
-is weakly lower semicontinuous on sigma-finite spaces by an exact exhaustion;
-its mass sublevel sets are weakly closed, including infinite integral values.
-`Linear/FourierL1L2.lean` proves the integral and unitary L² Fourier transforms
-agree for integrable Hilbert-valued inputs. `Linear/FourierEnergySplit.lean`
-proves the actual isotropic low/high-frequency estimate. `Linear/IsotropicEnergySpace.lean`
-constructs the complete Hilbert energy graph and identifies its full Fourier energy.
-`Linear/FourierCoercivity.lean` proves a positive small-frequency radius exists
-in every positive dimension and the resulting quantitative energy and mass bounds.
-`Linear/WholeSpaceMassCompactness.lean` proves weak compactness of the actual Hilbert L²
-densities satisfying a pointwise norm cap and a finite full-vector mass bound, even
-on an infinite measure space. It supplies density compactness for a future exhaustion;
-the obstacle-state limit and its identification remain necessary.
-`Linear/HessianCapEstimate.lean` discharges the energy and orthogonal
-splitting conditions using the actual full and traceless Hessians. It supplies the
-article's exact optimized Hessian coefficient from capped-density data; the
-unconditional construction of that density is still required.
-
-`Maximal/RadialFluxComparison.lean` proves the finite-annulus integration-by-parts
-identity, including the joined-profile flux jump. `Maximal/RadialKernelComparison.lean`
-proves the actual heat and Poisson flux monotonicity and jump signs. These are
-prerequisites for the distributional kernel comparison. `Maximal/RadialKernelPairing.lean`
-and `Maximal/SemigroupKernelPairing.lean` now prove actual ambient integrability and
-nonnegative Laplacian pairings for nonnegative C² compact tests vanishing at the center,
-for both exact-root majorants in every positive dimension. The supporting radial
-integrability and sphere-geometry modules supply the center and support terms.
-`Maximal/AffineRadialScaling.lean` and `Maximal/ScaledSemigroupMajorants.lean` prove
-the actual normalized time-kernel identities, almost-everywhere domination, compact
-integrability, and zero-contact pairings after translation and dilation. Transfer
-to the actual Sobolev obstacle and the final maximal inequalities remain necessary.
-`Maximal/PoissonKernel.lean` proves integrability and mass one of the genuine Poisson
-kernel by Laplace-Gaussian integration, without a normalization assumption.
-`Maximal/PoissonKato.lean` specializes norm-defect and Kato averaging to this actual
-probability kernel. `Maximal/PlanarBoundFormula.lean` proves the exact
-elementary planar heat and Poisson formulas, including their improper tails.
-`Maximal/SquaredRadialMass.lean` and `Maximal/SemigroupMajorantMass.lean` prove
-genuine ambient integrability and exact full masses of both normalized majorants,
-in every positive dimension and at every positive time. The center-source modules
-retain the finite center-value term for arbitrary nonnegative compact C² tests.
-`Maximal/BoundedSourceTransfer.lean` proves this comparison for globally bounded
-C² functions with bounded derivatives by genuine cutoff estimates and dominated
-convergence. `Maximal/L2MollifiedSource.lean` constructs actual bounded positive
-smooth mollifications of nonnegative L² states, derives their true Laplace equation
-from the distributional equation, and applies the source comparison.
-`Maximal/L1KernelL2.lean` proves the actual L¹-kernel L² Young map, including
-almost-everywhere convolution existence and strong convergence transfer.
-`Maximal/SobolevKernelSourceBound.lean` passes the source comparison to the
-original nonnegative L² state by the closed L² order cone.
-`Maximal/SemigroupSobolevSourceBound.lean` specializes this to the actual heat
-and Poisson majorants, including the nonnegative contact pairing, and discharges
-their integrability and positivity using their genuine kernel formulas.
-Constructing the whole-space obstacle and concluding the maximal inequalities
-remain necessary.
-
-`Linear/L2ZeroExtension.lean` and `Linear/SobolevZeroExtension.lean` construct
-genuine isometric zero extensions of restricted L² classes and actual H01 graphs.
-`Linear/ZeroExtensionMass.lean` proves preservation of the norm integral.
-`Linear/SobolevDistributionGradient.lean` identifies the true distributional
-and Fourier derivatives of whole-space H01 coordinates from their defining
-test-graph closure. `Linear/VectorDirichletEnergy.lean` proves the exact value
-and gradient norm identities and the energy-plus-cap-mass balance of the actual
-finite vector obstacle. `Linear/VectorSobolevExtension.lean` extends the actual
-finite vector state isometrically, preserving its value and gradient energy.
-`Linear/SobolevCoordinateMass.lean` identifies the actual integrable complex
-extended coordinate masses. `Linear/FourierDirichletEnergy.lean` proves the
-exact isotropic Fourier energy/physical Dirichlet energy identity, and
-`Linear/ScalarDirichletInterpolation.lean` derives the genuine scalar estimate.
-`Linear/VectorStateCoercivity.lean` and `Linear/UniformFiniteStateBounds.lean`
-deduce quantitative domain-independent energy, mass, and full Sobolev state
-bounds from the actual weak equation and cap alignment.
-`Linear/ZeroExtensionWeakEquation.lean` transports the genuine weak equation
-to global compact tests supported in the finite domain.
-`Linear/ScalarPositiveObstacle.lean` proves actual scalar state and density
-positivity from nonnegative input, using genuine negative-part Sobolev tests.
-`Linear/L2DomainRestriction.lean` and `Linear/FiniteDensityExhaustion.lean`
-construct actual finite obstacle density families with their whole-space cap
-and mass bounds. `Linear/JointWeakCompactness.lean` supplies simultaneous
-cofinal weak limits for actual bounded states and densities, and transports
-fixed linear test equations. `Linear/WholeSpaceStateExhaustion.lean` discharges
-the uniform-state requirement with the actual finite obstacles and Fourier bounds.
-`Linear/ExhaustionWeakEquation.lean` proves actual coordinate transport and
-fixed compact-test passage, including eventual expanding-ball containment.
-`Linear/WholeSpaceWeakPDE.lean` constructs actual whole-space states and capped
-finite-mass densities satisfying every smooth compact-test PDE.
-`Linear/WeakDirichletEnergy.lean` proves weak lower semicontinuity of the true
-physical energy plus full vector mass, including infinite mass values.
-`Linear/ExtendedEnergyMassIdentity.lean` transports the finite energy-mass balance
-to one fixed global input pairing. `Linear/DirichletTestClosure.lean` extends the
-actual compact-test PDE to every H01 test. `Linear/WeakDirichletComplementarity.lean`
-recovers true pointwise alignment and saturation for the same joint limit.
-`Linear/WholeSpaceVectorBalayage.lean` now constructs actual global Laplace
-vector balayage with its PDE, cap complementarity, true integrability, total
-mass contraction, and sharp L² density bound, without decomposition or
-analytical-certificate hypotheses.
-`Linear/WholeSpaceActiveVolume.lean` proves the genuine active-volume bound on
-infinite ambient measure, and `Linear/GlobalBalayageActiveSet.lean` supplies an
-actual measurable active cover with that measure bound.
-`Linear/WholeSpaceDistributionPDE.lean` derives the raw distributional Laplacian
-from the actual compact-test weak equation. Concrete Fourier operator cancellation,
-and the final weak-type bounds remain necessary.
-`Linear/ScalarStateExhaustion.lean` transports the genuine scalar state and density
-positivity through the same cofinal joint limit.
-`Linear/WholeSpaceScalarPositiveBalayage.lean` constructs the actual positive global
-scalar state and density with PDE, cap alignment, saturation, integrability, and
-mass bounds. No positivity or limit certificate is assumed.
-`Maximal/CappedMaximalLevelSet.lean` proves the final outer-measure level-set step
-from an actual off-active bound and the active-volume cap.
-
-`Maximal/SemigroupTimeContinuity.lean` proves actual heat and Poisson convolution
-integrability at every center and continuity in positive time for integrable
-inputs. `Maximal/RationalTimeMaximal.lean` identifies both actual maximal
-functions with their positive-rational-time suprema and passes countably many
-almost-everywhere bounds to the full positive-time supremum.
-
-The genuine scalar contact equation, original-kernel cap, rational-time supremum
-reduction, and monotone L¹ transfer now discharge these hypotheses for all six
-semigroup table rows. `Maximal/SemigroupWeakBounds.lean` proves the final
-unconditional exact coefficients and their one-dimensional and planar expressions.
-The selected tangency parameters satisfy the proved unique algebraic equations.
-The actual complex-input Hessian, Beurling, traceless Hessian and projection
-level-set estimates now yield true linear all-L¹ extensions with exact L²
-agreement and no decomposition hypotheses. Extension uniqueness follows from
-the actual weak-bound continuity into convergence in measure. The independent
-concrete Fourier definitions equal the constructed multipliers. These discharge
-rows 1–6, with the later signed isotropic construction discharging the Riesz
-row. The stronger square fractional-generator certificate and comparison
-remain required.
-
-The subsequent Poisson L² modules identify the actual probability convolution
-with its exact Fourier multiplier on every Hilbert L² input. Dominated limits
-and the scalar generator quotient use the full positive-height filter.
-For the square row, the actual singular jump graph is closed and complete,
-normal contractions reduce its energy, and finite-ball zero-exterior states
-have a proved long-jump coercivity bound. The actual kernel is integrable and
-has the required support and symmetries; its spline corrections agree with
-exact bicubic cell polynomials. Rational fifth-power enclosures imply true
-real-power inequalities. Exact second-difference bounds control the entire
-singular integral and show that small cutoff errors tend to zero. These
-supporting facts still require the kernel admissibility checks and genuine
-whole-space fractional obstacle construction before row 9 is completed.
-
-### Verification boundary
-
-The actual coordinate-stable generator now has proved physical dilation scaling
-and smooth compact-cutoff decay. Genuine finite positive jump obstacles satisfy
-the inside-domain weak equation, cap complementarity and active-volume bound.
-Weighted coordinate and rectangle translation controls support the pending
-uniform-state and whole-space construction. For the isotropic order-one route,
-actual smooth Kato tests and witnesses are constructed, and the full Poisson
-quadratic limit recovers the true half-order Fourier energy, including infinite
-energy cases. Its norm contraction is proved.
-
-The square candidate's exact mass and strict half-mass bound are now proved in
-`Maximal/Square/KernelMass.lean`. The actual diamond-to-square transformation,
-radial power integrals, affine tensor integrals and signed orbit sum establish
-the normalization. The finite cell-coefficient reduction and closed grid coverage
-are also proved. Full kernel majorization and whole-space fractional balayage
-are now proved. Distributional fractional-generator positivity and the actual
-source/comparison passage remain necessary for row 9.
-
-Each final challenge statement must name the concrete operators and exact
-constants above and carry no unproved analytical certificate as a hypothesis.
-Comparator success establishes equality between the challenge and solution
-statements and verifies their permitted axioms; it does not establish that an
-incorrectly weakened challenge is faithful to the source. Public metadata and
-coverage should distinguish completed table rows from remaining proof work until
-all sixteen rows are kernel checked.
-
-The current supporting development includes an actual positive whole-space
-coordinate-stable compact-test equation with an L1 state and a weighted capped
-density. Physical density mass, full energy testing, cap contact and active-volume
-control are now proved. All 210 retained bicubic square cells and every
-majorization leaf are linked to their actual rational coefficients. The
-remaining square work is distributional generator positivity and genuine
-source comparison. The signed Riesz obstacle exhaustion, physical gradient
-identification, full-vector cancellation and final all-L¹ table bound are proved.
-
-The actual square spline generator now has its exact singular-integral power
-formula and scaling. Genuine Taylor and boundary error bounds yield sound rational
-interval enclosures. The true incoming radial tail is integrable and dominates
-every exact finite polynomial obtained by integrating its binomial series.
-The actual radial generator is constant along each positive-quadrant diamond edge,
-and its homogeneity reduces it to one fixed diagonal integral. Positive real beta
-integrals are linked to genuine Gamma quotients, and the diagonal's positive-beta
-combination has the exact intrinsic normalization. The actual diagonal integral
-is now evaluated by convergent ordinary integration by parts, completing the
-paired homogeneous radial generator identity. The exact planar strip-volume
-bounds and real cusp estimates support the remaining full radial distributional
-identification.
-
-True singular translation-jump contact positivity holds with measures of infinite
-total mass. Actual quadratic cutoffs around the origin have uniform derivative
-bounds and generator errors tending to zero against every integrable kernel.
-Actual punctured source identities derive finite truncated second moments by
-positive cutoffs and Fatou limits. They give the full even compensated source
-representation on arbitrary compact C² tests, including the origin, and actual
-membership of those tests in the full singular translation-jump form. The whole
-generator positivity certificate and final comparison remain pending.
-
-
-The original radial and tensor spline densities now have one true punctured
-source identity, with actual local absolute integrability and a genuine physical
-generator formula. Exterior source positivity is proved and the diamond support
-boundary is null for ordinary volume. Kernel and source dilation are genuine at
-every positive radius. Actual indicator domination, planar area and radius-squared
-mass give half-kernel average caps; true region monotonicity makes rational bounds
-simultaneous over all positive radii. Actual L¹ energy tests give singular-source
-contact positivity, while graph passage for the constructed state remains ongoing.
-Exact coefficient matrices, tensor Taylor error bounds, radial tangents and the
-first positive arithmetic rectangle are checked. Full interior coverage and all
-remaining positivity rectangles still need certification.
-
-
-The actual maximal-function transfer is now complete: true normalized Euclidean
-diamond averages, every extended-real level, norm inputs, monotone L¹ truncations,
-volume-preserving coordinate transport and the genuine square transformation
-preserve the exact half-kernel coefficient. Its positivity follows from actual
-unit-diamond area and domination. The full singular-source graph, genuine compact
-source tests, weak equation passage and source/convolution commutation are proved.
-The original interior density agrees exactly with the named finite certificate
-expression at sixteen times the absolute physical coordinates. The fixed positive
-source candidate is sigma finite and has actual local test integrability. The
-first genuine interior rectangle is positive. The full finite partition and true
-contact of the constructed state remain necessary before the square row is added
-to Challenge, Solution and the comparator.
-
-
-The constructed square state now has its genuine singular-source contact inequality.
-Compact positive mollifications preserve the actual weak generator equation; true
-source convolution and energy bounds pass through the closed full-source graph.
-No finite total source mass or additional state regularity is assumed. Genuine
-source and kernel dilation then give contact caps at every positive radius.
-The exact square constant is strictly below 3.616 assuming only almost-everywhere
-nonnegativity of the actual source density. Actual operator symmetry and exterior
-positivity reduce this last premise to strict positivity on the ordered interior
-region. A genuine four-child subdivision theorem and floor-based unit-cell cover
-supply finite geometric soundness. Shared exact power caches, checked radial roots,
-actual coordinate data, and sound finite-tail Horner evaluation support the remaining
-complete arithmetic certificate and its full coverage proof.
-
-
-The entire original interior partition now has unconditional geometric coverage:
-all 210 ordered unit roots, every child subdivision and pruning condition, and
-the real floor-to-rectangle passage are checked. Every ordered strict-interior
-point belongs to one of the original 6,739 retained rectangles, with no assumed
-coverage or rectangle alignment premise. Shared root and coordinate data give
-one checked actual leaf lower bound. Normalized cell-coefficient caches equal
-the original genuine table; their equivalent validity predicates prove exactly
-the original cubic and coordinate properties. The remaining work is the complete
-numerical positivity registry and its unconditional identification with these
-covered rectangles.
-
-
-The source-scope audit required the full complex-input Riesz vector. The actual
-complex norm-cap Poisson construction and full-vector Riesz cancellation now
-prove coefficient two on every complex L¹ input. All fifteen completed rows
-match the stated input spaces and full norms. Exact snapshot
-`e301f763ae0c819976384ea733f7327e80ce1c44` passed the full official
-Comparator and independent-kernel preflight. Square arithmetic continues in
-disjoint exact certificate batches; its final unconditional theorem and the
-complete sixteen-row check remain pending.
-
-### Completed square assembly
-
-The exact 106 checked numerical blocks are assembled in `GeneratorLeafBlocks`.
-`GeneratorInteriorPositivity` combines that registry with the actual rectangle
-alignment and complete partition coverage. `SquarePositiveSource` derives
-almost-everywhere nonnegativity of the original density and its full compensated
-source identities. `SquareWeakBounds` discharges the source-positivity premise
-of the original operator transfer, giving the unconditional strict table bound
-below 452 / 125. All four actual module builds and ten imported standard-axiom
-audits passed in focused local stages using the exact split registry, with
-source and support guards preserved. The earlier runs `37422022840` and
-`37431956910` remain failed assembly attempts. The complete sixteen-row
-ordinary CI, Comparator and unchanged cold official preflight still require
-actual execution for the final public snapshot; registration also requires
-the current Palomar review and human consent.
+Euclidean balls use `EuclideanSpace ℝ (Fin n)` and its Euclidean norm.
+The retained one-dimensional cube formulation gives centred intervals.
+
+## The fifteen included statements
+
+| Article rows | Public Solution declaration | Scope |
+| --- | --- | --- |
+| 1 | `riesz_weakTypeConstant_le_two` | Full complex-input Riesz vector, $$n\ge1$$ |
+| 2 | `beurling_weakTypeConstant_le_two` | Complex scalar inputs on the plane |
+| 3 | `hessian_weakTypeConstant_two_le_exact` | Full planar Frobenius Hessian |
+| 4 | `hessian_weakTypeConstant_le_formula` | Full Frobenius Hessian, $$n\ge2$$ |
+| 5 | `tracelessHessian_weakTypeConstant_le` | Traceless Frobenius Hessian, $$n\ge1$$ |
+| 6 | `projections_weakTypeConstants_le_exact` | Both projections, $$n\ge2$$ |
+| 7 | `interval_weakTypeConstant_le_two` | Centred intervals |
+| 8 | `ball_weakTypeConstant_two_le_exp` | Planar Euclidean balls |
+| 10 | `ball_weakTypeConstant_le_rpow` | Euclidean balls, $$n\ge3$$ |
+| 11 | `poisson_weakTypeConstant_one_le_exact` | Exact one-dimensional Poisson expression |
+| 12 | `poisson_weakTypeConstant_two_le_exact` | Exact planar Poisson expression |
+| 13 | `poisson_weakTypeConstant_le_formula` | Poisson formula, $$n\ge1$$ |
+| 14 | `heat_weakTypeConstant_one_le_exact` | Exact one-dimensional heat expression |
+| 15 | `heat_weakTypeConstant_two_le_exact` | Exact planar heat expression |
+| 16 | `heat_weakTypeConstant_le_formula` | Heat formula, $$n\ge1$$ |
+
+The dimension-one traceless operator is zero. The projection statement contains
+both inequalities. The approximate decimals in the article are labels for exact
+expressions; they are not substituted as rigorous truncated upper bounds.
+The README gives the exact parameters and formulas. Their existence and uniqueness
+are proved for every positive dimension, without an assumed root certificate.
+
+## Linear proof map
+
+1. Concrete Fourier multipliers specify the Riesz, Beurling, full and traceless
+   Hessian, and projection operators with the intended output norms.
+2. Whole-space vector balayage constructs the norm-capped decomposition and proves
+   its weak PDE, active-volume bound, and global Sobolev regularity.
+3. Physical Sobolev zero-set locality gives Hessian and projection cancellation.
+   The complex Poisson branch constructs the Riesz decomposition, proves the
+   frequency-norm identity and self-energy pairing, identifies every coordinate
+   with a physical derivative, and obtains full-vector cancellation.
+4. The norm-capped level-set estimates give the exact coefficients. Genuine linear
+   extensions, unique among finite weak-bound extensions, transfer the operators
+   to every complex $$L^1$$ input.
+
+The principal source groups are `PartialBalayage/Linear/`,
+`PartialBalayage/Constants/`, `TableDefinitions.lean`, and
+`ComplexTableDefinitions.lean`. No input-dependent decomposition, locality, or
+Fourier certificate is left as a hypothesis of the public table statements.
+
+## Maximal proof map
+
+1. The interval and Euclidean-ball bounds reuse the author's earlier development,
+   retaining its source attribution and Apache-2.0 headers.
+2. Positive whole-space Laplace balayage supplies cap complementarity and the
+   active-volume estimate for the semigroup branch.
+3. Harmonic tangent majorants genuinely dominate the original Poisson and heat
+   kernels. Radial comparison and integration compute their exact masses.
+4. Parameter existence and uniqueness, Gaussian and arctangent tails, and planar
+   elementary identities produce the exact general and special coefficients.
+5. Rational-time comparison, continuity, and monotone integrable truncations give
+   every positive time and every integrable input.
+
+These proofs are in `PartialBalayage/Maximal/` and the retained
+`CenteredMaximal/` dependencies. The public conclusions have no analytical
+certificate hypotheses.
+
+## Verification boundary
+
+The source statements are matched by `Challenge.lean`, `Solution.lean`, and the
+fifteen targets in `comparator.json`. Deliberate Challenge holes do not enter the
+solution. The permitted axioms are only `propext`, `Classical.choice`, and
+`Quot.sound`; a declaration may use a subset.
+
+The earlier corrected fifteen-row snapshot passed the official full check.
+That historical result does not establish acceptance of the newly cleaned
+snapshot. Fresh ordinary CI and the protected official full verification are
+required before intake. [VERIFICATION.md](VERIFICATION.md) records the historical
+scope and failed sixteen-row attempts; registration remains pending.

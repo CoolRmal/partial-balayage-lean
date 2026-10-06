@@ -3,11 +3,13 @@ version: v0.4
 project:
   name: Two partial balayage principles for weak-type estimates
   description: >-
-    A candidate Lean formalization of all sixteen rows in Yongxi Lin's table of weak type
-    (1,1) upper bounds for singular integrals and maximal operators. Bounds include
+    A candidate Lean formalization of fifteen selected statements from Yongxi Lin's
+    table of weak type (1,1) upper bounds for singular integrals and maximal operators.
+    Bounds include
     full-vector complex-input Riesz, complex Beurling, full and traceless Frobenius
-    Hessians, both projections, centred intervals and balls, the strict planar
-    square bound below 3.616, and all six Poisson and heat maximal bounds.
+    Hessians, both projections, centred intervals and balls, and all six Poisson
+    and heat maximal bounds. The strict planar square bound below 3.616 is excluded
+    from the submitted scope at the human author's request.
   authors:
   - Yongxi Lin
   license: Apache-2.0
@@ -23,7 +25,9 @@ sources:
   id: https://coolrmal.github.io/articles/two-partial-balayage-principles/
   location: Abstract table and Section 4
   relationship: formalizes
-  note: The live article accessed on 5 October 2026 is the target; all sixteen rows are tracked.
+  note: >-
+    The live article accessed on 5 October 2026 is the source. Fifteen selected
+    statements are formalized; the planar square bound below 3.616 is excluded.
 - title: Centred maximal constants for cubes and Euclidean balls
   authors: [Yongxi Lin]
   type: other
@@ -40,7 +44,7 @@ related_formalizations:
   note: Supplies three already established maximal-operator bounds.
 status:
   scope: >-
-    The comparator has sixteen complete table-row statements: full-vector
+    The comparator has fifteen statements selected from the article's table: full-vector
     complex-input Riesz,
     complex Beurling, full and
     traceless Frobenius Hessians, both projections, centred intervals, planar
@@ -51,15 +55,12 @@ status:
     quantify over genuine linear all-L¹ extensions agreeing with the actual L²
     Fourier operators. The Riesz statement has a genuine complex-linear extension
     on every complex L¹ input, with coefficient two from actual complex norm-capped
-    Poisson balayage and physical full-vector gradient cancellation. The square
-    row is the unconditional strict bound below ENNReal.ofReal (452 / 125),
-    using the original centred square maximal operator on all integrable real
-    inputs and all levels. The four new square assembly modules and ten imported
-    standard-axiom audits passed focused local checks. All 106 numerical blocks
-    and their combined audit passed on Linux in run 37409981058. Earlier assembly
-    runs 37422022840 and 37431956910 failed and are not used as full acceptance.
-    Complete sixteen-row ordinary CI, unchanged cold official verification and
-    Palomar registration remain pending for the final public snapshot.
+    Poisson balayage and physical full-vector gradient cancellation. The
+    one-dimensional cube constant is retained because it defines the centred
+    interval operator. The planar square target and its proof are outside the
+    current scope. Ordinary CI, full cold official verification and Palomar
+    registration remain pending for the revised public snapshot; earlier checks
+    do not establish acceptance of this revision.
     Counts exclude the deliberate holes in Challenge.lean.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -77,6 +78,9 @@ automation:
     prompting_notes: >-
       The human author requested all table bounds, a separate mathlib project,
       continuous public commits, comparator checks and eventual registration.
+      The author later directed removal of the planar square proof and a
+      fifteen-statement submission, with the complete article table documented
+      separately from the formalized scope.
   - method: manual
     models: []
     framework: n/a
@@ -90,11 +94,12 @@ automation:
   notes: Copied proofs retain their previously documented provenance.
 fidelity:
   divergences: >-
-    All sixteen table rows are compared in sixteen statements, including complex
-    scalar Riesz input. Semigroup formulas use the exact proved unique parameters
-    rather than rounded decimals. The square target is strictly below 452 / 125,
-    exactly the published table value 3.616. The stronger approximate value
-    discussed elsewhere in the article is outside this table-only scope.
+    Fifteen selected statements are compared, including complex scalar Riesz
+    input. Semigroup formulas use the exact proved unique parameters rather than
+    rounded decimals. The strict planar square bound below 452 / 125, the
+    published table value 3.616, is deliberately excluded. Its large arithmetic
+    certificates made complete verification expensive. No planar square result
+    is advertised as part of this submission.
 review:
   status: self-assessed
   reviewers: []
@@ -182,14 +187,6 @@ alignment:
     module: Solution
     status: proved
     note: Both operators, actual complex Euclidean vectors and exact cubic-root coefficient.
-  - source: Abstract table, centred squares in dimension two
-    lean: PartialBalayage.square_weakTypeConstant_lt_3_616
-    module: Solution
-    status: proved
-    note: >-
-      Strict bound below ENNReal.ofReal (452 / 125), original centred square
-      averages at every positive radius, all integrable real inputs and all
-      levels, with no numerical or source-positivity certificate premise.
 acknowledgements: >-
   Built on Lean 4, Mathlib and Yongxi Lin's earlier centred-maximal proofs.
   Layout and verification scripts come from PalomarTemplate. Codex assisted
