@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: square-numerical-${{ inputs.commit }}
@@ -28,11 +29,11 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: ${{ inputs.commit }}
+          ref: 1e84ddabfbf64c3f4fe29cb61a85571f5caa7543
           persist-credentials: false
-      - name: Check the immutable snapshot and dependency pins
+      - name: Check the verified shared-cache seed and dependency pins
         env:
-          NUMERICAL_COMMIT: ${{ inputs.commit }}
+          NUMERICAL_COMMIT: 1e84ddabfbf64c3f4fe29cb61a85571f5caa7543
         run: |
           python3 scripts/validate-generator-blocks.py inspect
           python3 scripts/check-lean-sources.py
@@ -44,10 +45,34 @@ jobs:
           lint: false
           use-mathlib-cache: true
           use-github-cache: false
-      - name: Build only shared dependency modules and audit their numerical exports
+      - name: Download the verified shared dependency cache
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: square-numerical-warm-1e84ddabfbf64c3f4fe29cb61a85571f5caa7543
+          run-id: 37401878571
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/square-numerical-download
+      - name: Read the immutable cache compatibility tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          path: .square-control
+          persist-credentials: false
+      - name: Fetch the immutable numerical candidate without switching sources
         env:
           NUMERICAL_COMMIT: ${{ inputs.commit }}
-        run: python3 scripts/validate-generator-blocks.py warm
+        run: |
+          [[ "$NUMERICAL_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          git fetch --no-tags --depth=1 origin "$NUMERICAL_COMMIT"
+      - name: Verify compatibility and audit the new candidate shared modules
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+          CONTROL_COMMIT: ${{ github.sha }}
+        run: >-
+          python3 .square-control/scripts/rewarm-compatible-generator-cache.py
+          --new-commit "$NUMERICAL_COMMIT" --runner-temp "$RUNNER_TEMP"
+          --report "$RUNNER_TEMP/square-numerical/warm-cache-compatibility.json"
+          --execute-isolated-switch
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: square-numerical-warm-${{ inputs.commit }}

@@ -1082,3 +1082,38 @@ direct compiler exit and per-child `wait4` measurements establish these results.
 All original numerical sources remained unchanged. This verifies one actual
 inequality only. A complete 64-leaf block experiment, the full numerical
 registry, final sixteen-row verification and Palomar registration remain pending.
+
+## Verified full-block decomposition and new immutable candidate
+
+The complete actual block 30 passed after splitting both metadata and lower-bound
+checks into individual ordinary-kernel decisions. Direct compiler exit was 0:
+185.343 seconds wall time, 181.537 seconds user time and peak RSS 3,030,777,856
+bytes (about 2.82 GiB), with one compiler thread and a 4,096 MB Lean memory cap.
+Imported audits of unconditional block validity, every numerical-validity
+consequence and actual pointwise generator positivity all passed, each using
+exactly `propext`, `Classical.choice` and `Quot.sound`.
+
+The [new public candidate](https://github.com/CoolRmal/partial-balayage-lean/tree/dde634e918bcbba00881018b205dea4172d2ee5f)
+applies exactly those two proof-fragment changes to all 106 blocks. Independent
+reviews reversed the edits and recovered every byte of the previous candidate.
+All data records, imports, statements and source options are unchanged; block 30
+matches its measured build byte for byte. The remaining 105 blocks still require
+actual validation. The original working-tree numerical files were preserved.
+
+The previous remote run `37401878571` ended in failure. Its shared warm stage
+passed 65 modules and 99 actual imported standard-three-axiom audits; all 901
+reported source hashes match the immutable candidate. Its eighteen numerical
+build steps exited 143 and the combined audit was skipped. Two preserved range
+logs show runner shutdown during their first builds. No numerical range passed;
+the available logs establish neither an arithmetic rejection nor a shutdown
+cause. Its measured warm builds took 2,792.06 seconds in total, with maximum RSS
+4,958,576 kB.
+
+The replacement workflow reuses only this verified shared cache. Before its
+isolated source switch, the guard checks all 240 transitive local shared sources,
+39 external imports, dependency/configuration pins and the exact seed archive
+and manifest digests. Restored output hashes must survive the switch unchanged.
+The new candidate then runs the ordinary warm build and all 99 imported audits
+again, producing its own genuine archive and manifest. The old manifest remains
+unchanged. Numerical ranges and the 318-export combined audit remain required,
+followed by final source-based sixteen-row verification and Palomar registration.
