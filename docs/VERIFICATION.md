@@ -1849,3 +1849,20 @@ default 200,000-heartbeat tactic limit after 15.728 seconds wall; it supplies
 no accepted proof. The next diagnostic keeps the existing ten-minute and
 12-GiB external limits while allowing the tactic to finish. All earlier
 failures remain retained, and no experimental proof has been adopted.
+
+That subsequent diagnostic passed compilation and a fresh imported exact-type
+and standard-axiom audit. Compilation took 135.073 seconds wall. Its genuine
+selected export contains 75,485,454 bytes; con-ron accepted 8,135 verified
+declarations in 9.151 seconds wall, with 0.128 seconds parsing, 3.068 installing
+and 5.772 checking. The exported closure contains no original validity theorem
+or positivity auxiliary. The independent review has SHA256
+`ded79dece9d12df04dc888cdc8185b5bc26eac9ab49557d94e9f3983513f821d`.
+This sample is substantially faster than the expanded NormNum pilot, but
+still larger and slower than the original first-leaf baseline. It is not adopted.
+
+A separately imported, bounded proof-sharing helper and its first-leaf theorem
+also passed compilation and the fresh type/axiom audit. The inline helper's
+earlier module-initialization failure is retained. The corrected variant took
+134.247 seconds to compile, so no compilation speedup is established; its
+genuine export and replay are still pending. Neither pilot supplies complete
+sixteen-row Comparator or Palomar acceptance.
