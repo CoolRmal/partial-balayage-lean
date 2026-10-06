@@ -1460,3 +1460,37 @@ revision `4a396ed3140af32e5c2df27bb04fabd7b076d31f`. The source commit passed
 independent byte-level review against all 106 candidate Git blobs and four
 fixed assembly hashes. The run remains in progress; no assembly acceptance
 is inferred from dispatch or dependency setup.
+
+## Three-leaf shared Taylor-result experiment
+
+An isolated cache experiment used three unchanged actual numerical leaves:
+block 30 / leaf 29 with 75 Taylor terms, block 30 / leaf 1 with zero terms,
+and block 105 / leaf 18 in the corner regime. Each original/cached pair proved
+the identical closed `NumericalValid` statement. All six genuine self-contained
+exports passed the pinned Lean-default independent replay with exactly the
+standard three axioms. Each export retained the same 49 support roots and
+all 9,658 shared supporting declarations.
+
+| Leaf | Original wall / user seconds | Cached wall / user seconds |
+| --- | ---: | ---: |
+| 75 terms | 141.852 / 107.539 | 148.415 / 133.888 |
+| Zero terms | 99.680 / 95.698 | 122.482 / 119.632 |
+| Corner | 97.265 / 93.039 | 121.820 / 118.842 |
+
+The cached exports retained all 346 selected interval/error equalities and
+47 additional private power-cache checks. No supporting declarations were
+erased from the measurements. Independent read-only inspection matched all
+187 retained evidence file sizes and hashes, parsed the six actual exports,
+recomputed their closed goal hashes, and checked the actual replay records,
+per-stage 600-second / 12-GiB outer guards and zero dependency builds. The
+immutable evidence manifest has SHA256
+`0838136da0f192ef11e65a5f447777bd0b8bf533bdcda04b6c310d0b9bd9201c`;
+the comparison report has SHA256
+`3e936e711558a470d5943bae5a7fe1c4664ef80540b62d8c2f0808a5df542d90`.
+
+All three cached samples used more wall and user time. The experiment was
+not adopted. These whole-export measurements include shared support and
+parsing; they are not pure per-leaf costs or evidence of full-table resource
+fit. The actual 106-block candidate remains unchanged. A separate zero-centre
+fallback bridge and its three-leaf endpoints have compiled and passed
+standard-axiom audits; their comparable replay checks are still pending.
