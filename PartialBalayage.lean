@@ -705,12 +705,33 @@ public import PartialBalayage.Linear.ComplexPoissonRegularity
 public import PartialBalayage.Linear.ComplexPoissonSelfEnergy
 public import PartialBalayage.Linear.ComplexRieszWeakGradient
 public import PartialBalayage.Linear.ComplexRieszCappedEstimate
+public import PartialBalayage.ComplexTableDefinitions
+public import PartialBalayage.Linear.ComplexGradientZeroSet
+public import PartialBalayage.Linear.ComplexPoissonActiveSet
+public import PartialBalayage.Linear.ComplexPoissonBalayage
+public import PartialBalayage.Linear.ComplexPoissonDefectWeakLimit
+public import PartialBalayage.Linear.ComplexPoissonDirichletEnergyMass
+public import PartialBalayage.Linear.ComplexPoissonDirichletMass
+public import PartialBalayage.Linear.ComplexPoissonDirichletOperators
+public import PartialBalayage.Linear.ComplexPoissonFiniteObstacle
+public import PartialBalayage.Linear.ComplexPoissonFiniteUniformBounds
+public import PartialBalayage.Linear.ComplexPoissonFiniteWeakPDE
+public import PartialBalayage.Linear.ComplexPoissonHalfEnergyLimit
+public import PartialBalayage.Linear.ComplexPoissonStateExhaustion
+public import PartialBalayage.Linear.ComplexPoissonWholeSpaceEquation
+public import PartialBalayage.Linear.ComplexRieszOperatorBridge
+public import PartialBalayage.Linear.ComplexRieszCancellation
+public import PartialBalayage.Linear.ComplexRieszWeakBounds
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates34
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates36
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates38
+public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates86
 
 /-!
 # Two partial balayage principles
 
-The library exports fourteen full table rows and the real-input Riesz subcase.
-The complex Riesz extension and square row are tracked in `docs/DECOMPOSITION.md`.
+The library exports fifteen full table rows, including the complete complex-input Riesz bound.
+The remaining square row is tracked in `docs/DECOMPOSITION.md`.
 Supporting development includes capped-decomposition level-set estimates, finite-measure vector
 obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.
 -/

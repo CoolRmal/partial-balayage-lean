@@ -13,8 +13,8 @@ Fifteen rows are completed and advertised in the comparator: 1–8 and 10–16.
 Row 9 remains pending. All maximal estimates cover integrable real inputs
 and every extended-real level. The five complex linear rows use genuine all-L¹
 linear extensions of the actual complex Fourier multipliers, with Euclidean
-vector and Frobenius matrix norms. The complete real-input Riesz vector also
-has a genuine linear all-L¹ extension with coefficient two.
+vector and Frobenius matrix norms. The complete complex-input Riesz vector also
+has a genuine complex-linear all-L¹ extension with coefficient two.
 
 Further proved square prerequisites include the exact all-input diamond-to-square
 maximal transfer, the actual beta-integral upper bound and intrinsic-constant
@@ -35,7 +35,12 @@ equations identify the complete Riesz vector with a physical Sobolev gradient
 and give its zero-set cancellation. Actual signed whole-space complementarity
 constructs the required cap, density-mass contraction and active-volume bound.
 The L² contraction and canonical all-L¹ extension give the unconditional
-full-vector Riesz table coefficient two.
+full-vector real-input Riesz coefficient two. The complex extension constructs a
+single complex norm-capped decomposition, derives actual self-energy from the
+physical H01 equation, and identifies every Riesz coordinate with a genuine
+distributional first derivative. Real and imaginary weak graphs give full
+complex zero-set cancellation. The L² contraction and genuine complex-linear
+all-L¹ extension prove the unrestricted scalar-input Riesz table coefficient two.
 
 ## Definitions required by the statements
 

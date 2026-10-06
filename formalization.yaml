@@ -4,11 +4,11 @@ project:
   name: Two partial balayage principles for weak-type estimates
   description: >-
     A Lean formalization in progress of Yongxi Lin's table of weak type (1,1)
-    upper bounds for singular integrals and maximal operators. Fourteen table rows
-    are proved in full, together with the full-vector real-input Riesz subcase.
+    upper bounds for singular integrals and maximal operators. Fifteen table rows
+    are proved in full, including full-vector complex-input Riesz.
     Completed bounds include complex Beurling, full and traceless Frobenius
     Hessians, both projections, centred intervals and balls, and all six Poisson
-    and heat maximal bounds. Complex-input Riesz and the square row remain pending.
+    and heat maximal bounds. The square row remains pending.
   authors:
   - name: Yongxi Lin
     github: CoolRmal
@@ -43,8 +43,8 @@ related_formalizations:
   note: Supplies three already established maximal-operator bounds.
 status:
   scope: >-
-    The comparator has fifteen statements: fourteen complete table rows and the
-    full-vector real-input Riesz subcase,
+    The comparator has fifteen complete table-row statements: full-vector
+    complex-input Riesz,
     complex Beurling, full and
     traceless Frobenius Hessians, both projections, centred intervals, planar
     and higher-dimensional Euclidean balls, and all six Poisson and heat maximal
@@ -52,10 +52,10 @@ status:
     and all levels. Unique exact tangency parameters and elementary special
     formulas are proved. The complex singular-integral and projection statements
     quantify over genuine linear all-L¹ extensions agreeing with the actual L²
-    Fourier operators. The Riesz statement has a genuine linear extension on
-    every real L¹ input. The final source fidelity audit identified that the article
-    also covers complex scalar Riesz input; that extension and the square row
-    remain pending before final registration.
+    Fourier operators. The Riesz statement has a genuine complex-linear extension
+    on every complex L¹ input, with coefficient two from actual complex norm-capped
+    Poisson balayage and physical full-vector gradient cancellation. The square
+    row remains pending before final registration.
     Counts exclude the deliberate holes in Challenge.lean.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -86,9 +86,8 @@ automation:
   notes: Copied proofs retain their previously documented provenance.
 fidelity:
   divergences: >-
-    Incomplete: fourteen table rows and the real-input Riesz subcase are presently
-    compared in fifteen statements. The article also permits complex scalar Riesz
-    input; this scope extension is pending. Semigroup formulas use the exact proved
+    Incomplete: fifteen full table rows are presently compared in fifteen statements,
+    including complex scalar Riesz input. Semigroup formulas use the exact proved
     unique parameters rather than rounded decimals. The square
     row remains pending; the earlier square bound 3.879 is not advertised as
     the requested new bound below 3.616.
@@ -102,13 +101,13 @@ review:
 alignment:
   namespace: PartialBalayage
   statements:
-  - source: Abstract table, Riesz transform (real-input subcase)
+  - source: Abstract table, Riesz transform
     lean: PartialBalayage.riesz_weakTypeConstant_le_two
     module: Solution
     status: proved
     note: >-
-      Every positive dimension, full Euclidean vector and genuine linear all-real-L¹
-      extension. The article also permits complex scalar input; that extension is pending.
+      Every positive dimension, full complex Euclidean vector and genuine complex-linear
+      all-complex-L¹ extension, with coefficient two and no analytical certificate premise.
   - source: Abstract table, centred intervals
     lean: PartialBalayage.interval_weakTypeConstant_le_two
     module: Solution

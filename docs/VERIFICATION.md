@@ -828,3 +828,49 @@ snapshot confirms official checkpoints 26, 27 and 28 are at the comparator and
 provenance stage, with no terminal reports yet. Checkpoint 25 remains the latest
 downloaded full pass with zero errors and warnings. Final sixteen-row Comparator
 verification and Palomar intake, private review and registration remain pending.
+
+## Thirtieth proof checkpoint: complete complex-input Riesz table row
+
+The complex-input Riesz scope gap is closed. The compared statement now uses
+the independently defined complex-scalar Fourier operator, its complete complex
+Euclidean vector, every positive dimension, a genuine complex-linear all-L¹
+extension, every extended-real level and coefficient two. It has no cap, energy,
+regularity, convergence or physical-equation certificate premise. The earlier
+real-input Riesz theorem remains proved as a supporting result.
+
+The actual construction uses one complex norm cap. Genuine finite Poisson
+obstacles, uniform Fourier balance, joint weak exhaustion and full real/imaginary
+H01 test closure supply actual complex states. The physical self-energy identity
+gives norm saturation and active-volume control. Every Riesz coordinate is an
+actual represented first derivative; genuine real and imaginary weak graphs give
+its zero-set locality. The full-vector L² contraction supplies the capped estimate,
+and the proved canonical complex-linear extension reaches all complex L¹ inputs.
+A separate read-only source fidelity audit confirms the article's full input,
+vector, dimension and constant scope.
+
+Twenty-one new modules have successful focused builds. The twelve complex
+construction modules' 63 exports, the three actual locality/cancellation
+endpoints, six independent operator/bridge/full-weak-bound exports and eight
+coordinate validity exports have imported audits using only the permitted
+standard axioms. The combined library, challenge and solution build passed
+(4,603 jobs). Source, metadata and 100-column checks passed. The independent
+Challenge imports Mathlib alone, has 292 lines, and repeats the exact complex
+operator definition. All fifteen compared statements are now full table rows.
+
+Four paired coordinate modules (34/35, 36/37, 38/39 and 86/87) are also complete
+and audited. A controlled identical-source ordinary-kernel check of an unfrozen
+coordinate pair passed in 50.8 seconds with sequential elaboration; its earlier
+asynchronous run had exceeded sixteen minutes before the app interruption.
+Only the scheduling option changed in that candidate. A bounded full leaf probe
+was inconclusive and did not change the active numerical source. The finite
+positivity registry remains ongoing; no unchecked numerical leaf is published.
+
+The [twenty-sixth full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37389948017)
+passed exact commit `f58cb8b9eafcd13368ea4b14c1891d97fe46dd5c`, checked on
+6 October 2026 at 00:31:37 UTC. The downloaded report records `status: pass`,
+`stage: complete`, zero errors and warnings, independent NanoDa and con-ron
+checks and fifteen exact statement names. That snapshot still covers fourteen
+full rows and the real-input Riesz subcase; it does not verify the new complex
+statement. The new fifteen-full-row snapshot requires its own official preflight.
+The square row, final sixteen-row Comparator verification and Palomar intake,
+private review and registration remain pending.

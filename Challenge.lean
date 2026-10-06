@@ -116,6 +116,11 @@ def rieszFourierOperator {n : ℕ}
     Lp (EuclideanSpace ℂ (Fin n)) 2 (volume : Measure (EuclideanSpace ℝ (Fin n))) :=
   canonicalL2FourierOperator (fun ξ z ↦ z • fourierRieszSymbol ξ)
     (Complex.ofRealCLM.compLp f)
+/-- The full complex-input Riesz vector, defined by its genuine Fourier symbol. -/
+def complexRieszFourierOperator {n : ℕ}
+    (f : Lp ℂ 2 (volume : Measure (EuclideanSpace ℝ (Fin n)))) :
+    Lp (EuclideanSpace ℂ (Fin n)) 2 (volume : Measure (EuclideanSpace ℝ (Fin n))) :=
+  canonicalL2FourierOperator (fun ξ z ↦ z • fourierRieszSymbol ξ) f
 /-- The complex-input planar Beurling multiplier. -/
 def beurlingFourierOperator
     (f : Lp ℂ 2 (volume : Measure (EuclideanSpace ℝ (Fin 2)))) :
@@ -278,9 +283,9 @@ theorem projections_weakTypeConstants_le_exact (n : ℕ) (hn : 2 ≤ n) :
       ENNReal.ofReal (projectionCoefficient projectionParameter) := by
   sorry
 
-/-- The complete real-input Riesz vector has coefficient two on every real L¹ input. -/
+/-- The complete complex-input Riesz vector has coefficient two on every complex L¹ input. -/
 theorem riesz_weakTypeConstant_le_two (n : ℕ) (hn : 1 ≤ n) :
-    linearWeakTypeConstant (𝕜 := ℝ) (rieszFourierOperator (n := n)) ≤ 2 := by
+    linearWeakTypeConstant (𝕜 := ℂ) (complexRieszFourierOperator (n := n)) ≤ 2 := by
   sorry
 
 

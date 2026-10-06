@@ -4,17 +4,19 @@
 
 Work in progress toward formalizing all sixteen upper-bound rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-Fourteen table rows are proved in full, together with the real-input Riesz subcase:
-complex-input Beurling transform, full and traceless Frobenius Hessians, both
+Fifteen table rows are proved in full: complex-input full-vector Riesz and
+Beurling transforms, full and traceless Frobenius Hessians, both
 projections, centred intervals, Euclidean balls, and all six Poisson and heat bounds. Every maximal estimate
 quantifies over all integrable real inputs and all extended-real levels. The six new
 semigroup bounds use the article's exact formulas and proved unique parameters.
 
-The square row and the article's complex-input Riesz extension remain pending. This repository has
+The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fifteen statements. The fifteen-statement checkpoint
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37387101151)
-with no errors or warnings.
+configured for fifteen statements. An earlier checkpoint covering fourteen full
+rows and the real-input Riesz subcase
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37389948017)
+with no errors or warnings. The new complex-input Riesz theorem still needs its
+own official full preflight.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
@@ -44,10 +46,12 @@ are proved to exist and to be unique among finite weak-bound extensions. The fin
 statements use the independently defined concrete Fourier operators. Actual signed
 Poisson balayage, full-norm Fourier regularity and physical Sobolev zero-set locality
 give the full-vector Riesz coefficient two on every real L¹ input.
-The complex extension now has checked physical Poisson regularization, full
-frequency-norm identification, the actual self-energy identity, represented
-Riesz first derivatives and the complex norm-capped level-set estimate. These
-supporting results do not yet complete the complex-input table theorem.
+The complex extension constructs a genuine complex norm-capped Poisson
+decomposition, proves physical Poisson regularization, the full frequency-norm
+identity and actual self-energy pairing, and identifies every Riesz coordinate
+with a physical first derivative. Real and imaginary zero-set locality give
+full-vector cancellation. Its norm-capped level-set estimate and genuine complex
+linear L¹ extension prove the complete complex-input table theorem.
 
 The square prerequisites include the actual kernel's nonnegativity and closed-diamond
 majorization, exact mass below twice 3.616, the genuine spline generator formula,
