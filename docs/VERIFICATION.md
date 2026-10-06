@@ -1791,7 +1791,23 @@ matching the GitHub artifact API. The retained report bytes have SHA256
 The independent failure review has SHA256
 `42e32ab859077da4be5e91bf87e95e13e4f8c46ee05e488ffa76bcc5e8474fe7`.
 
-The separate ordinary CI run on the same source commit remains active at
-this checkpoint. No final CI acceptance, Palomar intake or registration is
-claimed. Further work must address the demonstrated resource limit before
-an unchanged-source retry; the failed run will remain recorded as a failure.
+The separate ordinary CI
+[run on the same source commit](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37447273104)
+is now terminal. Its Lean job passed all 4,742 jobs, including all 106
+numerical blocks and Solution. That job restored an older dependency cache,
+so it is not an additional cold-build measurement. Its independent kernel
+hooks were skipped; build success alone does not establish Comparator success.
+
+The ordinary Comparator and documentation jobs were cancelled with the
+explicit annotation `The job has exceeded the maximum execution time of
+5h50m0s.` The Comparator job had not completed the Solution dependency build,
+export or independent kernel checks. The documentation upload was not reached.
+The classifier, README and metadata/license jobs passed. The complete
+six-job ordinary CI run therefore remains unaccepted. All six job logs and
+the cancellation annotations were retained and independently checked; the
+terminal evidence receipt has SHA256
+`39bed97185aef99f8e66e808b5db2742e9f84b350f2f01480f1a5d05caab8426`.
+
+No final CI acceptance, Palomar intake or registration is claimed. Further
+work must address the demonstrated resource limit before an unchanged-source
+retry; these failed or cancelled runs will remain recorded as such.
