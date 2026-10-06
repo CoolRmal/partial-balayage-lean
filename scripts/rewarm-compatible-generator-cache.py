@@ -387,9 +387,10 @@ def main():
         new = Revision(args.root, args.new_commit)
         compatibility = compare_shared(old, new, args.expected_sources)
         expected_audits(new, compatibility["shared_roots"])
-        compatibility["status"] = "compatible-sources-only"
         if args.execute_isolated_switch:
             execute(args.root, old, new, args, compatibility)
+        else:
+            compatibility["status"] = "compatible-sources-only"
         if args.report:
             args.report.write_text(json.dumps(compatibility, indent=2, sort_keys=True) + "\n")
         print(json.dumps({k: compatibility[k] for k in (

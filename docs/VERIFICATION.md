@@ -1117,3 +1117,29 @@ The new candidate then runs the ordinary warm build and all 99 imported audits
 again, producing its own genuine archive and manifest. The old manifest remains
 unchanged. Numerical ranges and the 318-export combined audit remain required,
 followed by final source-based sixteen-row verification and Palomar registration.
+
+## Cache-guard execution regression
+
+The first split-candidate retry,
+[run 37408678726](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37408678726),
+failed before its fresh warm build or any numerical range. The guard restored the
+verified old shared cache and switched the isolated checkout, but then compared
+raw source facts with a dictionary already decorated with a source-only status.
+That bookkeeping mismatch rejected unchanged sources. No new mathematical
+validation passed in this run.
+
+The guard now adds the source-only status only in its inspection branch. Its
+execution branch retains the exact immutable source facts until the ordinary
+new-candidate warm build, all 99 imported audits and the new archive checks
+actually pass. The independent source comparison still confirms all 240 shared
+modules are unchanged. The mathematical sources and candidate commit remain
+unchanged; the replacement run still requires every numerical range and the
+combined audit.
+
+Ten execution-path regression cases pass with explicitly synthetic command and
+archive boundaries. They exercise the real dispatch, source-fact recheck, cache
+hashing, fresh-report validators and final status emission. Reinstating the old
+bug is rejected before fresh warm mode, as are altered source facts or restored
+outputs. Missing audits, an unpermitted axiom, a nonpassing report, a stale fresh
+manifest and relabelling the old manifest are rejected. These fixture tests
+establish guard behavior only and are not mathematical proof evidence.
