@@ -108,12 +108,16 @@ jobs:
           persist-credentials: false
       - name: Check Lean source requirements before builds
         run: python3 scripts/check-lean-sources.py
+      - name: Test ordinary cache input guards without proof builds
+        run: python3 scripts/test-ci-build-cache-marker.py
+      - name: Mark the exact inputs before the action caches a successful build
+        run: python3 scripts/ci-build-cache-marker.py write
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           build: true
 
   docs:
-    needs: [source-changes]
+    needs: [source-changes, build]
     if: ${{ always() && (needs['source-changes'].result != 'success' || needs['source-changes'].outputs.heavy != 'false') }}
     name: Build API documentation
     runs-on: ubuntu-latest
@@ -124,9 +128,17 @@ jobs:
           persist-credentials: false
       - name: Check Lean source requirements before builds
         run: python3 scripts/check-lean-sources.py
+      - name: Require the current upstream Lean build to have succeeded
+        env:
+          LEAN_BUILD_RESULT: ${{ needs.build.result }}
+        run: python3 scripts/ci-build-cache-marker.py require-success
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           build: false
+      - name: Require the cached inputs to match the exact successful build
+        run: python3 scripts/ci-build-cache-marker.py verify
+      - name: Require current compiled outputs without rebuilding dependencies
+        run: lake --no-build build PartialBalayage
       - name: Build doc-gen4 output
         working-directory: docbuild
         env:
@@ -141,7 +153,7 @@ jobs:
           if-no-files-found: error
 
   comparator:
-    needs: [source-changes]
+    needs: [source-changes, build]
     if: ${{ always() && (needs['source-changes'].result != 'success' || needs['source-changes'].outputs.heavy != 'false') }}
     name: Check statement against solution
     runs-on: ubuntu-latest
@@ -152,9 +164,17 @@ jobs:
           persist-credentials: false
       - name: Check Lean source requirements before builds
         run: python3 scripts/check-lean-sources.py
+      - name: Require the current upstream Lean build to have succeeded
+        env:
+          LEAN_BUILD_RESULT: ${{ needs.build.result }}
+        run: python3 scripts/ci-build-cache-marker.py require-success
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           build: false
+      - name: Require the cached inputs to match the exact successful build
+        run: python3 scripts/ci-build-cache-marker.py verify
+      - name: Require current compiled outputs without rebuilding dependencies
+        run: lake --no-build build Challenge Solution
       - name: Install bubblewrap for lake comparator's sandbox
         # Ubuntu 24.04 restricts unprivileged user namespaces through AppArmor,
         # which `bwrap` needs for the sandbox; the runner is disposable.

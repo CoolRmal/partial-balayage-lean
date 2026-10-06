@@ -1864,5 +1864,32 @@ A separately imported, bounded proof-sharing helper and its first-leaf theorem
 also passed compilation and the fresh type/axiom audit. The inline helper's
 earlier module-initialization failure is retained. The corrected variant took
 134.247 seconds to compile, so no compilation speedup is established; its
-genuine export and replay are still pending. Neither pilot supplies complete
-sixteen-row Comparator or Palomar acceptance.
+genuine export and replay subsequently passed. Its export contains 75,814,110
+bytes, and con-ron accepted 9,159 verified declarations in 12.654 seconds wall,
+with 0.127 seconds parsing, 3.064 installing and 9.247 checking. This sharing
+variant is larger and slower than the uncached lazy-selector pilot, so it is
+not adopted. Neither pilot supplies complete sixteen-row Comparator or Palomar
+acceptance.
+
+A separate ordinary Lean theorem-reference check confirmed that the selected
+original private proof has exactly the folded first-leaf inequality used by
+these pilots. Compilation and a fresh imported audit passed in 4.144 and
+1.316 seconds respectively, with only the three standard axioms. This checks
+the comparison predicate; it does not reprove arithmetic or establish literal
+identity of differently unfolded exported type expressions.
+
+## Ordinary CI build reuse
+
+The ordinary documentation and Comparator jobs now depend on the successful
+Lean build. The producer writes a commit-specific input marker before the
+pinned action saves its successful build cache. Consumers require that build
+to have passed, verify the restored marker against the exact source and
+dependency checksums, and require current compiled outputs using Lake's
+no-build mode before running their original commands. Missing or stale caches
+fail these checks. The marker records inputs, not proof acceptance.
+
+All 26 marker/workflow tests and the existing classifier regression tests
+passed. The official cold Palomar workflow, capacity profile, Comparator
+commands, all sixteen targets and allowed axioms are unchanged. Actual CI
+reuse and complete Comparator acceptance remain to be measured on a public
+commit with this change.
