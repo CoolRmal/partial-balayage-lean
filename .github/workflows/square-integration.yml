@@ -157,25 +157,41 @@ jobs:
           report["restored_leaf_output_hashes_unchanged"] = True
           report_path.write_text(json.dumps(report, indent=2) + "\n")
           PY
-      - name: Build the four actual integration modules serially
-        run: |
-          python3 - <<'PY'
-          import os, subprocess
-          from pathlib import Path
-          out = Path(os.environ["RUNNER_TEMP"]) / "square-numerical"
-          modules = ["PartialBalayage.Maximal.Square.GeneratorLeafBlocks",
-                     "PartialBalayage.Maximal.Square.GeneratorInteriorPositivity",
-                     "PartialBalayage.Maximal.Square.SquarePositiveSource",
-                     "PartialBalayage.Maximal.SquareWeakBounds"]
-          for module in modules:
-              name = module.rsplit(".",1)[1]
-              with (out / (name + "-deps.log")).open("w") as log:
-                  subprocess.run(["lake", "--no-build", "build", "+" + module + ":deps"],
-                                 stdout=log, stderr=subprocess.STDOUT, check=True)
-              with (out / (name + "-build.log")).open("w") as log:
-                  subprocess.run(["lake", "build", module], stdout=log,
-                                 stderr=subprocess.STDOUT, check=True)
-          PY
+      - name: Save the complete support checkpoint before assembly
+        run: >-
+          python3 .integration-control/scripts/checkpoint-square-support.py pack
+          --report-dir "$RUNNER_TEMP/square-numerical"
+      - name: Upload the complete support checkpoint before assembly
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: square-support-checkpoint-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/source-run.json
+            ${{ runner.temp }}/square-numerical/*.json
+            ${{ runner.temp }}/square-numerical/support-logs/*
+            ${{ runner.temp }}/square-numerical/support-checkpoint/*
+          if-no-files-found: error
+          retention-days: 14
+      - name: 'Build assembly: GeneratorLeafBlocks'
+        run: >-
+          python3 -u .integration-control/scripts/diagnose-square-assembly.py
+          --report-dir "$RUNNER_TEMP/square-numerical"
+          --module PartialBalayage.Maximal.Square.GeneratorLeafBlocks
+      - name: 'Build assembly: GeneratorInteriorPositivity'
+        run: >-
+          python3 -u .integration-control/scripts/diagnose-square-assembly.py
+          --report-dir "$RUNNER_TEMP/square-numerical"
+          --module PartialBalayage.Maximal.Square.GeneratorInteriorPositivity
+      - name: 'Build assembly: SquarePositiveSource'
+        run: >-
+          python3 -u .integration-control/scripts/diagnose-square-assembly.py
+          --report-dir "$RUNNER_TEMP/square-numerical"
+          --module PartialBalayage.Maximal.Square.SquarePositiveSource
+      - name: 'Build assembly: SquareWeakBounds'
+        run: >-
+          python3 -u .integration-control/scripts/diagnose-square-assembly.py
+          --report-dir "$RUNNER_TEMP/square-numerical"
+          --module PartialBalayage.Maximal.SquareWeakBounds
       - name: Require every restored leaf output to remain unchanged
         run: |
           python3 - <<'PY'
@@ -239,6 +255,8 @@ jobs:
             ${{ runner.temp }}/square-numerical/*.log
             ${{ runner.temp }}/square-numerical/*-audit.lean
             ${{ runner.temp }}/square-numerical/support-logs/*
+            ${{ runner.temp }}/square-numerical/assembly-logs/*
+            ${{ runner.temp }}/square-numerical/support-checkpoint/*.json
           if-no-files-found: warn
           retention-days: 14
 

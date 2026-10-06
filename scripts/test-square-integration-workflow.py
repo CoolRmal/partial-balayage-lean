@@ -35,7 +35,6 @@ def test(workflow):
     assert f"CONTROL_COMMIT: {CONTROL}" in text
     assert f'NUMERICAL_RUN: "{RUN}"' in text
     gate = inline(text, "Require the actual complete numerical run to pass", workflow)
-    build = inline(text, "Build the four actual integration modules serially", workflow)
     names = ["Build and audit shared square dependencies",
              "Restore and audit all 106 checked numerical modules"]
     names += [f"Ordinary kernel checks, blocks {n}–{min(n+5,105)}"
@@ -77,42 +76,30 @@ def test(workflow):
                 else:
                     assert accept, label
             results.append({"name": label, "status": "pass", "synthetic_api_calls": len(calls)})
-        out = Path(tmp) / "square-numerical"
-        out.mkdir()
-        modules = ["PartialBalayage.Maximal.Square.GeneratorLeafBlocks",
-                   "PartialBalayage.Maximal.Square.GeneratorInteriorPositivity",
-                   "PartialBalayage.Maximal.Square.SquarePositiveSource",
-                   "PartialBalayage.Maximal.SquareWeakBounds"]
-        expected = []
-        for module in modules:
-            expected += [["lake", "--no-build", "build", "+" + module + ":deps"],
-                         ["lake", "build", module]]
-        for failed_precheck in [None, 0, 1, 2, 3]:
-            calls = []
-
-            def fake_process(argv, **kwargs):
-                calls.append(argv)
-                if kwargs.get("check") is not True or kwargs.get("stderr") != subprocess.STDOUT:
-                    raise RuntimeError("Synthetic process call lost fail-closed options")
-                if failed_precheck is not None and argv == expected[failed_precheck * 2]:
-                    raise subprocess.CalledProcessError(3, argv)
-                return subprocess.CompletedProcess(argv, 0)
-
-            mock = types.ModuleType("subprocess")
-            mock.run = fake_process
-            mock.STDOUT = subprocess.STDOUT
-            with patch.dict(sys.modules, {"subprocess": mock}), patch.dict(os.environ, env):
-                try:
-                    exec(build, {})
-                except subprocess.CalledProcessError as exc:
-                    assert failed_precheck is not None and exc.returncode == 3
-                else:
-                    assert failed_precheck is None
-            wanted = expected if failed_precheck is None else expected[:failed_precheck * 2 + 1]
-            assert calls == wanted
-            label = ("ordered_deps_then_build_accepted" if failed_precheck is None
-                     else f"outdated_dependency_before_module_{failed_precheck}_stops_build")
-            results.append({"name": label, "status": "pass", "synthetic_process_calls": calls})
+    modules = ["PartialBalayage.Maximal.Square.GeneratorLeafBlocks",
+               "PartialBalayage.Maximal.Square.GeneratorInteriorPositivity",
+               "PartialBalayage.Maximal.Square.SquarePositiveSource",
+               "PartialBalayage.Maximal.SquareWeakBounds"]
+    positions = []
+    for module in modules:
+        name = "Build assembly: " + module.rsplit(".", 1)[1]
+        marker = "      - name: '" + name + "'\n"
+        assert text.count(marker) == 1
+        positions.append(text.index(marker))
+        step = text.split(marker, 1)[1].split("\n      - ", 1)[0]
+        command = step.split("        run: >-\n", 1)[1]
+        assert all(line.startswith("          ") for line in command.splitlines())
+        command = " ".join(line.strip() for line in command.splitlines())
+        assert command == ("python3 -u .integration-control/scripts/diagnose-square-assembly.py "
+                           '--report-dir "$RUNNER_TEMP/square-numerical" --module ' + module)
+        results.append({"name": "actual_diagnostic_helper_invocation_" + module,
+                        "status": "pass", "synthetic_process_calls": 0})
+    assert positions == sorted(positions)
+    assert text.index("      - name: Save the complete support checkpoint before assembly\n") < positions[0]
+    assert text.index("      - name: Upload the complete support checkpoint before assembly\n") < positions[0]
+    assert "Build the four actual integration modules serially" not in text
+    results.append({"name": "mandatory_checkpoint_precedes_ordered_helper_invocations",
+                    "status": "pass", "synthetic_process_calls": 0})
     return {"status": "actual_inline_synthetic_gates_pass", "candidate": CANDIDATE,
             "control_commit": CONTROL, "run": RUN, "proof_commands_executed": 0,
             "source_transitions_executed": 0, "restorations_executed": 0,
@@ -291,11 +278,18 @@ def main():
     report = test(args.workflow)
     assert len(report["cases"]) == 12
     report["preparation_control_cases"] = preparation_tests(args.workflow)
+    diagnostics_script = Path(__file__).resolve().with_name("test-square-assembly-diagnostics.py")
+    spec = importlib.util.spec_from_file_location("tested_square_diagnostic_cases", diagnostics_script)
+    diagnostics = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(diagnostics)
+    report["diagnostic_helper"] = diagnostics.test(
+        Path(__file__).resolve().with_name("diagnose-square-assembly.py"))
     encoded = json.dumps(report, indent=2) + "\n"
     if args.report:
         args.report.write_text(encoded)
     print(json.dumps({"status": report["status"], "tests": len(report["cases"]),
                       "preparation_control_tests": len(report["preparation_control_cases"]),
+                      "diagnostic_helper_tests": len(report["diagnostic_helper"]["cases"]),
                       "workflow": str(args.workflow), "report": str(args.report) if args.report else None}))
 
 

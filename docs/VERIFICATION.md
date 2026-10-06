@@ -1536,3 +1536,46 @@ prepared to measure reuse across a block, using exactly its 936 active
 original Taylor keys. Its proposed data, final proofs and replay remain
 pending at this checkpoint. The frozen original square integration run
 continues independently.
+
+## Square integration termination and instrumented retry
+
+[Integration run 37422022840](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37422022840)
+used frozen source `4671737f1acc8292a5c984d00401341c8a4a5548` and workflow
+control `4a396ed3140af32e5c2df27bb04fabd7b076d31f`. Its actual numerical gate,
+output restoration, source transition, and ordered support preparation passed.
+The support step completed at 07:13:01 UTC on 6 October 2026. The following
+four-module assembly step terminated with exit code 143 at 07:16:55 UTC;
+the run failed. The surviving log has no Lean diagnostic or exact failing
+module. Its final artifact upload was skipped, and the artifact API returned
+zero artifacts. No cause is established and no assembly theorem is accepted
+from this run. The retained complete job log has SHA256
+`e0070099d57fc937a6d635397635730234af14c1cdc62fe851aa0a8cf15815c1`.
+
+The next workflow preserves that exact mathematical source, all 106 checked
+numerical modules, the dependency pins, the complete twenty-job numerical
+gate, and the existing Ubuntu 350-minute limit. Before assembly, it requires
+a checkpoint containing the exact outputs of all 713 completed local modules
+(346 restored numerical dependencies and 367 prepared support modules),
+with the four final assembly modules excluded. The checkpoint binds its
+10,695 regular output files, source graph, pins, support logs and reports to
+the actual workflow revision, run and attempt. Uploading this completed
+checkpoint must succeed before any assembly step begins.
+
+Each of the four modules then has a separate visible step. The diagnostic
+helper streams merged process output into the CI log and retained files,
+records each dependency check and timed build, and checks the source graph
+and 1,590 protected leaf outputs after each command. It also preserves all
+completed support output hashes, records each new assembly output and checks
+earlier assembly results before building the next module. Periodic cgroup readings
+are observations, not claimed compiler or memory caps. Best-effort signal
+records cannot guarantee cleanup after termination of the runner itself.
+The final ten imported standard-axiom audits remain required. These controls
+have no authority to promote a source without actual complete build success.
+The later independent full Palomar check will still start cold, without
+supplying this checkpoint or any numerical output bundles.
+
+The frozen retry controls passed 87 synthetic workflow/diagnostic cases and
+34 independent checkpoint cases, with the existing numerical and source
+guards preserved. Root reran both suites successfully against the reviewed
+bytes. These tests execute no Lean proof, exporter or restoration and do not
+constitute assembly acceptance. The mathematical files remain unchanged.
