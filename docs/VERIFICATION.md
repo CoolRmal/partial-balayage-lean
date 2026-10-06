@@ -1840,3 +1840,12 @@ This replacement is larger and slower than the original baseline and is not
 adopted. A separate lazy-selector certificate pilot is being tested; its
 initial failed compilations are retained. The public mathematical source
 remains the complete `0055cdf` version, without any experimental replacement.
+
+The lazy-selector pilot now resolves the actual coordinate lookups. A traced
+attempt identified the next obstruction as Horner recursion on the first
+leaf's zero count. A narrow extension certifies that count before applying
+the unchanged zero equation. Its clean compilation then stopped at Lean's
+default 200,000-heartbeat tactic limit after 15.728 seconds wall; it supplies
+no accepted proof. The next diagnostic keeps the existing ten-minute and
+12-GiB external limits while allowing the tactic to finish. All earlier
+failures remain retained, and no experimental proof has been adopted.
