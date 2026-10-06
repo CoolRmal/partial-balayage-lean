@@ -128,10 +128,87 @@ jobs:
           NUMERICAL_FIRST: ${{ matrix.first }}
           NUMERICAL_LAST: ${{ matrix.last }}
         run: python3 scripts/validate-generator-blocks.py range
+      - name: Read the immutable artifact tooling revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          path: .square-control
+          persist-credentials: false
+      - name: Retain the checked compiled modules with their source manifests
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+          CONTROL_COMMIT: ${{ github.sha }}
+        run: >-
+          python3 .square-control/scripts/bundle-generator-outputs.py pack
+          --first ${{ matrix.first }} --last ${{ matrix.last }}
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: square-numerical-outputs-${{ matrix.first }}-${{ matrix.last }}-${{ inputs.commit }}
+          path: |
+            ${{ runner.temp }}/square-numerical/range-outputs-*.tar.gz
+            ${{ runner.temp }}/square-numerical/range-manifest-*.json
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: square-numerical-${{ matrix.first }}-${{ matrix.last }}-${{ inputs.commit }}
+          path: |
+            ${{ runner.temp }}/square-numerical/*.log
+            ${{ runner.temp }}/square-numerical/*.time
+            ${{ runner.temp }}/square-numerical/*.json
+            ${{ runner.temp }}/square-numerical/*-audit.lean
+          if-no-files-found: warn
+          retention-days: 14
+
+  combined:
+    name: Restore and audit all 106 checked numerical modules
+    needs: [warm, numerical]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ inputs.commit }}
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          use-github-cache: false
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: square-numerical-warm-${{ inputs.commit }}
+          path: ${{ runner.temp }}/square-numerical-merge/warm
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          pattern: square-numerical-outputs-*-${{ inputs.commit }}
+          path: ${{ runner.temp }}/square-numerical-merge
+      - name: Read the immutable artifact tooling revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          path: .square-control
+          persist-credentials: false
+      - name: Verify every source and output manifest before restoring
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+          CONTROL_COMMIT: ${{ github.sha }}
+        run: >-
+          python3 .square-control/scripts/bundle-generator-outputs.py restore-all
+          --download-dir "$RUNNER_TEMP/square-numerical-merge"
+      - name: Audit the complete numerical registry together in Lean
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+        run: python3 .square-control/scripts/audit-generator-outputs.py
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: square-numerical-combined-report-${{ inputs.commit }}
           path: |
             ${{ runner.temp }}/square-numerical/*.log
             ${{ runner.temp }}/square-numerical/*.time

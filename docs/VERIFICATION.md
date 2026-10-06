@@ -942,7 +942,8 @@ standard-axiom audit. The combined library, challenge and solution build passed
 The [parallel numerical workflow](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37399302649)
 checks immutable candidate commit `1e84ddabfbf64c3f4fe29cb61a85571f5caa7543`.
 Its initial snapshot, source and version-pin checks passed; the actual numerical
-builds remain in progress. The workflow revision is the separate main commit
+range builds were not started. This first warm run was stopped to retain compiled
+leaf outputs in the replacement workflow. Its workflow revision is main commit
 `fc6988860de6c088ae0d1b36bdfa7516e72507b3`; reports check the candidate SHA.
 
 The [twenty-ninth full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37394758297)
@@ -968,3 +969,23 @@ Source and metadata validation passed. These coordinate certificates support
 the remaining square row; its 106 actual numerical blocks are still undergoing
 ordinary-kernel validation in the immutable remote candidate snapshot.
 The final sixteen-row Comparator check and Palomar registration remain pending.
+
+## Retained numerical outputs for final integration
+
+The updated numerical workflow archives each successfully checked range's
+actual compiled modules and per-file hashes. A separate control checkout is
+pinned to the workflow revision; the mathematical candidate remains the same
+immutable commit. The bundler accepts a range only after all its actual builds
+and three imported proof audits per block have passed. Aggregate restoration
+requires the exact candidate, compiler and mathlib pins, unchanged source hashes,
+all eighteen disjoint ranges, matching shared dependencies and every archived
+output hash. It checks archive contents before restoring any output.
+
+The combined job imports all 106 restored numerical modules together and checks
+318 actual validity, numerical-validity and pointwise-positivity exports in Lean.
+These retained outputs support later integration. They do not replace the final
+cold source build and independent-kernel Comparator checks required by Palomar.
+Eight synthetic bundler checks passed, including missing range,
+corrupt archive, changed pin/source, unsafe archive path, symlink and forbidden
+axiom rejection. Python syntax, workflow syntax and exact range coverage checks
+passed. No synthetic or Python computation supplies mathematical proof evidence.
