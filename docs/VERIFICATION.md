@@ -1830,6 +1830,13 @@ Compilation took 35.950 seconds wall and 30.590 seconds user. Earlier failed
 pilot attempts and a legacy-format output-inventory rejection were preserved.
 The successful pilot source has SHA256
 `77a92ea36f37ad5b7466e98fe89fec305792e6b74426d653ddefb797e45961ad`.
-Independent export and replay of this replacement remain pending. No speed
-improvement or project-wide proof replacement is claimed from compilation
-alone; the public mathematical source remains the complete `0055cdf` version.
+Its genuine export and con-ron replay subsequently passed. The export contains
+102,130,954 bytes, and con-ron verified 9,713 declarations in 92.136 seconds
+wall. Its phase timings were 0.167 seconds parsing, 3.061 installing and
+88.643 checking. The exported closure contains no original validity theorem
+or original positivity auxiliary. The independent review has SHA256
+`cc50c1d87527a1ab72df05c905a16778ccd0f11734d871a51dbdfddc271785c7`.
+This replacement is larger and slower than the original baseline and is not
+adopted. A separate lazy-selector certificate pilot is being tested; its
+initial failed compilations are retained. The public mathematical source
+remains the complete `0055cdf` version, without any experimental replacement.
