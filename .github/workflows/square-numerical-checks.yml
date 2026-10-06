@@ -1,0 +1,141 @@
+name: Check immutable square numerical candidates
+
+# This validates a separate candidate snapshot. It does not alter the table
+# statements, import the future positivity registry, or submit to Palomar.
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Full public SHA of the square-numerical-checks candidate snapshot
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: square-numerical-${{ inputs.commit }}
+  cancel-in-progress: false
+
+env:
+  MATHLIB_NO_CACHE_ON_UPDATE: "1"
+
+jobs:
+  warm:
+    name: Build and audit shared square dependencies
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ inputs.commit }}
+          persist-credentials: false
+      - name: Check the immutable snapshot and dependency pins
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+        run: |
+          python3 scripts/validate-generator-blocks.py inspect
+          python3 scripts/check-lean-sources.py
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          use-github-cache: false
+      - name: Build only shared dependency modules and audit their numerical exports
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+        run: python3 scripts/validate-generator-blocks.py warm
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: square-numerical-warm-${{ inputs.commit }}
+          path: |
+            ${{ runner.temp }}/square-numerical/warm-outputs.tar.zst
+            ${{ runner.temp }}/square-numerical/warm-manifest.json
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: square-numerical-warm-report-${{ inputs.commit }}
+          path: |
+            ${{ runner.temp }}/square-numerical/*.log
+            ${{ runner.temp }}/square-numerical/*.time
+            ${{ runner.temp }}/square-numerical/*.json
+            ${{ runner.temp }}/square-numerical/*-audit.lean
+          if-no-files-found: warn
+          retention-days: 14
+
+  numerical:
+    name: Ordinary kernel checks, blocks ${{ matrix.first }}–${{ matrix.last }}
+    needs: warm
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include:
+          - {first: 0, last: 5}
+          - {first: 6, last: 11}
+          - {first: 12, last: 17}
+          - {first: 18, last: 23}
+          - {first: 24, last: 29}
+          - {first: 30, last: 35}
+          - {first: 36, last: 41}
+          - {first: 42, last: 47}
+          - {first: 48, last: 53}
+          - {first: 54, last: 59}
+          - {first: 60, last: 65}
+          - {first: 66, last: 71}
+          - {first: 72, last: 77}
+          - {first: 78, last: 83}
+          - {first: 84, last: 89}
+          - {first: 90, last: 95}
+          - {first: 96, last: 101}
+          - {first: 102, last: 105}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ inputs.commit }}
+          persist-credentials: false
+      - name: Check the immutable snapshot and dependency pins
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+        run: python3 scripts/validate-generator-blocks.py inspect
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          use-github-cache: false
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: square-numerical-warm-${{ inputs.commit }}
+          path: ${{ runner.temp }}/square-numerical-download
+      - name: Restore exact shared dependency outputs
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+        run: python3 scripts/validate-generator-blocks.py restore
+      - name: Build one actual leaf module at a time and audit its proofs
+        env:
+          NUMERICAL_COMMIT: ${{ inputs.commit }}
+          NUMERICAL_FIRST: ${{ matrix.first }}
+          NUMERICAL_LAST: ${{ matrix.last }}
+        run: python3 scripts/validate-generator-blocks.py range
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: square-numerical-${{ matrix.first }}-${{ matrix.last }}-${{ inputs.commit }}
+          path: |
+            ${{ runner.temp }}/square-numerical/*.log
+            ${{ runner.temp }}/square-numerical/*.time
+            ${{ runner.temp }}/square-numerical/*.json
+            ${{ runner.temp }}/square-numerical/*-audit.lean
+          if-no-files-found: warn
+          retention-days: 14

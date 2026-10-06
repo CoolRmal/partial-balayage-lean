@@ -900,3 +900,20 @@ subcase. They do not check the completed complex-input correction in checkpoint
 
 Final all-sixteen-row verification and Palomar intake, private review and
 registration remain pending.
+
+## Parallel square numerical validation
+
+The dispatch-only numerical workflow checks a separate immutable public
+candidate snapshot. It builds the actual shared dependencies, audits their
+exports, and checks all 106 blocks in eighteen fixed disjoint ranges. Each
+block uses ordinary Lean kernel arithmetic; imported audits check its genuine
+validity, numerical validity and actual pointwise generator positivity. The
+driver checks the full source commit, compiler and mathlib pins, unchanged
+source hashes, and the permitted standard axioms. Shared compiled outputs are
+reused only for that exact snapshot. A passing numerical job is supporting
+evidence, not the final all-row Comparator check or Palomar registration.
+
+Independent untrusted rational screening found positive candidate bounds for
+all 6,739 distinct leaves and 45 padding records. That computation supplies no
+proof evidence; every actual Lean proof is still required. The candidate
+snapshots do not enlarge the fifteen currently completed table statements.
