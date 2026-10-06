@@ -16,6 +16,14 @@ linear extensions of the actual complex Fourier multipliers, with Euclidean
 vector and Frobenius matrix norms. The complete complex-input Riesz vector also
 has a genuine complex-linear all-L¹ extension with coefficient two.
 
+All 106 square numerical blocks and their combined audit passed in
+[run 37409981058](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
+The final registry, source-positivity and strict square-bound assembly is now
+being checked in isolation in
+[run 37422022840](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37422022840).
+Row 9 still requires those actual assembly proofs and complete sixteen-row
+verification; numerical completion alone is not full-table acceptance.
+
 Further proved square prerequisites include the exact all-input diamond-to-square
 maximal transfer, the actual beta-integral upper bound and intrinsic-constant
 lower bound, uniform positive finite-ball fractional obstacles, actual compact

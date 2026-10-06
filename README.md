@@ -70,8 +70,12 @@ rectangle are checked. Genuine mollification, source convolution and the closed
 full-source graph now transfer the constructed state to the singular source.
 The strict square bound follows from positivity of the actual source density alone.
 The complete subdivision and floor-based coverage proof is now checked.
-Completing every finite positivity check remains necessary before adding the
-square row to the comparator.
+All 106 finite numerical blocks and their combined 318-endpoint standard-axiom
+audit passed in [the completed numerical run](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
+The final registry, positive-source and square-bound assembly is being checked
+on the public `square-integration-source` branch. Its actual proof builds and
+complete sixteen-row verification remain necessary before adding the square
+row to the comparator.
 Actual Euclidean diamond averages, maximal functions, every extended-real level,
 norm inputs and monotone L¹ truncations now have their exact coefficient transfer
 to the original square operator. The positive coefficient is derived from true

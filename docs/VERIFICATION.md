@@ -1452,3 +1452,11 @@ Its pins and fifteen-row table adapter are unchanged. Numerical completion
 does not establish the four assembly proofs, the sixteenth table result or
 complete official sixteen-row Comparator acceptance. Those checks remain
 pending at this checkpoint.
+
+The guarded integration workflow was subsequently dispatched as
+[run 37422022840](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37422022840),
+using input source `4671737f1acc8292a5c984d00401341c8a4a5548` and workflow
+revision `4a396ed3140af32e5c2df27bb04fabd7b076d31f`. The source commit passed
+independent byte-level review against all 106 candidate Git blobs and four
+fixed assembly hashes. The run remains in progress; no assembly acceptance
+is inferred from dispatch or dependency setup.
