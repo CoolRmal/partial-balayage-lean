@@ -1270,3 +1270,34 @@ for 36–41 and
 `353258beede42acd82231978dedafcbc53599d698cca0da4d600f637d20bc73d`
 for 42–47; range 30–35 is recorded above. The public run artifacts retain the
 source, audit, output and manifest evidence behind these checks.
+
+## Published guarded square integration controls
+
+The manually dispatched `square-integration.yml` workflow and its preparation
+script are published before numerical completion so the next stage is
+reviewable. They have not been dispatched. The workflow refuses to proceed
+unless exact run `37409981058`, dispatcher
+`243a5bd4f80c9517e7c9f834e85c5154eeb8e9a9`, all eighteen range jobs,
+the shared warm job and the combined audit actually complete successfully.
+The candidate remains `dde634e918bcbba00881018b205dea4172d2ee5f`.
+
+Independent source-DAG reviews agree on the intended post-transition closure:
+717 repository modules, comprising 346 numerical/cache modules, 367 additional
+support modules and four assembly modules. The four assembly source hashes are
+fixed to the reviewed drafts before any checkout. No support module
+transitively imports a numerical leaf block or an assembly module. The
+workflow prepares support modules in an explicit serial topological order,
+checking that each dependency is already current before its targeted build.
+It uses the same dependency check before each of the four real assembly builds.
+All restored leaf output hashes must remain unchanged before and after support
+preparation and after final assembly. Source identities, actual build logs and
+resource measurements are retained in the integration report.
+
+All 32 synthetic control tests passed independently and again on the installed
+copies: twelve workflow API/process cases and twenty source/support/identity
+cases. They exercise the actual control code with explicitly synthetic
+boundaries and execute no proof build, output restoration or source transition.
+These tests establish the guards only. The support and final proof builds, ten
+imported endpoint audits and full sixteen-row official check still require
+actual gated execution. The independent publication-review report and its
+synthetic test evidence are retained with the local audit records.
