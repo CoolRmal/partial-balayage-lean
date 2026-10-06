@@ -746,11 +746,16 @@ public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates68
 public import PartialBalayage.Maximal.Square.Data.GeneratorCoordinates70
 public import PartialBalayage.Maximal.Square.GeneratorCoordinates
 
+public import PartialBalayage.Maximal.Square.GeneratorLeafBlocks
+public import PartialBalayage.Maximal.Square.GeneratorInteriorPositivity
+public import PartialBalayage.Maximal.Square.SquarePositiveSource
+public import PartialBalayage.Maximal.SquareWeakBounds
+
 /-!
 # Two partial balayage principles
 
-The library exports fifteen full table rows, including the complete complex-input Riesz bound.
-The remaining square row is tracked in `docs/DECOMPOSITION.md`.
+The library exports all sixteen table rows, including full complex-input Riesz and the strict
+planar square bound. Scope and dependencies are recorded in `docs/DECOMPOSITION.md`.
 Supporting development includes capped-decomposition level-set estimates, finite-measure vector
 obstacle minimization, actual Fourier operators, Poisson and heat kernels, and exact constants.
 -/

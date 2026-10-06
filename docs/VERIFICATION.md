@@ -1706,3 +1706,45 @@ changes only the alignment proof, preserves the public theorem name/type
 bytes and all numerical data, and adds 106 private checks over Fin 64.
 No split proof source has been adopted, and complete assembly and final-16
 Comparator acceptance remain pending.
+
+
+## Complete local square assembly and sixteen-row source publication
+
+The split rectangle-alignment proof compiled in 56.237 seconds wall and its
+three imported audits passed in 7.415 seconds. The other three actual square
+assembly modules compiled in 7.532, 5.293 and 6.663 seconds. Their two, four
+and one imported theorem audits passed in 7.213, 6.366 and 6.131 seconds.
+All ten actual axiom lists are the permitted standard three. Independent
+inspection matched all eight actual stage records, twenty direct compiler
+outputs, source hashes and unchanged public statement bytes. The final
+strict square theorem is closed, with no positivity or certificate premise.
+The independent ordinary-local assembly receipt has SHA256
+`b927cc35fc884dd195c8a8f2c369da8ba7110ecead081a419d6a247fc45078c1`.
+These direct outputs are not a fabricated sixty-file Lake inventory.
+
+The complete root module, independent Challenge and final Solution adapters
+also compiled locally. Their wall times were 8.154, 4.348 and 3.073 seconds.
+A fresh imported sixteen-theorem audit passed in 1.491 seconds, with every
+actual list equal to `propext`, `Classical.choice`, `Quot.sound`. A first local
+adapter attempt stopped on a cache-library lookup gap before any theorem
+check. A disjoint unified ordinary cache resolved that gap; its 899 project
+modules use existing split or fifteen-row support outputs. Neither local
+attempt is a cold official or independent Comparator acceptance.
+The completed adapter-chain record has SHA256
+`587884a561f17939ef867bd89dc81f4bc567836cafabae2265fa46d0f5fb9889`.
+
+The coherent source publication adds all 106 checked numerical block modules,
+the four square assembly modules and the sixteenth Comparator target. Its
+only mathematical change from the frozen integration source is the split
+alignment proof; all numerical data and written public theorem statements
+are preserved. The exact 118-file overlay and all 118 previous drafts or
+tracked before-images were independently reviewed and preserved in a
+complete local backup before replacement. Older failed-run promotion tools
+remain disabled. The original interrupted integration runs remain failures.
+The reviewed source proposal has SHA256
+`e47246af0bbd0b0336ec6feb50facdc9c16b5e7fc91234eab370104af5037123`.
+
+Complete sixteen-row ordinary CI and the unchanged full cold Palomar verifier
+remain to be executed on the exact public commit. No numerical checkpoint,
+local compiled outputs or unified cache will be supplied to that verifier.
+Registration still requires the returned review and exact human consent.

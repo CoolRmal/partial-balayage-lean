@@ -16,7 +16,8 @@
     "PartialBalayage.beurling_weakTypeConstant_le_two",
     "PartialBalayage.tracelessHessian_weakTypeConstant_le",
     "PartialBalayage.projections_weakTypeConstants_le_exact",
-    "PartialBalayage.riesz_weakTypeConstant_le_two"
+    "PartialBalayage.riesz_weakTypeConstant_le_two",
+    "PartialBalayage.square_weakTypeConstant_lt_3_616"
   ],
   "definition_names": [],
   "permitted_axioms": [

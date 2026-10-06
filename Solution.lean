@@ -109,4 +109,9 @@ theorem riesz_weakTypeConstant_le_two (n : ℕ) (hn : 1 ≤ n) :
     linearWeakTypeConstant (𝕜 := ℂ) (complexRieszFourierOperator (n := n)) ≤ 2 :=
   Linear.complex_riesz_weakTypeConstant_le_two n hn
 
+/-- The centered square maximal operator has weak-type constant strictly below 3.616. -/
+theorem square_weakTypeConstant_lt_3_616 :
+    cubeWeakTypeConstant 2 < ENNReal.ofReal (452 / 125 : ℝ) :=
+  Maximal.square_weakTypeConstant_lt_3_616
+
 end PartialBalayage

@@ -9,20 +9,31 @@ the exact expressions represented by approximate decimals. Cited sharp compariso
 asymptotic estimates, and optimality of the majorants are useful context but are not
 additional final targets.
 
-Fifteen rows are completed and advertised in the comparator: 1–8 and 10–16.
-Row 9 remains pending. All maximal estimates cover integrable real inputs
-and every extended-real level. The five complex linear rows use genuine all-L¹
-linear extensions of the actual complex Fourier multipliers, with Euclidean
-vector and Frobenius matrix norms. The complete complex-input Riesz vector also
-has a genuine complex-linear all-L¹ extension with coefficient two.
+The candidate comparator lists all sixteen rows. The four new square assembly
+modules have passed focused local builds and ten imported axiom audits; the
+complete sixteen-row ordinary CI and cold official checks remain pending. All maximal
+estimates cover integrable real inputs and every extended-real level. The five
+complex linear rows use genuine all-L¹ linear extensions of the actual complex
+Fourier multipliers, with Euclidean vector and Frobenius matrix norms. The
+complete complex-input Riesz vector has a genuine complex-linear all-L¹
+extension with coefficient two. Row 9 is the strict bound below 452 / 125 for
+the original centred-square operator, with no analytical certificate premise.
 
 All 106 square numerical blocks and their combined audit passed in
 [run 37409981058](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
-The final registry, source-positivity and strict square-bound assembly is now
-being checked in isolation in
-[run 37422022840](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37422022840).
-Row 9 still requires those actual assembly proofs and complete sixteen-row
-verification; numerical completion alone is not full-table acceptance.
+The four final registry, source-positivity and strict square-bound modules and
+ten imported standard-axiom audits passed in focused local stages against the
+exact split registry. That registry compiled in 56.237 seconds and its three
+audits completed in 7.415 seconds. The remaining three modules compiled in
+7.532, 5.293 and 6.663 seconds; their two, four and one theorem audits completed
+in 7.213, 6.366 and 6.131 seconds, respectively.
+
+Runs 37422022840 and 37431956910 failed during assembly. The second run retained
+all 367 completed support builds in a 713-module checkpoint before its first
+assembly build stopped. Its failure is preserved; no failure cause is assumed.
+Complete sixteen-row ordinary CI, unchanged cold official verification and
+Palomar registration remain pending. Local assembled checks are not a complete
+official Comparator pass.
 
 Further proved square prerequisites include the exact all-input diamond-to-square
 maximal transfer, the actual beta-integral upper bound and intrinsic-constant
@@ -30,7 +41,7 @@ lower bound, uniform positive finite-ball fractional obstacles, actual compact
 energy tests, and the genuine generator/form pairing. The complete actual
 kernel majorization is proved, including every cell and
 boundary. The distributional generator check and whole-space fractional
-source/comparison argument remain necessary. The actual whole-space jump
+source/comparison argument are assembled from their proved components. The actual whole-space jump
 density is integrable with exactly the original input mass, and genuine strong
 compact cutoff approximation and supported dual pairings are proved. The
 full fractional weak equation, cap saturation and active-volume bound are proved.
@@ -397,7 +408,14 @@ treated as already formalized facts.
    kernels $$p_1$$ and $$h_{1/4}$$. Prove the one- and two-dimensional evaluations
    as corollaries of the general bounds.
 
-## Existing results and missing API
+## Historical implementation checkpoints
+
+The following notes preserve intermediate implementation checkpoints and the
+proof work that remained at each checkpoint. Their pending items describe
+those earlier states. The current completed scope is stated above, and exact
+verification evidence is recorded in `docs/VERIFICATION.md`.
+
+### Existing results and missing API
 
 The existing `centered-maximal-constant` development already contains:
 
@@ -437,7 +455,7 @@ structure of scalar $$L^2$$. Reuse its general Hilbert-space variational and
 compactness lemmas after supplying the missing vector, whole-space, and fractional
 steps; do not add the desired decomposition as a final theorem hypothesis.
 
-## Implementing the signed and vector obstacle
+### Implementing the signed and vector obstacle
 
 The strongest reusable components are the genuinely abstract real-Hilbert lemmas in
 `Ball/ObstacleExistence.lean`, `Ball/MonotoneSurjectivity.lean`, and
@@ -544,7 +562,7 @@ its operator-domain convergence, and the cutoff decay estimate are genuine
 dependencies. The order-one scalar/complex construction cannot be replaced by the
 existing order-two ball obstacle.
 
-## Further verified support
+### Further verified support
 
 The unique heat and Poisson parameters now satisfy the article's exact intervals in
 every positive dimension. `Maximal/RadialTangentMass.lean` proves the weighted mass
@@ -747,7 +765,7 @@ singular integral and show that small cutoff errors tend to zero. These
 supporting facts still require the kernel admissibility checks and genuine
 whole-space fractional obstacle construction before row 9 is completed.
 
-## Verification boundary
+### Verification boundary
 
 The actual coordinate-stable generator now has proved physical dilation scaling
 and smooth compact-cutoff decay. Genuine finite positive jump obstacles satisfy
@@ -867,3 +885,19 @@ match the stated input spaces and full norms. Exact snapshot
 Comparator and independent-kernel preflight. Square arithmetic continues in
 disjoint exact certificate batches; its final unconditional theorem and the
 complete sixteen-row check remain pending.
+
+### Completed square assembly
+
+The exact 106 checked numerical blocks are assembled in `GeneratorLeafBlocks`.
+`GeneratorInteriorPositivity` combines that registry with the actual rectangle
+alignment and complete partition coverage. `SquarePositiveSource` derives
+almost-everywhere nonnegativity of the original density and its full compensated
+source identities. `SquareWeakBounds` discharges the source-positivity premise
+of the original operator transfer, giving the unconditional strict table bound
+below 452 / 125. All four actual module builds and ten imported standard-axiom
+audits passed in focused local stages using the exact split registry, with
+source and support guards preserved. The earlier runs `37422022840` and
+`37431956910` remain failed assembly attempts. The complete sixteen-row
+ordinary CI, Comparator and unchanged cold official preflight still require
+actual execution for the final public snapshot; registration also requires
+the current Palomar review and human consent.

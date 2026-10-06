@@ -3,19 +3,16 @@ version: v0.4
 project:
   name: Two partial balayage principles for weak-type estimates
   description: >-
-    A Lean formalization in progress of Yongxi Lin's table of weak type (1,1)
-    upper bounds for singular integrals and maximal operators. Fifteen table rows
-    are proved in full, including full-vector complex-input Riesz.
-    Completed bounds include complex Beurling, full and traceless Frobenius
-    Hessians, both projections, centred intervals and balls, and all six Poisson
-    and heat maximal bounds. The square row remains pending.
+    A candidate Lean formalization of all sixteen rows in Yongxi Lin's table of weak type
+    (1,1) upper bounds for singular integrals and maximal operators. Bounds include
+    full-vector complex-input Riesz, complex Beurling, full and traceless Frobenius
+    Hessians, both projections, centred intervals and balls, the strict planar
+    square bound below 3.616, and all six Poisson and heat maximal bounds.
   authors:
-  - name: Yongxi Lin
-    github: CoolRmal
+  - Yongxi Lin
   license: Apache-2.0
   responsible_maintainers:
-  - name: Yongxi Lin
-    github: CoolRmal
+  - Yongxi Lin
 classification:
   arxiv: [math.CA]
   msc2020: [42B25, 42B20, 31B15]
@@ -43,7 +40,7 @@ related_formalizations:
   note: Supplies three already established maximal-operator bounds.
 status:
   scope: >-
-    The comparator has fifteen complete table-row statements: full-vector
+    The comparator has sixteen complete table-row statements: full-vector
     complex-input Riesz,
     complex Beurling, full and
     traceless Frobenius Hessians, both projections, centred intervals, planar
@@ -55,7 +52,14 @@ status:
     Fourier operators. The Riesz statement has a genuine complex-linear extension
     on every complex L¹ input, with coefficient two from actual complex norm-capped
     Poisson balayage and physical full-vector gradient cancellation. The square
-    row remains pending before final registration.
+    row is the unconditional strict bound below ENNReal.ofReal (452 / 125),
+    using the original centred square maximal operator on all integrable real
+    inputs and all levels. The four new square assembly modules and ten imported
+    standard-axiom audits passed focused local checks. All 106 numerical blocks
+    and their combined audit passed on Linux in run 37409981058. Earlier assembly
+    runs 37422022840 and 37431956910 failed and are not used as full acceptance.
+    Complete sixteen-row ordinary CI, unchanged cold official verification and
+    Palomar registration remain pending for the final public snapshot.
     Counts exclude the deliberate holes in Challenge.lean.
   sorry_count: 0
   sorry_in_definitions: 0
@@ -86,11 +90,11 @@ automation:
   notes: Copied proofs retain their previously documented provenance.
 fidelity:
   divergences: >-
-    Incomplete: fifteen full table rows are presently compared in fifteen statements,
-    including complex scalar Riesz input. Semigroup formulas use the exact proved
-    unique parameters rather than rounded decimals. The square
-    row remains pending; the earlier square bound 3.879 is not advertised as
-    the requested new bound below 3.616.
+    All sixteen table rows are compared in sixteen statements, including complex
+    scalar Riesz input. Semigroup formulas use the exact proved unique parameters
+    rather than rounded decimals. The square target is strictly below 452 / 125,
+    exactly the published table value 3.616. The stronger approximate value
+    discussed elsewhere in the article is outside this table-only scope.
 review:
   status: self-assessed
   reviewers: []
@@ -178,6 +182,14 @@ alignment:
     module: Solution
     status: proved
     note: Both operators, actual complex Euclidean vectors and exact cubic-root coefficient.
+  - source: Abstract table, centred squares in dimension two
+    lean: PartialBalayage.square_weakTypeConstant_lt_3_616
+    module: Solution
+    status: proved
+    note: >-
+      Strict bound below ENNReal.ofReal (452 / 125), original centred square
+      averages at every positive radius, all integrable real inputs and all
+      levels, with no numerical or source-positivity certificate premise.
 acknowledgements: >-
   Built on Lean 4, Mathlib and Yongxi Lin's earlier centred-maximal proofs.
   Layout and verification scripts come from PalomarTemplate. Codex assisted

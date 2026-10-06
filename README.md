@@ -2,24 +2,26 @@
 
 [![CI](https://github.com/CoolRmal/partial-balayage-lean/actions/workflows/ci.yml/badge.svg)](https://github.com/CoolRmal/partial-balayage-lean/actions/workflows/ci.yml)
 
-Work in progress toward formalizing all sixteen upper-bound rows in Yongxi Lin's
+A candidate Lean formalization of all sixteen upper-bound rows in Yongxi Lin's
 [published table](https://coolrmal.github.io/articles/two-partial-balayage-principles/).
-Fifteen table rows are proved in full: complex-input full-vector Riesz and
-Beurling transforms, full and traceless Frobenius Hessians, both
-projections, centred intervals, Euclidean balls, and all six Poisson and heat bounds. Every maximal estimate
-quantifies over all integrable real inputs and all extended-real levels. The six new
-semigroup bounds use the article's exact formulas and proved unique parameters.
+The results include complex-input full-vector Riesz and Beurling transforms,
+full and traceless Frobenius Hessians, both projections, centred intervals,
+Euclidean balls, the strict planar square bound below 3.616, and all six Poisson
+and heat bounds. Every maximal estimate covers all integrable real inputs and
+all extended-real levels. The semigroup bounds use exact formulas and proved
+unique parameters.
 
-The square row remains pending. This repository has
-**not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fifteen statements. Exact snapshot
-`e301f763ae0c819976384ea733f7327e80ce1c44`, covering all fifteen full rows
-including complex-input Riesz,
+The comparator is configured for all sixteen statements. The four new square
+assembly modules and ten imported axiom audits have passed focused local checks.
+Full sixteen-row ordinary CI and unchanged cold official verification remain
+pending, and the repository is **not registered on
+Palomar**. The earlier fifteen-row snapshot
+`e301f763ae0c819976384ea733f7327e80ce1c44`, including full complex-input Riesz,
 [passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37404883784)
-with no errors or warnings. The Comparator and Lean, NanoDa and con-ron kernels
-accepted the solution.
-Exact verified commits, scope and earlier failed attempts are recorded in
-[docs/VERIFICATION.md](docs/VERIFICATION.md).
+with no errors or warnings. Comparator and Lean, NanoDa and con-ron accepted
+that earlier solution. The final sixteen-row snapshot still requires the
+complete official check. Exact scope, evidence and earlier failed attempts
+are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 The three interval and Euclidean-ball proofs are adapted from the author's
 [earlier formalization](https://github.com/CoolRmal/centered-maximal-constant/tree/72c022ba09032b522c878cca2f9b6c68217d77ea).
@@ -54,32 +56,38 @@ with a physical first derivative. Real and imaginary zero-set locality give
 full-vector cancellation. Its norm-capped level-set estimate and genuine complex
 linear L¹ extension prove the complete complex-input table theorem.
 
-The square prerequisites include the actual kernel's nonnegativity and closed-diamond
-majorization, exact mass below twice 3.616, the genuine spline generator formula,
-actual Taylor error bounds and finite incoming-tail lower bounds. True angular
-constancy, homogeneity and the exact convergent diagonal integral establish the
-intrinsic radial source constant. Actual strip volumes control the coordinate
-and boundary singularities. The full even compensated source representation
-and its required second moment follow from genuine punctured test identities.
-The original radial and spline sources are now identified together, including
-axis and boundary singularities. True source and kernel dilation, physical
-diamond averages and simultaneous all-positive-radius estimates are proved.
-The full source form has genuine compact-test integrability and L¹ contact
-positivity. Exact coefficient tables and the first actual interior generator
-rectangle are checked. Genuine mollification, source convolution and the closed
-full-source graph now transfer the constructed state to the singular source.
-The strict square bound follows from positivity of the actual source density alone.
-The complete subdivision and floor-based coverage proof is now checked.
-All 106 finite numerical blocks and their combined 318-endpoint standard-axiom
-audit passed in [the completed numerical run](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
-The final registry, positive-source and square-bound assembly is being checked
-on the public `square-integration-source` branch. Its actual proof builds and
-complete sixteen-row verification remain necessary before adding the square
-row to the comparator.
-Actual Euclidean diamond averages, maximal functions, every extended-real level,
-norm inputs and monotone L¹ truncations now have their exact coefficient transfer
-to the original square operator. The positive coefficient is derived from true
-unit-diamond domination, without an assumed numerical bound.
+The square proof constructs the actual nonnegative kernel and proves its
+closed-diamond majorization and exact mass bound. The original radial and
+cubic-spline sources are identified through genuine punctured test identities,
+with the full even compensated source representation and required second
+moment. Exact Taylor enclosures and incoming-tail estimates, the complete
+subdivision and floor-based coverage proof, and all 106 checked numerical
+blocks prove positivity of the actual interior generator. Boundary and axis
+identities give the almost-everywhere nonnegative source used by the source
+comparison theorem. Genuine mollification, source convolution and the closed
+full-source graph transfer the constructed state to that singular source.
+Physical diamond averages, all positive radii, every extended-real level and
+monotone L¹ truncations transfer the coefficient to the original square
+operator, proving
+
+$$
+c(M_\square)<\frac{452}{125}=3.616.
+$$
+
+[All 106 numerical blocks and the combined audit passed on Linux](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058).
+The exact split registry then compiled locally in 56.237 seconds and its three
+imported axiom audits completed in 7.415 seconds. Rectangle alignment uses 106
+separate checks of 64 labels, preserving the original registry data and public
+theorem statements. The remaining three assembly modules also compiled locally,
+and all ten imported theorem audits use only `propext`, `Classical.choice` and
+`Quot.sound`. The resulting square theorem has no positivity or numerical
+certificate premise.
+
+The earlier integration attempts 37422022840 and 37431956910 failed during
+assembly and remain recorded as failures. The latter saved the completed
+713-module support checkpoint before assembly. These focused local results
+do not turn either failed run into a pass. Complete sixteen-row ordinary CI,
+unchanged cold official verification and Palomar registration remain pending.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly
@@ -87,11 +95,11 @@ below 3.616; the earlier bound 3.879 does not meet it.
 
 ## Project map
 
-- `Challenge.lean`: fifteen independent auditable statements importing Mathlib alone.
+- `Challenge.lean`: sixteen independent auditable statements importing Mathlib alone.
 - `Solution.lean`: the matching proved declarations.
 - `PartialBalayage/`: new proofs and adapters to earlier results.
 - `CenteredMaximal/`: the copied minimal earlier source closure, preserving author headers.
-- `comparator.json`: the exact fifteen statements currently compared.
+- `comparator.json`: the exact sixteen statements compared.
 - `formalization.yaml`: provenance, scope, automation and review metadata.
 - `docs/DECOMPOSITION.md`: all sixteen targets and the proof dependencies.
 - `docs/PALOMAR.md`: verification and eventual registration procedure.
@@ -103,7 +111,7 @@ Comparator with its bundled NanoDa and con-ron independent kernels. Official Pal
 full preflight verifies an immutable public snapshot; a build alone is not a
 Comparator pass.
 
-After all sixteen rows are proved, the final commit will be verified and submitted
+After the complete sixteen-row snapshot passes official verification, it will be submitted
 through [Palomar's intake](https://submit.palomar-registry.org/). Final registration
 requires review and the human author's consent to that exact review.
 
