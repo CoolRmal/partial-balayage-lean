@@ -11,11 +11,16 @@ and heat bounds. Every maximal estimate covers all integrable real inputs and
 all extended-real levels. The semigroup bounds use exact formulas and proved
 unique parameters.
 
-The comparator is configured for all sixteen statements. The four new square
-assembly modules and ten imported axiom audits have passed focused local checks.
-Full sixteen-row ordinary CI and unchanged cold official verification remain
-pending, and the repository is **not registered on
-Palomar**. The earlier fifteen-row snapshot
+The comparator is configured for all sixteen statements. The complete source
+`0055cdf5b947f4e23b0b736a297ab38b48b1a270` passed the official cold Solution build
+(4,739 jobs) and the ordinary CI Lean build (4,742 jobs), including all 106
+numerical blocks and the final square assembly. The official Comparator stage
+exhausted the worker's time budget; ordinary Comparator and documentation jobs
+were cancelled at their 350-minute limits. Neither complete verification run
+passed. Proof optimization is in progress, and the repository is **not
+registered on Palomar**.
+
+The earlier fifteen-row snapshot
 `e301f763ae0c819976384ea733f7327e80ce1c44`, including full complex-input Riesz,
 [passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37404883784)
 with no errors or warnings. Comparator and Lean, NanoDa and con-ron accepted
@@ -86,8 +91,9 @@ certificate premise.
 The earlier integration attempts 37422022840 and 37431956910 failed during
 assembly and remain recorded as failures. The latter saved the completed
 713-module support checkpoint before assembly. These focused local results
-do not turn either failed run into a pass. Complete sixteen-row ordinary CI,
-unchanged cold official verification and Palomar registration remain pending.
+do not turn either failed run into a pass. The subsequent complete cold build
+passed, as described above; complete sixteen-row Comparator acceptance and
+Palomar registration remain pending.
 
 Some table decimals approximate exact formulas and are not rigorous truncated upper
 bounds. The formal statements retain exact expressions. The square target is strictly
