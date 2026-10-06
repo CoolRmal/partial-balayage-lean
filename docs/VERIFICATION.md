@@ -917,3 +917,39 @@ Independent untrusted rational screening found positive candidate bounds for
 all 6,739 distinct leaves and 45 padding records. That computation supplies no
 proof evidence; every actual Lean proof is still required. The candidate
 snapshots do not enlarge the fifteen currently completed table statements.
+
+## Checked equivalent sparse evaluator
+
+The new generic sparse evaluator recognizes exact zero coefficients before
+evaluating their power intervals or Taylor errors. Nine public equalities and
+validity endpoints prove that this evaluator equals the existing Horner-based
+bound and the actual source rectangle bound for every datum. No approximation
+or additional analytic premise is introduced. Its focused build passed in
+5.9 seconds, complete LSP diagnostics are clean, and its imported nine-export
+audit uses exactly `propext`, `Classical.choice` and `Quot.sound`. The source
+has 130 lines, with at most 95 columns.
+
+Both controlled first-leaf timing comparisons reached their 90-second limits
+without completing. They therefore establish no measured speed benefit. The
+active original numerical candidates were unchanged. The separate public
+numerical snapshot changes only their evaluation route, preserving every
+actual record declaration byte for byte.
+
+Coordinate pair 46/47 also passed its focused build and two-export imported
+standard-axiom audit. The combined library, challenge and solution build passed
+(4,608 jobs), with successful source and metadata validation.
+
+The [parallel numerical workflow](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37399302649)
+checks immutable candidate commit `1e84ddabfbf64c3f4fe29cb61a85571f5caa7543`.
+Its initial snapshot, source and version-pin checks passed; the actual numerical
+builds remain in progress. The workflow revision is the separate main commit
+`fc6988860de6c088ae0d1b36bdfa7516e72507b3`; reports check the candidate SHA.
+
+The [twenty-ninth full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37394758297)
+passed exact commit `9a7102462b973ec5f1627eb8b55e6cae42083926`, checked on
+6 October 2026 at 01:27:30 UTC. Its downloaded report records full completion,
+zero errors and warnings and fifteen names accepted by the independent kernels.
+That older snapshot still checks the real-input Riesz subcase. The full complex
+Riesz preflight and the full square positivity registry and final sixteen-row
+Comparator verification remain pending, followed by Palomar intake, private
+review and registration.
