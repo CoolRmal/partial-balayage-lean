@@ -12,11 +12,12 @@ semigroup bounds use the article's exact formulas and proved unique parameters.
 
 The square row remains pending. This repository has
 **not** completed the table and is **not registered on Palomar**. The comparator is
-configured for fifteen statements. An earlier checkpoint covering fourteen full
-rows and the real-input Riesz subcase
-[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37389948017)
-with no errors or warnings. The new complex-input Riesz theorem still needs its
-own official full preflight.
+configured for fifteen statements. Exact snapshot
+`e301f763ae0c819976384ea733f7327e80ce1c44`, covering all fifteen full rows
+including complex-input Riesz,
+[passed official full Palomar preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37404883784)
+with no errors or warnings. The Comparator and Lean, NanoDa and con-ron kernels
+accepted the solution.
 Exact verified commits, scope and earlier failed attempts are recorded in
 [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
