@@ -169,6 +169,12 @@ def rieszFourierOperator {n : ℕ}
   canonicalL2FourierOperator (fun ξ z ↦ z • fourierRieszSymbol ξ)
     (Complex.ofRealCLM.compLp f)
 
+/-- The full complex-input Riesz vector, defined by its genuine Fourier symbol. -/
+def complexRieszFourierOperator {n : ℕ}
+    (f : Lp ℂ 2 (volume : Measure (EuclideanSpace ℝ (Fin n)))) :
+    Lp (EuclideanSpace ℂ (Fin n)) 2 (volume : Measure (EuclideanSpace ℝ (Fin n))) :=
+  canonicalL2FourierOperator (fun ξ z ↦ z • fourierRieszSymbol ξ) f
+
 /-- The complex-input planar Beurling multiplier. -/
 def beurlingFourierOperator
     (f : Lp ℂ 2 (volume : Measure (EuclideanSpace ℝ (Fin 2)))) :

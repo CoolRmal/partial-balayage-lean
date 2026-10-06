@@ -10,22 +10,8 @@ public import PartialBalayage.TableDefinitions
 /-!
 # Independent complex-input Riesz table operator
 
-The complete complex Euclidean vector is specified directly by the actual
-Fourier symbol. Its definition uses no analytical proof or certificate.
+Compatibility import for the complete complex Riesz table operator. The actual
+definition lives in the independent `TableDefinitions` block, at the same position
+as in `Challenge`, so elaboration shares the same generated volume-instance proofs.
+The operator continues to use its genuine Fourier symbol and no analytic certificate.
 -/
-
-@[expose] public section
-
-noncomputable section
-
-open MeasureTheory FourierTransform
-
-namespace PartialBalayage
-
-/-- The full complex-input Riesz vector, defined by its genuine Fourier symbol. -/
-def complexRieszFourierOperator {n : ℕ}
-    (f : Lp ℂ 2 (volume : Measure (EuclideanSpace ℝ (Fin n)))) :
-    Lp (EuclideanSpace ℂ (Fin n)) 2 (volume : Measure (EuclideanSpace ℝ (Fin n))) :=
-  canonicalL2FourierOperator (fun ξ z ↦ z • fourierRieszSymbol ξ) f
-
-end PartialBalayage

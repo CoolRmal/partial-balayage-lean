@@ -989,3 +989,44 @@ Eight synthetic bundler checks passed, including missing range,
 corrupt archive, changed pin/source, unsafe archive path, symlink and forbidden
 axiom rejection. Python syntax, workflow syntax and exact range coverage checks
 passed. No synthetic or Python computation supplies mathematical proof evidence.
+
+## Thirty-fifth proof checkpoint: matching the full complex Riesz definition
+
+The [thirtieth official preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37396454003)
+rejected exact snapshot `880a228b18805419bf6329ec1ceeb455aeb6354d` at the
+Comparator stage. Its 4,603-job solution build passed, but the Comparator reported
+`Const does not match between challenge and target
+'PartialBalayage.complexRieszFourierOperator'`. The independent kernels were not
+reached. This is an actual declaration mismatch, not a setup failure.
+
+The source definition was identical in the two environments, but its separate
+library module introduced different generated volume-instance proof references.
+The unchanged complex operator now lives in the same transparent definition
+block, at the same declaration position, as in the independent Challenge.
+`ComplexTableDefinitions` remains an import-only compatibility module. No symbol,
+input space, output norm, dimension range or all-L¹ extension statement changed.
+The corrected fully explicit printed type and body match the Challenge byte for
+byte (128,409 bytes, SHA256
+`5fd5441e6a45a6b4337cf08ff7a00edea67bfa65126a34e3d165b2a9fc4af8c1`).
+The focused two-module build passed and complete LSP diagnostics are clean.
+
+Seven coordinate modules, covering 58 through 71, also have successful focused
+builds and fourteen imported standard-three-axiom audits. Their frozen source
+hashes and audit endpoints were checked before inclusion. The corrected explicit
+library-module, Challenge and Solution build passed (4,621 jobs), followed by
+successful source and metadata checks. The rebuild uses explicit module targets;
+an earlier broad library invocation was stopped after selecting untracked drafts
+and is not counted as verification evidence.
+
+The local Comparator matched all fifteen configured statements and Lean's
+default kernel accepted the solution (exit 0; 364.28 seconds). All mathematical
+source hashes remained unchanged. This macOS diagnostic explicitly used no
+external kernels and disabled the sandbox; it is supporting evidence only.
+The corrected public snapshot still needs the full official independent-kernel
+preflight with the protected standard configuration.
+The remaining square numerical validation is running at
+[run 37401878571](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37401878571),
+checking candidate `1e84ddabfbf64c3f4fe29cb61a85571f5caa7543` with separate
+dispatcher revision `2c32bcf030a58efcd4173da2ddafc5552e0af8d5` and retained
+compiled outputs. Final sixteen-row verification and Palomar registration
+remain pending.
