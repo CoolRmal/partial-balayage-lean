@@ -1744,7 +1744,54 @@ remain disabled. The original interrupted integration runs remain failures.
 The reviewed source proposal has SHA256
 `e47246af0bbd0b0336ec6feb50facdc9c16b5e7fc91234eab370104af5037123`.
 
-Complete sixteen-row ordinary CI and the unchanged full cold Palomar verifier
-remain to be executed on the exact public commit. No numerical checkpoint,
-local compiled outputs or unified cache will be supplied to that verifier.
+At this publication checkpoint, complete sixteen-row ordinary CI and the
+unchanged full cold Palomar verifier remained to be executed on the exact
+public commit. No numerical checkpoint, local compiled outputs or unified
+cache would be supplied to that verifier.
 Registration still requires the returned review and exact human consent.
+
+
+## First complete cold sixteen-row verification attempt
+
+The complete source was committed and pushed as
+`0055cdf5b947f4e23b0b736a297ab38b48b1a270`. The unchanged official full verifier
+[ran on that exact commit](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37447417954)
+under `palomar-standard-v1` and pipeline
+`d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44`. It started from source without
+any numerical checkpoint, local compiled outputs or unified investigation
+cache. Its setup and capacity checks passed.
+
+The actual cold Solution build passed all 4,739 jobs in 16,581.368 seconds
+wall, with return code zero, 63,455.257 seconds user and 986.433 seconds
+system. Its recorded peak memory was 13,933,182,976 bytes. All 106 numerical
+block modules and the four final square assembly modules built. The registry
+itself took 95 seconds; the other three final modules took 1.5, 1.8 and
+1.7 seconds. Root and Solution then built, and the log ended with
+`Build completed successfully (4739 jobs).`
+
+The actual Solution export also passed, with return code zero and 72.256
+seconds wall. The subsequent Comparator stage did not complete before the
+worker wall-clock capacity was exhausted. The run is therefore a **failure**,
+with report `status: error`, `stage: resource-exhausted`,
+`phase: verification`, and `last_active_stage: comparator`. It supplies no
+completed three-kernel verdict or full sixteen-row Comparator acceptance.
+
+The Comparator supervisor record has `supervisor_timeout: true`, no completed
+return-code or elapsed-time result, and zero recorded OOM and OOM-kill events.
+Its zero resource fields do not establish that no Comparator work occurred;
+the report does not identify an unfinished internal kernel. The standard
+profile, 19,800-second whole-worker budget, independent Challenge, all
+sixteen targets and permitted standard axioms were unchanged.
+
+Actual report artifact `11424328288`, named
+`mechanical-report-preflight001`, has 9,588 archive bytes and SHA256
+`6f84406a839d7e27dd78f75baf47199a14c20d2d363acb66a6dab5ef8cdb98ee`,
+matching the GitHub artifact API. The retained report bytes have SHA256
+`09bc494a51c87c5b7178be02cfbf903566c14f77cd3322362ad3cd78d110cf0a`.
+The independent failure review has SHA256
+`42e32ab859077da4be5e91bf87e95e13e4f8c46ee05e488ffa76bcc5e8474fe7`.
+
+The separate ordinary CI run on the same source commit remains active at
+this checkpoint. No final CI acceptance, Palomar intake or registration is
+claimed. Further work must address the demonstrated resource limit before
+an unchanged-source retry; the failed run will remain recorded as a failure.
