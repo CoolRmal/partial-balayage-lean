@@ -1334,3 +1334,52 @@ commits. Twenty-seven additional cases evaluated the three actual workflow
 conditions, including failure after an output of `false`. Independent review
 and a rerun on the installed files passed all 65 cases. These control tests
 execute no Lean or Comparator commands and establish no new proof acceptance.
+
+## Ninety-six numerical blocks independently inspected
+
+Range 78–83 also completed and passed independent source, actual axiom-log,
+compiled-output and outer GitHub artifact identity checks. Its report SHA256
+is `7a544a0fa0a2e190cd4d87d8d82d5496ea7def2b98f0e0b30c3c573f0f3caa13`.
+This extends the previous checkpoint to blocks 0–95: 96 numerical blocks,
+288 actual permitted-axiom endpoints and 1,440 outputs. The remaining ten
+blocks and combined audit are still pending at this checkpoint. No local
+outputs have been restored, and square assembly remains pending.
+
+## Isolated ordinary-arithmetic leaf proof: actual comparison, no adoption
+
+An isolated proof of the unchanged block-30 leaf-29 lower bound eventually
+compiled using ordinary `norm_num`, explicit finite/vector enumeration and
+`Fintype.sum_prod_type`. Eight earlier attempts failed or left goals; their
+source and diagnostics are retained. The successful source SHA256 is
+`2fd2bd2510f86ca010cc4dd77c2c9a1d232afe03a0c20565d7404d629a256f06`.
+Its actual theorem axiom audit used only the permitted standard three axioms.
+
+Both exported comparisons use the identical 21 shared-support frontier roots
+plus the same comparator primitives, and retain all 9,658 baseline declarations.
+The ordinary proof adds 2,934 declarations; the retained same-record decision
+proof adds eight. Both exports were actually accepted by pinned Lean-default
+replay. These are single measurements that include support and export parsing:
+
+| Same actual leaf | Export bytes | Lean-default wall seconds | Peak RSS bytes |
+| --- | ---: | ---: | ---: |
+| Retained decision proof | 41,349,396 | 94.938 | 2,892,316,672 |
+| Ordinary arithmetic experiment | 425,950,621 | 150.912 | 4,209,344,512 |
+
+The ordinary export SHA256 is
+`01bcd1cb32da6cc4d326a86dee4d6cb4b4bcceb71e645dc282d8c77b90d066f6`;
+the retained decision export SHA256 is
+`f11efd3b1d425a07fdf8fa84f5357c01219d63833ec0409ffd60e7c66d66acdf`.
+Observed compilation took 186.024 seconds for the experiment and 4.240 seconds
+for the earlier decision sample, with different compiler options. The earlier
+command explicitly capped compiler threads and memory; the experiment supplied
+only an environment hint whose consumption by pinned Lean was not established.
+Its actual worker count is unknown. No controlled compilation-speed comparison
+or pure per-leaf replay cost is inferred. The guarded clarified evidence
+manifest has SHA256
+`494fbe8fdd1711961ef287bbbfd63f95edecf1810c837f8138657a00d9d47b5e`;
+all 133 retained file sizes and hashes were independently matched. The original
+raw reports and earlier descriptive interpretations remain preserved.
+
+The experiment was not adopted. NanoDa and con-ron have not checked it, and
+it establishes no complete table acceptance or full-run resource fit. The
+actual 106-block candidate and all analytical statements remain unchanged.
