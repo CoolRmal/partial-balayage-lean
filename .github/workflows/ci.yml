@@ -112,7 +112,7 @@ jobs:
         run: python3 scripts/test-ci-build-cache-marker.py
       - name: Mark the exact inputs before the action caches a successful build
         run: python3 scripts/ci-build-cache-marker.py write
-      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+      - uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865
         with:
           build: true
 
@@ -132,7 +132,7 @@ jobs:
         env:
           LEAN_BUILD_RESULT: ${{ needs.build.result }}
         run: python3 scripts/ci-build-cache-marker.py require-success
-      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+      - uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865
         with:
           build: false
       - name: Require the cached inputs to match the exact successful build
@@ -168,7 +168,7 @@ jobs:
         env:
           LEAN_BUILD_RESULT: ${{ needs.build.result }}
         run: python3 scripts/ci-build-cache-marker.py require-success
-      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+      - uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865
         with:
           build: false
       - name: Require the cached inputs to match the exact successful build
