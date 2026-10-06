@@ -1143,3 +1143,8 @@ bug is rejected before fresh warm mode, as are altered source facts or restored
 outputs. Missing audits, an unpermitted axiom, a nonpassing report, a stale fresh
 manifest and relabelling the old manifest are rejected. These fixture tests
 establish guard behavior only and are not mathematical proof evidence.
+
+The [replacement run 37409981058](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058)
+checks the unchanged candidate `dde634e918bcbba00881018b205dea4172d2ee5f`
+using tested dispatcher `243a5bd4f80c9517e7c9f834e85c5154eeb8e9a9`.
+Its fresh warm audits, numerical ranges and combined audit remain pending.
