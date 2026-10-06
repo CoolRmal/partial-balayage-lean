@@ -874,3 +874,29 @@ full rows and the real-input Riesz subcase; it does not verify the new complex
 statement. The new fifteen-full-row snapshot requires its own official preflight.
 The square row, final sixteen-row Comparator verification and Palomar intake,
 private review and registration remain pending.
+
+## Thirty-first proof checkpoint: additional checked source coordinates
+
+The actual coordinate pairs 40/41, 42/43 and 44/45 passed their focused builds and a
+six-export imported audit. Every export uses only `propext`, `Classical.choice`
+and `Quot.sound`. Their actual data, headers and 100-column checks are clean.
+These are supporting source certificates; the full square numerical registry
+is still being checked.
+The combined library, challenge and solution build passed (4,606 jobs), and
+source and metadata validation passed. Only completed coordinate modules are
+included in this checkpoint.
+
+The [twenty-seventh full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37391226313)
+passed exact public commit `7d5133e4b84356baee8db3d33fae6a9c8d20b6c8`, checked
+on 6 October 2026 at 00:41:22 UTC. The
+[twenty-eighth full preflight](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37392302170)
+passed exact public commit `183f573c2a534e537914a98b3dcaa63103e7ce72`, checked
+on 6 October 2026 at 00:59:20 UTC. Both downloaded reports identify their exact
+source snapshots and record `status: pass`, `stage: complete`, zero errors and
+warnings, and fifteen theorem names with independent NanoDa and con-ron checks.
+Those earlier snapshots check fourteen full rows and the real-input Riesz
+subcase. They do not check the completed complex-input correction in checkpoint
+30. Its exact-commit official full preflight remains in progress.
+
+Final all-sixteen-row verification and Palomar intake, private review and
+registration remain pending.
