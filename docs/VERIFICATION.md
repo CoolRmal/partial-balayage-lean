@@ -1054,3 +1054,31 @@ protected standard configuration and independent kernels remain required.
 The immutable square numerical snapshot and its retained-output workflow are
 still running. Final sixteen-row verification, Palomar intake, private review
 and registration remain pending.
+
+## Numerical check resource investigation
+
+Read-only process samples of two incomplete local dense checks measured physical
+footprints of 15.9 GB for block 77 and 7.5 GB for an older sixteen-leaf attempt.
+The samples showed active kernel reduction and rational/natural arithmetic.
+Both owned process groups were stopped after recording their identities and
+preserving all 107 original source hashes; no proof success was claimed. A
+separate read confirmed both groups were gone and memory pressure had fallen.
+
+The [pinned Lean kernel](https://github.com/leanprover/lean4/blob/470d5ce1400764999581fd26d5d72b00d990b0f4/src/kernel/type_checker.cpp)
+gives each declaration checker its own reduction caches, released when that
+checker is destroyed. The [kernel decision tactic](https://github.com/leanprover/lean4/blob/470d5ce1400764999581fd26d5d72b00d990b0f4/src/Lean/Elab/Tactic/Decide.lean)
+checks its auxiliary lemma synchronously, including under ordinary compiler defaults. Separate
+closed leaf checks therefore give cache-release boundaries that a single
+quantified 64-leaf decision lacks. This observation motivates an experiment;
+it is not yet a measured whole-block memory result.
+
+One actual leaf with the maximum 75 terms, block 30 / leaf 29, passed a direct
+ordinary-kernel compilation: exit 0, 4.240 seconds wall time, 3.451 seconds user
+time and peak RSS 3,063,939,072 bytes. Its imported positivity endpoint audit
+passed and uses exactly `propext`, `Classical.choice` and `Quot.sound`.
+Both runs used one compiler thread and a 4,096 MB Lean memory cap. The first
+timing wrapper's reporting syscall was unavailable in the macOS sandbox;
+direct compiler exit and per-child `wait4` measurements establish these results.
+All original numerical sources remained unchanged. This verifies one actual
+inequality only. A complete 64-leaf block experiment, the full numerical
+registry, final sixteen-row verification and Palomar registration remain pending.
