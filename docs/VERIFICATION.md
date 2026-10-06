@@ -1811,3 +1811,25 @@ terminal evidence receipt has SHA256
 No final CI acceptance, Palomar intake or registration is claimed. Further
 work must address the demonstrated resource limit before an unchanged-source
 retry; these failed or cancelled runs will remain recorded as such.
+
+## Numerical proof replay investigation
+
+A genuine selective export of the original first numerical lower-bound proof
+passed con-ron with its 33 protected companion roots. The export contains
+33,138,396 bytes, with SHA256
+`dac8983ecd5462491b59e43be99e2a8f2aa2491d25a4cf4b380c11c9b66558c0`.
+The checker accepted 6,137 verified declarations in 6.993 seconds wall, using
+two workers. Its phase timings were 0.061 seconds parsing, 2.838 installing
+and 4.038 checking. This verifies one original numerical inequality; it is
+not acceptance of the complete sixteen-row export.
+
+A separate NormNum pilot proves the same first-leaf inequality without
+using the original positivity theorem. Its modern-module compilation and
+fresh imported type/axiom audit passed, using only the standard three axioms.
+Compilation took 35.950 seconds wall and 30.590 seconds user. Earlier failed
+pilot attempts and a legacy-format output-inventory rejection were preserved.
+The successful pilot source has SHA256
+`77a92ea36f37ad5b7466e98fe89fec305792e6b74426d653ddefb797e45961ad`.
+Independent export and replay of this replacement remain pending. No speed
+improvement or project-wide proof replacement is claimed from compilation
+alone; the public mathematical source remains the complete `0055cdf` version.
