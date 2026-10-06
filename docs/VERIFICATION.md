@@ -1421,3 +1421,34 @@ are not pure proof costs, additive estimates for all 106 blocks, or evidence
 of full-run resource fit. Only Lean-default checked these isolated groups.
 A proposed shared Taylor-result route remains an isolated experiment; no
 source or proof change has been adopted.
+
+## Complete numerical run and combined audit
+
+Run [37409981058](https://github.com/CoolRmal/partial-balayage-lean/actions/runs/37409981058)
+completed successfully. Independent GitHub API checks confirmed exactly twenty
+successful jobs: the shared-dependency build, eighteen disjoint numerical
+ranges covering blocks 0–105, and the combined audit. The dispatcher remains
+`243a5bd4f80c9517e7c9f834e85c5154eeb8e9a9` and the checked source remains
+`dde634e918bcbba00881018b205dea4172d2ee5f`. All eighteen actual range reports,
+compiled-output manifests and outer GitHub artifact identities passed
+independent review.
+
+The genuine combined artifact has ID `11393001514` and outer ZIP SHA256
+`0c3a068642731922f288fd00081dcffd92880e0fafafec5492ce43bce05b23be`.
+Independent inspection matched all 902 source/pin hashes, all 318 actual
+standard-axiom endpoints and all 5,190 output hashes. The retained warm archive
+was inspected as a stream; no local compiled outputs were restored. The
+combined audit source was reproduced byte for byte from the frozen control
+template, and each endpoint's axiom basis also matched its individual range
+audit. The combined report SHA256 is
+`5746c27cd44cf64746af1a7cba5b22369409c2beba6b05608a07fc1ff04e9d92`.
+The root's exact twenty-job gate evidence has SHA256
+`39201451f04d5d55aad6b425dba2e5b62e880babf8d0c99bf5b5b472a387c2d0`.
+
+Public branch `square-integration-source`, commit
+`4671737f1acc8292a5c984d00401341c8a4a5548`, contains precisely the 106 checked
+leaf sources and four frozen assembly drafts on the latest public main source.
+Its pins and fifteen-row table adapter are unchanged. Numerical completion
+does not establish the four assembly proofs, the sixteenth table result or
+complete official sixteen-row Comparator acceptance. Those checks remain
+pending at this checkpoint.
