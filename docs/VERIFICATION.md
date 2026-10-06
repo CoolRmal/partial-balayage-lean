@@ -1175,3 +1175,46 @@ peak RSS was 3,950,912 kB. The fresh manifest has SHA256
 Its unchanged shared output archive remains byte-identical to the verified seed,
 while the new manifest and actual rerun audits establish the candidate identity.
 Numerical ranges and their combined audit remain pending.
+
+## First six remote numerical blocks accepted
+
+The replacement numerical run completed range 30 through 35 successfully.
+Independent inspection confirms all 902 source and pin hashes match exact
+candidate `dde634e918bcbba00881018b205dea4172d2ee5f`, all eighteen actual
+imported validity/numerical/pointwise endpoints use exactly the three standard
+axioms, and all ninety regular compiled-output archive members match their
+reported hashes and sizes. The exact dispatcher remains
+`243a5bd4f80c9517e7c9f834e85c5154eeb8e9a9`.
+The range report SHA256 is
+`900fd7447432ba13afe0282d25eb4ef46d08bbd0b57e6eebdf4854e14ebc7cdc`;
+its binary archive SHA256 is
+`eb67654e740528b0ae79d794366830b55636dea53ffdafa70fa6bdc45f0f6e60`.
+
+Actual checking ran from 03:45:24 to 04:19:12 UTC on 2026-10-06. Each ordinary
+build exited zero in 321.05 to 347.31 seconds, with maximum process peak RSS
+3,104,645,120 bytes. Six builds took 2,012.83 seconds in total. Every imported
+audit exited zero in 2.34 to 2.44 seconds, with maximum process peak RSS
+3,975,196,672 bytes. Outputs were inspected without restoration or source
+transition. The other hundred blocks, complete registry, unconditional square
+theorem and final sixteen-row check remain pending.
+
+## Bounded independent rechecking of the measured block
+
+A genuine export of the already proved block 30 validity theorem contains all
+128 private decision proof values and no other block-validity theorem. The
+44,667,120-byte export has SHA256
+`691efd636e911fcefd07bce724e4f269108855dbd3476c362e5a5aa92b034a4e`.
+Pinned con-ron with its verified configuration and two workers accepted 9,197
+declarations: 369.499 seconds wall, 442.767 seconds user, peak RSS
+7,806,222,336 bytes. Pinned Lean-default replay also accepted: 281.059 seconds
+wall, 274.637 seconds user, peak RSS 2,905,669,632 bytes.
+
+The separate four-worker NanoDa experiment was stopped by an explicit local
+12 GiB physical-footprint guard after reaching 13,167,028,232 sampled bytes.
+It returned no verdict and is inconclusive. Its peak resident set was
+4,204,675,072 bytes; the physical-footprint and resident-set measures differ.
+This diagnostic guard is separate from Palomar's approved execution profiles.
+Pinned NanoDa source creates fresh reduction caches for each declaration; that
+lifecycle does not guarantee immediate allocator page release. These measured
+results cover one block and its shared dependencies only. Final all-block
+Comparator acceptance and resource fit require the actual full check.
