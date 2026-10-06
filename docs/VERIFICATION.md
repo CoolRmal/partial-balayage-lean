@@ -1675,3 +1675,34 @@ the sealed 49-file manifest SHA256 is
 An independent read-only check matched all 49 actual file hashes/sizes and
 the complete replay records. No cached proof source is adopted. This pair
 provides no full-table resource estimate or final Comparator acceptance.
+
+
+## Local alignment investigation after support recovery
+
+Independent support-only validation completed for all 713 support modules
+and all 10,695 real output hashes. A separately reviewed transactional helper
+restored those exact outputs into two clean disjoint checkouts at source
+`4671737f1acc8292a5c984d00401341c8a4a5548`. Independent post-restoration
+inspection passed for both checkouts. The four final assembly modules were
+excluded. These are ordinary local investigation caches; they will not be
+supplied to the independent cold full-16 Palomar verifier.
+
+The bounded original registry build reached its 600-second local wall limit
+without a Lean diagnostic or verdict. Its actual status is
+`timeout-inconclusive`, with 600.319 seconds wall, 23.503 seconds user,
+88.367 seconds system and 8,809,909,424 bytes maximum sampled physical
+footprint. All source, support and prior evidence guards passed. The actual
+metrics have SHA256
+`8409c62498519f0379a5d92fb910b16bc0d4efdc658227e456f4023d393a4a86`.
+This does not establish the cause of the earlier remote runner shutdown.
+
+An exact source-prefix diagnostic before the rectangle-alignment theorem
+compiled in 8.571 seconds wall. Its imported validity theorem audit passed
+in 7.111 seconds and reported only the three permitted standard axioms.
+The prefix is diagnostic evidence, not the complete registry proof.
+A disjoint split candidate is now being compiled under the same local
+600-second and 12-GiB guard. Independent source inspection confirms that it
+changes only the alignment proof, preserves the public theorem name/type
+bytes and all numerical data, and adds 106 private checks over Fin 64.
+No split proof source has been adopted, and complete assembly and final-16
+Comparator acceptance remain pending.
